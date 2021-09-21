@@ -263,3 +263,59 @@ form input+i {
 #footer .credits a {
     color: #F6F8FD;
 }
+
+
+/* Tentang */
+
+.frame {
+    width: 604px;
+    height: 514px;
+}
+
+.card {
+    -webkit-box-shadow: 0 0 35px 10px #ededed;
+    box-shadow: 0 0 35px 10px #ededed;
+    /* width: 393px; */
+    height: 338px;
+}
+
+.text-center {
+    margin-bottom: 200px;
+}
+
+.text-center .row {
+    margin-top: -400px;
+}
+
+.card .card-body {
+    text-align: center;
+}
+
+.judul {
+    width: 100%;
+}
+
+
+/* .tentang_1 {
+    padding-left: 180px;
+    padding-right: 180px;
+} */
+
+.tentang {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.tentang .maju {
+    padding-bottom: 50px;
+    color: #335c32;
+}
+
+h4 {
+    color: #335c32;
+}
+
+p {
+    font-family: "Poppin", sans-serif;
+}
