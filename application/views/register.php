@@ -37,7 +37,7 @@
                                         Register
                                 </a>
                                 <p class="text-center">Sudah mempunyai akun?
-                                    <a href="<?= base_url();?>LandingPage" class="regis"> Login</a>
+                                    <a href="<?= base_url();?>Login" class="regis"> Login</a>
                                 </p>                               
 
                             </div>
