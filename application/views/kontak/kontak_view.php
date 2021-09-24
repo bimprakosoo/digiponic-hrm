@@ -8,6 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
   </head>
   <body>
        <!-- Awal menu -->
@@ -21,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="<?php echo base_url();?>LandingPage">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url();?>Tentang/tentang">Tentang</a>
@@ -31,17 +37,15 @@
                             Departemen
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Departemen</a></li>
+                                <li><a class="dropdown-item" href="#">Karyawan</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url();?>LandingPage/Lowongan">Lowongan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Artikel</a>
+                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/artikel">Artikel</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url();?>LandingPage/kontak">Kontak</a>
@@ -60,6 +64,9 @@
 
      <!-- Awal menu -->
     <section class="hubungi" id="hubungi">
+    <div className="row">
+           <img src="<?php echo base_url();?>assets/image/hubungi/slide-hubungi.svg" class="d-block w-100" />
+        </div>
     <div class="container px-4 py-4">
         <div class="row gx-5">
             <div class="col">
