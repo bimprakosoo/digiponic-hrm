@@ -12,4 +12,20 @@ class LandingPage extends CI_Controller
     {
     $this->load->view('lowongan/lowongan_view');
     }
+
+    public function artikel()
+    {
+    $this->load->view('lowongan/lowongan_view');
+    }
+
+    public function karyawan()
+    {
+    $this->load->view('lowongan/lowongan_view');
+    }
+
+    public function kontak()
+    {
+    $this->load->view('kontak/kontak_view');
+    }
+    
 }

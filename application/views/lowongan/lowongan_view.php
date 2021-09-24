@@ -44,7 +44,7 @@
                             <a class="nav-link" href="#">Artikel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kontak</a>
+                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/kontak">Kontak</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-secondary" href="<?php echo base_url();?>login">Login</a>
@@ -57,36 +57,104 @@
             </div>
         </nav>
     <header>
-<!-- Akhir menu -->
-    <!-- <footer id="footer ">
-      <div className="container ">
-        <div className="copyright bg-dark">
-          &copy;21
-          <span>
-            PT. Maju Bersama - Nelongso.com - All rights reserved.
-            <br />
-            Develop by
-          </span>
-          <span id="digi"> Digiponic.co.id</span>
-        </div>
 
-        <div className="credits">
-          <div className="social-links">
-            <a href="#" className="twitter">
-              <img src="<?php echo base_url();?>assets/image/Footer/foot01.svg"/>
-            </a>
-            <a href="#" className="facebook">
-              <img src="<?php echo base_url();?>assets/image/Footer/foot02.svg" />
-            </a>
-            <a href="#" className="instagram">
-              <img src="<?php echo base_url();?>assets/image/Footer/foot03.svg" />
-            </a>
+     <!-- Awal menu -->
+     <section className="container-fluid">
+          <div className="row">
+            <img src="<?php echo base_url();?>assets/image/slide/slide.svg" class="d-block w-100" />
+          </div>
+          <div class="container pt-5 ">
+          <center>
+            <h4>Beberapa lowongan pekerjaan yang sedang dibutuhkan, bagi yang minat langsung bisa melamar dibawah ini</h4>
+          </center>
+        <div class="row pt-5 pb-5">
+          <div class="col-sm-3">
+            <div class="card h-100" >
+                <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url();?>assets/image/lowongan/icon-analityc.svg" class="card-img-top"/>
+                </div>
+              <div class="card-body pb-3">
+                <h5 class="card-title">Accounting staff</h5>
+                <p class="card-text">
+                            Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                            penyusunan laporan keuangan dan perpajakan.
+                          </p>
+                          <p>Lokasi - Malang</p>
+                          <p>
+                            <strong>Posted Date</strong> <br /> 11 September 2021
+                          </p>
+                          <a href="#" class="btn btn-primary">
+                            Lihat Selengkapnya
+                          </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card h-100">
+            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url();?>assets/image/lowongan/icon-analityc.svg" class="card-img-top"/>
+                </div>
+                <div class="card-body pb-3">
+                <h5 class="card-title">Accounting staff</h5>
+                <p class="card-text">
+                            Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                            penyusunan laporan keuangan dan perpajakan.
+                          </p>
+                          <p>Lokasi - Malang</p>
+                          <p>
+                            <strong>Posted Date</strong> <br /> 11 September 2021
+                          </p>
+                          <a href="#" class="btn btn-primary">
+                            Lihat Selengkapnya
+                          </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card h-100">
+            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                <img style="width: 48px; heigth: 50px;" src="<?php echo base_url();?>assets/image/lowongan/icon-analityc.svg" class="card-img-top"/>
+                </div>
+                <div class="card-body pb-3">
+                <h5 class="card-title">Accounting staff</h5>
+                <p class="card-text">
+                            Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                            penyusunan laporan keuangan dan perpajakan.
+                          </p>
+                          <p>Lokasi - Malang</p>
+                          <p>
+                            <strong>Posted Date</strong> <br /> 11 September 2021
+                          </p>
+                          <a href="#" class="btn btn-primary">
+                            Lihat Selengkapnya
+                          </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card h-100">
+            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url();?>assets/image/lowongan/icon-analityc.svg" class="card-img-top"/>
+                </div>
+                <div class="card-body pb-3">
+                <h5 class="card-title">Accounting staff</h5>
+                <p class="card-text">
+                            Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                            penyusunan laporan keuangan dan perpajakan.
+                          </p>
+                          <p>Lokasi - Malang</p>
+                          <p>
+                            <strong>Posted Date</strong> <br /> 11 September 2021
+                          </p>
+                          <a href="#" class="btn btn-primary">
+                            Lihat Selengkapnya
+                          </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer> -->
-     <!-- Awal menu -->
-     <?php $this->load->view('lowongan/main_lowongan_view');?>
+        </div>
+      </section>
 <!-- Akhir menu -->
     <footer id="footer">
       <div class="container-fluid">

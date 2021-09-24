@@ -8,19 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css" />
-    
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
   </head>
   <body>
        <!-- Awal menu -->
        <header class=body-warp>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="<?php echo base_url();?>/assets/image/Logo.svg" alt=""></a>
+                <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/image/Logo.svg" alt=""></a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                          </button>
@@ -44,7 +38,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/lowongan">Lowongan</a>
+                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/Lowongan">Lowongan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Artikel</a>
@@ -63,34 +57,70 @@
             </div>
         </nav>
     <header>
-      <div class="slider w-100">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-1.jpg" class="d-block w-100" alt="...">
+
+     <!-- Awal menu -->
+    <section class="hubungi" id="hubungi">
+    <div class="container px-4 py-4">
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3 ">
+                    <h4>Kontak Informasi</h4>
+                    <div class="jalan pt-5">
+                        <div class="d-inline pe-2">
+                        <img src="<?php echo base_url();?>assets/image/hubungi/lokasi.svg"/>
+                        </div>
+                        <div class="d-inline">Jl. Raya Tidar No.100, Karangbesuki,
+                        Kec. Sukun, Kota Malang, Jawa Timur</div>
+                    </div>
+                    <div class="tlpn pt-4">
+                        <div class="d-inline pe-2">
+                        <img src="<?php echo base_url();?>assets/image/hubungi/tlpn.svg"/>
+                        </div>
+                        <div class="d-inline">021 6010948/ 6269552/ 62203958</div>
+                    </div>
+                    <div class="mailo pt-4">
+                        <div class="d-inline pe-2">
+                        <img src="<?php echo base_url();?>assets/image/hubungi/email.svg"/>
+                        </div>
+                        <div class="d-inline">MajuJaya@gmail.com</div>
+                    </div>
+                    <div class="wa py-4">
+                        <div class="d-inline pe-2">
+                        <img src="<?php echo base_url();?>assets/image/hubungi/wa.svg"/>
+                        </div>
+                        <div class="d-inline">085282832341</div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-2.jpg" class="d-block w-100" alt="...">
+            <div class="col">
+                 <div class="HubungiKami p-3">
+                 <h4>Hubungi Kami</h4>
+                    <form class="row g-3 pt-5">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="Notlpn" placeholder="No. Telp/WA">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control" id="Email" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="Subjek" placeholder="Subjek">
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" id="TextAreaPesan" rows="4" placeholder="Pesan"></textarea>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="kirim btn btn-primary">Kirim</button>
+                        </div>
+                    </form>
+                 </div>
             </div>
-            <div class="carousel-item">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-3.jpg" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-        </div>
+    </div>
+    </section>
+<!-- Akhir menu -->
     <footer id="footer">
       <div class="container-fluid">
         <div class="copyright">
