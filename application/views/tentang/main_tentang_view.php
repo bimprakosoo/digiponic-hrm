@@ -26,8 +26,10 @@
                 dapat dibuktikan kinerja PT.MAJU BERSAMA
             </p>
     </div>
-    <div class="text-center pb-5">
+    <div class="visiMisi pb-5">
+        <center>
        <img src="<?php echo base_url();?>assets/image/Tentang/frame.svg" class="img-fluid" alt="...">
+        </center>
        <div class="row">
                 <div class="col-sm-6">
                     <div class="card w-100 mb-3">
