@@ -14,7 +14,7 @@
        <header class=body-warp>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="<?php echo base_url();?>/assets/image/Logo.svg" alt=""></a>
+                <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/image/Logo.svg" alt=""></a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                          </button>
@@ -38,7 +38,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/lowongan">Lowongan</a>
+                            <a class="nav-link" href="<?php echo base_url();?>LandingPage/Lowongan">Lowongan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Artikel</a>
@@ -57,34 +57,37 @@
             </div>
         </nav>
     <header>
-      <div class="slider w-100">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="<?php echo base_url();?>/assets/image/slide/slide-3.jpg" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+<!-- Akhir menu -->
+    <!-- <footer id="footer ">
+      <div className="container ">
+        <div className="copyright bg-dark">
+          &copy;21
+          <span>
+            PT. Maju Bersama - Nelongso.com - All rights reserved.
+            <br />
+            Develop by
+          </span>
+          <span id="digi"> Digiponic.co.id</span>
         </div>
+
+        <div className="credits">
+          <div className="social-links">
+            <a href="#" className="twitter">
+              <img src="<?php echo base_url();?>assets/image/Footer/foot01.svg"/>
+            </a>
+            <a href="#" className="facebook">
+              <img src="<?php echo base_url();?>assets/image/Footer/foot02.svg" />
+            </a>
+            <a href="#" className="instagram">
+              <img src="<?php echo base_url();?>assets/image/Footer/foot03.svg" />
+            </a>
+          </div>
         </div>
+      </div>
+    </footer> -->
+     <!-- Awal menu -->
+     <?php $this->load->view('lowongan/main_lowongan_view');?>
+<!-- Akhir menu -->
     <footer id="footer">
       <div class="container-fluid">
         <div class="copyright">

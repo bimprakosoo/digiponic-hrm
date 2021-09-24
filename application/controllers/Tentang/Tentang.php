@@ -6,4 +6,5 @@ class Tentang  extends CI_Controller {
     {
     $this->load->view('tentang/tentang_view');
     }
+    
 }
