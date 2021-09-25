@@ -103,15 +103,30 @@ form input+i {
 }
 
 /*--------------------------------------------------------------
-# Artikel
---------------------------------------------------------------*/
-
-
-
-/*--------------------------------------------------------------
 # Lowongan
 --------------------------------------------------------------*/
 
+p.jd-lowongan{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; 
+    font-size: 18;
+    color:#292C2B ;
+    text-align: center;
+}
+
+.judul{
+    margin: auto;
+    margin-top: 100px;
+}
+
+/*--------------------------------------------------------------
+# Kontak
+--------------------------------------------------------------*/
+
+h4.k1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500 !important; 
+}
 
 #hubungi .HubungiKami .kirim {
     height: 100px;
@@ -127,12 +142,18 @@ form input+i {
     border-color: #8CCF4D;
     width: 135px;
     margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important; 
+    font-size: 16;
 }
 
 .btn-success:hover{
     background-color: #6fa83a ;
     border-color: #6fa83a;
     width: 135px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important; 
+    font-size: 16;
 }
 
 
@@ -141,12 +162,18 @@ form input+i {
     color: #000;
     width: 100px;
     margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important; 
+    font-size: 16;
 }
 
 .btn-outline-light:hover{
     border-color: #fff;
     background-color: #fff;
 color: #6fa83a;
+font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important; 
+    font-size: 16;
 }
 
 .d-inline{
@@ -156,7 +183,21 @@ color: #6fa83a;
     font-weight: 400;
 }
 
+/*--------------------------------------------------------------
+# header
+--------------------------------------------------------------*/
 
+a.nav-link{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16;
+}
+
+a.dropdown-item{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16;
+}
 
 /*--------------------------------------------------------------
 # Footer
@@ -343,17 +384,52 @@ color: #6fa83a;
     /* height: 338px; */
 }
 
-
-/* .text-center {
-    margin-bottom: 200px;
+.page-1{
+    width: 900px;
+    align-content: center;
 }
 
-.text-center .row {
-    margin-top: -400px;
-} */
+h2.pt{
+    font-family: 'Poppins', sans-serif;
+    font-size: 36;
+    font-weight: 600;
+    color: #335C32;
+}
 
-.card .card-body {
+p.text-break-1{
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16;
+}
+
+p.text-break-2{
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16;
+   
+}
+
+h5.card-title{
+    font-size: 25;
+    color: #335C32;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+p.card-text{
+    font-size: 16;
+    color: #292C2B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+
+.card-body {
     text-align: center;
+}
+div.card{
+    border-radius: 10px;
+    border: #fff;
 }
 
 .judul {

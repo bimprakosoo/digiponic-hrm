@@ -74,7 +74,7 @@
                     <div class="row gx-5">
                         <div class="col kontak">
                             <div class="p-3 ">
-                                <h4>Kontak Informasi</h4>
+                                <h4 class="k1">Kontak Informasi</h4>
                                 <div class="jalan pt-5">
                                     <div class="d-inline pe-2">
                                         <img src="<?php echo base_url(); ?>assets/image/hubungi/lokasi.svg" />
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col">
                             <div class="HubungiKami p-3">
-                                <h4>Hubungi Kami</h4>
+                                <h4 class="k1">Hubungi Kami</h4>
                                 <form class="row g-3 pt-5">
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap">
