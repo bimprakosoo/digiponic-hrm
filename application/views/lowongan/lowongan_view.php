@@ -74,7 +74,7 @@
             <p class="jd-lowongan center">Beberapa lowongan pekerjaan yang sedang dibutuhkan, bagi yang minat langsung bisa melamar dibawah ini</p>
           </div>
           <div class="row pt-5 pb-5">
-            <div class="card-lw col-sm-3">
+            <div class="col-sm-3">
               <div class="card h-100">
                 <div class="d-flex justify-content-center pt-4" style="width: 100%;">
                   <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
