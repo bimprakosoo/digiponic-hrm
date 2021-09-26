@@ -80,26 +80,26 @@
                 <div class="card-group">
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                         <div class="card h-100 me-1 ms-1">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                     </div>
@@ -110,26 +110,26 @@
                 <div class="card-group">
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                         <div class="card h-100 me-1 ms-1">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small>/h5>
                             </div>
                         </div>
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                     </div>
@@ -140,26 +140,26 @@
                 <div class="card-group">
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                         <div class="card h-100 me-1 ms-1">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                         <div class="card h-100 ">
                             <img src="<?php echo base_url();?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                            <div class="card-body pt-5">
-                            <h class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h>
+                            <div class="card-body text-start pt-5">
+                            <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
                             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                            <h5 class="card-text py-5">Jan 26, 2021</h5>
+                            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
                             </div>
                         </div>
                     </div>
