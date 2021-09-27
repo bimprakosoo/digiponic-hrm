@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tentang  extends CI_Controller
-{
+class Tentang  extends CI_Controller {
     public function index()
     {
-        $this->load->view('tentang/tentang_view');
+    $this->load->view('tentang/tentang_view');
     }
+    
 }

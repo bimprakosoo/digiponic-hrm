@@ -1,3 +1,37 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #434343;
+}
+
+a:hover {
+    color: #8CCF4D;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins', sans-serif";
+    color: #335C32;
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
 .navbar {
     border-bottom: 1px solid #e9ecef;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
@@ -35,10 +69,15 @@
 }
 
 .btn-secondary:hover {
-    color: #6fa83a;
+    color: #8CCF4D;
     background-color: #fff;
     border-color: #fff;
 }
+
+
+/*--------------------------------------------------------------
+# Login&Regis
+--------------------------------------------------------------*/
 
 #card {
     border-radius: 10px;
@@ -104,24 +143,6 @@ form input+i {
 
 
 /*--------------------------------------------------------------
-# Lowongan
---------------------------------------------------------------*/
-
-p.jd-lowongan {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 18;
-    color: #292C2B;
-    text-align: center;
-}
-
-.judul {
-    margin: auto;
-    margin-top: 100px;
-}
-
-
-/*--------------------------------------------------------------
 # Departemen
 --------------------------------------------------------------*/
 
@@ -133,11 +154,6 @@ p.jd-lowongan {
 /*--------------------------------------------------------------
 # kontak
 --------------------------------------------------------------*/
-
-h4.k1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500 !important;
-}
 
 #hubungi .HubungiKami .kirim {
     height: 100px;
@@ -355,7 +371,7 @@ h4.k1 {
 }
 
 #footer .credits {
-    padding-top: 20px;
+    padding-top: 10px;
     color: #fff;
 }
 
@@ -378,51 +394,16 @@ h4.k1 {
     /* height: 338px; */
 }
 
-.page-1 {
-    width: 900px;
-    align-content: center;
+.visiMisi {
+    margin-bottom: 200px;
 }
 
-h2.pt {
-    font-family: 'Poppins', sans-serif;
-    font-size: 36;
-    font-weight: 600;
-    color: #335C32;
+.visiMisi .row {
+    margin-top: -400px;
 }
 
-p.text-break-1 {
-    margin-top: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16;
-}
-
-p.text-break-2 {
-    margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16;
-}
-
-h5.card-title {
-    font-size: 25;
-    color: #335C32;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
-
-p.card-text {
-    font-size: 16;
-    color: #292C2B;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-}
-
-.card-body {
+.card .card-body {
     text-align: center;
-}
-
-div.card {
-    border-radius: 10px;
-    border: #fff;
 }
 
 .judul {
@@ -443,10 +424,6 @@ div.card {
 
 .tentang .maju {
     padding-bottom: 50px;
-    color: #335c32;
-}
-
-h4 {
     color: #335c32;
 }
 
