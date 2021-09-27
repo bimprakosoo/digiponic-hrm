@@ -150,6 +150,55 @@ form input+i {
     height: 100px;
 }
 
+#hubungi .form-control {
+    border-color: #C4C4C4;
+    border-radius: 5px !important;
+}
+
+.btn-success {
+    background-color: #8CCF4D;
+    border-color: #8CCF4D;
+    width: 135px;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+    font-size: 16;
+}
+
+.btn-success:hover {
+    background-color: #6fa83a;
+    border-color: #6fa83a;
+    width: 135px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+    font-size: 16;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #000;
+    width: 100px;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+    font-size: 16;
+}
+
+.btn-outline-light:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #6fa83a;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+    font-size: 16;
+}
+
+.d-inline {
+    color: #292C2B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
