@@ -13,16 +13,10 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-    <!-- Awal menu -->
-    <header class=body-warp>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
             <div class="container">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>/assets/image/Logo.svg" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,8 +51,8 @@
 
                     </ul>
                     <div class="gap-3 ms-auto">
-                        <button class="btn btn-outline-light">Login</button>
-                        <button class="btn btn-success">Register</button>
+                        <a class="btn btn-outline-light" href="<?php echo base_url(); ?>login">Login</a>
+                        <a class="btn btn-success" href="<?php echo base_url(); ?>register">Register</a>
                     </div>
                 </div>
             </div>
