@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="regis_V">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -34,10 +34,11 @@
                                     <a href="#" class="lupa">lupa password?</a>
                                     <!-- <a href="#" onclick="proses_login()" id="login"
                                         class="btn btn-primary btn-user btn-block"> -->
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
-
+                                        <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block ">
                                         Register
                                     </button>
+                                    </div>
                                     <!-- </a> -->
                                     <p class="text-center">Sudah mempunyai akun?
                                         <a href="<?= base_url(); ?>Login" class="regis"> Login</a>

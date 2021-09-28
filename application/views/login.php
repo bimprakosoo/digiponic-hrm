@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="Login_V">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -30,10 +30,12 @@
                                         <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <a href="#" class="lupa">lupa password?</a>
-
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block ">
                                         Login
                                     </button>
+                                    </div>
+                                    
                                     <p class="text-center">belum mempunyai akun?
                                         <a href="<?= base_url('register'); ?>" class="regis"> Register</a>
                                     </p>
