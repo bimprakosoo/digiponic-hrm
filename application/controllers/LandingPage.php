@@ -6,30 +6,36 @@ class LandingPage extends CI_Controller
 
     public function index()
     {
-        $this->load->view('home/landingpage_view');
+        $this->load->view('landingpage/landingpage_view');
     }
+
+    public function Tentang()
+    {
+        $this->load->view('landingpage/tentang_view');
+    }
+
     public function departemen()
     {
-    $this->load->view('departemen/departemen_view');
+    $this->load->view('landingpage/departemen_view');
     }
     public function lowongan()
     {
-    $this->load->view('lowongan/lowongan_view');
+    $this->load->view('landingpage/lowongan_view');
     }
 
     public function artikel()
     {
-    $this->load->view('artikel/artikel_view');
+    $this->load->view('landingpage/artikel_view');
     }
 
     public function karyawan()
     {
-    $this->load->view('departemen/karyawan_view');
+    $this->load->view('landingpage/karyawan_view');
     }
 
     public function kontak()
     {
-    $this->load->view('kontak/kontak_view');
+    $this->load->view('landingpage/kontak_view');
     }
     
 }
