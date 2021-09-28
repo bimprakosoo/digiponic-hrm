@@ -38,7 +38,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="<?php echo base_url(); ?>LandingPage/departemen">Departemen</a></li>
-                                <li><a class="dropdown-item" href="#">Karyawan</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url(); ?>LandingPage/karyawan">Karyawan</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -64,14 +64,14 @@
      <!-- Awal menu -->
     <section class="departemen" id="departemen">
   
-           <img src="<?php echo base_url();?>assets/image/hubungi/slide-hubungi.svg" class="d-block w-100" />
+           <img src="<?php echo base_url();?>assets/image/departemen/departemen.svg" class="d-block w-100" />
         
     <div class="container-fluid">
-        <h4 class="text-center pb-3" >Struktur Departemen</h4>
+        <h4 class="text-center pb-3" id="strukturDept">Struktur Departemen</h4>
 
         <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-struktur.svg" alt="" class="container d-flex justify-content-center">
 
-        <h4 class="text-center pb-3">Daftar Departemen</h4>
+        <h4 class="text-center pb-3" id="daftarDept">Daftar Departemen</h4>
         
         <div class="row ">
             <div class="col d-flex justify-content-lg-center">
