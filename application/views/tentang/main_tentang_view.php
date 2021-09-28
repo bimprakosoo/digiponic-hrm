@@ -1,8 +1,6 @@
-<section class="container-fluid">
-          <div class="row">
+
             <img src="<?php echo base_url();?>assets/image/Tentang/slide-tentang.svg" class="d-block w-100" />
-          </div>
-</section>
+
 <section class="container page-1">
     
     <div class="tentang">

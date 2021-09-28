@@ -145,6 +145,195 @@ form input+i {
     height: 580px;
 }
 
+#landTentang {
+    background: #F6F8FD;
+}
+
+#landTentang h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+#landTentang h5 {
+    font-weight: 600;
+    font-size: 24px;
+    color: rgba(49, 49, 49, 1);
+}
+
+#landTentang p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #292C2B;
+}
+
+#landTentang .btn {
+    color: #335C32;
+    background: #fff;
+    border-color: #335C32;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#landTentang .card {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #F6F8FD;
+}
+
+#landTentang .card .img-fluid {
+    width: 317px;
+    height: 226px;
+}
+
+#landDepartemen h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+#landDepartemen .card-group {
+    width: 100%;
+}
+
+#landDepartemen .card-group .card {
+    width: 393px;
+    height: 528px;
+}
+
+#landDepartemen .card-group .card h2 {
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+#landDepartemen .btn {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#landDepartemen .d-grid {
+    margin-top: 80px;
+}
+
+#landDepartemen .d-grid .btn {
+    color: #335C32;
+    background: #fff;
+    border-color: #335C32;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#landKaryawan {
+    background: #F6F8FD;
+}
+
+#landKaryawan h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+#landKaryawan p {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+#landKaryawan .card-group .card {
+    width: 288.46px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+#landKaryawan .d-grid {
+    margin-top: 80px;
+}
+
+#landKaryawan .d-grid .btn {
+    color: #335C32;
+    background: #fff;
+    border-color: #335C32;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#landLowongan h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+#landLowongan p {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+#landLowongan .selengkapnya.d-grid {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#landLowongan .selengkapnya.d-grid .btn {
+    color: #335C32;
+    background: #fff;
+    border-color: #335C32;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#landArtikel {
+    background: #F6F8FD;
+}
+
+#landArtikel h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+#landArtikel p {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+#landArtikel .card {
+    height: 600px;
+}
+
+#landArtikel .d-grid {
+    margin-top: 50px;
+}
+
+#landArtikel .d-grid .btn {
+    color: #335C32;
+    background: #fff;
+    border-color: #335C32;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#landKontak h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 # Departemen
@@ -161,7 +350,6 @@ form input+i {
 #departemen .card {
     width: 393px;
     height: 528px;
-    padding-left: 50px !important;
 }
 
 #departemen .card-img-top {
