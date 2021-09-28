@@ -24,7 +24,7 @@ class LandingPage extends CI_Controller
 
     public function karyawan()
     {
-    $this->load->view('lowongan/lowongan_view');
+    $this->load->view('departemen/karyawan_view');
     }
 
     public function kontak()

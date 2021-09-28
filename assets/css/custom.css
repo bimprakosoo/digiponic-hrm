@@ -23,8 +23,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins', sans-serif";
+    font-family: 'Poppins', sans-serif;
     color: #335C32;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -146,8 +150,12 @@ form input+i {
 # Departemen
 --------------------------------------------------------------*/
 
-#departemen h4 {
+#strukturDept {
     padding-top: 140px;
+}
+
+#daftarDept {
+    padding-top: 40px;
 }
 
 #departemen .card {
@@ -159,6 +167,26 @@ form input+i {
 #departemen .card-img-top {
     width: 100%;
     height: 200;
+}
+
+
+/*--------------------------------------------------------------
+# karyawan
+--------------------------------------------------------------*/
+
+#karyawan .card {
+    width: 288.46px;
+    height: 459px;
+    border-radius: 10px;
+}
+
+#karyawan .card-img-top {
+    width: 288.46px;
+    height: 277px;
+}
+
+#karyawan .container {
+    padding-top: 140px;
 }
 
 
@@ -393,6 +421,30 @@ form input+i {
 
 /* Tentang */
 
+.page-1 {
+    width: 900px;
+    align-content: center;
+}
+
+h2.pt {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 36;
+    font-weight: 600;
+    color: #335C32;
+}
+
+p.text-break-1 {
+    margin-top: 30px;
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 16;
+}
+
+p.text-break-2 {
+    margin-top: 20px;
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 16;
+}
+
 .frame {
     width: 604px;
     height: 514px;
@@ -431,13 +483,4 @@ form input+i {
     text-align: center;
     padding-top: 100px;
     padding-bottom: 50px;
-}
-
-.tentang .maju {
-    padding-bottom: 50px;
-    color: #335c32;
-}
-
-p {
-    font-family: "Poppin", sans-serif;
 }

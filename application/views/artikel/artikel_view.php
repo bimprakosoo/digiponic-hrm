@@ -38,8 +38,8 @@
                                 Departemen
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Departemen</a></li>
-                                <li><a class="dropdown-item" href="#">Karyawan</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url(); ?>LandingPage/departemen">Departemen</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url(); ?>LandingPage/karyawan">Karyawan</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
