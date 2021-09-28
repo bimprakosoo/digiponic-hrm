@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
-  
   </head>
   <body>
        <!-- Awal menu -->
@@ -63,13 +62,85 @@
     <header>
 
      <!-- Awal menu -->
-     <section class="departemen" id="departemen">
-          <img src="<?php echo base_url();?>assets/image/departemen/departemen.svg" class="d-block w-100" />
-          <div class="text-center">
-              <h4>Departemen</h4>
-          </div>
+    <section class="departemen" id="departemen">
+  
+           <img src="<?php echo base_url();?>assets/image/hubungi/slide-hubungi.svg" class="d-block w-100" />
         
-      <section>
+    <div class="container-fluid">
+        <h4 class="text-center pb-3" >Struktur Departemen</h4>
+
+        <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-struktur.svg" alt="" class="container d-flex justify-content-center">
+
+        <h4 class="text-center pb-3">Daftar Departemen</h4>
+        
+        <div class="row ">
+            <div class="col d-flex justify-content-lg-center">
+                <div class="card ">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-lg-center">
+            <div class="card">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-lg-center">
+            <div class="card">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-5 pb-5">
+            <div class="col d-flex justify-content-lg-center">
+                <div class="card ">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-lg-center">
+            <div class="card">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-lg-center">
+            <div class="card">
+                <img src="<?php echo base_url();?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Departemen Satuan Pengawasan Internal</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </section>
 <!-- Akhir menu -->
     <footer id="footer">
       <div class="container-fluid">
