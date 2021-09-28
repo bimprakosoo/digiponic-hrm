@@ -52,3 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'LandingPage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['api/authentication/login'] = 'api/authentication/login';
+$route['api/authentication/registration'] = 'api/authentication/registration';
