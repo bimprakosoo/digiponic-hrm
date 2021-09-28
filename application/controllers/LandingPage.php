@@ -8,6 +8,10 @@ class LandingPage extends CI_Controller
     {
         $this->load->view('home/landingpage_view');
     }
+    public function departemen()
+    {
+    $this->load->view('departemen/departemen_view');
+    }
     public function lowongan()
     {
     $this->load->view('lowongan/lowongan_view');
