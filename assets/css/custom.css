@@ -136,6 +136,14 @@ form input+i {
     color: #6fa83a;
 }
 
+#Login_V .d-grid .btn {
+    border-radius: 10px;
+}
+
+#regis_V .d-grid .btn {
+    border-radius: 10px;
+}
+
 
 /*--------------------------------------------------------------
 # Home
