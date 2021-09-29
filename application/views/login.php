@@ -31,7 +31,7 @@
                                     </div>
                                     <a href="#" class="lupa">lupa password?</a>
                                     <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-primary btn-user btn-block ">
+                                    <button type="submit" class="btn">
                                         Login
                                     </button>
                                     </div>
