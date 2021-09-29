@@ -137,11 +137,12 @@ form input+i {
 }
 
 #Login_V .d-grid .btn {
-    border-radius: 10px;
+    border-radius: 50px;
+    background: linear-gradient(91.44deg, #A4EC60 14.21%, #61B115 88.29%);
 }
 
 #regis_V .d-grid .btn {
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 
