@@ -54,9 +54,16 @@
 
                     </ul>
                     <div class="gap-3 ms-auto">
-                      <a href="">
-                      <img src="<?php echo base_url();?>assets/image/karyawan/karyawan-foto.svg" alt="Avatar Logo" style="width:50px;" class="rounded-pill"> 
-                      </a>
+                        <div class="flex-shrink-0 dropdown">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="45" height="45" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
