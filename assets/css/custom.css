@@ -33,6 +33,17 @@ p {
 
 
 /*--------------------------------------------------------------
+# Modal
+--------------------------------------------------------------*/
+
+#departemen #exampleModal .modal-body h4 {
+    font-weight: 600px;
+    font-size: 24px;
+    color: #000;
+}
+
+
+/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 
@@ -137,12 +148,23 @@ form input+i {
 }
 
 #Login_V .d-grid .btn {
-    border-radius: 50px;
+    border-radius: 10px;
     background: linear-gradient(91.44deg, #A4EC60 14.21%, #61B115 88.29%);
+    color: #fff;
+    font-weight: 600px;
+    font-size: 18px;
+}
+
+#Login_V .d-grid .btn:hover {
+    border-radius: 10px;
+    background: linear-gradient(91.44deg, #81d334 14.21%, #4d9906 88.29%);
+    color: #fff;
+    font-weight: 600px;
+    font-size: 18px;
 }
 
 #regis_V .d-grid .btn {
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 
