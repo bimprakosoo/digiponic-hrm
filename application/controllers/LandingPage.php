@@ -11,7 +11,7 @@ class LandingPage extends CI_Controller
 
     public function Tentang()
     {
-        $this->load->view('landingpage/tentang_view');
+        $this->load->view('dashboard/admin');
     }
 
     public function departemen()
