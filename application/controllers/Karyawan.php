@@ -8,4 +8,16 @@ class Karyawan extends CI_Controller
         // $this->load->view('template/headerauth');
         $this->load->view('karyawan/admin');
     }
+
+    public function lowongan_detail()
+    {
+        // $this->load->view('template/headerauth');
+        $this->load->view('lowongan/lowongan_detail_view');
+    }
+
+    public function lamaran()
+    {
+        // $this->load->view('template/headerauth');
+        $this->load->view('lowongan/lowongan_lamaran_view');
+    }
 }

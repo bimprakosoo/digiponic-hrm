@@ -139,7 +139,7 @@
                         Operation
                         </div>
                     </div>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#karyawanModal" class="btn btn-primary">
                                 Lihat Selengkapnya
                             </button>
                 </div>
@@ -433,7 +433,7 @@
       </div>
     </footer>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="karyawanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
