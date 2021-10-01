@@ -432,31 +432,90 @@
         </div>
       </div>
     </footer>
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Karyawan</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Detail Karyawan</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="<?php echo base();?>assets/image/karyawan/karyawan-foto/svg" class="img-fluid rounded-start" alt="...">
+      <div class="container px-4">
+        <div class="row gx-5">
+          <div class="col d-flex justify-content-center">
+          <div class="p-3 ">
+          <img src="<?php echo base_url();?>assets/image/karyawan/karyawan-foto.svg" style="border-radius: 10px;"/>
+            
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+
+          <div class="col">
+            <div class="p-3 ">
+            <div class="row justify-content-between">
+                   <div class="col-6 text-start">
+                   Nama  
+                   </div>
+                   <div class="col-6 text-end">
+                   Sean zayn
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Departemen  
+                   </div>
+                   <div class="col-6 text-end">
+                   Produksi
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Alamat  
+                   </div>
+                   <div class="col-6 text-end">
+                   Jl. Surabaya, Ijen, Lowokwaru, Malang
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Tanggal Lahir  
+                   </div>
+                   <div class="col-6 text-end">
+                   20-09-1997
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2 pb-3">
+                   <div class="col-6 text-start">
+                   Divisi  
+                   </div>
+                   <div class="col-6 text-end">
+                   Operation
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Golongan  
+                   </div>
+                   <div class="col-6 text-end">
+                   A
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Posisi  
+                   </div>
+                   <div class="col-6 text-end">
+                   Staff
+                   </div>
+               </div>
+               <div class="row justify-content-between pt-2">
+                   <div class="col-6 text-start">
+                   Penempatan  
+                   </div>
+                   <div class="col-6 text-end">
+                   Cabang A
+                   </div>
+               </div>
             </div>
           </div>
         </div>
@@ -464,7 +523,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

@@ -83,7 +83,9 @@
                     
                 </div>
                 <div class="d-grid gap-2 mx-3 pb-4">
-                <button class="btn btn-primary" type="button">Lihat Selengkapnya</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">
+                                Lihat Selengkapnya
+                            </button>
                 </div>
                 </div>
             </div>
@@ -109,7 +111,9 @@
                     
                 </div>
                 <div class="d-grid gap-2 mx-3 pb-4">
-                <button class="btn btn-primary" type="button">Lihat Selengkapnya</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">
+                                Lihat Selengkapnya
+                            </button>
                 </div>
                 </div>
             </div>
@@ -158,6 +162,48 @@
         </div>
 
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detail Karyawan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+          <div class="text-center">
+          <h4>Departemen Akutansi dan Keuangan</h4>
+          </div>
+          <div class="container text-center">
+          <h5>Fungsi</h5>
+          <p>Keuangan mengatur dana perusahaan agar secara efektif digunakan untuk memaksimalkan keuntungan usaha sekaligus menjaga
+               penggunaan dana tersebut secara efisien dan akuntansi bertugas mengumpulkan bukti-bukti segala jenis 
+               transaksi yang telah terjadi atau akan terjadi (berdasarkan metode akrual), mencatat dan mengelompokkannya, 
+               mudian membuat laporan keuangan perusahaan sesuai dengan prinsip-prinsip Akuntansi yang berlaku umum atau 
+               Standar Akuntansi Keuangan yang berlaku.</p>
+          </div>
+          <div class="container text-start">
+          <h5 class="text-center">Peran</h5>
+          <p>
+          1. Akuntansi keuangan, berkaitan dengan mencatat semua transaksi, menggunakan sistem pembukuan entri ganda dan menyiapkan laporan keuangan. <br>
+          2. Sistem keuangan, menganalisis kebutuhan informasi keuangan organisasi dan meninjau sistem yang ada dan bertanggung jawab atas desain dan pemeliharaan sistem keuangan.<br>
+          3. Penganggaran, berkaitan dengan analisis dan kontrol informasi keuangan untuk membantu operasi sehari-hari perusahaan. <br>
+          4. Penggajian <br>
+          5. Treasuri dan perencanaan keuangan <br>
+          6. Perpajakan, menangani semua urusan perpajakan. <br>
+          </p>
+          </div>
+
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
 <!-- Akhir menu -->
     <footer id="footer">
@@ -188,6 +234,7 @@
       </div>
     </footer>
 
+    
     <script src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
