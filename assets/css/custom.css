@@ -36,11 +36,13 @@ p {
 # Modal
 --------------------------------------------------------------*/
 
+
+/* 
 #departemen #exampleModal .modal-body h4 {
     font-weight: 600px;
     font-size: 24px;
     color: #000;
-}
+} */
 
 
 /*--------------------------------------------------------------
@@ -102,10 +104,10 @@ form input+i {
     position: absolute;
     left: 7px;
     top: 10px;
-    color: #777;
+    color: rgb(192, 191, 191);
 }
 
-.form-control {
+#Login_V .form-control {
     border-radius: 10px;
     border: 1px solid rgba(51, 92, 50, 1);
 }
@@ -464,6 +466,15 @@ form input+i {
     color: #292C2B;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+
+
+/*--------------------------------------------------------------
+# Lowongan
+--------------------------------------------------------------*/
+
+#lamaran .card {
+    background: #F6F8FD;
 }
 
 

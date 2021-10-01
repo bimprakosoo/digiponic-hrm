@@ -87,7 +87,7 @@
                           <p>
                             <strong>Posted Date</strong> <br /> 11 September 2021
                           </p>
-                          <a href="#" class="btn btn-primary">
+                          <a href="<?php echo base_url();?>karyawan/lowongan_detail" class="btn btn-primary">
                             Lihat Selengkapnya
                           </a>
               </div>
