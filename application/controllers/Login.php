@@ -36,12 +36,14 @@ class Login extends CI_Controller
 
     private function login_post()
     {
+
         // Get the post data
         // $email = $this->post('email');
         // $password = $this->post('password');
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
+        $user = $this->db->get_where('users', ['email' => $email])->row_array();
         // Validate the post data
         if (!empty($email) && !empty($password)) {
 
