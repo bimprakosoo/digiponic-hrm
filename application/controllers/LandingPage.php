@@ -16,26 +16,25 @@ class LandingPage extends CI_Controller
 
     public function departemen()
     {
-    $this->load->view('landingpage/departemen_view');
+        $this->load->view('landingpage/departemen_view');
     }
     public function lowongan()
     {
-    $this->load->view('landingpage/lowongan_view');
+        $this->load->view('landingpage/lowongan_view');
     }
 
     public function artikel()
     {
-    $this->load->view('landingpage/artikel_view');
+        $this->load->view('landingpage/artikel_view');
     }
 
     public function karyawan()
     {
-    $this->load->view('landingpage/karyawan_view');
+        $this->load->view('landingpage/karyawan_view');
     }
 
     public function kontak()
     {
-    $this->load->view('landingpage/kontak_view');
+        $this->load->view('landingpage/kontak_view');
     }
-    
 }
