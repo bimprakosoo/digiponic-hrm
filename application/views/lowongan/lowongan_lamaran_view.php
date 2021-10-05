@@ -13,7 +13,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+    $.datepicker.setDefaults({
+    showOn: "button",
+    buttonImage: "<?php echo base_url();?>assets/image/datepicker_icon.png",
+    buttonText: "Date Picker",
+    buttonImageOnly: true  
+    });
+    $(function() {
+    $( "#txtFromDate" ).datepicker();
+    });
+    </script>
     
   </head>
   <body>
@@ -185,14 +198,12 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Tanggal Lahir</label>
                 <div class="col-sm-8">
-                <div class="input-group mb-3 date" id=>
+                <div class="input-group mb-3 date">
                     <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
-                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" id="txtFromDate" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <!-- <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url();?>assets/calendar-event-fill.svg" alt=""></span> -->
                 </div>
-                
                 </div>
-                
             </div>
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">No.Tlpn</label>
