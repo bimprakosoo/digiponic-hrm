@@ -9,7 +9,7 @@ class M_Pelamar extends CI_Model
     }
 
     public function insertData(
-        $id_m,
+        // $id_m,
         $nama_m,
         $provinsi_m,
         $kota_kabupaten_m,
@@ -27,7 +27,7 @@ class M_Pelamar extends CI_Model
     {
         $data                   = array();
 
-        $data['id']                     = $id_m;
+        // $data['id']                     = $id_m;
         $data['nama']                   = $nama_m;
         $data['provinsi']               = $provinsi_m;
         $data['kota_kabupaten']         = $kota_kabupaten_m;

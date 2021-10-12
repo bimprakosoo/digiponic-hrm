@@ -1,13 +1,6 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-// require APPPATH . '/libraries/RestController.php';
-
-// use chriskacerguis\RestServer\RestController;
-
-// class Login extends RestController
-
-
 class Login extends CI_Controller
 {
 
@@ -16,6 +9,7 @@ class Login extends CI_Controller
         parent::__construct();
 
         $this->load->library('form_validation');
+        $this->load->library('session');
         // Load the user model
         $this->load->model('user');
     }
@@ -38,12 +32,10 @@ class Login extends CI_Controller
     {
 
         // Get the post data
-        // $email = $this->post('email');
-        // $password = $this->post('password');
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $user = $this->db->get_where('users', ['email' => $email])->row_array();
+        // $user = $this->db->get_where('users', ['email' => $email])->row_array();
         // Validate the post data
         if (!empty($email) && !empty($password)) {
 
@@ -54,7 +46,7 @@ class Login extends CI_Controller
                 'password' => ($password),
                 'status' => 1
             );
-            $user = $this->user->getRows($con);
+            $user['users'] = $this->user->getRows($con);
 
             // var_dump($user);
             // die;
