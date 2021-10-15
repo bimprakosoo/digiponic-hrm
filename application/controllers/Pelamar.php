@@ -35,8 +35,6 @@ class Pelamar extends CI_Controller
 
         if (isset($_POST['submit'])) {
 
-
-
             $data = array(
                 // 'id'       =>  $this->input->post('id'),
                 'nama'      =>  $this->input->post('nama'),
@@ -52,8 +50,6 @@ class Pelamar extends CI_Controller
                 'up_lamaran' =>     $this->file_lamaran(),
                 'up_cv' =>          $this->file_cv()
             );
-            var_dump($data);
-            die;
 
             $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {
