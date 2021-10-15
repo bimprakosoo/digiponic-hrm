@@ -6,7 +6,7 @@ class Karyawan extends CI_Controller
     public function index()
     {
         // $this->load->view('template/headerauth');
-        $this->load->view('karyawan/admin');
+        $this->load->view('dashboard/admin');
     }
 
     public function lowongan_detail()

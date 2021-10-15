@@ -34,10 +34,10 @@
                                     <a href="#" class="lupa">lupa password?</a>
                                     <!-- <a href="#" onclick="proses_login()" id="login"
                                         class="btn btn-primary btn-user btn-block"> -->
-                                        <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-primary btn-user btn-block ">
-                                        Register
-                                    </button>
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block ">
+                                            Register
+                                        </button>
                                     </div>
                                     <!-- </a> -->
                                     <p class="text-center">Sudah mempunyai akun?
