@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #000;
 }
 
@@ -13,7 +13,7 @@ a {
 }
 
 a:hover {
-    color: #8CCF4D;
+    color: #8ccf4d;
     text-decoration: none;
 }
 
@@ -23,12 +23,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Poppins', sans-serif;
-    color: #335C32;
+    font-family: "Poppins", sans-serif;
+    color: #335c32;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -63,14 +63,14 @@ p {
 
 .navbar-nav li.nav-item a.nav-link:hover {
     text-decoration: none;
-    color: #8CCF4D;
+    color: #8ccf4d;
     transition: 0.3s;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #8CCF4D;
-    border-color: #8CCF4D;
+    background-color: #8ccf4d;
+    border-color: #8ccf4d;
 }
 
 .btn-primary:hover {
@@ -86,7 +86,7 @@ p {
 }
 
 .btn-secondary:hover {
-    color: #8CCF4D;
+    color: #8ccf4d;
     background-color: #fff;
     border-color: #fff;
 }
@@ -124,7 +124,7 @@ form input+i {
 .regis {
     display: inline;
     text-decoration: none;
-    color: #8CCF4D;
+    color: #8ccf4d;
 }
 
 .regis:hover {
@@ -141,7 +141,7 @@ form input+i {
     padding-top: 5px;
     text-decoration: none;
     text-align: right;
-    color: #8CCF4D;
+    color: #8ccf4d;
     padding-bottom: 30px;
 }
 
@@ -151,7 +151,7 @@ form input+i {
 
 #Login_V .d-grid .btn {
     border-radius: 10px;
-    background: linear-gradient(91.44deg, #A4EC60 14.21%, #61B115 88.29%);
+    background: linear-gradient(91.44deg, #a4ec60 14.21%, #61b115 88.29%);
     color: #fff;
     font-weight: 600px;
     font-size: 18px;
@@ -179,7 +179,7 @@ form input+i {
 }
 
 #landTentang {
-    background: #F6F8FD;
+    background: #f6f8fd;
 }
 
 #landTentang h2 {
@@ -198,13 +198,13 @@ form input+i {
 #landTentang p {
     font-weight: 400;
     font-size: 16px;
-    color: #292C2B;
+    color: #292c2b;
 }
 
 #landTentang .btn {
-    color: #335C32;
+    color: #335c32;
     background: #fff;
-    border-color: #335C32;
+    border-color: #335c32;
     font-weight: 500;
     font-size: 18px;
 }
@@ -213,7 +213,7 @@ form input+i {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background: #F6F8FD;
+    background: #f6f8fd;
 }
 
 #landTentang .card .img-fluid {
@@ -253,15 +253,15 @@ form input+i {
 }
 
 #landDepartemen .d-grid .btn {
-    color: #335C32;
+    color: #335c32;
     background: #fff;
-    border-color: #335C32;
+    border-color: #335c32;
     font-weight: 500;
     font-size: 18px;
 }
 
 #landKaryawan {
-    background: #F6F8FD;
+    background: #f6f8fd;
 }
 
 #landKaryawan h2 {
@@ -290,9 +290,9 @@ form input+i {
 }
 
 #landKaryawan .d-grid .btn {
-    color: #335C32;
+    color: #335c32;
     background: #fff;
-    border-color: #335C32;
+    border-color: #335c32;
     font-weight: 500;
     font-size: 18px;
 }
@@ -318,15 +318,15 @@ form input+i {
 }
 
 #landLowongan .selengkapnya.d-grid .btn {
-    color: #335C32;
+    color: #335c32;
     background: #fff;
-    border-color: #335C32;
+    border-color: #335c32;
     font-weight: 500;
     font-size: 18px;
 }
 
 #landArtikel {
-    background: #F6F8FD;
+    background: #f6f8fd;
 }
 
 #landArtikel h2 {
@@ -353,9 +353,9 @@ form input+i {
 }
 
 #landArtikel .d-grid .btn {
-    color: #335C32;
+    color: #335c32;
     background: #fff;
-    border-color: #335C32;
+    border-color: #335c32;
     font-weight: 500;
     font-size: 18px;
 }
@@ -420,16 +420,16 @@ form input+i {
 }
 
 #hubungi .form-control {
-    border-color: #C4C4C4;
+    border-color: #c4c4c4;
     border-radius: 5px !important;
 }
 
 .btn-success {
-    background-color: #8CCF4D;
-    border-color: #8CCF4D;
+    background-color: #8ccf4d;
+    border-color: #8ccf4d;
     width: 135px;
     margin-left: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400 !important;
     font-size: 16;
 }
@@ -438,7 +438,7 @@ form input+i {
     background-color: #6fa83a;
     border-color: #6fa83a;
     width: 135px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400 !important;
     font-size: 16;
 }
@@ -448,7 +448,7 @@ form input+i {
     color: #000;
     width: 100px;
     margin-left: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400 !important;
     font-size: 16;
 }
@@ -457,14 +457,14 @@ form input+i {
     border-color: #fff;
     background-color: #fff;
     color: #6fa83a;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400 !important;
     font-size: 16;
 }
 
 .d-inline {
-    color: #292C2B;
-    font-family: 'Poppins', sans-serif;
+    color: #292c2b;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
 
@@ -474,7 +474,7 @@ form input+i {
 --------------------------------------------------------------*/
 
 #lamaran .card {
-    background: #F6F8FD;
+    background: #f6f8fd;
 }
 
 
@@ -645,7 +645,7 @@ form input+i {
 }
 
 #footer .credits a {
-    color: #F6F8FD;
+    color: #f6f8fd;
 }
 
 
@@ -660,7 +660,7 @@ h2.pt {
     /* font-family: 'Poppins', sans-serif; */
     font-size: 36;
     font-weight: 600;
-    color: #335C32;
+    color: #335c32;
 }
 
 p.text-break-1 {

@@ -254,6 +254,9 @@
                     <input class="form-control" type="file" id="formFile">
                 </div>
             </div>
+            <div class="d-grid gap-2 mx-3 pt-4 pb-4">
+                <a class="btn btn-primary" href="<?php echo base_url();?>">Lamaran</a>
+                </div>
         </div>
         </div>
         </div>
@@ -293,7 +296,7 @@
     </footer>
 
     <script src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
-    <script>// Data Picker Initialization
-$('.datepicker').datepicker();</script>
+    <!-- <script>// Data Picker Initialization
+$('.datepicker').datepicker();</script> -->
   </body>
 </html>
