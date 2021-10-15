@@ -34,37 +34,8 @@ class Pelamar extends CI_Controller
         $this->form_validation->set_rules('nama', 'nama', 'required');                // 2
 
         if (isset($_POST['submit'])) {
-            // upload file surat lamaran--------------------------------------------------------------------------------------
-            $config['upload_path'] = "./dokumen/surat_lamaran";
-            $config['allowed_types'] = "pdf";
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);
 
-            if (!$this->upload->do_upload('up_lamaran')) {
-                // salah
-                $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
-                $response['hasil'] = false;
-                echo json_encode($response);
-            } else {
-                $data_upload    = $this->upload->data();
-                $file_lamaran      = $data_upload['file_name'];
-            }
 
-            // uplaod file cv--------------------------------------------------------------------------------------
-            $config['upload_path'] = "./dokumen/cv";
-            $config['allowed_types'] = "pdf";
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);
-
-            if (!$this->upload->do_upload('up_cv')) {
-                // salah
-                $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
-                $response['hasil'] = false;
-                echo json_encode($response);
-            } else {
-                $data_upload    = $this->upload->data();
-                $file_cv      = $data_upload['file_name'];
-            }
 
             $data = array(
                 // 'id'       =>  $this->input->post('id'),
@@ -78,11 +49,11 @@ class Pelamar extends CI_Controller
                 'no_telp' =>  $this->input->post('no_telp'),
                 'status_perkawinan' =>  $this->input->post('status_perkawinan'),
                 'pendidikan_terakhir' =>  $this->input->post('pendidikan_terakhir'),
-                'up_lamaran' =>     $file_lamaran,
-                'up_cv' =>          $file_cv
+                'up_lamaran' =>     $this->file_lamaran(),
+                'up_cv' =>          $this->file_cv()
             );
-            // var_dump($data);
-            // die;
+            var_dump($data);
+            die;
 
             $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {

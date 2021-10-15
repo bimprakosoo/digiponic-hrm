@@ -41,7 +41,7 @@ class M_Pelamar extends CI_Model
         $data['surat_lamaran']          = $surat_lamaran_m;
         $data['cv']                     = $cv_m;
 
-        return $this->db->insert('data_lamaran', $data);
+        return $this->db->insert('tbl_karyawan', $data);
     }
 
     // next
