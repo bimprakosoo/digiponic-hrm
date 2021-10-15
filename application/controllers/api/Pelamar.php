@@ -29,11 +29,45 @@ class Pelamar extends RestController
         $this->response($kontak, 200);
     }
 
-    // add data pelamar
-    function index_post()
-    {
-        $response = array();
+    // function uploads()
+    // {
+    //     // upload file surat lamaran--------------------------------------------------------------------------------------
+    //     $config['upload_path'] = "./dokumen/surat_lamaran";
+    //     $config['allowed_types'] = "pdf";
+    //     $this->load->library('upload', $config);
+    //     $this->upload->initialize($config);
 
+    //     if (!$this->upload->do_upload('up_lamaran')) {
+    //         // salah
+    //         $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+    //         $response['hasil'] = false;
+    //         echo json_encode($response);
+    //     } else {
+    //         $data_upload    = $this->upload->data();
+    //         $file_lamaran      = $data_upload['file_name'];
+    //     }
+
+    //     // uplaod file cv--------------------------------------------------------------------------------------
+    //     $config['upload_path'] = "./dokumen/cv";
+    //     $config['allowed_types'] = "pdf";
+    //     $this->load->library('upload', $config);
+    //     $this->upload->initialize($config);
+
+    //     if (!$this->upload->do_upload('up_cv')) {
+    //         // salah
+    //         $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+    //         $response['hasil'] = false;
+    //         echo json_encode($response);
+    //     } else {
+    //         $data_upload    = $this->upload->data();
+    //         $file_cv      = $data_upload['file_name'];
+    //     }
+
+    //     return array($file_cv, $file_lamaran);
+    // }
+
+    function file_lamaran()
+    {
         // upload file surat lamaran--------------------------------------------------------------------------------------
         $config['upload_path'] = "./dokumen/surat_lamaran";
         $config['allowed_types'] = "pdf";
@@ -49,7 +83,11 @@ class Pelamar extends RestController
             $data_upload    = $this->upload->data();
             $file_lamaran      = $data_upload['file_name'];
         }
+        return $file_lamaran;
+    }
 
+    function file_cv()
+    {
         // uplaod file cv--------------------------------------------------------------------------------------
         $config['upload_path'] = "./dokumen/cv";
         $config['allowed_types'] = "pdf";
@@ -66,6 +104,15 @@ class Pelamar extends RestController
             $file_cv      = $data_upload['file_name'];
         }
 
+        return $file_cv;
+    }
+
+
+    // add data pelamar
+    function index_post()
+    {
+        $response = array();
+
         // $id_m                   = $this->input->post('id');
         $nama_m                 = $this->input->post('nama');
         $provinsi_m             = $this->input->post('provinsi');
@@ -77,8 +124,10 @@ class Pelamar extends RestController
         $no_telp_m              = $this->input->post('no_telp');
         $status_perkawinan_m    = $this->input->post('status_perkawinan');
         $pendidikan_terakhir_m  = $this->input->post('pendidikan_terakhir');
-        $surat_lamaran_m        = $file_lamaran;    // up_lamaran
-        $cv_m                   = $file_cv;         // up_cv
+        // $surat_lamaran_m        = $file_lamaran;    // up_lamaran
+        // $cv_m                   = $file_cv;         // up_cv
+        $surat_lamaran_m        = $this->file_lamaran();    // up_lamaran
+        $cv_m                   = $this->file_cv();     // up_cv
 
         $simpan_data = $this->M_Pelamar->insertData(
             // $id_m,
@@ -95,6 +144,7 @@ class Pelamar extends RestController
             $surat_lamaran_m,
             $cv_m
         );
+
 
         if ($simpan_data) {
             // berhasil
