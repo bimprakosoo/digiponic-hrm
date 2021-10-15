@@ -62,6 +62,7 @@
         </nav>
     <header>
      <!-- Awal menu -->
+     
      <section className="container-fluid">
         <div className="row">
            <img src="<?php echo base_url();?>assets/image/artikel/slide-artikel.svg" class="d-block w-100" />

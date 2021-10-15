@@ -375,13 +375,10 @@
                         </div>
                     </div>
                 </div>
-            </footer>
-
             <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
             <script>
                 // Data Picker Initialization
                 $('.datepicker').datepicker();
             </script>
 </body>
-
 </html>

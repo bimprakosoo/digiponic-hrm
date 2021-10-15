@@ -32,7 +32,7 @@
 			<!-- Top Menu Items -->
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block mr-20 pull-left" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-				<a href="index.html"><img class="brand-img pull-left" src="<?php echo base_url();?>assets/image/logo.svg" alt="brand"/></a>
+				<a href="<?php echo base_url();?>LandingPage"><img class="brand-img pull-left" src="<?php echo base_url();?>assets/image/logo.svg" alt="brand"/></a>
 				<ul class="nav navbar-right top-nav pull-right">
 					<li>
 						<a href="javascript:void(0);" data-toggle="collapse" data-target="#site_navbar_search">
@@ -153,8 +153,11 @@
 			<div class="fixed-sidebar-left">
 				<ul class="nav navbar-nav side-nav nicescroll-bar">
 					<li>
-						<a  class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><i class="icon-picture mr-10"></i>Dashboard <span class="pull-right"><span class="label label-success mr-10">4</span><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="dashboard_dr" class="collapse collapse-level-1">
+						<a class="active" href="widgets.html"><i class="glyphicon glyphicon-th-large mr-10"></i>Dashboard</a>
+					</li>
+					<li>
+						<a  href="javascript:void(0);" data-toggle="collapse" data-target="#pekerjaan"><i class="glyphicon glyphicon-tasks mr-10"></i>Pekerjaan <span class="pull-right"><span class="label label-success mr-10">4</span><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="pekerjaan" class="collapse collapse-level-1">
 							<li>
 								<a class="active" href="index.html">Analytical</a>
 							</li>
@@ -170,8 +173,8 @@
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><i class="icon-basket-loaded mr-10"></i>E-Commerce<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="ecom_dr" class="collapse collapse-level-1">
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#organisasi"><i class="glyphicon glyphicon-tasks mr-10"></i>Organisasi<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="organisasi" class="collapse collapse-level-1">
 							<li>
 								<a href="e-commerce.html">Dashboard</a>
 							</li>
@@ -196,608 +199,151 @@
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><i class="icon-grid mr-10"></i>Apps <span class="pull-right"><span class="label label-info mr-10">9</span><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="app_dr" class="collapse collapse-level-1">
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#kehadiran"><i class="glyphicon glyphicon-tasks mr-10"></i>Kehadiran<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="kehadiran" class="collapse collapse-level-1">
 							<li>
-								<a href="chats.html">chats</a>
+								<a href="e-commerce.html">Dashboard</a>
 							</li>
 							<li>
-								<a href="calendar.html">calendar</a>
+								<a href="product.html">Products</a>
 							</li>
 							<li>
-								<a href="weather.html">weather</a>
+								<a href="product-detail.html">Product Detail</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" data-toggle="collapse" data-target="#email_dr">Email<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-								<ul id="email_dr" class="collapse">
-									<li>
-										<a href="inbox.html">inbox</a>
-									</li>
-									<li>
-										<a href="inbox-detail.html">detail email</a>
-									</li>
-								</ul>
+								<a href="add-products.html">Add Product</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" data-toggle="collapse" data-target="#contact_dr">Contacts<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-								<ul id="contact_dr" class="collapse">
-									<li>
-										<a href="contact-list.html">list</a>
-									</li>
-									<li>
-										<a href="contact-card.html">cards</a>
-									</li>
-								</ul>
+								<a href="product-orders.html">Orders</a>
 							</li>
 							<li>
-								<a href="file-manager.html">File Manager</a>
+								<a href="product-cart.html">Cart</a>
 							</li>
 							<li>
-								<a href="todo-tasklist.html">To Do/Tasklist</a>
+								<a href="product-checkout.html">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><i class="icon-vector mr-10"></i>UI Elements<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="ui_dr" class="collapse collapse-level-1">
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#cuti"><i class="glyphicon glyphicon-tasks mr-10"></i>Cuti<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="cuti" class="collapse collapse-level-1">
 							<li>
-								<a href="panels-wells.html">Panels & Wells</a>
+								<a href="e-commerce.html">Dashboard</a>
 							</li>
 							<li>
-								<a href="modals.html">Modals</a>
+								<a href="product.html">Products</a>
 							</li>
 							<li>
-								<a href="sweetalert.html">Sweet Alerts</a>
+								<a href="product-detail.html">Product Detail</a>
 							</li>
 							<li>
-								<a href="notifications.html">notifications</a>
+								<a href="add-products.html">Add Product</a>
 							</li>
 							<li>
-								<a href="typography.html">Typography</a>
+								<a href="product-orders.html">Orders</a>
 							</li>
 							<li>
-								<a href="buttons.html">Buttons</a>
+								<a href="product-cart.html">Cart</a>
 							</li>
 							<li>
-								<a href="accordion-toggle.html">Accordion / Toggles</a>
-							</li>
-							<li>
-								<a href="tabs.html">Tabs</a>
-							</li>
-							<li>
-								<a href="progressbars.html">Progress bars</a>
-							</li>
-							<li>
-								<a href="skills-counter.html">Skills & Counters</a>
-							</li>
-							<li>
-								<a href="pricing.html">Pricing Tables</a>
-							</li>
-							<li>
-								<a href="nestable.html">Nestables</a>
-							</li>
-							<li>
-								<a href="dorpdown.html">Dropdowns</a>
-							</li>
-							<li>
-								<a href="bootstrap-treeview.html">Tree View</a>
-							</li>
-							<li>
-								<a href="carousel.html">Carousel</a>
-							</li>
-							<li>
-								<a href="range-slider.html">Range Slider</a>
-							</li>
-							<li>
-								<a href="grid-styles.html">Grid</a>
-							</li>
-							<li>
-								<a href="bootstrap-ui.html">Bootstrap UI</a>
+								<a href="product-checkout.html">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><i class=" icon-flag mr-10"></i>Forms<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="form_dr" class="collapse collapse-level-1">
+						<a href="widgets.html"><i class="glyphicon glyphicon-tasks mr-10"></i>Mutasi</a>
+					</li>
+					<li>
+						<a href="widgets.html"><i class="glyphicon glyphicon-tasks mr-10"></i>Karyawan</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#P_kinerja"><i class="glyphicon glyphicon-tasks mr-10"></i>Penilaian Kinerja<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="P_kinerja" class="collapse collapse-level-1">
 							<li>
-								<a href="form-element.html">Basic Forms</a>
+								<a href="e-commerce.html">Dashboard</a>
 							</li>
 							<li>
-								<a href="form-layout.html">form Layout</a>
+								<a href="product.html">Products</a>
 							</li>
 							<li>
-								<a href="form-advanced.html">Form Advanced</a>
+								<a href="product-detail.html">Product Detail</a>
 							</li>
 							<li>
-								<a href="form-mask.html">Form Mask</a>
+								<a href="add-products.html">Add Product</a>
 							</li>
 							<li>
-								<a href="form-picker.html">Form Picker</a>
+								<a href="product-orders.html">Orders</a>
 							</li>
 							<li>
-								<a href="form-validation.html">form Validation</a>
+								<a href="product-cart.html">Cart</a>
 							</li>
 							<li>
-								<a href="form-wizard.html">Form Wizard</a>
-							</li>
-							<li>
-								<a href="form-x-editable.html">X-Editable</a>
-							</li>
-							<li>
-								<a href="cropperjs.html">Cropperjs</a>
-							</li>
-							<li>
-								<a href="form-file-upload.html">File Upload</a>
-							</li>
-							<li>
-								<a href="dropzone.html">Dropzone</a>
-							</li>
-							<li>
-								<a href="bootstrap-wysihtml5.html">Bootstrap Wysihtml5</a>
-							</li>
-							<li>
-								<a href="tinymce-wysihtml5.html">Tinymce Wysihtml5</a>
-							</li>
-							<li>
-								<a href="summernote-wysihtml5.html">summernote</a>
-							</li>
-							<li>
-								<a href="typeahead-js.html">typeahead</a>
+								<a href="product-checkout.html">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#chart_dr"><i class="icon-graph mr-10"></i>Charts <span class="pull-right"><span class="label label-primary mr-10">7</span><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="chart_dr" class="collapse collapse-level-1">
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#T_pekerja"><i class="glyphicon glyphicon-tasks mr-10"></i>Top Pekerja<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="T_pekerja" class="collapse collapse-level-1">
 							<li>
-								<a href="flot-chart.html">Flot Chart</a>
+								<a href="e-commerce.html">Dashboard</a>
 							</li>
 							<li>
-								<a href="morris-chart.html">Morris Chart</a>
+								<a href="product.html">Products</a>
 							</li>
 							<li>
-								<a href="chart.js.html">chartjs</a>
+								<a href="product-detail.html">Product Detail</a>
 							</li>
 							<li>
-								<a href="chartist.html">chartist</a>
+								<a href="add-products.html">Add Product</a>
 							</li>
 							<li>
-								<a href="easy-pie-chart.html">Easy Pie Chart</a>
+								<a href="product-orders.html">Orders</a>
 							</li>
 							<li>
-								<a href="sparkline.html">Sparkline</a>
+								<a href="product-cart.html">Cart</a>
 							</li>
 							<li>
-								<a href="peity-chart.html">Peity Chart</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><i class="icon-list mr-10"></i>Tables<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="table_dr" class="collapse collapse-level-1">
-							<li>
-								<a href="basic-table.html">Basic Table</a>
-							</li>
-							<li>
-								<a href="bootstrap-table.html">Bootstrap Table</a>
-							</li>
-							<li>
-								<a href="data-table.html">Data Table</a>
-							</li>
-							<li>
-								<a  href="export-table.html"><span class="pull-right"><span class="label label-warning">New</span></span>Export Table</a>
-							</li>
-							<li>
-								<a  href="responsive-data-table.html"><span class="pull-right"><span class="label label-warning">New</span></span>RSPV DataTable</a>
-							</li>
-							<li>
-								<a href="responsive-table.html">Responsive Table</a>
-							</li>
-							<li>
-								<a href="editable-table.html">Editable Table</a>
-							</li>
-							<li>
-								<a href="foo-table.html">Foo Table</a>
-							</li>
-							<li>
-								<a href="jsgrid-table.html">Jsgrid Table</a>
+								<a href="product-checkout.html">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="widgets.html"><i class="icon-drawar mr-10"></i>widgets</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#icon_dr"><i class="icon-options mr-10"></i>Icons<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="icon_dr" class="collapse collapse-level-1">
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#Acara"><i class="glyphicon glyphicon-tasks mr-10"></i>Acara dan Rapat<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="Acara" class="collapse collapse-level-1">
 							<li>
-								<a href="fontawesome.html">Fontawesome</a>
+								<a href="e-commerce.html">Dashboard</a>
 							</li>
 							<li>
-								<a href="themify.html">Themify</a>
+								<a href="product.html">Products</a>
 							</li>
 							<li>
-								<a href="linea-icon.html">Linea</a>
+								<a href="product-detail.html">Product Detail</a>
 							</li>
 							<li>
-								<a href="simple-line-icons.html">Simple Line</a>
+								<a href="add-products.html">Add Product</a>
 							</li>
 							<li>
-								<a href="pe-icon-7.html">Pe-icon-7</a>
+								<a href="product-orders.html">Orders</a>
 							</li>
 							<li>
-								<a href="glyphicons.html">Glyphicons</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><i class="icon-layers mr-10"></i>Special Pages<span class="pull-right"><span class="label label-danger mr-10">12</span><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="pages_dr" class="collapse collapse-level-1">
-							<li>
-								<a href="blank.html">Blank Page</a>
+								<a href="product-cart.html">Cart</a>
 							</li>
 							<li>
-								<a href="login.html">Login Page</a>
-							</li>
-							<li>
-								<a href="signup.html">Register</a>
-							</li>
-							<li>
-								<a href="forgot-password.html">Recover Password</a>
-							</li>
-							<li>
-								<a href="reset-password.html">reset Password</a>
-							</li>
-							<li>
-								<a href="locked.html">Lock Screen</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);" data-toggle="collapse" data-target="#invoice_dr">Invoice<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-								<ul id="invoice_dr" class="collapse">
-									<li>
-										<a href="invoice.html">Invoice</a>
-									</li>
-									<li>
-										<a href="invoice-archive.html">Invoice Archive</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="404.html">Error 404</a>
-							</li>
-							<li>
-								<a href="500.html">Error 500</a>
-							</li>
-							<li>
-								<a href="gallery.html">Gallery</a>
-							</li>
-							<li>
-								<a href="timeline.html">Timeline</a>
-							</li>
-							<li>
-								<a href="faq.html">FAQ</a>
+								<a href="product-checkout.html">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#maps_dr"><i class="icon-map mr-10"></i>maps<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="maps_dr" class="collapse collapse-level-1">
-							<li>
-								<a href="vector-map.html">Vector Map</a>
-							</li>
-							<li>
-								<a href="google-map.html">Google Map</a>
-							</li>
-						</ul>
+						<a href="widgets.html"><i class="glyphicon glyphicon-tasks mr-10"></i>Artikel</a>
 					</li>
 					<li>
-						<a href="documentation.html"><i class="icon-doc mr-10"></i>documentation</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><i class="icon-arrow-down-circle mr-10"></i>Dropdown leavel 1<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-						<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv2">Dropdown leavel 2<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
-								<ul id="dropdown_dr_lv2" class="collapse collapse-level-2">
-									<li>
-										<a href="#">Dropdown Item</a>
-									</li>
-									<li>
-										<a href="#">Dropdown Item</a>
-									</li>
-									<li>
-										<a href="#">Dropdown Item</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+						<a href="widgets.html"><i class="glyphicon glyphicon-tasks mr-10"></i>Hak Istimewa</a>
 					</li>
 				</ul>
 			</div>
 			<!-- /Left Sidebar Menu -->
 			
-			<!-- Right Sidebar Menu -->
-			<div class="fixed-sidebar-right">
-				<ul class="right-sidebar nicescroll-bar">
-					<li>
-						<div  class="tab-struct custom-tab-1">
-							<ul role="tablist" class="nav nav-tabs" id="right_sidebar_tab">
-								<li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="chat_tab_btn" href="#chat_tab">chat</a></li>
-								<li role="presentation" class=""><a  data-toggle="tab" id="messages_tab_btn" role="tab" href="#messages_tab" aria-expanded="false">messages</a></li>
-								<li role="presentation" class=""><a  data-toggle="tab" id="todo_tab_btn" role="tab" href="#todo_tab" aria-expanded="false">todo</a></li>
-							</ul>
-							<div class="tab-content" id="right_sidebar_content">
-								<div  id="chat_tab" class="tab-pane fade active in" role="tabpanel">
-									<div class="chat-cmplt-wrap">
-										<div class="chat-box-wrap">
-											<form role="search">
-												<div class="input-group mb-15">
-													<input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control" placeholder="Search">
-													<span class="input-group-btn">
-													<button type="button" class="btn  btn-default"><i class="fa fa-search"></i></button>
-													</span>
-												</div>
-											</form>
-											<ul class="chat-list-wrap">
-												<li class="chat-list">
-													<div class="chat-body">
-														<a  href="javascript:void(0)">
-															<div class="chat-data">
-																<img class="user-img img-circle"  src="dist/img/user.png" alt="user"/>
-																<div class="user-data">
-																	<span class="name block capitalize-font">ryan gosling</span>
-																	<span class="time block txt-grey">2pm</span>
-																</div>
-																<div class="status away"></div>
-																<div class="clearfix"></div>
-															</div>
-														</a>
-														<a  href="javascript:void(0)">
-															<div class="chat-data">
-																<img class="user-img img-circle"  src="dist/img/user1.png" alt="user"/>
-																<div class="user-data">
-																	<span class="name block capitalize-font">ryan gosling</span>
-																	<span class="time block txt-grey">1pm</span>
-																</div>
-																<div class="status offline"></div>
-																<div class="clearfix"></div>
-															</div>
-														</a>
-														<a  href="javascript:void(0)">
-															<div class="chat-data">
-																<img class="user-img img-circle"  src="dist/img/user2.png" alt="user"/>
-																<div class="user-data">
-																	<span class="name block capitalize-font">ryan gosling</span>
-																	<span class="time block txt-grey">2pm</span>
-																</div>
-																<div class="status online"></div>
-																<div class="clearfix"></div>
-															</div>
-														</a>
-														<a  href="javascript:void(0)">
-															<div class="chat-data">
-																<img class="user-img img-circle"  src="dist/img/user3.png" alt="user"/>
-																<div class="user-data">
-																	<span class="name block capitalize-font">ryan gosling</span>
-																	<span class="time block txt-grey">2pm</span>
-																</div>
-																<div class="status online"></div>
-																<div class="clearfix"></div>
-															</div>
-														</a>
-														<a  href="javascript:void(0)">
-															<div class="chat-data">
-																<img class="user-img img-circle"  src="dist/img/user4.png" alt="user"/>
-																<div class="user-data">
-																	<span class="name block capitalize-font">ryan gosling</span>
-																	<span class="time block txt-grey">2pm</span>
-																</div>
-																<div class="status online"></div>
-																<div class="clearfix"></div>
-															</div>
-														</a>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<div class="recent-chat-box-wrap">
-											<div class="panel panel-success card-view">
-												<div class="panel-heading mb-20">
-													<a class="goto-chat-list txt-light" href="javascript:void(0);"><i class="ti-angle-left"></i></a>
-													<div class="text-center">
-														<h6 class="panel-title txt-light">Alan Gilchrist</h6>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-												<div class="panel-wrapper collapse in">
-													<div class="panel-body">
-														<div class="chat-content">
-															<ul>
-																<li class="friend">
-																	<div class="friend-msg-wrap">
-																		<img class="user-img img-circle block pull-left"  src="dist/img/user.png" alt="user"/>
-																		<div class="msg pull-left">A forest is a large area of land covered with trees
-																			<div class="msg-per-detail mt-5">
-																				<span class="msg-per-name pr-5 txt-success">ryan</span>
-																				<span class="msg-time txt-grey">2:30pm</span>
-																			</div>
-																		</div>
-																		<div class="clearfix"></div>
-																	</div>	
-																</li>
-																<li class="self">
-																	<div class="self-msg-wrap">
-																		<div class="msg block pull-right"> Provide ecosystem...
-																			<div class="msg-per-detail mt-5">
-																				<span class="msg-time txt-grey">2:30pm</span>
-																			</div>
-																		</div>
-																		<div class="clearfix"></div>
-																	</div>	
-																</li>
-																<li class="friend">
-																	<div class="friend-msg-wrap">
-																		<img class="user-img img-circle block pull-left"  src="dist/img/user.png" alt="user"/>
-																		<div class="msg pull-left"> Account for 75% of the gross primary productivity of them Earth's biosphere
-																			<div class="msg-per-detail mt-5">
-																				<span class="msg-per-name pr-5 txt-success">ryan</span>
-																				<span class="msg-time txt-grey">2:30pm</span>
-																			</div>
-																		</div>
-																		<div class="clearfix"></div>
-																	</div>	
-																</li>
-															</ul>
-														</div>
-														<div class="input-group">
-															<div class="input-group-btn">
-																<div class="dropup">
-																	<button type="button" class="btn  btn-default  dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-smile-o"></i></button>
-																	<ul class="dropdown-menu dropdown-menu-right">
-																		<li><a href="javascript:void(0)">Action</a></li>
-																		<li><a href="javascript:void(0)">Another action</a></li>
-																		<li class="divider"></li>
-																		<li><a href="javascript:void(0)">Separated link</a></li>
-																	</ul>
-																</div>
-															</div>
-															
-															<input type="text" id="input_msg_send" name="send-msg" class="form-control" placeholder="Type something">
-															<div class="input-group-btn">
-																<div class="fileupload btn  btn-default"><i class="fa fa-paperclip"></i>
-																	<input type="file" class="upload">
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div id="messages_tab" class="tab-pane fade" role="tabpanel">
-									<div class="message-box-wrap">
-										<div class="streamline message-box">
-											<div class="sl-item">
-												<div class="sl-avatar avatar avatar-sm avatar-circle">
-													<img class="img-responsive img-circle" src="dist/img/user.png" alt="avatar"/>
-												</div>
-												<div class="sl-content">
-													<a href="javascript:void(0)" class="inline-block capitalize-font  mb-5 pull-left">Sandy Doe</a>
-													<span class="inline-block font-12 mb-5 pull-right">12/10/16</span>
-													<div class="clearfix"></div>
-													<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-												</div>
-											</div>
-											<hr/>
-											<div class="sl-item">
-												<div class="sl-avatar avatar avatar-sm avatar-circle">
-													<img class="img-responsive img-circle" src="dist/img/user1.png" alt="avatar"/>
-												</div>
-												<div class="sl-content">
-													<a href="javascript:void(0)" class="inline-block capitalize-font  mb-5 pull-left">Sandy Doe</a>
-													<span class="inline-block font-12 mb-5 pull-right">2pm</span>
-													<div class="clearfix"></div>
-													<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-												</div>
-											</div>
-											<hr/>
-											<div class="sl-item">
-												<div class="sl-avatar avatar avatar-sm avatar-circle">
-													<img class="img-responsive img-circle" src="dist/img/user2.png" alt="avatar"/>
-												</div>
-												<div class="sl-content">
-													<a href="javascript:void(0)" class="inline-block capitalize-font  mb-5 pull-left">Sandy Doe</a>
-													<span class="inline-block font-12 mb-5 pull-right">1pm</span>
-													<div class="clearfix"></div>
-													<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-												</div>
-											</div>
-											<hr/>
-											<div class="sl-item">
-												<div class="sl-avatar avatar avatar-sm avatar-circle">
-													<img class="img-responsive img-circle" src="dist/img/user3.png" alt="avatar"/>
-												</div>
-												<div class="sl-content">
-													<a href="javascript:void(0)" class="inline-block capitalize-font  mb-5 pull-left">Sandy Doe</a>
-													<span class="inline-block font-12 mb-5 pull-right">1pm</span>
-													<div class="clearfix"></div>
-													<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-												</div>
-											</div>
-											<hr/>
-											<div class="sl-item">
-												<div class="sl-avatar avatar avatar-sm avatar-circle">
-													<img class="img-responsive img-circle" src="dist/img/user4.png" alt="avatar"/>
-												</div>
-												<div class="sl-content">
-													<a href="javascript:void(0)" class="inline-block capitalize-font  mb-5 pull-left">Sandy Doe</a>
-													<span class="inline-block font-12 mb-5 pull-right">1pm</span>
-													<div class="clearfix"></div>
-													<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div  id="todo_tab" class="tab-pane fade" role="tabpanel">
-									<div class="todo-box-wrap">
-										<!-- Todo-List -->
-										<ul class="todo-list">
-											<li class="todo-item">
-												<div class="checkbox checkbox-default">
-													<input type="checkbox" id="checkbox01"/>
-													<label for="checkbox01">Record The First Episode Of HTML Tutorial</label>
-												</div>
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-pink">
-													<input type="checkbox" id="checkbox02"/>
-													<label for="checkbox02">Prepare The Conference Schedule</label>
-												</div>
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-warning">
-													<input type="checkbox" id="checkbox03" checked/>
-													<label for="checkbox03">Decide The Live Discussion Time</label>
-												</div>
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-success">
-													<input type="checkbox" id="checkbox04" checked/>
-													<label for="checkbox04">Prepare For The Next Project</label>
-												</div>
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-danger">
-													<input type="checkbox" id="checkbox05" checked/>
-													<label for="checkbox05">Finish Up AngularJs Tutorial</label>
-												</div>
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-purple">
-													<input type="checkbox" id="checkbox06" checked/>
-													<label for="checkbox06">Finish Infinity Project</label>
-												</div>
-											</li>
-										</ul>
-										<!-- /Todo-List -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!-- /Right Sidebar Menu -->
-
         <!-- Main Content -->
 		<div class="page-wrapper">
             <div class="container-fluid">
@@ -820,7 +366,93 @@
 				<!-- /Title -->
 				
 				<!-- Row -->
-				<div class="row">
+				
+					<div class="row">
+					<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark"></i>8 task completed out of 10</h6>
+								</div>
+								<div class="pull-right">
+									<div class="dropdown">
+										<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><h6 class="panel-title txt-dark">Show : <span style="color: #2384FF"> this week</span> </h6><span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+										<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+											<li>
+												<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-credit-card-alt"></i> my balance</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+											</li>
+											<li class="divider"></li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+
+							<div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+							<h5> <strong>23 December, Sunday</strong></h5>
+							</div>
+							</div>
+
+							<div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+									<div class="row ">
+												<div class="col-sm-1 txt-dark">Sun</div>
+												<div class="col-sm-1 txt-dark">Mon</div>
+												<div class="col-sm-1 txt-dark">Tue</div>
+												<div class="col-sm-1 txt-dark">Wed</div>
+												<div class="col-sm-1 txt-dark">Thu</div>
+												<div class="col-sm-1 txt-dark">Fri</div>
+												<div class="col-sm-1 txt-dark">Sat</div>
+									</div>
+									<div class="row ">
+												<div class="col-sm-1">23</div>
+												<div class="col-sm-1">24</div>
+												<div class="col-sm-1">25</div>
+												<div class="col-sm-1">26</div>
+												<div class="col-sm-1">27</div>
+												<div class="col-sm-1">28</div>
+												<div class="col-sm-1">29</div>
+									</div>
+								</div>
+							</div>
+							
+							<hr>
+							<div class="card-view" style="box-shadow: 
+								0px 2px 10px rgba(0, 0, 0, 0.08);
+								border-radius: 4px;"> 
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+									<h5 class="panel-title-2 pull-left"> 23 December, Sunday</h5>
+									<p class="text-muted pull-right"> Reminder</p>
+								</div>
+								<div class="panel-body">
+									<p class="text-muted pull-left"> Due date: <span class="txt-dark">December 23, 2018</span></p>
+								</div>
+								<div class="panel-body">
+									<img src="<?php echo base_url();?>assets/image/karyawan/fotoKaryawan.svg" alt="" class="pull-left" width="30px" height="100%" style="border-radius: 50%;">
+									<p class="pull-left txt-dark" style="margin-left: 10px;">Aprilda Peter</p>
+									<button class="btn btn-success pull-right txt-white" style="border-radius: 4px;">Completed</button>
+								</div>
+							</div>
+						</div>
+                    </div>
+					</div>
 					<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
@@ -896,21 +528,7 @@
 							</div>
 						
 					</div>
-					<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
-						<div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark"><i class="icon-share mr-10"></i>Visits Conversion</h6>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-                                <div class="panel-body">
-									<canvas id="chart_1" height="417"></canvas>	
-								</div>
-                            </div>
-                        </div>
-					</div>
+					
 				</div>
 				<!-- /Row -->
 				
