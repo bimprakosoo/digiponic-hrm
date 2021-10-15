@@ -216,11 +216,6 @@ form input+i {
     background: #f6f8fd;
 }
 
-#landTentang .card .img-fluid {
-    width: 317px;
-    height: 226px;
-}
-
 #landDepartemen h2 {
     padding-top: 30px;
     font-weight: 700;
@@ -416,7 +411,8 @@ form input+i {
 --------------------------------------------------------------*/
 
 #hubungi .HubungiKami .kirim {
-    height: 100px;
+    height: 40px;
+    width: 135px;
 }
 
 #hubungi .form-control {
@@ -424,7 +420,7 @@ form input+i {
     border-radius: 5px !important;
 }
 
-.btn-success {
+#hubungi.btn-success {
     background-color: #8ccf4d;
     border-color: #8ccf4d;
     width: 135px;
@@ -434,7 +430,7 @@ form input+i {
     font-size: 16;
 }
 
-.btn-success:hover {
+#hubungi.btn-success:hover {
     background-color: #6fa83a;
     border-color: #6fa83a;
     width: 135px;
@@ -443,7 +439,7 @@ form input+i {
     font-size: 16;
 }
 
-.btn-outline-light {
+#hubungi.btn-outline-light {
     border-color: #fff;
     color: #000;
     width: 100px;
@@ -453,7 +449,7 @@ form input+i {
     font-size: 16;
 }
 
-.btn-outline-light:hover {
+#hubungi.btn-outline-light:hover {
     border-color: #fff;
     background-color: #fff;
     color: #6fa83a;
@@ -462,7 +458,7 @@ form input+i {
     font-size: 16;
 }
 
-.d-inline {
+#hubungi .d-inline {
     color: #292c2b;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -471,6 +467,16 @@ form input+i {
 
 /*--------------------------------------------------------------
 # Lowongan
+--------------------------------------------------------------*/
+
+#lowongan .container {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+
+/*--------------------------------------------------------------
+# Lamaran
 --------------------------------------------------------------*/
 
 #lamaran .card {
@@ -489,135 +495,6 @@ form input+i {
     height: 196px;
     font-size: 14px;
 }
-
-
-/* 
-#footer .footer-top {
-  background: #F6F8FD;
-  border-top: 1px solid #768fa6;
-  border-bottom: 1px solid #67839c;
-  padding: 60px 0 30px 0;
-}
-
-#footer .footer-top .footer-info {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-info h3 {
-  font-size: 24px;
-  margin: 0 0 20px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 700;
-}
-
-#footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-}
-
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #768fa6;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .footer-top .social-links a:hover {
-  background: #F6F8FD;
-  color: #000;
-  text-decoration: none;
-}
-
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #9eccf4;
-  font-size: 18px;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #fff;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  color: #9eccf4;
-}
-
-#footer .footer-top .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4;
-}
-
-#footer .footer-top .footer-newsletter form input[type="email"] {
-  border: 0;
-  padding: 4px;
-  width: calc(100% - 110px);
-}
-
-#footer .footer-top .footer-newsletter form input[type="submit"] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #F6F8FD;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 4;
-}
-
-#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-  background: #5295ce;
-} */
 
 #footer {
     background: #f6f8fd;
@@ -649,7 +526,9 @@ form input+i {
 }
 
 
-/* Tentang */
+/*------------------------------
+             Tentang
+--------------------------------*/
 
 .page-1 {
     width: 900px;
