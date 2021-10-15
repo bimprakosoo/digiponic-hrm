@@ -216,11 +216,6 @@ form input+i {
     background: #f6f8fd;
 }
 
-#landTentang .card .img-fluid {
-    width: 317px;
-    height: 226px;
-}
-
 #landDepartemen h2 {
     padding-top: 30px;
     font-weight: 700;
@@ -473,6 +468,16 @@ form input+i {
 # Lowongan
 --------------------------------------------------------------*/
 
+#lowongan .container {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+
+/*--------------------------------------------------------------
+# Lamaran
+--------------------------------------------------------------*/
+
 #lamaran .card {
     background: #f6f8fd;
 }
@@ -649,7 +654,9 @@ form input+i {
 }
 
 
-/* Tentang */
+/*------------------------------
+             Tentang
+--------------------------------*/
 
 .page-1 {
     width: 900px;

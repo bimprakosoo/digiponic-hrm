@@ -92,7 +92,7 @@
      
      <img src="<?php echo base_url();?>assets/image/Tentang/slide-tentang.svg" class="d-block w-100" />
 
-<section class="container page-1">
+<section class="container ">
     
     <div class="tentang">
             <h2 class="pt">PT. MAJU BERSAMA</h2>

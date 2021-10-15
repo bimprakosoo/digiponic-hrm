@@ -74,6 +74,7 @@
     <header>
 
       <!-- Awal menu -->
+      <!-- Carusoel -->
       <section class="slider">
         <div class="slider w-100">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -104,16 +105,18 @@
           </div>
         </div>
       </section>
+      <!-- End Carusoel -->
 
+      <!-- Tentang -->
       <section class="landTentang" id="landTentang">
         <h2>
           Tentang Kami
         </h2>
 
         <div class="container d-flex justify-content-center">
-          <div class="card mb-3 pt-3" style="max-width: 1240px;">
+          <div class="card mb-3 py-5" >
             <div class="row g-0">
-              <div class="col-md-4">
+              <div class="col-md-4 d-flex justify-content-center">
                 <img src="<?php echo base_url(); ?>assets/image/landingpage/tentang.svg" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
@@ -130,314 +133,371 @@
         </div>
 
       </section>
+      <!-- End TenTang -->
 
+      <!-- Departemen -->
       <section class="landDepartemen" id="landDepartemen">
-        <h2>
+        <h2 class="pt-5">
           Departemen
         </h2>
 
-        <div class="container-fluid py-5">
-          <div class="card-group">
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-              <a href="#" class="btn btn-primary">Lihat Departemen</a>
-
-            </div>
-            <div class="card me-3 ms-3">
-              <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title">Departemen Sekertaris Perusahaan</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-              <a href="#" class="btn btn-primary">Lihat Departemen</a>
-            </div>
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title">Departemen Keuangan</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-              <a href="#" class="btn btn-primary">Lihat Departemen</a>
-            </div>
-          </div>
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <a href="<?php echo base_url(); ?>LandingPage/departemen" class="btn btn-primary">Selengkapnya</a>
-          </div>
-      </section>
-
-      <section class="landKaryawan" id="landKaryawan">
-        <h2>
-          Karyawan Berprestasi
-        </h2>
-        <p>
-          Inilah beberapa karyawan yang bekerja di PT MAJU BERSAMA
-        </p>
-        <div class="container-fluid py-5">
-          <div class="card-group">
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start">
-                <div class="row justify-content-between">
-                  <div class="col-6 text-start">
-                    Nama
-                  </div>
-                  <div class="col-6 text-end">
-                    Sean zayn
-                  </div>
+        <div class="container-fluid pt-5 px-5">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
                 </div>
-                <div class="row justify-content-between pt-2">
-                  <div class="col-6 text-start">
-                    Departemen
-                  </div>
-                  <div class="col-6 text-end">
-                    Produksi
-                  </div>
-                </div>
-                <div class="row justify-content-between pt-2 pb-3">
-                  <div class="col-6 text-start">
-                    Divisi
-                  </div>
-                  <div class="col-6 text-end">
-                    Operation
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
-                </div>
+                <a href="#" class="btn btn-primary">Lihat Departemen</a>
               </div>
             </div>
-            <div class="card  ms-2">
-              <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start ">
-                <div class="row justify-content-between">
-                  <div class="col-6 text-start">
-                    Nama
-                  </div>
-                  <div class="col-6 text-end">
-                    Sean zayn
-                  </div>
+            <div class="col">
+              <div class="card" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
                 </div>
-                <div class="row justify-content-between pt-2">
-                  <div class="col-6 text-start">
-                    Departemen
-                  </div>
-                  <div class="col-6 text-end">
-                    Produksi
-                  </div>
-                </div>
-                <div class="row justify-content-between pt-2 pb-3">
-                  <div class="col-6 text-start">
-                    Divisi
-                  </div>
-                  <div class="col-6 text-end">
-                    Operation
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
-                </div>
+                <a href="#" class="btn btn-primary">Lihat Departemen</a>
               </div>
             </div>
-            <div class="card me-2 ms-2">
-              <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start ">
-                <div class="row justify-content-between">
-                  <div class="col-6 text-start">
-                    Nama
-                  </div>
-                  <div class="col-6 text-end">
-                    Sean zayn
-                  </div>
+            <div class="col">
+              <div class="card" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
                 </div>
-                <div class="row justify-content-between pt-2">
-                  <div class="col-6 text-start">
-                    Departemen
-                  </div>
-                  <div class="col-6 text-end">
-                    Produksi
-                  </div>
-                </div>
-                <div class="row justify-content-between pt-2 pb-3">
-                  <div class="col-6 text-start">
-                    Divisi
-                  </div>
-                  <div class="col-6 text-end">
-                    Operation
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
-                </div>
-              </div>
-            </div>
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start ">
-                <div class="row justify-content-between">
-                  <div class="col-6 text-start">
-                    Nama
-                  </div>
-                  <div class="col-6 text-end">
-                    Sean zayn
-                  </div>
-                </div>
-                <div class="row justify-content-between pt-2">
-                  <div class="col-6 text-start">
-                    Departemen
-                  </div>
-                  <div class="col-6 text-end">
-                    Produksi
-                  </div>
-                </div>
-                <div class="row justify-content-between pt-2 pb-3">
-                  <div class="col-6 text-start">
-                    Divisi
-                  </div>
-                  <div class="col-6 text-end">
-                    Operation
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <a href="<?php echo base_url(); ?>LandingPage/karyawan" class="btn btn-primary">Selengkapnya</a>
-          </div>
-      </section>
-
-      <section class="landLowongan" id="landLowongan">
-        <h2>
-          Lowongan
-        </h2>
-        <p>
-          Beberapa lowongan pekerjaan yang sedang dibutuhkan, bagi yang minat langsung bisa melamar dibawah ini
-        </p>
-
-        <div class="container py-5">
-          <div class="card-group">
-            <div class="card">
-              <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-                <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
-              </div>
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title text-center">Accounting staff</h5>
-                <p class="card-text">
-                  Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
-                  penyusunan laporan keuangan dan perpajakan.
-                </p>
-                <p>Lokasi - Malang</p>
-                <p>
-                  <strong>Posted Date</strong> <br /> 11 September 2021
-                </p>
-                <div class="d-grid gap-2">
-                  <a href="#" class="btn btn-primary">
-                    Lihat Selengkapnya
-                  </a>
-                </div>
-
-              </div>
-            </div>
-            <div class="card me-4 ms-4">
-              <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-                <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
-              </div>
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title text-center">Accounting staff</h5>
-                <p class="card-text">
-                  Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
-                  penyusunan laporan keuangan dan perpajakan.
-                </p>
-                <p>Lokasi - Malang</p>
-                <p>
-                  <strong>Posted Date</strong> <br /> 11 September 2021
-                </p>
-                <div class="d-grid gap-2">
-                  <a href="#" class="btn btn-primary">
-                    Lihat Selengkapnya
-                  </a>
-                </div>
-
-              </div>
-            </div>
-            <div class="card h-100 ">
-              <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-                <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
-              </div>
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title text-center">Accounting staff</h5>
-                <p class="card-text">
-                  Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
-                  penyusunan laporan keuangan dan perpajakan.
-                </p>
-                <p>Lokasi - Malang</p>
-                <p>
-                  <strong>Posted Date</strong> <br /> 11 September 2021
-                </p>
-                <div class="d-grid gap-2">
-                  <a href="#" class="btn btn-primary">
-                    Lihat Selengkapnya
-                  </a>
-                </div>
-
+                <a href="#" class="btn btn-primary">Lihat Departemen</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="selengkapnya d-grid gap-2 col-2 mx-auto">
+
+        <div class="d-grid gap-2 col-4 mx-auto pb-5">
+          <a href="<?php echo base_url(); ?>LandingPage/departemen" class="btn btn-primary">Selengkapnya</a>
+        </div>
+      </section>
+      <!-- End Departemen -->
+
+      <!-- Karyawan -->
+      <section class="landKaryawan" id="landKaryawan">
+        <div class="container py-5">
+          <h2>
+            Karyawan Berprestasi
+          </h2>
+          <p>
+            Inilah beberapa karyawan yang bekerja di PT MAJU BERSAMA
+          </p>
+
+        </div>
+        <div class="container-fluid px-5">
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start">
+                  <div class="row justify-content-between">
+                    <div class="col-6 text-start">
+                      Nama
+                    </div>
+                    <div class="col-6 text-end">
+                      Sean zayn
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Departemen
+                    </div>
+                    <div class="col-6 text-end">
+                      Produksi
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2 pb-3">
+                    <div class="col-6 text-start">
+                      Divisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Operation
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start">
+                  <div class="row justify-content-between">
+                    <div class="col-6 text-start">
+                      Nama
+                    </div>
+                    <div class="col-6 text-end">
+                      Sean zayn
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Departemen
+                    </div>
+                    <div class="col-6 text-end">
+                      Produksi
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2 pb-3">
+                    <div class="col-6 text-start">
+                      Divisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Operation
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tasks Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start">
+                  <div class="row justify-content-between">
+                    <div class="col-6 text-start">
+                      Nama
+                    </div>
+                    <div class="col-6 text-end">
+                      Sean zayn
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Departemen
+                    </div>
+                    <div class="col-6 text-end">
+                      Produksi
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2 pb-3">
+                    <div class="col-6 text-start">
+                      Divisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Operation
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start">
+                  <div class="row justify-content-between">
+                    <div class="col-6 text-start">
+                      Nama
+                    </div>
+                    <div class="col-6 text-end">
+                      Sean zayn
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Departemen
+                    </div>
+                    <div class="col-6 text-end">
+                      Produksi
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2 pb-3">
+                    <div class="col-6 text-start">
+                      Divisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Operation
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-grid gap-2 col-4 mx-auto pb-5">
+          <a href="<?php echo base_url(); ?>LandingPage/karyawan" class="btn btn-primary">Selengkapnya</a>
+        </div>
+      </section>
+      <!-- End Karyawan -->
+
+      <!-- Lowongan -->
+      <section class="landLowongan" id="landLowongan">
+        <div class="container py-5">
+          <h2>
+            Lowongan
+          </h2>
+          <p>
+            Beberapa lowongan pekerjaan yang sedang dibutuhkan, bagi yang minat langsung bisa melamar dibawah ini
+          </p>
+        </div>
+
+        <div class="container pt-5 px-5">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                  <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
+                </div>
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title text-center">Accounting staff</h5>
+                  <p class="card-text">
+                    Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                    penyusunan laporan keuangan dan perpajakan.
+                  </p>
+                  <p>Lokasi - Malang</p>
+                  <p>
+                    <strong>Posted Date</strong> <br /> 11 September 2021
+                  </p>
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">
+                      Lihat Selengkapnya
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                  <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
+                </div>
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title text-center">Accounting staff</h5>
+                  <p class="card-text">
+                    Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                    penyusunan laporan keuangan dan perpajakan.
+                  </p>
+                  <p>Lokasi - Malang</p>
+                  <p>
+                    <strong>Posted Date</strong> <br /> 11 September 2021
+                  </p>
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">
+                      Lihat Selengkapnya
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+                  <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
+                </div>
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title text-center">Accounting staff</h5>
+                  <p class="card-text">
+                    Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
+                    penyusunan laporan keuangan dan perpajakan.
+                  </p>
+                  <p>Lokasi - Malang</p>
+                  <p>
+                    <strong>Posted Date</strong> <br /> 11 September 2021
+                  </p>
+                  <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary">
+                      Lihat Selengkapnya
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="selengkapnya d-grid gap-2 col-4 mx-auto py-5">
           <a href="<?php echo base_url(); ?>LandingPage/lowongan" class="btn btn-primary">Selengkapnya</a>
         </div>
       </section>
+      <!-- End Lowongan -->
 
+      <!-- Artikel -->
       <section class="landArtikel" id="landArtikel">
-        <h2>
-          Artikel
-        </h2>
-        <p>
-          Beberapa artikel tentang pentang perusahaan yang bisa anda baca
-        </p>
         <div class="container py-5">
-          <div class="card-group">
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
-              </div>
-            </div>
-            <div class="card me-3 ms-3">
-              <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
-              </div>
-            </div>
-            <div class="card ">
-              <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-              <div class="card-body text-start pt-5">
-                <h5 class="card-title">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
-              </div>
-            </div>
-          </div>
-          <div class="selengkapnya d-grid gap-2 col-2 mx-auto">
-            <a href="<?php echo base_url(); ?>LandingPage/artikel" class="btn btn-primary">Selengkapnya</a>
-          </div>
-      </section>
+          <h2>
+            Artikel
+          </h2>
+          <p>
+            Beberapa artikel tentang pentang perusahaan yang bisa anda baca
+          </p>
+        </div>
 
+        <div class="container-fluid pt-5 px-5">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+                  <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+                  <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card " style="border-radius: 10px;">
+                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
+                <div class="card-body text-start pt-5">
+                  <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
+                  <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+                  <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="selengkapnya d-grid gap-2 col-4 mx-auto py-5">
+          <a href="<?php echo base_url(); ?>LandingPage/artikel" class="btn btn-primary">Selengkapnya</a>
+        </div>
+      </section>
+      <!-- End Artikel -->
+
+      <!-- Kontak -->
       <section class="landKontak" id="landKontak">
-        <h2>
-          Kontak Kami
-        </h2>
+        <div class="container py-5">
+          <h2>
+            Kontak Kami
+          </h2>
+        </div>
 
         <div class="container px-4 py-4">
           <div class="row gx-5">
@@ -499,6 +559,8 @@
           </div>
         </div>
       </section>
+      <!-- End Kontak -->
+
       <!-- Akhir menu -->
       <footer id="footer">
         <div class="container-fluid">
