@@ -15,6 +15,7 @@ class Pelamar extends CI_Controller
         $this->load->helper('url');
         $this->load->library('upload');
         $this->load->library('form_validation');
+        $this->load->model('M_Pelamar');
         // if ($this->session->userdata('status') != true) {
         //     redirect(base_url("login"));
         // }
@@ -47,9 +48,11 @@ class Pelamar extends CI_Controller
                 'no_telp' =>  $this->input->post('no_telp'),
                 'status_perkawinan' =>  $this->input->post('status_perkawinan'),
                 'pendidikan_terakhir' =>  $this->input->post('pendidikan_terakhir'),
-                'up_lamaran' =>     $this->file_lamaran(),
-                'up_cv' =>          $this->file_cv()
+                'up_lamaran' =>     $this->M_Pelamar->file_lamaran(),
+                'up_cv' =>          $this->M_Pelamar->file_cv()
             );
+            var_dump($data);
+            die;
 
             $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {
