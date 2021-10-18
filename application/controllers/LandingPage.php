@@ -11,8 +11,9 @@ class LandingPage extends CI_Controller
 
     public function Tentang()
     {
-        $isi['content'] = 'dashboard/home';
-        $this->load->view('dashboard/admin2',$isi);
+        // $isi['content'] = 'dashboard/home';
+        // $this->load->view('dashboard/admin2',$isi);
+        $this->load->view('landingpage/tentang_view');
     }
 
     public function departemen()
