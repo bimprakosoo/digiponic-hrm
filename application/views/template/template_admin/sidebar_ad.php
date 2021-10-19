@@ -40,13 +40,13 @@
                         </a>
                         <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">Lowongan</a>
+                                <a class="sidebar-link" href="<?php echo base_url();?>admin/lowongan_ad">Lowongan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">Lamaran Masuk</a>
+                                <a class="sidebar-link" href="<?php echo base_url();?>admin/lamaran_masuk">Lamaran Masuk</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-cards.html">Hasil Seleksi</a>
+                                <a class="sidebar-link" href="<?php echo base_url();?>admin/hasil_seleksi">Hasil Seleksi</a>
                             </li>
                         </ul>
                     </li>
