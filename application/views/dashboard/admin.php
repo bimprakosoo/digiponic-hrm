@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Page</title>
     <!-- Favicon -->
 	<!-- <link rel="shortcut icon" href="favicon.ico">
 	<link rel="icon" href="favicon.ico" type="image/x-icon"> -->
@@ -158,7 +158,7 @@
 					<li>
 						<a  href="javascript:void(0);" data-toggle="collapse" data-target="#pekerjaan"><i class="glyphicon glyphicon-tasks mr-10"></i>Pekerjaan <span class="pull-right"><span class="label label-success mr-10">4</span><i class="fa fa-fw fa-angle-down"></i></span></a>
 						<ul id="pekerjaan" class="collapse collapse-level-1">
-							<li>
+							<!-- <li>
 								<a class="active" href="index.html">Analytical</a>
 							</li>
 							<li>
@@ -166,9 +166,9 @@
 							</li>
 							<li>
 								<a href="index3.html">Project</a>
-							</li>
+							</li> -->
 							<li>
-								<a href="index4.html">Classic</a>
+								<a href="index.html">Lamaran Masuk</a>
 							</li>
 						</ul>
 					</li>

@@ -3,15 +3,24 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
+    var $API = "";
 
     public function __construct()
     {
         parent::__construct();
-
-        $this->load->library('form_validation');
+        $this->API = "http://localhost/digiponic-hrm/api";
         $this->load->library('session');
+        $this->load->library('curl');
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('upload');
+        $this->load->library('form_validation');
         // Load the user model
         $this->load->model('user');
+
+        // if ($this->session->userdata('status') != true) {
+        //     redirect(base_url("login"));
+        // }
     }
 
     public function index()
@@ -35,7 +44,7 @@ class Login extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        // $user = $this->db->get_where('users', ['email' => $email])->row_array();
+        $user = $this->db->get_where('users', ['email' => $email])->row_array();
         // Validate the post data
         if (!empty($email) && !empty($password)) {
 
@@ -55,6 +64,8 @@ class Login extends CI_Controller
                     'role_id' => $user['role_id']
                 ];
                 $this->session->set_userdata($data);
+                // var_dump($user);
+                // die;
                 // ke halaman user
                 if ($user['role_id'] == 1) {
                     redirect('Dashboard');
