@@ -20,8 +20,8 @@ class Dashboard extends CI_Controller
     {
         // $this->load->view('template/headerauth');
         // $this->load->view('dashboard/admin');
-        $isi['content'] = 'dashboard/home';
-        $this->load->view('dashboard/admin2', $isi);
+        // $isi['content'] = 'dashboard/home';
+        // $this->load->view('dashboard/admin2', $isi);
     }
 
 

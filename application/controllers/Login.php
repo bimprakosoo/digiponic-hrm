@@ -68,11 +68,11 @@ class Login extends CI_Controller
                 // die;
                 // ke halaman user
                 if ($user['role_id'] == 1) {
-                    redirect('Dashboard');
+                    redirect('admin');
                 } else if ($user['role_id'] == 2) {
-                    redirect('Karyawan');
+                    redirect('karyawan');
                 } else {
-                    redirect('Pelamar');
+                    redirect('pelamar');
                 }
 
                 // Set the response and exit

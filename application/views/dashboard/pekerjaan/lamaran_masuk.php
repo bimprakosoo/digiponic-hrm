@@ -36,23 +36,45 @@
                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                              <thead>
                                  <tr>
+                                     <th>No</th>
                                      <th scope="col">Action</th>
                                      <th>Status</th>
                                      <th>Nama</th>
-                                     <th>Provinsi</th>
-                                     <th>Kota/Kabupaten</th>
-                                     <th>Kecamatan</th>
-                                     <th>Alamat Lengkap</th>
+                                     <!-- <th>Provinsi</th> -->
+                                     <!-- <th>Kota/Kabupaten</th> -->
+                                     <!-- <th>Kecamatan</th> -->
+                                     <!-- <th>Alamat Lengkap</th> -->
                                      <th>Jenis Kelamin</th>
                                      <th>Tanggal Lahir</th>
                                      <th>No.Telp</th>
                                      <th>Pendidikan</th>
-                                     <th>Status Perkawinan</th>
+                                     <!-- <th>Status Perkawinan</th> -->
                                      <th>Status Lamaran</th>
                                      <th>CV</th>
                                  </tr>
                              </thead>
+                             <tbody>
+                                 <?php $i = 1; ?>
+                                 <?php foreach ($lamaran_masuk as $m) : ?>
+                                     <tr>
+                                         <th scope="row"><?= $i ?></th>
+                                         <td>
+                                             <a href="" class="btn btn-primary">Di Terima</a>
+                                             <a href="<?= base_url('dashboard/delete/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#delete">Di Tolak</a>
 
+
+                                         </td>
+                                         <td></td>
+                                         <td><?= $m['nama']; ?></td>
+                                         <td><?= $m['jk']; ?></td>
+                                         <td><?= $m['tgl_lahir']; ?></td>
+                                         <td><?= $m['no_telp']; ?></td>
+                                         <td><?= $m['pendidikan_terakhir']; ?></td>
+
+                                     </tr>
+                                     <?php $i++; ?>
+                                 <?php endforeach; ?>
+                             </tbody>
                          </table>
                      </div>
                  </div>
@@ -74,3 +96,21 @@
      </div>
  </main>
  <!-- End Content -->
+
+ <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">status</h5>
+                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">×</span>
+                 </button>
+             </div>
+             <div class="modal-body">apakah anda ingin menolak pelamar atas nama : <?= $m['nama']; ?> </div>
+             <div class="modal-footer">
+                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                 <a class="btn btn-primary" href="<?= base_url('dashboard/delete/') . $m['id']; ?>">Di Tolak</a>
+             </div>
+         </div>
+     </div>
+ </div>
