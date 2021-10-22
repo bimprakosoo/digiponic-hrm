@@ -218,27 +218,8 @@ form input+i {
 # Home
 --------------------------------------------------------------*/
 
-
-/* .slider .carousel .carousel-inner {
-    height: 580px;
-} */
-
-@media (min-width: 576px) {
-    .slider .carousel .carousel-inner {
-        height: 205px;
-    }
-}
-
-@media (min-width: 768px) {
-    .slider .carousel .carousel-inner {
-        height: 432px;
-    }
-}
-
-@media (min-width: 992px) {
-    slider .carousel .carousel-inner {
-        height: 632px;
-    }
+.slider .carousel .carousel-inner {
+    height: 600px;
 }
 
 #landTentang {
@@ -425,6 +406,45 @@ form input+i {
     text-align: center;
 }
 
+@media (min-width: 320px) {
+    .slider .carousel .carousel-inner {
+        height: 190px;
+    }
+    #landArtikel .card-text {
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 576px) {
+    .slider .carousel .carousel-inner {
+        height: 205px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slider .carousel .carousel-inner {
+        height: 450px;
+    }
+    #landArtikel .card-text {
+        padding-top: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider .carousel .carousel-inner {
+        height: 580px;
+    }
+    #landArtikel .card-text {
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #landArtikel .card-text {
+        padding-top: 30px;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # Departemen
@@ -448,6 +468,41 @@ form input+i {
     height: 200;
 }
 
+@media (min-width: 320px) {
+    #departemen .card {
+        width: 255px;
+        height: 528px;
+    }
+}
+
+@media (min-width: 400px) {
+    #departemen .card {
+        width: 320px;
+        height: 528px;
+    }
+}
+
+@media (min-width: 768px) {
+    #departemen .card {
+        width: 230px;
+        height: 528px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #departemen .card {
+        width: 373px;
+        height: 528px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #departemen .card {
+        width: 423px;
+        height: 528px;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # karyawan
@@ -462,10 +517,6 @@ form input+i {
 #karyawan .card-img-top {
     width: 288.46px;
     height: 277px;
-}
-
-#karyawan .container {
-    padding-top: 140px;
 }
 
 
@@ -532,10 +583,18 @@ form input+i {
 # Lowongan
 --------------------------------------------------------------*/
 
-#lowongan .container {
+
+/* #lowongan .container {
     margin-top: 80px;
     margin-bottom: 30px;
 }
+
+@media (min-width: 320px) {
+    #lowongan .container {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+} */
 
 
 /*--------------------------------------------------------------
@@ -593,6 +652,53 @@ form input+i {
              Tentang
 --------------------------------*/
 
+@media (min-width: 320px) {
+    #tentang .row {
+        margin-top: 10px;
+        margin-bottom: -70px;
+    }
+    .tentang {
+        margin-top: -50px;
+    }
+    .visiMisi {
+        margin-bottom: 70px;
+    }
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1200px) {
+    .text-break-1 {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+    .text-break-2 {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+    .visiMisi {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .text-break-1 {
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+    .text-break-2 {
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+    .visiMisi {
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+}
+
 .page-1 {
     width: 900px;
     align-content: center;
@@ -627,14 +733,6 @@ p.text-break-2 {
     box-shadow: 0 0 35px 10px #ededed;
     /* width: 393px; */
     /* height: 338px; */
-}
-
-.visiMisi {
-    margin-bottom: 200px;
-}
-
-.visiMisi .row {
-    margin-top: -400px;
 }
 
 .card .card-body {

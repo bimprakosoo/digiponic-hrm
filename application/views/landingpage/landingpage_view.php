@@ -116,6 +116,8 @@
     </p>
 
   </div>
+
+  
   <div class="container-fluid px-5">
     <div class="row">
 
@@ -267,6 +269,7 @@
     <div class="d-grid gap-2 col-6 mx-auto pb-5">
       <a href="<?php echo base_url(); ?>LandingPage/karyawan" class="btn btn-primary">Selengkapnya</a>
     </div>
+  </div>
 </section>
 <!-- End Karyawan -->
 
@@ -380,7 +383,7 @@
           <div class="card-body text-start pt-5">
             <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+            <h5 class="card-text "><small>Jan 26, 2021</small></h5>
           </div>
         </div>
       </div>
@@ -390,7 +393,7 @@
           <div class="card-body text-start pt-5">
             <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+            <h5 class="card-text "><small>Jan 26, 2021</small></h5>
           </div>
         </div>
       </div>
@@ -400,7 +403,7 @@
           <div class="card-body text-start pt-5">
             <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-            <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+            <h5 class="card-text "><small>Jan 26, 2021</small></h5>
           </div>
         </div>
       </div>

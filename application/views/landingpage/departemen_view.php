@@ -1,8 +1,8 @@
+<img src="<?php echo base_url(); ?>assets/image/departemen/departemen.svg" class="d-block w-100" />
 
       <!-- Awal menu -->
       <section class="departemen" id="departemen">
 
-        <img src="<?php echo base_url(); ?>assets/image/departemen/departemen.svg" class="d-block w-100" />
 
         <div class="container-fluid pb-5">
           <h4 class="text-center pb-3" id="strukturDept">Struktur Departemen</h4>

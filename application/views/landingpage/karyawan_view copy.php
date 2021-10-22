@@ -1,15 +1,11 @@
-<img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan.svg" class="d-block w-100" />
+<!-- Awal menu -->
+<section class="karyawan pb-5" id="karyawan">
 
-<!-- Karyawan -->
-<section class="Karyawan">
-<div class="container text-center py-5">
-
-<h4>Inilah beberapa karyawan terbaik yang bekerja di PT MAJU BERSAMA</h4>
-
-</div>
+  <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan.svg" class="d-block w-100" />
 
   
-<div class="container-fluid px-5">
+
+  <div class="container-fluid px-5">
     <div class="row">
 
       <!-- Earnings (Monthly) Card Example -->
@@ -322,8 +318,8 @@
       </div>
     </div>
   </div>
+
 </section>
-<!-- End Karyawan -->
 <!-- Modal -->
 <div class="modal fade" id="karyawanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

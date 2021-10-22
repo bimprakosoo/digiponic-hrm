@@ -1,8 +1,10 @@
 <!-- Awal menu -->
 
-<img src="<?php echo base_url(); ?>assets/image/Tentang/slide-tentang.svg" class="d-block w-100" />
+<div class="image">
+  <img src="<?php echo base_url(); ?>assets/image/Tentang/slide-tentang.svg" class="jumb d-block w-100" />
+</div>
 
-<section class="container ">
+<section class="container " id="tentang">
 
   <div class="tentang">
     <h2 class="pt">PT. MAJU BERSAMA</h2>
@@ -26,9 +28,7 @@
     </p>
   </div>
   <div class="visiMisi pb-5">
-    <center>
-      <img src="<?php echo base_url(); ?>assets/image/Tentang/frame.svg" class="img-fluid" alt="...">
-    </center>
+    
     <div class="row">
       <div class="col-sm-6">
         <div class="card mb-3">
