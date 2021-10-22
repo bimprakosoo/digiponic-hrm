@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['api/authentication/login'] = 'api/authentication/login';
 $route['api/authentication/registration'] = 'api/authentication/registration';
+
+// $route['file-cv'] = "api/pelamar/file_lamaran";
+// $route['file-lamaran'] = "api/pelamar/file_cv";

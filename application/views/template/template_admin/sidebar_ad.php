@@ -9,11 +9,11 @@
     <meta name="author" content="AdminKit" />
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
-    <link rel="shortcut icon" href="<?php echo base_url();?>assets/image/Logo.svg" />
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo.svg" />
 
     <title>Dashboard</title>
 
-    <link href="<?php echo base_url();?>assets/admin2/static/css/app.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,8 +21,8 @@
         <!-- SideBar -->
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="<?php echo base_url();?>landingpage">
-                    <span class="align-middle"><img src="<?php echo base_url();?>assets/image/Logo.svg" alt=""></span>
+                <a class="sidebar-brand" href="<?php echo base_url(); ?>landingpage">
+                    <span class="align-middle"><img src="<?php echo base_url(); ?>assets/image/Logo.svg" alt=""></span>
                 </a>
 
                 <ul class="sidebar-nav">
@@ -40,13 +40,13 @@
                         </a>
                         <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url();?>admin/lowongan_ad">Lowongan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/lowongan_ad">Lowongan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url();?>admin/lamaran_masuk">Lamaran Masuk</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/lamaran_masuk">Lamaran Masuk</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url();?>admin/hasil_seleksi">Hasil Seleksi</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/hasil_seleksi">Hasil Seleksi</a>
                             </li>
                         </ul>
                     </li>
