@@ -23,4 +23,13 @@ class M_Admin extends CI_Model
     {
         // delete or change status
     }
+
+    function insert_into()
+    {
+
+        $q = $this->db->get('data_lamaran')->result(); // get first table
+        foreach ($q as $r) { // loop over results
+            $this->db->update('tbl_karyawan', $r, array('id' => $r->id)); // insert each row to another table
+        }
+    }
 }
