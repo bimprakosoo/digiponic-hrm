@@ -52,8 +52,8 @@ class Admin extends RestController
         // }
 
 
-        $id = $this->db->get('id');
-        $goo = $this->db->where('id', $id);
+        // $id = $this->db->get('id');
+        // $this->db->where('id', $id);
 
         $data = $this->db->get('data_lamaran')->result();
         foreach ($data as $r) { // loop over results

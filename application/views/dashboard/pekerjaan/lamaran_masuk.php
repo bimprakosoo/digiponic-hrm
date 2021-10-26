@@ -59,8 +59,8 @@
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>
-                                             <a href="" class="btn btn-primary">Di Terima</a>
-                                             <a href="<?= base_url('dashboard/delete/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#delete">Di Tolak</a>
+                                             <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary" data-toggle="modal" data-target="#diterima">Di Terima</a>
+                                             <a href="<?= base_url('admin/delete/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#delete">Di Tolak</a>
 
 
                                          </td>
@@ -97,6 +97,9 @@
  </main>
  <!-- End Content -->
 
+
+
+ <!-- delete -->
  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -109,7 +112,26 @@
              <div class="modal-body">apakah anda ingin menolak pelamar atas nama : <?= $m['nama']; ?> </div>
              <div class="modal-footer">
                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                 <a class="btn btn-primary" href="<?= base_url('dashboard/delete/') . $m['id']; ?>">Di Tolak</a>
+                 <a class="btn btn-primary" href="<?= base_url('admin/delete/') . $m['id']; ?>">Di Tolak</a>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- diterima -->
+ <div class="modal fade" id="diterima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">status</h5>
+                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">×</span>
+                 </button>
+             </div>
+             <div class="modal-body">apakah anda ingin menerima pelamar atas nama : <?= $m['nama']; ?> </div>
+             <div class="modal-footer">
+                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                 <a class="btn btn-primary" href="<?= base_url('admin/diterima/') . $m['id']; ?>">Terima Lamaran</a>
              </div>
          </div>
      </div>
