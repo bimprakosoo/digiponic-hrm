@@ -50,6 +50,13 @@ class Admin extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
+    public function mutasi()
+    {
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/mutasi/mutasi_ad');
+        $this->load->view('template/template_admin/footer_ad');
+    }
     // sidebar karyawan
     public function data_karyawan()
     {
