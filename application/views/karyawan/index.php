@@ -11,17 +11,6 @@
  <main class="content">
 
      <div class="container-fluid p-0 ">
-         <div class="card ">
-             <div class="row my-2 my-xl-3 m-2">
-                 <div class="col-auto d-none d-sm-block ">
-                     <h3><strong>Tambah Data Lowongan</strong></h3>
-                 </div>
-
-                 <div class="col-auto ml-auto ">
-                     <button class="btn btn-primary">Tambah Data</button>
-                 </div>
-             </div>
-         </div>
 
          <!-- Daftar Semua Lowongan -->
          <div class="container-fluid p-0">
@@ -29,7 +18,7 @@
              <div class="card shadow mb-4 ">
                  <div class="card-header py-3">
                      <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
-                     <h1 class="m-0 font-weight-bold ">Daftar Semua Lowongan</h1>
+                     <h1 class="m-0 font-weight-bold ">Data Karyawan</h1>
                  </div>
                  <div class="card-body text-center">
                      <div class="table-responsive">
@@ -37,8 +26,8 @@
                              <thead>
                                  <tr>
                                      <th>No</th>
-                                     <th scope="col">Action</th>
-                                     <th>Status</th>
+                                     <!-- <th scope="col">Action</th> -->
+                                     <!-- <th>Status</th> -->
                                      <th>Nama</th>
                                      <!-- <th>Provinsi</th> -->
                                      <!-- <th>Kota/Kabupaten</th> -->
@@ -49,22 +38,16 @@
                                      <th>No.Telp</th>
                                      <th>Pendidikan</th>
                                      <!-- <th>Status Perkawinan</th> -->
-                                     <th>Status Lamaran</th>
-                                     <th>CV</th>
+                                     <!-- <th>Status Lamaran</th>
+                                     <th>CV</th> -->
                                  </tr>
                              </thead>
                              <tbody>
                                  <?php $i = 1; ?>
-                                 <?php foreach ($lamaran_masuk as $m) : ?>
+                                 <?php foreach ($m_db as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-                                         <td>
-                                             <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary" data-toggle="modal" data-target="#diterima">Di Terima</a>
-                                             <a href="<?= base_url('admin/delete/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#delete">Di Tolak</a>
 
-
-                                         </td>
-                                         <td><?= $m['status']; ?></td>
                                          <td><?= $m['nama']; ?></td>
                                          <td><?= $m['jk']; ?></td>
                                          <td><?= $m['tgl_lahir']; ?></td>
@@ -102,7 +85,7 @@
  <!-- delete -->
  <?php
     $i = 1;
-    foreach ($lamaran_masuk as $m) : ?>
+    foreach ($m_db as $m) : ?>
      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
@@ -126,7 +109,7 @@
  <!-- diterima -->
  <?php
     $i = 1;
-    foreach ($lamaran_masuk as $m) : ?>
+    foreach ($m_db as $m) : ?>
      <div class="modal fade" id="diterima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">

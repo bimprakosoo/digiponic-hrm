@@ -30,43 +30,43 @@ class Admin extends RestController
     }
 
     //Mengirim atau menambah data kontak baru
-    function index_post()
+    function diterima_post()
     {
+        $id = $this->get('id');
 
-        // if ($id == '') {
-        //     // salah 
-        //     var_dump($id);
-        //     die;
-        // } else {
-        //     $this->db->where('id', $id);
-        //     $data = $this->db->get('data_lamaran')->result();
-        //     foreach ($data as $r) { // loop over results
-        //         $insert = $this->db->insert('tbl_karyawan', $r); // insert each row to another table
-        //     }
-        //     // $insert = $this->db->insert('tbl_karyawan', $data);
-        //     if ($insert) {
-        //         $this->response($data, 200);
-        //     } else {
-        //         $this->response(array('status' => 'fail', 502));
-        //     }
-        // }
+        if ($id == '') {
+            // salah 
+            var_dump($id);
+            die;
+        } else {
+            $this->db->where('id', $id);
+            $data = $this->db->get('data_lamaran', ['id' => $id])->result();
+            foreach ($data as $r) { // loop over results
+                $insert = $this->db->insert('tbl_karyawan', $r); // insert each row to another table
+            }
+            // $insert = $this->db->insert('tbl_karyawan', $data);
+            if ($insert) {
+                $this->response($data, 200);
+            } else {
+                $this->response(array('status' => 'fail', 502));
+            }
+        }
 
 
         // $id = $this->db->get('id');
-        // $this->db->where('id', $id);
+        // $this->db->get_where('id', $id);
 
-        $data = $this->db->get('data_lamaran')->result();
-        foreach ($data as $r) { // loop over results
-            $insert = $this->db->insert('tbl_karyawan', $r); // insert each row to another table
-        }
-        // $insert = $this->db->insert('tbl_karyawan', $data);
-        var_dump($insert);
-        die;
-        if ($insert) {
-            $this->response($data, 200);
-        } else {
-            $this->response(array('status' => 'fail', 502));
-        }
+        // $data = $this->db->get_where('data_lamaran')->result();
+        // foreach ($data as $r) { // loop over results
+        //     $insert = $this->db->insert('tbl_karyawan', $r); // insert each row to another table
+        // }
+        // // $insert = $this->db->insert('tbl_karyawan', $data);
+
+        // if ($insert) {
+        //     $this->response($data, 200);
+        // } else {
+        //     $this->response(array('status' => 'fail', 502));
+        // }
     }
 
     //Menghapus salah satu data kontak

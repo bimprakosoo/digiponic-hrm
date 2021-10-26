@@ -122,7 +122,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-blank.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin/data_karyawan">
                             <i class="align-middle" data-feather="book"></i>
                             <span class="align-middle">Karyawan</span>
                         </a>
