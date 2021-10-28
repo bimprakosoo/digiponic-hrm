@@ -74,7 +74,9 @@
             <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
           </div>
-          <a href="#" class="btn btn-primary">Lihat Departemen</a>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#departemenModal" class="btn btn-primary">
+            Lihat Selengkapnya
+          </button>
         </div>
       </div>
       <div class="col">
@@ -84,7 +86,9 @@
             <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
           </div>
-          <a href="#" class="btn btn-primary">Lihat Departemen</a>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#departemenModal" class="btn btn-primary">
+            Lihat Selengkapnya
+          </button>
         </div>
       </div>
       <div class="col">
@@ -94,13 +98,57 @@
             <h5 class="card-title ">Departemen Satuan Pengawasan Internal</h5>
             <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
           </div>
-          <a href="#" class="btn btn-primary">Lihat Departemen</a>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#departemenModal" class="btn btn-primary">
+            Lihat Selengkapnya
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto pb-5">
     <a href="<?php echo base_url(); ?>LandingPage/departemen" class="btn btn-primary">Selengkapnya</a>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="departemenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail Karyawan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="text-center">
+            <h4>Departemen Akutansi dan Keuangan</h4>
+          </div>
+          <div class="container text-center">
+            <h5>Fungsi</h5>
+            <p>Keuangan mengatur dana perusahaan agar secara efektif digunakan untuk memaksimalkan keuntungan usaha sekaligus menjaga
+              penggunaan dana tersebut secara efisien dan akuntansi bertugas mengumpulkan bukti-bukti segala jenis
+              transaksi yang telah terjadi atau akan terjadi (berdasarkan metode akrual), mencatat dan mengelompokkannya,
+              mudian membuat laporan keuangan perusahaan sesuai dengan prinsip-prinsip Akuntansi yang berlaku umum atau
+              Standar Akuntansi Keuangan yang berlaku.</p>
+          </div>
+          <div class="container text-start">
+            <h5 class="text-center">Peran</h5>
+            <p>
+              1. Akuntansi keuangan, berkaitan dengan mencatat semua transaksi, menggunakan sistem pembukuan entri ganda dan menyiapkan laporan keuangan. <br>
+              2. Sistem keuangan, menganalisis kebutuhan informasi keuangan organisasi dan meninjau sistem yang ada dan bertanggung jawab atas desain dan pemeliharaan sistem keuangan.<br>
+              3. Penganggaran, berkaitan dengan analisis dan kontrol informasi keuangan untuk membantu operasi sehari-hari perusahaan. <br>
+              4. Penggajian <br>
+              5. Treasuri dan perencanaan keuangan <br>
+              6. Perpajakan, menangani semua urusan perpajakan. <br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- End Departemen -->
@@ -117,7 +165,7 @@
 
   </div>
 
-  
+
   <div class="container-fluid px-5">
     <div class="row">
 
@@ -151,7 +199,9 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#karyawanModal" class="btn btn-primary">
+                Lihat Selengkapnya
+              </button>
             </div>
           </div>
         </div>
@@ -187,7 +237,9 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#karyawanModal" class="btn btn-primary">
+                Lihat Selengkapnya
+              </button>
             </div>
           </div>
         </div>
@@ -223,7 +275,9 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#karyawanModal" class="btn btn-primary">
+                Lihat Selengkapnya
+              </button>
             </div>
           </div>
         </div>
@@ -259,7 +313,9 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#karyawanModal" class="btn btn-primary">
+                Lihat Selengkapnya
+              </button>
             </div>
           </div>
         </div>
@@ -268,6 +324,102 @@
 
     <div class="d-grid gap-2 col-6 mx-auto pb-5">
       <a href="<?php echo base_url(); ?>LandingPage/karyawan" class="btn btn-primary">Selengkapnya</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="karyawanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail Karyawan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container px-4">
+            <div class="row gx-5">
+              <div class="col d-flex justify-content-center">
+                <div class="p-3 ">
+                  <img src="<?php echo base_url(); ?>assets/image/karyawan/karyawan-foto.svg" style="border-radius: 10px;" />
+
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="p-3 ">
+                  <div class="row justify-content-between">
+                    <div class="col-6 text-start">
+                      Nama
+                    </div>
+                    <div class="col-6 text-end">
+                      Sean zayn
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Departemen
+                    </div>
+                    <div class="col-6 text-end">
+                      Produksi
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Alamat
+                    </div>
+                    <div class="col-6 text-end">
+                      Jl. Surabaya, Ijen, Lowokwaru, Malang
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Tanggal Lahir
+                    </div>
+                    <div class="col-6 text-end">
+                      20-09-1997
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2 pb-3">
+                    <div class="col-6 text-start">
+                      Divisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Operation
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Golongan
+                    </div>
+                    <div class="col-6 text-end">
+                      A
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Posisi
+                    </div>
+                    <div class="col-6 text-end">
+                      Staff
+                    </div>
+                  </div>
+                  <div class="row justify-content-between pt-2">
+                    <div class="col-6 text-start">
+                      Penempatan
+                    </div>
+                    <div class="col-6 text-end">
+                      Cabang A
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -302,7 +454,7 @@
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
             <div class="d-grid gap-2">
-              <a href="#" class="btn btn-primary">
+              <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
                 Lihat Selengkapnya
               </a>
             </div>
@@ -325,7 +477,7 @@
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
             <div class="d-grid gap-2">
-              <a href="#" class="btn btn-primary">
+              <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
                 Lihat Selengkapnya
               </a>
             </div>
@@ -348,7 +500,7 @@
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
             <div class="d-grid gap-2">
-              <a href="#" class="btn btn-primary">
+              <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
                 Lihat Selengkapnya
               </a>
             </div>
