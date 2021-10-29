@@ -45,14 +45,20 @@
                                  </tr>
                              </thead>
                              <tbody>
-                                 <tr>
-                                     <th scope="row">1</th>
-                                     <td>
-                                         <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahModel">Update</a>
-                                     </td>
-                                     <td>a</td>
-                                     <td>s</td>
-                                 </tr>
+                                 <?php $i = 1; ?>
+                                 <?php foreach ($m_db as $m) : ?>
+                                     <tr>
+                                         <th scope="row"><?= $i ?></th>
+                                         <td>
+                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" class="btn btn-primary" >Update</a>
+
+                                         </td>
+                                         <td><?= $m['nama']; ?></td>
+                                         <td><?= $m['department']; ?></td>
+
+                                     </tr>
+                                     <?php $i++; ?>
+                                 <?php endforeach; ?>
                              </tbody>
                          </table>
                      </div>
@@ -87,37 +93,41 @@
                          <span aria-hidden="true">&times;</span>
                      </button>
                  </div>
-                 <!-- FORM [ karyawan ] -->
-                 <div class="modal-body">
-                     <div class="form-group">
-                         <h4>Karyawan</h4>
-                         <select name="jk" id="jk" class="form-control">
-                             <option value="">Jenis Kelamin Anda</option>
-                             <option value="Laki-laki">Laki-laki</option>
-                             <option value="Perempuan">Perempuan</option>
-                         </select>
+                 <form action="<?= base_url('admin/update_mutasi'); ?>" method="post">
+                     <!-- FORM [ karyawan ] -->
+                     <div class="modal-body">
+                         <div class="form-group">
+                             <h4>Karyawan</h4>
+                             <select name="id" id="id" class="form-control">
+                                 <option value="">Pilih Karyawan</option>
+                                 <?php foreach ($m_db as $s) : ?>
+                                     <option value="<?= $s['id']; ?>"><?= $s['nama']; ?></option>
+                                 <?php endforeach; ?>
+                             </select>
+                         </div>
                      </div>
-                 </div>
-                 <!-- FORM [ Departemen ] -->
-                 <div class="modal-body">
-                     <div class="form-group">
-                         <h4>Departemen</h4>
-                         <select name="jk" id="jk" class="form-control">
-                             <option value="">Jenis Kelamin Anda</option>
-                             <option value="Laki-laki">Laki-laki</option>
-                             <option value="Perempuan">Perempuan</option>
-                         </select>
+                     <!-- FORM [ Departemen ] -->
+                     <div class="modal-body">
+                         <div class="form-group">
+                             <h4>Departemen</h4>
+                             <select name="id_departemen" id="id_departemen" class="form-control">
+                                 <option value="">Pilih Departemen</option>
+                                 <?php foreach ($dept as $s) : ?>
+                                     <option value="<?= $s['id_departemen']; ?>"><?= $s['department']; ?></option>
+                                 <?php endforeach; ?>
+                             </select>
+                         </div>
                      </div>
-                 </div>
 
 
 
 
-                 <!-- ACTION -->
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="submit" class="btn btn-primary">Simpan</button>
-                 </div>
+                     <!-- ACTION -->
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <button type="submit" class="btn btn-primary">Simpan</button>
+                     </div>
+                 </form>
              </div>
          </div>
      </div>

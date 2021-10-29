@@ -17,9 +17,12 @@ class M_Admin extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_karyawan');
+        $this->db->join('department', 'tbl_karyawan.id_departemen = department.id_departemen');
+
         // $this->db->where('role_id', 1);
         return $this->db->get();
     }
+    
 
     // btn lamaran diterima
     public function diterima()
@@ -33,12 +36,5 @@ class M_Admin extends CI_Model
         // delete or change status
     }
 
-    // function insert_into()
-    // {
-
-    //     $q = $this->db->get('data_lamaran')->result(); // get first table
-    //     foreach ($q as $r) { // loop over results
-    //         $this->db->update('tbl_karyawan', $r, array('id' => $r->id)); // insert each row to another table
-    //     }
-    // }
+  
 }
