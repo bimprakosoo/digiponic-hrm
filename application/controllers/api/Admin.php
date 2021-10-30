@@ -69,7 +69,7 @@ class Admin extends RestController
         // }
     }
 
-    //Menghapus salah satu data kontak
+    // tolak pelamar
     function index_delete()
     {
         $id = $this->delete('id');

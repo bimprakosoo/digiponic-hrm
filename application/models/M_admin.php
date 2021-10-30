@@ -41,4 +41,19 @@ class M_Admin extends CI_Model
     //         $this->db->update('tbl_karyawan', $r, array('id' => $r->id)); // insert each row to another table
     //     }
     // }
+
+    public function terima_pelamar($data)
+    {
+        // pindah data karywaan yang diterima ke tbl_karyawan
+        $this->db->insert('tbl_karyawan', $data);
+    }
+
+    public function update_status_pelamar($update_status, $diterima_id)
+    {
+        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+
+        $this->db->set($update_status);
+        $this->db->where('id', $diterima_id);
+        $this->db->update('data_lamaran');
+    }
 }
