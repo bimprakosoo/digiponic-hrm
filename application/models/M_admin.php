@@ -17,9 +17,12 @@ class M_Admin extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_karyawan');
+        $this->db->join('department', 'tbl_karyawan.id_departemen = department.id_departemen');
+
         // $this->db->where('role_id', 1);
         return $this->db->get();
     }
+
 
     // btn lamaran diterima
     public function diterima()

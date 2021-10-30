@@ -26,7 +26,7 @@
                 </a>
 
                 <ul class="sidebar-nav">
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item ">
                         <a class="sidebar-link" href="admin.html">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Dashboard</span>
@@ -115,7 +115,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-invoice.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin/mutasi">
                             <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Mutasi</span>
                         </a>
