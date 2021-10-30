@@ -60,7 +60,7 @@
                                          <th scope="row"><?= $i ?></th>
                                          <td>
                                              <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary" data-toggle="modal" data-target="#diterima">Di Terima</a>
-                                             <a href="<?= base_url('admin/delete/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#delete">Di Tolak</a>
+                                             <a href="<?= base_url('admin/ditolak/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#ditolak">Di Tolak</a>
 
 
                                          </td>
@@ -103,7 +103,7 @@
  <?php
     $i = 1;
     foreach ($lamaran_masuk as $m) : ?>
-     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="ditolak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">
@@ -115,7 +115,7 @@
                  <div class="modal-body">apakah anda ingin menolak pelamar atas nama : <?= $m['nama']; ?> </div>
                  <div class="modal-footer">
                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                     <a class="btn btn-primary" href="<?= base_url('admin/delete/') . $m['id']; ?>">Di Tolak</a>
+                     <a class="btn btn-primary" href="<?= base_url('admin/ditolak/') . $m['id']; ?>">Di Tolak</a>
                  </div>
              </div>
          </div>
