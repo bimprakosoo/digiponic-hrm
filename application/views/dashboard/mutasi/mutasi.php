@@ -50,7 +50,7 @@
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>
-                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" class="btn btn-primary" >Update</a>
+                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" class="btn btn-primary">Update</a>
 
                                          </td>
                                          <td><?= $m['nama']; ?></td>

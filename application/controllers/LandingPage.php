@@ -3,6 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class LandingPage extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->API = "http://localhost/digiponic-hrm/api";
+        $this->load->library('session');
+        $this->load->library('curl');
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->model('M_admin');
+    }
 
     public function index()
     {
@@ -26,8 +36,10 @@ class LandingPage extends CI_Controller
     }
     public function lowongan()
     {
+        $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
+
         $this->load->view('template/header');
-        $this->load->view('landingpage/lowongan_view');
+        $this->load->view('landingpage/lowongan_view',$data);
         $this->load->view('template/footer');
     }
 

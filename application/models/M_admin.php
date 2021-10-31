@@ -3,6 +3,14 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_Admin extends CI_Model
 {
+    // get data lowongan
+    public function lowongan_ad()
+    {
+        $this->db->select('*');
+        $this->db->from('lowongan');
+        // $this->db->where('role_id', 1);
+        return $this->db->get();
+    }
     // get data lamaran masuk
     public function lamaran_masuk()
     {
