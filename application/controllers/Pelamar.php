@@ -51,8 +51,8 @@ class Pelamar extends CI_Controller
                 'up_lamaran' =>     $this->M_Pelamar->file_lamaran(),
                 'up_cv' =>          $this->M_Pelamar->file_cv()
             );
-            var_dump($data);
-            die;
+            // var_dump($data);
+            // die;
 
             $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {

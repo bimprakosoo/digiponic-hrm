@@ -3,6 +3,13 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_Pelamar extends CI_Model
 {
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->library('upload');
+    }
+
     public function index()
     {
         // get data
@@ -49,7 +56,7 @@ class M_Pelamar extends CI_Model
     function file_lamaran()
     {
         // upload file surat lamaran--------------------------------------------------------------------------------------
-        $config['upload_path'] = ".assets/dokumen/surat_lamaran";
+        $config['upload_path'] = "./assets/dokumen/surat_lamaran";
         $config['allowed_types'] = "pdf";
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
@@ -69,7 +76,7 @@ class M_Pelamar extends CI_Model
     function file_cv()
     {
         // uplaod file cv--------------------------------------------------------------------------------------
-        $config['upload_path'] = ".assets/dokumen/cv";
+        $config['upload_path'] = "./assets/dokumen/cv";
         $config['allowed_types'] = "pdf";
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
