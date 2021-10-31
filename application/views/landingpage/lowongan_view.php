@@ -11,28 +11,34 @@
     <div class="row">
 
       <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
-          <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-            <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
-          </div>
-          <div class="card-body pb-3">
-            <h5 class="card-title">Accounting staff</h5>
-            <p class="card-text">
-              Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
-              penyusunan laporan keuangan dan perpajakan.
-            </p>
-            <p>Lokasi - Malang</p>
-            <p>
-              <strong>Posted Date</strong> <br /> 11 September 2021
-            </p>
-            <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
-              Lihat Selengkapnya
-            </a>
-          </div>
-        </div>
-      </div>
+      <?php
+      foreach ($lowongan as $s) {
+      ?>
+        <div class="col-xl-3 col-md-6 mb-4">
 
+          <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+              <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
+            </div>
+            <div class="card-body pb-3">
+              <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>
+              <p class="card-text text-truncate">
+                <?php echo $s['ket']; ?>
+              </p>
+              <p>Lokasi - <?php echo $s['lokasi']; ?></p>
+              <p>
+                <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>
+              </p>
+              <a href="<?php echo base_url("admin/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
+                Lihat Selengkapnya
+              </a>
+            </div>
+          </div>
+
+        </div>
+      <?php
+      }
+      ?>
       <!-- Earnings (Annual) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
@@ -41,7 +47,7 @@
           </div>
           <div class="card-body pb-3">
             <h5 class="card-title">Accounting staff</h5>
-            <p class="card-text">
+            <p class="card-text text-truncate">
               Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
               penyusunan laporan keuangan dan perpajakan.
             </p>
@@ -49,7 +55,7 @@
             <p>
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
-            <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
+            <a href="<?php echo base_url(); ?>admin/lowongan_detail" class="btn btn-primary">
               Lihat Selengkapnya
             </a>
           </div>
@@ -64,7 +70,7 @@
           </div>
           <div class="card-body pb-3">
             <h5 class="card-title">Accounting staff</h5>
-            <p class="card-text">
+            <p class="card-text text-truncate">
               Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
               penyusunan laporan keuangan dan perpajakan.
             </p>
@@ -72,7 +78,7 @@
             <p>
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
-            <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
+            <a href="<?php echo base_url(); ?>admin/lowongan_detail" class="btn btn-primary">
               Lihat Selengkapnya
             </a>
           </div>
@@ -87,7 +93,7 @@
           </div>
           <div class="card-body pb-3">
             <h5 class="card-title">Accounting staff</h5>
-            <p class="card-text">
+            <p class="card-text text-truncate">
               Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
               penyusunan laporan keuangan dan perpajakan.
             </p>
@@ -95,7 +101,7 @@
             <p>
               <strong>Posted Date</strong> <br /> 11 September 2021
             </p>
-            <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
+            <a href="<?php echo base_url(); ?>admin/lowongan_detail" class="btn btn-primary">
               Lihat Selengkapnya
             </a>
           </div>

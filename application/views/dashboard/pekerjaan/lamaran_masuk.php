@@ -55,7 +55,7 @@
                              </thead>
                              <tbody>
                                  <?php $i = 1; ?>
-                                 <?php foreach ($lamaran_masuk as $m) : ?>
+                                 <?php foreach ($lamaran_masuk as $m) : ?> 
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>

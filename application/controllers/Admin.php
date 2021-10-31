@@ -26,11 +26,24 @@ class Admin extends CI_Controller
 
     public function lowongan_ad()
     {
+        $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
+
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/pekerjaan/lowongan_ad');
+        $this->load->view('dashboard/pekerjaan/lowongan_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
+    public function lowongan_detail($data_id)
+    {
+        // $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
+        $data['lowongan'] = $this->db->get_where('lowongan', ['id_lowongan' => $data_id])->result_array();
+
+        // $this->load->view('template/headerauth');
+        $this->load->view('template/header');
+        $this->load->view('lowongan/lowongan_detail_view',$data);
+        $this->load->view('template/footer');
+    }
+
 
     public function lamaran_masuk()
     {
@@ -53,6 +66,8 @@ class Admin extends CI_Controller
     public function mutasi()
     {
         $data['m_db'] = $this->M_admin->data_karyawan()->result_array();
+        $data['dept'] = $this->db->get('department')->result_array();
+
         // $data['status'] = $this->M_admin->data_departemen()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad');

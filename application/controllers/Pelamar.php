@@ -70,5 +70,6 @@ class Pelamar extends CI_Controller
     {
         // $this->load->view('template/headerauth');
         $this->load->view('lowongan/lowongan_lamaran_view');
+        
     }
 }

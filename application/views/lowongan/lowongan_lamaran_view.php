@@ -349,7 +349,7 @@
 
             </section>
             <!-- Akhir menu -->
-            <footer id=" footer">
+            <footer id="footer">
                 <div class="container-fluid">
                     <div class="copyright">
                         &copy;21
@@ -375,10 +375,12 @@
                         </div>
                     </div>
                 </div>
+            </footer>
             <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
             <script>
                 // Data Picker Initialization
                 $('.datepicker').datepicker();
             </script>
 </body>
+
 </html>
