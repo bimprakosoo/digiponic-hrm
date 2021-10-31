@@ -11,16 +11,16 @@
     </div>
 
     <div class="container overflow-hidden">
+    <?= form_open('admin/lowongan_detail' . $lowongan['id_lowongan']); ?>
 
         <div class="row gy-5">
-        <?= form_open('admin/lowongan_detail' . $lowongan['id_lowongan']); ?>
 
             <div class="col-5">
 
                 <div class="p-3 ">
                     <div class="card" style="width: 100%; ">
                         <div class="card-body">
-                            <h3 class="text-center pt-4 pb-2"> <strong><?php echo $lowongan['id_lowongan']; ?></strong></h3>
+                            <h3 class="text-center pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
                             <p class="text-start">
                                 <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
                             </p>
