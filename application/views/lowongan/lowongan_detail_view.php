@@ -11,7 +11,7 @@
     </div>
 
     <div class="container overflow-hidden">
-    <?= form_open('admin/lowongan_detail' . $lowongan['id_lowongan']); ?>
+    <?= form_open('landingpage/lowongan_detail' . $lowongan['id_lowongan']); ?>
 
         <div class="row gy-5">
 
@@ -19,7 +19,7 @@
 
                 <div class="p-3 ">
                     <div class="card" style="width: 100%; ">
-                        <div class="card-body">
+                        <div class="card-body text-start">
                             <h3 class="text-center pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
                             <p class="text-start">
                                 <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
@@ -65,7 +65,7 @@
             <div class="col-7">
                 <div class="p-3 ">
                     <div class="card" style="width: 100%;">
-                        <div class="card-body">
+                        <div class="card-body text-start">
                             <h3 class="text-center pt-4 pb-2"> <strong>Keterangan Pekerjaan</strong></h3>
                             <p class="card-text text-start">
                             <ul class="card-text text-start">
@@ -74,15 +74,11 @@
                             </p>
                             <h5 class="text-start">Syarat Pengalaman</h5>
                             <p class="card-text text-start">
-                            <ul class="card-text text-start">
                                 <?php echo $lowongan['syarat_pengalaman']; ?>
-                            </ul>
                             </p>
                             <h5 class="text-start">Tunjangan</h5>
                             <p class="card-text text-start">
-                            <ul class="card-text text-start">
                                 <?php echo $lowongan['tunjangan']; ?>
-                            </ul>
                             </p>
                         </div>
                     </div>
