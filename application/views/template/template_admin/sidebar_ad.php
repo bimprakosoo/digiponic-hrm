@@ -10,10 +10,29 @@
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo.svg" />
-
+    
     <title>Dashboard</title>
 
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $.datepicker.setDefaults({
+            showOn: "button",
+            buttonImage: "<?php echo base_url(); ?>assets/image/datepicker_icon.png",
+            buttonText: "Date Picker",
+            buttonImageOnly: true
+        });
+        $(function() {
+            $("#post_date").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
+
 </head>
 
 <body>
