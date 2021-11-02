@@ -21,6 +21,7 @@ class LandingPage extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    // Page Deksripsi Tentang Perusahaan
     public function Tentang()
     {
         $this->load->view('template/header');
@@ -34,12 +35,14 @@ class LandingPage extends CI_Controller
         $this->load->view('landingpage/departemen_view');
         $this->load->view('template/footer');
     }
+
+    // Page Lowongan Kerja DiPerusahaan
     public function lowongan()
     {
         $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
 
         $this->load->view('template/header');
-        $this->load->view('landingpage/lowongan_view',$data);
+        $this->load->view('landingpage/lowongan_view', $data);
         $this->load->view('template/footer');
     }
 
