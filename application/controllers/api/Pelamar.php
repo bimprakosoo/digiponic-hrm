@@ -45,26 +45,11 @@ class Pelamar extends RestController
             'no_telp'              => $this->post('no_telp'),
             'status_perkawinan'    => $this->post('status_perkawinan'),
             'pendidikan_terakhir'  => $this->post('pendidikan_terakhir'),
-            // 'surat_lamaran'            => $this->M_Pelamar->file_lamaran(),     // up_lamaran
-            // 'cv'                  => $this->M_Pelamar->file_cv()          // up_cv
+            'surat_lamaran'            => $this->M_Pelamar->file_lamaran(),     // up_lamaran
+            'cv'                  => $this->M_Pelamar->file_cv()          // up_cv
         );
 
         $insert = $this->db->insert('data_lamaran', $data);
-        // $simpan_data = $this->M_Pelamar->insertData(
-        //     // $id_m,
-        //     $nama_m,
-        //     $provinsi_m,
-        //     $kota_kabupaten_m,
-        //     $kecamatan_m,
-        //     $alamat_lengkap_m,
-        //     $jk_m,
-        //     $tgl_lahir_m,
-        //     $no_telp_m,
-        //     $status_perkawinan_m,
-        //     $pendidikan_terakhir_m,
-        //     $surat_lamaran_m,
-        //     $cv_m
-        // );
         if ($insert) {
             $this->response($data, 200);
         } else {
@@ -81,7 +66,6 @@ class Pelamar extends RestController
         //     $response['hasil'] = false;
         // }
 
-        // echo json_encode($response);
     }
 
     // next
