@@ -8,6 +8,7 @@ class M_Admin extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('lowongan');
+
         // $this->db->where('role_id', 1);
         return $this->db->get();
     }

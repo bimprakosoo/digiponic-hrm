@@ -59,8 +59,8 @@
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>
-                                             <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary" data-toggle="modal" data-target="#diterima">Di Terima</a>
-                                             <a href="<?= base_url('admin/ditolak/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#ditolak">Di Tolak</a>
+                                             <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#diterima">Diterima</a> 
+                                             <a href="<?= base_url('admin/ditolak/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#ditolak">Ditolak</a>
 
 
                                          </td>

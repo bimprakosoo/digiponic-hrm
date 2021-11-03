@@ -245,7 +245,7 @@
                                                     <div class="input-group mb-3 date">
                                                         <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
                                                         <input type="text" class="form-control" id="txtFromDate" name="tgl_lahir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                                        <span class="input-group-text" id="basic-addon1"><img src="<?php echo base_url(); ?>assets/calendar-event-fill.svg" alt=""></span>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
