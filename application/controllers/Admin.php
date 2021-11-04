@@ -95,6 +95,9 @@ class Admin extends CI_Controller
     public function lamaran_masuk()
     {
         $data['lamaran_masuk'] = $this->M_admin->lamaran_masuk()->result_array();
+        // var_dump($data);
+        // die;
+        // $data['pilih'] = $this->M_admin->get_data_lamaran()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
@@ -184,10 +187,10 @@ class Admin extends CI_Controller
     //     }
     // }
 
-    public function diterima($diterima_id)
+    public function diterima($dapat_di)
     {
         // pindah data karywaan yang diterima ke tbl_karyawan
-        $data = $this->db->get_where('data_lamaran', ['id' => $diterima_id])->result();
+        $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
         foreach ($data as $r) {
             $data = [
                 'id'                    =>  $r->id,
@@ -208,23 +211,23 @@ class Admin extends CI_Controller
         }
 
         // update status dari data pelamaran [1 => diterima | 2 => ditolak]
-        $data = $this->db->get_where('data_lamaran', ['id' => $diterima_id])->row_array();
+        $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
         $update_status = [
             'status' => 1
         ];
-        $this->M_admin->update_status_pelamar($update_status, $diterima_id);
+        $this->M_admin->update_status_pelamar($update_status, $dapat_di);
 
         redirect('admin/lamaran_masuk');
     }
 
     // 
-    public function ditolak($ditolak_id)
+    public function ditolak($dapat_di)
     {
-        $data = $this->db->get_where('data_lamaran', ['id' => $ditolak_id])->row_array();
+        $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
         $update_status = [
             'status' => 2
         ];
-        $this->M_admin->update_status_pelamar($update_status, $ditolak_id);
+        $this->M_admin->update_status_pelamar($update_status, $dapat_di);
 
         redirect('admin/lamaran_masuk');
     }

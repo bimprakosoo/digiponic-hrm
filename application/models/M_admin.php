@@ -32,17 +32,12 @@ class M_Admin extends CI_Model
         return $this->db->get();
     }
 
-
-    // btn lamaran diterima
-    public function diterima()
+    public function get_data_lamaran()
     {
-        // get or post
-    }
+        $this->db->select('*');
+        $this->db->from('data_lamaran');
 
-    // btn lamaran di tolak
-    public function ditolak()
-    {
-        // delete or change status
+        return $this->db->get();
     }
 
     // function insert_into()

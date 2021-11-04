@@ -315,7 +315,7 @@
                                             <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Surat Lamaran</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="file" id="file_lamaran" name="up_lamaran">
+                                                    <input class="form-control" type="file" id="up_lamaran" name="up_lamaran">
                                                 </div>
                                             </div>
                                             <!--  -->
@@ -324,7 +324,7 @@
                                             <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Uploda CV</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="file" id="file_cv" name="up_cv">
+                                                    <input class="form-control" type="file" id="up_cv" name="up_cv">
                                                 </div>
                                             </div>
                                             <!--  -->

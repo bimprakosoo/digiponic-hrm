@@ -23,40 +23,44 @@ class Pelamar extends CI_Controller
 
     public function index()
     {
-
-        // $this->load->view('template/headerauth');
-        // $this->load->view('pelamar/admin');
+        $this->load->view('template/header');
         $this->load->view('landingpage/landingpage_view');
+        $this->load->view('template/footer');
     }
 
     // insert data pelamar
     function create()
     {
-        $this->form_validation->set_rules('nama', 'nama', 'required');                // 2
+        // $this->form_validation->set_rules('nama', 'nama', 'required');                // 2
 
         if (isset($_POST['submit'])) {
-
+            // $ch = curl_init();
             $data = array(
-                // 'id'       =>  $this->input->post('id'),
-                'nama'      =>  $this->input->post('nama'),
-                'provinsi' =>  $this->input->post('provinsi'),
-                'kota_kabupaten' =>  $this->input->post('kota_kabupaten'),
-                'kecamatan' =>  $this->input->post('kecamatan'),
-                'alamat_lengkap' =>  $this->input->post('alamat_lengkap'),
-                'jk' =>  $this->input->post('jk'),
-                'tgl_lahir' =>  $this->input->post('tgl_lahir'),
-                'no_telp' =>  $this->input->post('no_telp'),
-                'status_perkawinan' =>  $this->input->post('status_perkawinan'),
-                'pendidikan_terakhir' =>  $this->input->post('pendidikan_terakhir'),
-                'up_lamaran' =>     $this->M_Pelamar->file_lamaran(),
-                'up_cv' =>          $this->M_Pelamar->file_cv()
+                // 'id'=>  $this->input->post('id'),
+                'nama'                  =>  $this->input->post('nama'),
+                'provinsi'              =>  $this->input->post('provinsi'),
+                'kota_kabupaten'        =>  $this->input->post('kota_kabupaten'),
+                'kecamatan'             =>  $this->input->post('kecamatan'),
+                'alamat_lengkap'        =>  $this->input->post('alamat_lengkap'),
+                'jk'                    =>  $this->input->post('jk'),
+                'tgl_lahir'             =>  $this->input->post('tgl_lahir'),
+                'no_telp'               =>  $this->input->post('no_telp'),
+                'status_perkawinan'     =>  $this->input->post('status_perkawinan'),
+                'pendidikan_terakhir'   =>  $this->input->post('pendidikan_terakhir'),
+                'surat_lamaran'         => $this->M_Pelamar->file_lamaran(),
+                'cv'                    => $this->M_Pelamar->file_cv()
             );
-            // var_dump($data);
-            // die;
+
 
             $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
+            // echo curl_getinfo($ch) . '<br/>';
+            // echo curl_errno($ch) . '<br/>';
+            // echo curl_error($ch) . '<br/>';
+            // va`r_dump($insert);
+            // die;`
             if ($insert) {
                 $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
+                // redirect('landingPage/lowongan');
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
             }
@@ -70,6 +74,5 @@ class Pelamar extends CI_Controller
     {
         // $this->load->view('template/headerauth');
         $this->load->view('lowongan/lowongan_lamaran_view');
-        
     }
 }
