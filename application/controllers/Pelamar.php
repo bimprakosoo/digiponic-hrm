@@ -8,7 +8,7 @@ class Pelamar extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->API = "http://localhost/digiponic-hrm/api";
+        $this->API = site_url() . 'api';
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
@@ -47,12 +47,13 @@ class Pelamar extends CI_Controller
                 'no_telp'               =>  $this->input->post('no_telp'),
                 'status_perkawinan'     =>  $this->input->post('status_perkawinan'),
                 'pendidikan_terakhir'   =>  $this->input->post('pendidikan_terakhir'),
-                'surat_lamaran'         => $this->M_Pelamar->file_lamaran(),
-                'cv'                    => $this->M_Pelamar->file_cv()
+                'surat_lamaran'         =>  $this->M_Pelamar->file_lamaran(),
+                'cv'                    =>  $this->M_Pelamar->file_cv()
             );
 
-
-            $insert =  $this->curl->simple_post($this->API . '/pelamar', $data, array(CURLOPT_BUFFERSIZE => 10));
+            // $url = site_url() . 'api/pelamar/create';
+            // $res = $this->curl->post_multi($url, $data);
+            $insert =  $this->curl->simple_post($this->API . '/pelamar/create', $data, array(CURLOPT_BUFFERSIZE => 10));
             // echo curl_getinfo($ch) . '<br/>';
             // echo curl_errno($ch) . '<br/>';
             // echo curl_error($ch) . '<br/>';
@@ -65,6 +66,7 @@ class Pelamar extends CI_Controller
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
             }
             redirect('pelamar');
+            // var_dump($insert);
         } else {
             $this->load->view('lowongan/lowongan_lamaran_view');
         }
