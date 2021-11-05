@@ -55,12 +55,12 @@
                              </thead>
                              <tbody>
                                  <?php $i = 1; ?>
-                                 <?php foreach ($lamaran_masuk as $m) : ?> 
+                                 <?php foreach ($lamaran_masuk as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>
-                                             <a href="<?= base_url('admin/terima/') . $m['id']; ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#diterima">Diterima</a> 
-                                             <a href="<?= base_url('admin/ditolak/') . $m['id']; ?>" class="btn btn-danger" data-toggle="modal" data-target="#ditolak">Ditolak</a>
+                                             <button class="btn btn-primary" data-toggle="modal" data-target="#diterima-<?= $i; ?>">Di Terima</button>
+                                             <button class="btn btn-danger" data-toggle="modal" data-target="#ditolak-<?= $i; ?>">Di Tolak</button>
 
 
                                          </td>
@@ -103,7 +103,7 @@
  <?php
     $i = 1;
     foreach ($lamaran_masuk as $m) : ?>
-     <div class="modal fade" id="ditolak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="ditolak-<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">
@@ -127,7 +127,7 @@
  <?php
     $i = 1;
     foreach ($lamaran_masuk as $m) : ?>
-     <div class="modal fade" id="diterima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="diterima-<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">

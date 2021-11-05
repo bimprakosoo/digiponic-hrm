@@ -21,63 +21,51 @@ class Pelamar extends RestController
     {
         $id = $this->get('id');
         if ($id == '') {
-            $kontak = $this->db->get('tbl_karyawan')->result();
+            $kontak = $this->db->get('data_lamaran')->result();
         } else {
             $this->db->where('id', $id);
-            $kontak = $this->db->get('tbl_karyawan')->result();
+            $kontak = $this->db->get('data_lamaran')->result();
         }
         $this->response($kontak, 200);
     }
 
     // add data pelamar
-    function index_post()
+    function create_post()
     {
-        $response = array();
-
-        // $id_m                   = $this->input->post('id');
-        $nama_m                 = $this->input->post('nama');
-        $provinsi_m             = $this->input->post('provinsi');
-        $kota_kabupaten_m       = $this->input->post('kota_kabupaten');
-        $kecamatan_m            = $this->input->post('kecamatan');
-        $alamat_lengkap_m       = $this->input->post('alamat_lengkap');
-        $jk_m                   = $this->input->post('jk');
-        $tgl_lahir_m            = $this->input->post('tgl_lahir');
-        $no_telp_m              = $this->input->post('no_telp');
-        $status_perkawinan_m    = $this->input->post('status_perkawinan');
-        $pendidikan_terakhir_m  = $this->input->post('pendidikan_terakhir');
-        // $surat_lamaran_m        = $file_lamaran;    // up_lamaran
-        // $cv_m                   = $file_cv;         // up_cv
-        $surat_lamaran_m        = $this->M_Pelamar->file_lamaran();     // up_lamaran
-        $cv_m                   = $this->M_Pelamar->file_cv();          // up_cv
-
-        $simpan_data = $this->M_Pelamar->insertData(
-            // $id_m,
-            $nama_m,
-            $provinsi_m,
-            $kota_kabupaten_m,
-            $kecamatan_m,
-            $alamat_lengkap_m,
-            $jk_m,
-            $tgl_lahir_m,
-            $no_telp_m,
-            $status_perkawinan_m,
-            $pendidikan_terakhir_m,
-            $surat_lamaran_m,
-            $cv_m
+        // $response = array();
+        $data = array(
+            // $id_m                   = $this->post('id');
+            'nama'                 => $this->post('nama'),
+            'provinsi'             => $this->post('provinsi'),
+            'kota_kabupaten'       => $this->post('kota_kabupaten'),
+            'kecamatan'            => $this->post('kecamatan'),
+            'alamat_lengkap'       => $this->post('alamat_lengkap'),
+            'jk'                   => $this->post('jk'),
+            'tgl_lahir'            => $this->post('tgl_lahir'),
+            'no_telp'              => $this->post('no_telp'),
+            'status_perkawinan'    => $this->post('status_perkawinan'),
+            'pendidikan_terakhir'  => $this->post('pendidikan_terakhir'),
+            'surat_lamaran'        => $this->post('surat_lamaran'),     // up_lamaran
+            'cv'                   => $this->post('cv')          // up_cv
         );
 
-
-        if ($simpan_data) {
-            // berhasil
-            $response['pesan'] = 'berhasil';
-            $response['hasil'] = true;
+        $insert = $this->db->insert('data_lamaran', $data);
+        if ($insert) {
+            $this->response($data, 200);
         } else {
-            // gagal
-            $response['pesan'] = 'gagal';
-            $response['hasil'] = false;
+            $this->response(array('status' => 'fail', 502));
         }
 
-        echo json_encode($response);
+        // if ($simpan_data) {
+        //     // berhasil
+        //     $response['pesan'] = 'berhasil';
+        //     $response['hasil'] = true;
+        // } else {
+        //     // gagal
+        //     $response['pesan'] = 'gagal';
+        //     $response['hasil'] = false;
+        // }
+
     }
 
     // next
