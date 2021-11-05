@@ -30,24 +30,28 @@
                                  <input type="text" class="form-control" id="nama_lowongan" name="nama_lowongan">
                              </div>
                          </div>
+                         <!-- Lokasi -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Lokasi</label>
                                  <input type="text" class="form-control" id="lokasi" name="lokasi">
                              </div>
                          </div>
+                         <!-- Perusahaan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Perusahaan</label>
                                  <input type="text" class="form-control" id="perusahaan" name="perusahaan">
                              </div>
                          </div>
+                         <!-- Industri -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Industri</label>
                                  <input type="text" class="form-control" id="industri" name="industri">
                              </div>
                          </div>
+                         <!-- Tipe Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Tipe Pekerjaan</label>
@@ -59,6 +63,7 @@
                                  <!-- <input type="text" class="form-control" id="tipe_pekerjaan" name="tipe_pekerjaan"> -->
                              </div>
                          </div>
+                         <!-- Pengalaman Kerja -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Pengalaman Kerja</label>
@@ -71,18 +76,21 @@
                                  <!-- <input type="text" class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"> -->
                              </div>
                          </div>
+                         <!-- Insentif -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Insentif</label>
                                  <input type="text" class="form-control" id="insentif_lembur" name="insentif_lembur">
                              </div>
                          </div>
+                         <!-- Level Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Level Pekerjaan</label>
                                  <input type="text" class="form-control" id="level_pekerjaan" name="level_pekerjaan">
                              </div>
                          </div>
+                         <!-- Pendidikan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Pendidikan</label>
@@ -96,20 +104,23 @@
                                  <!-- <input type="text" class="form-control" id="pendidikan" name="pendidikan"> -->
                              </div>
                          </div>
+                         <!-- Waktu Bekerja -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Waktu Bekerja</label>
                                  <textarea class="ckeditor text-start" id="waktu_bekerja" name="waktu_bekerja"></textarea>
                              </div>
                          </div>
+                         <!-- Gaji -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Gaji</label>
                                  <input type="text" class="form-control" id="gaji" name="gaji">
                              </div>
                          </div>
+                         <!-- Post Date -->
                          <div class="modal-body">
-                             <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Tanggal Lahir</label>
+                             <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Post Date</label>
                              <div class="col-sm-8">
                                  <div class="input-group mb-3 date">
                                      <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
@@ -124,22 +135,33 @@
                                  <input type="text" class="form-control" id="post_date" name="post_date">
                              </div>
                          </div> -->
+
+                         <!-- Keterangan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Keterangan</label>
                                  <textarea class="ckeditor" id="ket" name="ket"></textarea>
                              </div>
                          </div>
+                         <!-- Syarat PEngalaman -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Syarat Pengalaman</label>
                                  <textarea class="ckeditor" id="syarat_pengalaman" name="syarat_pengalaman"></textarea>
                              </div>
                          </div>
+                         <!-- Tunjangan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Tunjangan</label>
                                  <textarea class="ckeditor" id="tunjangan" name="tunjangan"></textarea>
+                             </div>
+                         </div>
+                         <!-- Upload Surat Lamaran -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label>
+                                     <input class="form-control" type="file" id="file_image" name="image">
                              </div>
                          </div>
                      </div>

@@ -16,9 +16,9 @@
       ?>
         <div class="col-xl-3 col-md-6 mb-4">
 
-          <div class="card border-left-primary shadow h-100 pb-2" style="border-radius: 10px;">
+          <div class="card border-left-primary text-capitalize  shadow h-100 pb-2" style="border-radius: 10px;">
             <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-              <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
+              <img style="display: block; width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/').$s['image'];?>" class="card-img-top" />
             </div>
             <div class="card-body  pb-3">
               <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>

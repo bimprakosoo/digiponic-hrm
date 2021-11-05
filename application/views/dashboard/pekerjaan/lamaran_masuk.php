@@ -11,7 +11,7 @@
  <main class="content">
 
      <div class="container-fluid p-0 ">
-         <div class="card ">
+         <!-- <div class="card ">
              <div class="row my-2 my-xl-3 m-2">
                  <div class="col-auto d-none d-sm-block ">
                      <h3><strong>Tambah Data Lowongan</strong></h3>
@@ -21,7 +21,7 @@
                      <button class="btn btn-primary">Tambah Data</button>
                  </div>
              </div>
-         </div>
+         </div> -->
 
          <!-- Daftar Semua Lowongan -->
          <div class="container-fluid p-0">
@@ -32,7 +32,7 @@
                      <h1 class="m-0 font-weight-bold ">Daftar Semua Lowongan</h1>
                  </div>
                  <div class="card-body text-center">
-                     <div class="table-responsive">
+                     <div class="table-responsive" width="100%">
                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                              <thead>
                                  <tr>

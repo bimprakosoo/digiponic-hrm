@@ -12,12 +12,18 @@ class LandingPage extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->model('M_admin');
+        $this->load->model('M_landingpage');
     }
 
     public function index()
     {
+        $data['start'] = $this->uri->segment(3);
+
+        $data['lowongan'] = $this->M_landingpage->lowongan_lan(3, $data['start']);
+
+
         $this->load->view('template/header');
-        $this->load->view('landingpage/landingpage_view');
+        $this->load->view('landingpage/landingpage_view', $data);
         $this->load->view('template/footer');
     }
 
@@ -36,18 +42,19 @@ class LandingPage extends CI_Controller
     }
     public function lowongan()
     {
-        $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
+
+        $data['lowongan'] = $this->M_landingpage->lowongan();
 
 
         $this->load->view('template/header');
-        $this->load->view('landingpage/lowongan_view',$data);
+        $this->load->view('landingpage/lowongan_view', $data);
         $this->load->view('template/footer');
     }
     public function lowongan_detail($data_id)
     {
         // $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
         $data['lowongan'] = $this->db->get_where('lowongan', ['id_lowongan' => $data_id])->row_array();
-        
+
         // var_dump($data);
         // die;
         // $this->load->view('template/headerauth');
