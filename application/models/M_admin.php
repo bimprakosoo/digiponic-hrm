@@ -3,15 +3,27 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_Admin extends CI_Model
 {
-    // get data lowongan
-    public function lowongan_ad()
+    function __construct()
     {
-        $this->db->select('*');
-        $this->db->from('lowongan');
+        parent::__construct();
+        $this->load->library('upload');
+    }
+
+    // get data lowongan
+    public function lowongan_ad($limit, $start)
+    {
+        // $this->db->select('*');
+        // $this->db->from('lowongan');
 
         // $this->db->where('role_id', 1);
-        return $this->db->get();
+        return $this->db->get('lowongan', $limit, $start)->result_array();
     }
+    // get jumlah data lowongan
+    public function countAllLowongan()
+    {
+        return $this->db->get('lowongan')->num_rows();
+    }
+    
     // get data lamaran masuk
     public function lamaran_masuk()
     {
@@ -62,5 +74,25 @@ class M_Admin extends CI_Model
         $this->db->set($update_status);
         $this->db->where('id', $diterima_id);
         $this->db->update('data_lamaran');
+    }
+
+    function file_image()
+    {
+        // upload file surat lamaran--------------------------------------------------------------------------------------
+        $config['upload_path'] = "./assets/image/lowongan/";
+        $config['allowed_types'] = "jpg|jpeg|png|svg";
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image')) {
+            // salah
+            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+            $response['hasil'] = false;
+            echo json_encode($response);
+        } else {
+            $data_upload    = $this->upload->data();
+            $file_image      = $data_upload['file_name'];
+        }
+        return $file_image;
     }
 }

@@ -438,7 +438,35 @@
 
   <div class="container px-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
+      <?php
+      foreach ($lowongan as $s) {
+      ?>
+        <div class="col">
+          <div class="card text-capitalize " style="border-radius: 10px; height:500px;">
+            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+              <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
+            </div>
+            <div class="card-body text-center pt-3 w-100">
+              <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>
+              <div class="card-text text-truncate">
+                <?php echo $s['ket']; ?>
+              </div>
+              <p>Lokasi - <?php echo $s['lokasi']; ?></p>
+              <p>
+                <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>
+              </p>
+              <div class="d-grid gap-2">
+                <a href="<?php echo base_url("landingpage/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
+                  Lihat Selengkapnya
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
+      <!-- <div class="col">
         <div class="card " style="border-radius: 10px;">
           <div class="d-flex justify-content-center pt-4" style="width: 100%;">
             <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
@@ -483,34 +511,11 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card " style="border-radius: 10px;">
-          <div class="d-flex justify-content-center pt-4" style="width: 100%;">
-            <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url(); ?>assets/image/lowongan/icon-analityc.svg" class="card-img-top" />
-          </div>
-          <div class="card-body text-start pt-5">
-            <h5 class="card-title text-center">Accounting staff</h5>
-            <p class="card-text">
-              Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
-              penyusunan laporan keuangan dan perpajakan.
-            </p>
-            <p>Lokasi - Malang</p>
-            <p>
-              <strong>Posted Date</strong> <br /> 11 September 2021
-            </p>
-            <div class="d-grid gap-2">
-              <a href="<?php echo base_url(); ?>karyawan/lowongan_detail" class="btn btn-primary">
-                Lihat Selengkapnya
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="selengkapnya d-grid gap-2 col-6 mx-auto py-5">
-    <a href="<?php echo base_url(); ?>LandingPage/artikel" class="btn btn-primary">Selengkapnya</a>
+    <a href="<?php echo base_url(); ?>LandingPage/lowongan" class="btn btn-primary">Selengkapnya</a>
   </div>
 
 </section>
