@@ -32,8 +32,8 @@
                      <h1 class="m-0 font-weight-bold ">Daftar Semua Lowongan</h1>
                  </div>
                  <div class="card-body text-center">
-                     <div class="table-responsive" width="100%">
-                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                     <div class="table-responsive" >
+                         <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                              <thead>
                                  <tr>
                                      <th>No</th>

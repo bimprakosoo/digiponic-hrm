@@ -35,7 +35,7 @@
 
                  <div class="card-body text-center">
                      <div class="table-responsive">
-                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                         <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                              <thead>
                                  <tr>
                                      <th>No</th>
@@ -50,7 +50,7 @@
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
                                          <td>
-                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" class="btn btn-primary">Update</a>
+                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" ><i class="align-middle mr-2" data-feather="edit"></i></a>
 
                                          </td>
                                          <td><?= $m['nama']; ?></td>

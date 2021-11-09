@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -61,8 +61,8 @@
                                     <tr>
                                         <th scope="row"><?= ++$start; ?></th>
                                         <td>
-                                            <a href="" class="btn btn-primary">Edit</a>
-                                            <a href="" class="btn btn-danger">Hapus</a>
+                                            <a href="" class="btn btn-primary" style="width: 100px;">Edit</a>
+                                            <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
                                         </td>
                                         <td><?= $m['nama_lowongan']; ?></td>
                                         <td><?= $m['lokasi']; ?></td>

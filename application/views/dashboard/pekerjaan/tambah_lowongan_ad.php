@@ -160,8 +160,8 @@
                          <!-- Upload Surat Lamaran -->
                          <div class="modal-body">
                              <div class="form-group">
-                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label>
-                                     <input class="form-control" type="file" id="file_image" name="image">
+                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label><br>
+                                     <input class="pt-1" type="file" id="file_image" name="image">
                              </div>
                          </div>
                      </div>
