@@ -20,7 +20,7 @@
     <script>
         $.datepicker.setDefaults({
             showOn: "button",
-            buttonImage: "<?php echo base_url(); ?>assets/image/datepicker_icon.png",
+            buttonImage: "<?php echo base_url(); ?>assets/calendar.svg",
             buttonText: "Date Picker",
             buttonImageOnly: true
         });

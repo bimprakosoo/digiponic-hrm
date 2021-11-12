@@ -29,9 +29,19 @@
 </div>
 
 <script src="<?php echo base_url(); ?>assets/admin2/static/js/app.js "></script>
+<script src="<?php echo base_url(); ?>assets/admin2/static/js/todo.js"></script>
 <script>
     // Data Picker Initialization
     $('.datepicker').datepicker();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span class=\"fas fa-chevron-left\" title=\"Previous month\"></span>",
+            nextArrow: "<span class=\"fas fa-chevron-right\" title=\"Next month\"></span>",
+        });
+    });
 </script>
 </body>
 

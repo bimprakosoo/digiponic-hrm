@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -53,16 +53,16 @@
                                     <th>Keterangan Pekerjaan</th>
                                     <th>Syarat Pengalaman</th>
                                     <th>Tunjangan</th>
+                                    <th>Image</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 1; ?>
                                 <?php foreach ($lowongan as $m) : ?>
                                     <tr>
-                                        <th scope="row"><?= $i ?></th>
+                                        <th scope="row"><?= ++$start; ?></th>
                                         <td>
-                                            <a href="" class="btn btn-primary">Edit</a>
-                                            <a href="" class="btn btn-danger">Hapus</a>
+                                            <a href="" class="btn btn-primary" style="width: 100px;">Edit</a>
+                                            <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
                                         </td>
                                         <td><?= $m['nama_lowongan']; ?></td>
                                         <td><?= $m['lokasi']; ?></td>
@@ -79,26 +79,14 @@
                                         <td><?= $m['ket']; ?></td>
                                         <td><?= $m['syarat_pengalaman']; ?></td>
                                         <td><?= $m['tunjangan']; ?></td>
+                                        <td><?= $m['image']; ?></td>
                                     </tr>
-                                    <?php $i++; ?>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <nav aria-label="Page navigation example" class="m-3">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                <?= $this->pagination->create_links();?>
             </div>
         </div>
     </div>

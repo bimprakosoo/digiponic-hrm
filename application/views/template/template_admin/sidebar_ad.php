@@ -10,11 +10,12 @@
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo.svg" />
-    
+
     <title>Dashboard</title>
 
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/admin2/static/css/custom.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -22,7 +23,7 @@
     <script>
         $.datepicker.setDefaults({
             showOn: "button",
-            buttonImage: "<?php echo base_url(); ?>assets/image/datepicker_icon.png",
+            buttonImage: "<?php echo base_url(); ?>assets/calendar.svg",
             buttonText: "Date Picker",
             buttonImageOnly: true
         });
@@ -46,7 +47,7 @@
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-item ">
-                        <a class="sidebar-link" href="admin.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/dashboard/dashboard/">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
@@ -77,25 +78,25 @@
                         </a>
                         <ul id="or" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">Perusahaan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/perusahaan/">Perusahaan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">Departemen</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/departemen/">Departemen</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-cards.html">Divisi</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/divisi/">Divisi</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-general.html">Jabatan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/jabatan/">Jabatan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-grid.html">Golongan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/golongan/">Golongan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-modals.html">Posisi</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/posisi/">Posisi</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-typography.html">Penempatan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/penempatan/">Penempatan</a>
                             </li>
                         </ul>
                     </li>
@@ -107,10 +108,10 @@
                         </a>
                         <ul id="kh" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">Absensi</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/kehadiran/absensi/">Absensi</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">Surat Ijin / Sakit</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/kehadiran/sakit/">Surat Ijin / Sakit</a>
                             </li>
                         </ul>
                     </li>
@@ -122,13 +123,13 @@
                         </a>
                         <ul id="cuti" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">Form Cuti</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/permohonan_cuti/">Permohonan Cuti</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">Jumlah Cuti</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/data_cuti_karyawan/">Data Cuti Karyawan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-cards.html">Data Harian</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/pengunduran_diri/">Pengunduruan Diri</a>
                             </li>
                         </ul>
                     </li>
@@ -154,45 +155,37 @@
                         </a>
                         <ul id="penilaian" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">KPI Departemen</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/penilaian_pekerja/kpi_departemen/">KPI Departemen</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">KPI Karyawan</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/penilaian_pekerja/kpi_karyawan/">KPI Karyawan</a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-invoice.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/top_kerja/top_kerja/">
                             <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Top Kerja</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
-                        <a data-target="#acara" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/acara_rapat/acara_rapat/">
+                            <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Acara dan Rapat</span>
                         </a>
-                        <ul id="acara" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-alerts.html">Acara</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="ui-buttons.html">Rapat</a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-invoice.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/artikel/artikel/">
                             <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Artikel</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-invoice.html">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/hak_istimewa/hak_istimewa/">
                             <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Hak Istimewa</span>
                         </a>

@@ -1,17 +1,17 @@
 <!-- Awal menu -->
 <section class="container-fluid" id="lamaran">
+    <?= form_open('landingpage/lowongan_detail' . $lowongan['id_lowongan']); ?>
 
     <div class="container overflow-hidden pt-3 pb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Lowongan</a></li>
-                <li class="breadcrumb-item"><a href="#">Staff HRD</a></li>
+                <li class="breadcrumb-item"><a href="#"><?php echo $lowongan['nama_lowongan']; ?></a></li>
             </ol>
         </nav>
     </div>
 
     <div class="container overflow-hidden">
-    <?= form_open('landingpage/lowongan_detail' . $lowongan['id_lowongan']); ?>
 
         <div class="row gy-5">
 
@@ -19,8 +19,8 @@
 
                 <div class="p-3 ">
                     <div class="card" style="width: 100%; ">
-                        <div class="card-body text-start">
-                            <h3 class="text-center pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
+                        <div class="card-body text-start text-capitalize">
+                            <h3 class="text-center text-capitalize pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
                             <p class="text-start">
                                 <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
                             </p>
@@ -68,9 +68,7 @@
                         <div class="card-body text-start">
                             <h3 class="text-center pt-4 pb-2"> <strong>Keterangan Pekerjaan</strong></h3>
                             <p class="card-text text-start">
-                            <ul class="card-text text-start">
                                 <?php echo $lowongan['ket']; ?>
-                            </ul>
                             </p>
                             <h5 class="text-start">Syarat Pengalaman</h5>
                             <p class="card-text text-start">
