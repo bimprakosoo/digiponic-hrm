@@ -37,10 +37,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Divisi</th>
                                     <th>Kepala Divisi</th>
                                     <th>Departemen</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

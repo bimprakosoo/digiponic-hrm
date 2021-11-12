@@ -36,7 +36,6 @@
                         <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th scope="col">Action</th>
                                     <th>Status</th>
                                     <th>Nama</th>
                                     <th>Provinsi</th>
@@ -50,6 +49,7 @@
                                     <th>Status Perkawinan</th>
                                     <th>Status Lamaran</th>
                                     <th>CV</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
 

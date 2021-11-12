@@ -39,9 +39,15 @@
                              <thead>
                                  <tr>
                                      <th>No</th>
-                                     <th scope="col">Action</th>
                                      <th>Nama Karyawan</th>
+                                     <th>Tgl Mutasi</th>
                                      <th>Departemen</th>
+                                     <th>Divisi</th>
+                                     <th>Jabatan</th>
+                                     <th>Posisi</th>
+                                     <th>Penempatan</th>
+                                     <th>Jenis Mutasi</th>
+                                     <th scope="col">Action</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -49,12 +55,18 @@
                                  <?php foreach ($m_db as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
+                                         <td><?= $m['nama']; ?></td>
+                                         <td>Jabatan</td>
+                                         <td><?= $m['department']; ?></td>
+                                         <td>Jabatan</td>
+                                         <td>Jabatan</td>
+                                         <td>Jabatan</td>
+                                         <td>Jabatan</td>
+                                         <td>Jabatan</td>
                                          <td>
-                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>" ><i class="align-middle mr-2" data-feather="edit"></i></a>
+                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>"><i class="align-middle mr-2" data-feather="edit"></i></a>
 
                                          </td>
-                                         <td><?= $m['nama']; ?></td>
-                                         <td><?= $m['department']; ?></td>
 
                                      </tr>
                                      <?php $i++; ?>

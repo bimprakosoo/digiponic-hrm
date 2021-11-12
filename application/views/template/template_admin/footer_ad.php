@@ -30,10 +30,10 @@
 
 <script src="<?php echo base_url(); ?>assets/admin2/static/js/app.js "></script>
 <script src="<?php echo base_url(); ?>assets/admin2/static/js/todo.js"></script>
-<script>
+<!-- <script>
     // Data Picker Initialization
     $('.datepicker').datepicker();
-</script>
+</script> -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("datetimepicker-dashboard").flatpickr({
@@ -43,6 +43,20 @@
         });
     });
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".add-more").click(function() {
+            var html = $(".copy").html();
+            $(".after-add-more").after(html);
+        });
+
+        // saat tombol remove dklik control group akan dihapus 
+        $("body").on("click", ".remove", function() {
+            $(this).parents(".control-group").remove();
+        });
+    });
+</script>
+
 </body>
 
 </html>

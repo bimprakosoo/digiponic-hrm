@@ -37,12 +37,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Karyawan</th>
                                     <th>Tgl Sakit</th>
                                     <th>Foto Surat Sakit</th>                                    
                                     <th>Jam</th>                                    
                                     <th>Status</th>                                    
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

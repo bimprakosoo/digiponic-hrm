@@ -27,11 +27,11 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Karyawan</th>
                                     <th>Foto Tempat</th>
                                     <th>Jam Masuk</th>
                                     <th>Jam Pulang</th>                                    
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

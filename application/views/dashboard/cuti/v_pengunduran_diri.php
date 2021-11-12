@@ -27,13 +27,13 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Karyawan</th>
                                     <th>Tgl Pengajuan</th>
                                     <th>Tgl Masuk Kerja</th>
                                     <th>Tgl Keluar Kerja</th>                                    
                                     <th>Keterangan</th>                                    
                                     <th>Status</th>                                    
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -27,7 +27,6 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Karyawan</th>
                                     <th>Tgl Pengajuan</th>
                                     <th>Lama Cuci</th>
@@ -36,6 +35,7 @@
                                     <th>Akhir Cuti</th>                                    
                                     <th>Keterangan Cuti</th>                                    
                                     <th>Status</th>                                    
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
