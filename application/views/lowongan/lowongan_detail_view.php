@@ -68,9 +68,7 @@
                         <div class="card-body text-start">
                             <h3 class="text-center pt-4 pb-2"> <strong>Keterangan Pekerjaan</strong></h3>
                             <p class="card-text text-start">
-                            <ul class="card-text text-start">
                                 <?php echo $lowongan['ket']; ?>
-                            </ul>
                             </p>
                             <h5 class="text-start">Syarat Pengalaman</h5>
                             <p class="card-text text-start">
