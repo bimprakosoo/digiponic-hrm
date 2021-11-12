@@ -36,12 +36,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Jenis Kegiatan</th>
                                     <th>Nama Kegiatan</th>
                                     <th>Tgl Kegiatan</th>                                    
                                     <th>Waktu Dimulai</th>                                    
                                     <th>Waktu Berakhir</th>                                    
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="col-auto ml-auto ">
-                            <a href="<?php echo base_url() ?>admin2/penilaian_pekerja//kpi_departemen/tambah" class="btn btn-primary">Tambah Data</a>
+                            <a href="<?php echo base_url() ?>admin2/penilaian_pekerja//kpi_departemen/tambah" class="btn btn-primary">Simpan Data</a>
                         </div>
                     </div>
                     <hr>
@@ -49,41 +49,108 @@
                     </div>
                     <hr>
                     <div class="">
-                        <a href="<?php echo base_url() ?>admin2/penilaian_pekerja/kpi_departemen/tambah" class="btn btn-primary">Simpan Data</a>
+                        <button type="button" name="add" id="add" class="btn btn-primary btn-xs">Tambah Data</button>
                     </div>
                 </div>
             </div>
             <div class="card mb-4" style="margin-top: -24px; box-shadow: inset 0px 5px 31px rgba(0, 0, 0, 0.15); background: #FFFFFF;">
                 <div class="table-responsive">
-                    <table class="table" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Key Perfomance Indicators</th>
-                                <th>Unit Pengukuran</th>
-                                <th>Target</th>
-                                <th>Realisasi</th>
-                                <th>Skor</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td>
-                                    <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
-                                </td>
-                            </tr>
-                        </tbody>
+                <table class="table table-bordered" id="crud_table">
+                        <tr>
+                            <th>Key Perfomance Indicators</th>
+                            <th>Unit Pengukuran</th>
+                            <th>Target</th>
+                            <th>Realisasi</th>
+                            <th>Skor</th>
+                            <th scope="col">Action</th>
+                            <!-- <th width="5%"></th> -->
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" class="key_perfomance_indicators"></td>
+                            <td contenteditable="true" class="unit_pengukuran"></td>
+                            <td contenteditable="true" class="target"></td>
+                            <td contenteditable="true" class="realisasi"></td>
+                            <td contenteditable="true" class="skor"></td>
+                            <td contenteditable="true" class="action"></td>
+                            <!-- <td></td> -->
+                        </tr>
                     </table>
+                    <br />
+                    <div id="inserted_item_data"></div>
                 </div>
             </div>
         </div>
     </div>
 </main>
 <!-- End Content -->
+<script>
+    $(document).ready(function() {
+        var count = 1;
+        $('#add').click(function() {
+            count = count + 1;
+            var html_code = "<tr id='row" + count + "'>";
+            html_code += "<td contenteditable='true' class='key_perfomance_indicators'></td>";
+            html_code += "<td contenteditable='true' class='unit_pengukuran'></td>";
+            html_code += "<td contenteditable='true' class='target' ></td>";
+            html_code += "<td contenteditable='true' class='realisasi' ></td>";
+            html_code += "<td contenteditable='true' class='skor' ></td>";
+            html_code += "<td><button type='button' name='remove' data-row='row" + count + "' class='btn btn-danger btn-xs remove'>Hapus</button></td>";
+            html_code += "</tr>";
+            $('#crud_table').append(html_code);
+        });
+
+        $(document).on('click', '.remove', function() {
+            var delete_row = $(this).data("row");
+            $('#' + delete_row).remove();
+        });
+
+        //     $('#save').click(function() {
+        //         var item_name = [];
+        //         var item_code = [];
+        //         var item_desc = [];
+        //         var item_price = [];
+        //         $('.item_name').each(function() {
+        //             item_name.push($(this).text());
+        //         });
+        //         $('.item_code').each(function() {
+        //             item_code.push($(this).text());
+        //         });
+        //         $('.item_desc').each(function() {
+        //             item_desc.push($(this).text());
+        //         });
+        //         $('.item_price').each(function() {
+        //             item_price.push($(this).text());
+        //         });
+        //         $.ajax({
+        //             url: "insert.php",
+        //             method: "POST",
+        //             data: {
+        //                 item_name: item_name,
+        //                 item_code: item_code,
+        //                 item_desc: item_desc,
+        //                 item_price: item_price
+        //             },
+        //             success: function(data) {
+        //                 alert(data);
+        //                 $("td[contentEditable='true']").text("");
+        //                 for (var i = 2; i <= count; i++) {
+        //                     $('tr#' + i + '').remove();
+        //                 }
+        //                 fetch_item_data();
+        //             }
+        //         });
+        //     });
+
+        //     function fetch_item_data() {
+        //         $.ajax({
+        //             url: "fetch.php",
+        //             method: "POST",
+        //             success: function(data) {
+        //                 $('#inserted_item_data').html(data);
+        //             }
+        //         })
+        //     }
+        //     fetch_item_data();
+
+    });
+</script>

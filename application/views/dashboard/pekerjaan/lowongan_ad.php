@@ -33,11 +33,10 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Pekerjaan</th>
                                     <th>Lokasi</th>
                                     <th>Perusahaan</th>
@@ -54,39 +53,112 @@
                                     <th>Syarat Pengalaman</th>
                                     <th>Tunjangan</th>
                                     <th>Image</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($lowongan as $m) : ?>
                                     <tr>
                                         <th scope="row"><?= ++$start; ?></th>
-                                        <td>
-                                            <a href="" class="btn btn-primary" style="width: 100px;">Edit</a>
-                                            <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
-                                        </td>
                                         <td><?= $m['nama_lowongan']; ?></td>
                                         <td><?= $m['lokasi']; ?></td>
                                         <td><?= $m['perusahaan']; ?></td>
                                         <td><?= $m['industri']; ?></td>
                                         <td><?= $m['tipe_pekerjaan']; ?></td>
-                                        <td><?= $m['pengalaman_kerja']; ?></td>
+                                        <td><?= $m['pengalaman_kerja']; ?> </td>
                                         <td><?= $m['insentif_lembur']; ?></td>
                                         <td><?= $m['level_pekerjaan']; ?></td>
                                         <td><?= $m['pendidikan']; ?></td>
                                         <td><?= $m['waktu_bekerja']; ?></td>
                                         <td><?= $m['gaji']; ?></td>
                                         <td><?= $m['post_date']; ?></td>
-                                        <td><?= $m['ket']; ?></td>
-                                        <td><?= $m['syarat_pengalaman']; ?></td>
-                                        <td><?= $m['tunjangan']; ?></td>
+                                        <td>
+                                            <!-- BEGIN  modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">
+                                                Keterangan
+                                            </button>
+                                            <div class="modal fade" id="sizedModalLg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Keterangan</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                            <?= $m['ket']; ?>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                        </td>
+                                        <td>
+                                            <!-- BEGIN  modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#syarat">
+                                                Syarat Pengalaman
+                                            </button>
+                                            <div class="modal fade" id="syarat" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg text-start" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Syarat Pengalaman</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                            <?= $m['syarat_pengalaman']; ?>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                        </td>
+                                        <td>
+                                            <!-- BEGIN  modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tunjangan">
+                                                Tunjangan
+                                            </button>
+                                            <div class="modal fade" id="tunjangan" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-md " role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Tunjangan</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                            <?= $m['tunjangan']; ?>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                        </td>
                                         <td><?= $m['image']; ?></td>
+                                        <td>
+                                            <a href="" class="btn btn-primary" style="width: 100px;">Edit</a>
+                                            <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <?= $this->pagination->create_links();?>
+                <?= $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

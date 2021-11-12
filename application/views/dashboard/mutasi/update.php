@@ -35,9 +35,15 @@
                              <label for="id_departemen">Departemen</label>
                              <select name="id_departemen" id="id_departemen" class="form-control">
                                  <option value="">Pilih Departemen</option>
-                                 <?php foreach ($dept as $s) : ?>
-                                     <option value="<?= $s['id_departemen']; ?>"><?= $s['department']; ?></option>
-                                 <?php endforeach; ?>
+
+                                 <?php foreach ($dept as $s) {
+                                        if ($m_db['id_departemen'] == $s['id_departemen']) { ?>
+                                         <option value="<?= $s['id_departemen']; ?>" selected><?= $s['department']; ?></option>
+                                     <?php } else { ?>
+                                         <option value="<?= $s['id_departemen']; ?>"><?= $s['department']; ?></option>
+                                 <?php }
+                                    } ?>
+
                              </select>
 
                              <!-- <input type="text" class="form-control" id="status_id" name="status_id" value="<?= $positif['status_id']; ?>"> -->

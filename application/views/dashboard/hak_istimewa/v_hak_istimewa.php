@@ -36,10 +36,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Peran</th>
                                     <th>Tgl Buat</th>
                                     <th>Akses</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
