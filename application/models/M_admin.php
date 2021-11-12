@@ -55,6 +55,12 @@ class M_Admin extends CI_Model
         $this->db->insert('tbl_karyawan', $data);
     }
 
+    public function delete_pelamar($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('lamaran');
+    }
+
     public function update_status_pelamar($update_status, $diterima_id)
     {
         // update status dari data pelamaran [1 => diterima | 2 => ditolak]
@@ -62,5 +68,27 @@ class M_Admin extends CI_Model
         $this->db->set($update_status);
         $this->db->where('id', $diterima_id);
         $this->db->update('data_lamaran');
+    }
+
+
+
+    function file_image()
+    {
+        // upload file surat lamaran--------------------------------------------------------------------------------------
+        $config['upload_path'] = "./assets/image/lowongan/";
+        $config['allowed_types'] = "jpg|jpeg|png|svg";
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image')) {
+            // salah
+            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+            $response['hasil'] = false;
+            echo json_encode($response);
+        } else {
+            $data_upload        = $this->upload->data();
+            $file_image         = $data_upload['file_name'];
+        }
+        return $file_image;
     }
 }

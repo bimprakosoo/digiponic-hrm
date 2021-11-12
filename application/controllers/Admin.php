@@ -217,6 +217,12 @@ class Admin extends CI_Controller
         ];
         $this->M_admin->update_status_pelamar($update_status, $dapat_di);
 
+        // delete data lamaran yang telah di action
+        $delete =  $this->curl->simple_delete($this->API . '/admin', array('id' => $dapat_di), array(CURLOPT_BUFFERSIZE => 10));
+        // $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
+        // $this->M_admin->delete_pelamar();
+
+
         redirect('admin/lamaran_masuk');
     }
 

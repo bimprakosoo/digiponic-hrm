@@ -227,10 +227,10 @@
 
                                             <!-- Jenis Kelamin -->
                                             <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Provinsi</label>
+                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
                                                 <div class="col-sm-8">
                                                     <select name="jk" id="jk" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
+                                                        <option value="">Open this select menu</option>
                                                         <option value="laki-laki">Laki-Laki</option>
                                                         <option value="perempuan">Perempuan</option>
                                                     </select>
@@ -245,7 +245,7 @@
                                                     <div class="input-group mb-3 date">
                                                         <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
                                                         <input type="text" class="form-control" id="txtFromDate" name="tgl_lahir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
