@@ -162,11 +162,11 @@
                                             <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Provinsi</label>
                                                 <div class="col-sm-8">
-                                                    <select name="provinsi" id="provinsi" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="sumantra">sumantra</option>
-                                                        <option value="kalimantan">kalimantan</option>
-                                                        <option value="jawa timur">jawa timur</option>
+                                                    <select name="provinsi" id="provinsi" class="form-control" aria-label="Default select example">
+                                                        <option value="">-- Pilih Provinsi --</option>
+                                                        <?php foreach ($provinsi as $prov) : ?>
+                                                            <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -176,11 +176,8 @@
                                             <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kota/Kabupaten</label>
                                                 <div class="col-sm-8">
-                                                    <select name="kota_kabupaten" id="kota_kabupaten" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="aceh">aceh</option>
-                                                        <option value="samarinda">samarinda</option>
-                                                        <option value="malang">malang</option>
+                                                    <select class="form-control" id="kota" name="kota" required>
+                                                        <option value="">-- Pilih Kota --</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -190,11 +187,8 @@
                                             <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kecamatan</label>
                                                 <div class="col-sm-8">
-                                                    <select name="kecamatan" id="kecamatan" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="pukau">pukau</option>
-                                                        <option value="sanggata">sanggata</option>
-                                                        <option value="pakis">pakis</option>
+                                                    <select class="form-control" id="kecamatan" name="kecamatan" required>
+                                                        <option value="">-- Pilih Kecamatan --</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -230,7 +224,7 @@
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
                                                 <div class="col-sm-8">
                                                     <select name="jk" id="jk" class="form-select" aria-label="Default select example">
-                                                        <option value="">Open this select menu</option>
+                                                        <option value="">Pilih</option>
                                                         <option value="laki-laki">Laki-Laki</option>
                                                         <option value="perempuan">Perempuan</option>
                                                     </select>
@@ -288,7 +282,7 @@
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
                                                 <div class="col-sm-8">
                                                     <select name="status_perkawinan" id="status_perkawinan" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
+                                                        <option value="">Pilih</option>
                                                         <option value="belum kawin">belum kawin</option>
                                                         <option value="kawin">kawin</option>
                                                         <!-- <option value="3">Three</option> -->
@@ -302,7 +296,7 @@
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Pendidikan Terakhir</label>
                                                 <div class="col-sm-8">
                                                     <select name="pendidikan_terakhir" id="pendidikan_terakhir" class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
+                                                        <option value="">Pilih</option>
                                                         <option value="S1">S1</option>
                                                         <option value="SMK">SMK</option>
                                                         <!-- <option value="3">Three</option> -->
@@ -380,6 +374,48 @@
             <script>
                 // Data Picker Initialization
                 $('.datepicker').datepicker();
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#provinsi').change(function() {
+                        var id = $(this).val();
+                        // console.log(id); // cek id
+                        $.ajax({
+                            type: "POST",
+                            url: "<?= base_url('pelamar/getKota') ?>",
+                            data: {
+                                id: id
+                            },
+                            dataType: "JSON",
+                            success: function(response) {
+                                // console.log(response);
+                                $('#kota').html(response);
+                                // get id kota by provinsi
+                            }
+                        });
+                    });
+
+                    $('#kota').change(function() {
+                        var id = $(this).val();
+                        // console.log(id); // cek id
+                        $.ajax({
+                            type: "POST",
+                            url: "<?= base_url('pelamar/getKecamatan') ?>",
+                            data: {
+                                id: id
+                            },
+                            dataType: "JSON",
+                            success: function(response) {
+                                // console.log(response);
+                                $('#kecamatan').html(response);
+                                // get id kecamtan by kota
+                            }
+                        });
+                    });
+
+
+                });
             </script>
 </body>
 

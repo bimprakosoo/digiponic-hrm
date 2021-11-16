@@ -238,7 +238,7 @@ class Admin extends CI_Controller
                 'id'                    =>  $r->id,
                 'nama'                  =>  $r->nama,
                 'provinsi'              =>  $r->provinsi,
-                'kota_kabupaten'        =>  $r->kota_kabupaten,
+                'kota'        =>  $r->kota,
                 'kecamatan'             =>  $r->kecamatan,
                 'alamat_lengkap'        =>  $r->alamat_lengkap,
                 'jk'                    =>  $r->jk,

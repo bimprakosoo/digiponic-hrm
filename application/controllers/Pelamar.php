@@ -28,10 +28,18 @@ class Pelamar extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function lamaran()
+    {
+        // $this->load->view('template/headerauth');
+        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+        $this->load->view('lowongan/lowongan_lamaran_view', $data);
+    }
+
     // insert data pelamar
     function create()
     {
         // $this->form_validation->set_rules('nama', 'nama', 'required');                // 2
+
 
         if (isset($_POST['submit'])) {
             // $ch = curl_init();
@@ -39,7 +47,7 @@ class Pelamar extends CI_Controller
                 // 'id'=>  $this->input->post('id'),
                 'nama'                  =>  $this->input->post('nama'),
                 'provinsi'              =>  $this->input->post('provinsi'),
-                'kota_kabupaten'        =>  $this->input->post('kota_kabupaten'),
+                'kota'                  =>  $this->input->post('kota'),
                 'kecamatan'             =>  $this->input->post('kecamatan'),
                 'alamat_lengkap'        =>  $this->input->post('alamat_lengkap'),
                 'jk'                    =>  $this->input->post('jk'),
@@ -51,30 +59,47 @@ class Pelamar extends CI_Controller
                 'cv'                    =>  $this->M_Pelamar->file_cv()
             );
 
-            // $url = site_url() . 'api/pelamar/create';
-            // $res = $this->curl->post_multi($url, $data);
+            // var_dump($data);
+            // die;
+
             $insert =  $this->curl->simple_post($this->API . '/pelamar/create', $data, array(CURLOPT_BUFFERSIZE => 10));
-            // echo curl_getinfo($ch) . '<br/>';
-            // echo curl_errno($ch) . '<br/>';
-            // echo curl_error($ch) . '<br/>';
-            // va`r_dump($insert);
-            // die;`
+
             if ($insert) {
                 $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
-                // redirect('landingPage/lowongan');
+                redirect('pelamar');
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
+
+                var_dump($data);
+                die;
+                redirect('pelamar');
             }
-            redirect('pelamar');
+            // redirect('pelamar');
             // var_dump($insert);
         } else {
             $this->load->view('lowongan/lowongan_lamaran_view');
         }
     }
 
-    public function lamaran()
+    public function getKota()
     {
-        // $this->load->view('template/headerauth');
-        $this->load->view('lowongan/lowongan_lamaran_view');
+        $idprov =   $this->input->post('id');
+        $data   =   $this->M_Pelamar->getDataKota($idprov);
+        $output =   '<option value="">-- Pilih Kota --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
+
+    public function getKecamatan()
+    {
+        $idkota =   $this->input->post('id');
+        $data   =   $this->M_Pelamar->getDataKecamatan($idkota);
+        $output =   '<option value="">-- Pilih Kecamatan --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
 }

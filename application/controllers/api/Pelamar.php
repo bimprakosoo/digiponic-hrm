@@ -37,7 +37,7 @@ class Pelamar extends RestController
             // $id_m                   = $this->post('id');
             'nama'                 => $this->post('nama'),
             'provinsi'             => $this->post('provinsi'),
-            'kota_kabupaten'       => $this->post('kota_kabupaten'),
+            'kota'                 => $this->post('kota'),
             'kecamatan'            => $this->post('kecamatan'),
             'alamat_lengkap'       => $this->post('alamat_lengkap'),
             'jk'                   => $this->post('jk'),
@@ -49,11 +49,14 @@ class Pelamar extends RestController
             'cv'                   => $this->post('cv')          // up_cv
         );
 
+        // var_dump($data);
+        // die;
+
         $insert = $this->db->insert('data_lamaran', $data);
         if ($insert) {
             $this->response($data, 200);
         } else {
-            $this->response(array('status' => 'fail', 502));
+            $this->response(array('hasil' => 'fail', 502));
         }
 
         // if ($simpan_data) {
