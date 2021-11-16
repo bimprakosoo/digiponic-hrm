@@ -118,17 +118,7 @@
                                  <input type="text" class="form-control" id="gaji" name="gaji">
                              </div>
                          </div>
-                         <!-- Post Date -->
-                         <div class="modal-body">
-                             <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Post Date</label>
-                             <div class="col-sm-8">
-                                 <div class="input-group mb-3 date">
-                                     <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
-                                     <input type="text" class="form-control" id="post_date" name="post_date" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
 
-                                 </div>
-                             </div>
-                         </div>
                          <!-- <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Post Date</label>
@@ -161,10 +151,14 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label><br>
-                                     <input class="pt-1" type="file" id="file_image" name="image">
+                                 <input class="pt-1" type="file" id="file_image" name="image">
                              </div>
                          </div>
                      </div>
+
+                     <!-- Post Date -->
+                     <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                     <input class="invisible" type="text" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
 
                      <div class="row pb-2 m-4">
                          <div class="col-auto ml-auto ">

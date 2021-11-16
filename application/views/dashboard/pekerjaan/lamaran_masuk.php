@@ -37,7 +37,6 @@
                              <thead>
                                  <tr>
                                      <th>No</th>
-                                     <th scope="col">Action</th>
                                      <th>Status</th>
                                      <th>Nama</th>
                                      <!-- <th>Provinsi</th> -->
@@ -51,6 +50,7 @@
                                      <!-- <th>Status Perkawinan</th> -->
                                      <th>Status Lamaran</th>
                                      <th>CV</th>
+                                     <th scope="col">Action</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -58,20 +58,20 @@
                                  <?php foreach ($lamaran_masuk as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-                                         <td>
-                                             <button class="btn btn-primary" data-toggle="modal" data-target="#diterima-<?= $i; ?>">Di Terima</button>
-                                             <button class="btn btn-danger" data-toggle="modal" data-target="#ditolak-<?= $i; ?>">Di Tolak</button>
-
-
-                                         </td>
                                          <td><?= $m['status']; ?></td>
                                          <td><?= $m['nama']; ?></td>
                                          <td><?= $m['jk']; ?></td>
                                          <td><?= $m['tgl_lahir']; ?></td>
                                          <td><?= $m['no_telp']; ?></td>
                                          <td><?= $m['pendidikan_terakhir']; ?></td>
-
-                                     </tr>
+                                         
+                                         <td>
+                                             <button class="btn btn-primary" data-toggle="modal" data-target="#diterima-<?= $i; ?>">Di Terima</button>
+                                             <button class="btn btn-danger" data-toggle="modal" data-target="#ditolak-<?= $i; ?>">Di Tolak</button>
+ 
+ 
+                                         </td>
+                                        </tr>
                                      <?php $i++; ?>
                                  <?php endforeach; ?>
                              </tbody>

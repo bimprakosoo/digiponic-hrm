@@ -37,13 +37,13 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th scope="col">Action</th>
                                     <th>Nama Perusahaan</th>
                                     <th>Industri</th>
                                     <th>Kota</th>
                                     <th>Email</th>
                                     <th>Alamat</th>
                                     <th>No Telp</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
