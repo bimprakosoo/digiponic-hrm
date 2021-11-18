@@ -55,16 +55,16 @@
                                  <?php foreach ($m_db as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-                                         <td><?= $m['nama']; ?></td>
-                                         <td>Jabatan</td>
-                                         <td><?= $m['department']; ?></td>
-                                         <td>Jabatan</td>
-                                         <td>Jabatan</td>
-                                         <td>Jabatan</td>
-                                         <td>Jabatan</td>
-                                         <td>Jabatan</td>
+                                         <td><?= $m['nama']; ?></td> <!-- nama karyawan -->
+                                         <td>Jabatan</td> <!-- tgl mutasi [menentikan kapan di mutasi ]-->
+                                         <td><?= $m['department']; ?></td> <!-- departemen [keuangagn/logistik]-->
+                                         <td>operasional</td> <!-- devisi [operasional/bisnis] -->
+                                         <td>staff</td> <!-- jabatan [staf]-->
+                                         <td>staff logistik</td> <!-- posisi [staff logistik]-->
+                                         <td>cabang malang</td> <!-- penempatan [cabang/gedung]-->
+                                         <td>promosi</td> <!-- jenis mutasi [promosi/demosi]-->
                                          <td>
-                                             <a href="<?= base_url('admin/update_mutasi/') . $m['id']; ?>"><i class="align-middle mr-2" data-feather="edit"></i></a>
+                                             <a href="<?= base_url('admin2/mutasi/mutasi/update_mutasi/') . $m['id']; ?>"><i class="align-middle mr-2" data-feather="edit"></i></a>
 
                                          </td>
 

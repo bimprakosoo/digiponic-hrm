@@ -33,18 +33,24 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
+
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Departemen</th>
-                                    <th>Kepala Departemen</th>
-                                    <th>Perusahaan</th>                                    
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
+                                <?php $i = 1;
+                                foreach ($dept as $d) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $d['department']; ?></td> <!-- nama departemnt -->
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>

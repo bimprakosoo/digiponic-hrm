@@ -14,7 +14,7 @@
     <title>Dashboard</title>
 
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-    <!-- <script src="<?php echo base_url();?> assets/admin2/ckeditor/ckeditor.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?> assets/admin2/ckeditor/ckeditor.js"></script> -->
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/custom.css" rel="stylesheet" />
 
@@ -136,7 +136,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin/mutasi">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/mutasi/mutasi">
                             <i class="align-middle" data-feather="credit-card"></i>
                             <span class="align-middle">Mutasi</span>
                         </a>

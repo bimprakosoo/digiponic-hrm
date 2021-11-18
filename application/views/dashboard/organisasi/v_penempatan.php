@@ -33,17 +33,24 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Penempatan</th>
-                                    <th>Divisi</th>
+                                    <!-- <th>Divisi</th> -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
+                                <?php $i = 1;
+                                foreach ($penempatan as $d) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $d['nama']; ?></td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>
