@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin2/organisasi/perusahaan/tambah_perusahaan" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">Tambah Data</a>
+                    <a href="<?php echo base_url() ?>admin2/organisasi/perusahaan/tambah_perusahaan" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">Tambah</a>
                 </div>
             </div>
         </div>
@@ -27,9 +27,36 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-header py-3">
-                    <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
-                    <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
+                <div class="row m-2">
+                    <div class="col-auto d-none d-sm-block ">
+                        <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
+                    </div>
+
+                    <div class="col-md-4 ml-auto ">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <select class="form-control text-center" id="kota" name="kota" required>
+                                        <option value="">-- Filter --</option>
+                                        <option value="">-- Filter --</option>
+                                        <option value="">-- Filter --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <form class="d-none d-sm-inline-block">
+                                    <div class="input-group input-group-navbar">
+                                        <input type="text" class="form-control" placeholder="Search…" aria-label="Search" id="search_text" />
+                                        <button class="btn" type="button">
+                                            <i class="align-middle" data-feather="search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
@@ -46,20 +73,8 @@
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php $i = 1;
-                                foreach ($perusahaan as $d) : ?>
-                                    <tr>
-                                        <th scope="row"><?= $i ?></th>
-                                        <td><?= $d['nama_perusahaan']; ?></td>
-                                        <td><?= $d['industri']; ?></td>
-                                        <td><?= $d['kota']; ?></td>
-                                        <td><?= $d['email']; ?></td>
-                                        <td><?= $d['alamat']; ?></td>
-                                        <td><?= $d['telp']; ?></td>
-                                    </tr>
-                                <?php $i++;
-                                endforeach; ?>
+                            <tbody id="result">
+
                             </tbody>
                         </table>
                     </div>
@@ -69,7 +84,6 @@
         </div>
     </div>
     <!-- BEGIN  modal -->
-
     <div class="modal fade" id="sizedModalLg" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -105,10 +119,10 @@
                                     <div class="form-group">
                                         <label for="title">Provinsi</label>
                                         <select class="form-control" id="provinsi" name="provinsi" required>
-                                        <option value="">-- Pilih Provinsi --</option>
-                                                        <?php foreach ($provinsi as $prov) : ?>
-                                                            <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                                        <?php endforeach; ?>
+                                            <option value="">-- Pilih Provinsi --</option>
+                                            <?php foreach ($provinsi as $prov) : ?>
+                                                <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -119,7 +133,7 @@
                                     <div class="form-group">
                                         <label for="title">Kota</label>
                                         <select class="form-control" id="kota" name="kota" required>
-                                            <<option value="">-- Pilih Kota --</option>
+                                            <option value="">-- Pilih Kota --</option>
                                         </select>
                                     </div>
                                 </div>
@@ -154,11 +168,11 @@
                             </div>
                         </div>
 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
                 </div>
             </div>
         </div>
@@ -166,6 +180,34 @@
     <!-- END  modal -->
 </main>
 <!-- End Content -->
+<script>
+    $(document).ready(function() {
+
+        load_data();
+
+        function load_data(query) {
+            $.ajax({
+                url: "<?php echo base_url(); ?>admin2/organisasi/perusahaan/fetch",
+                method: "POST",
+                data: {
+                    query: query
+                },
+                success: function(data) {
+                    $('#result').html(data);
+                }
+            })
+        }
+
+        $('#search_text').keyup(function() {
+            var search = $(this).val();
+            if (search != '') {
+                load_data(search);
+            } else {
+                load_data();
+            }
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $('#provinsi').change(function() {
@@ -185,5 +227,6 @@
                 }
             });
         });
+
     });
 </script>
