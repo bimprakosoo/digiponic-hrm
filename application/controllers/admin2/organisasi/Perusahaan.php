@@ -40,7 +40,7 @@ class Perusahaan extends CI_Controller
 
             $data = array(
                 // 'id'       =>  $this->input->post('id'),
-                'perusahaan'       =>  $this->input->post('perusahaan'),
+                'nama_perusahaan'       =>  $this->input->post('perusahaan'),
                 'industri'       =>  $this->input->post('industri'),
                 'kota'       =>  $this->input->post('kota'),
                 'email'       =>  $this->input->post('email'),
@@ -51,7 +51,7 @@ class Perusahaan extends CI_Controller
             // die;
 
             // $insert = $this->M_organisasi->postDataPerusahaan($data);
-            $insert = $this->db->get('perusahaan');
+            $insert = $this->db->insert('perusahaan', $data);
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Insert Data Berhasil');
@@ -61,7 +61,7 @@ class Perusahaan extends CI_Controller
                 redirect('admin2/organisasi/perusahaan');
             }
         } else {
-            // $this->lowongan_ad();
+            redirect('admin2/organisasi/perusahaan');
         }
     }
     public function getKota()

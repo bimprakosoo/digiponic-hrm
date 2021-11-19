@@ -30,6 +30,7 @@
                 <div class="card-header py-3">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
+                    <?php echo $this->session->flashdata('status'); ?>
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
@@ -134,7 +135,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Email</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="email" name="email">
                             </div>
                         </div>
 
@@ -142,7 +143,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Alamat</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="alamat" name="alamat">
                             </div>
                         </div>
 
@@ -150,7 +151,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Telp</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="telp" name="telp">
                             </div>
                         </div>
 
