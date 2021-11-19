@@ -94,7 +94,7 @@
                     </button>
                 </div>
                 <div class="modal-body m-3">
-                    <form action="<?= base_url('admin2/organisasi/perusahaan/create_perusahaan'); ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url('admin2/organisasi/perusahaan/create_perusahaan'); ?>" method="POST">
 
                         <!-- Perusahaan -->
                         <div class="modal-body">

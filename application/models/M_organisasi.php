@@ -43,6 +43,7 @@ class M_organisasi extends CI_Model
     {
         return $this->db->get('perusahaan');
     }
+
     function search_perusahaan($query)
     {
         $this->db->select("*");
@@ -55,7 +56,6 @@ class M_organisasi extends CI_Model
         $this->db->order_by('id', 'ASC');
         return $this->db->get();
     }
-
 
     // create data
 
