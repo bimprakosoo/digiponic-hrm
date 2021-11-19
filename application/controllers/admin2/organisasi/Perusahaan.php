@@ -15,7 +15,6 @@ class Perusahaan extends CI_Controller
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
         $data['provinsi'] = $this->M_Pelamar->getDataprov();
 
-
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
         $this->load->view('dashboard/organisasi/v_perusahaan', $data);
@@ -24,9 +23,11 @@ class Perusahaan extends CI_Controller
 
     public function tambah_perusahaan()
     {
+        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/organisasi/v_create_perusahaan');
+        $this->load->view('dashboard/organisasi/v_create_perusahaan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 
@@ -39,17 +40,25 @@ class Perusahaan extends CI_Controller
 
             $data = array(
                 // 'id'       =>  $this->input->post('id'),
-
+                'perusahaan'       =>  $this->input->post('perusahaan'),
+                'industri'       =>  $this->input->post('industri'),
+                'kota'       =>  $this->input->post('kota'),
+                'email'       =>  $this->input->post('email'),
+                'alamat'       =>  $this->input->post('alamat'),
+                'telp'       =>  $this->input->post('telp'),
             );
+            // var_dump($data);
+            // die;
 
+            // $insert = $this->M_organisasi->postDataPerusahaan($data);
+            $insert = $this->db->get('perusahaan');
 
-            $insert =  $this->db->insert('tabel', $data);
             if ($insert) {
-                $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
-                redirect('perusahaan');
+                $this->session->set_flashdata('status', 'Insert Data Berhasil');
+                redirect('admin2/organisasi/perusahaan');
             } else {
-                $this->session->set_flashdata('hasil', 'Insert Data Gagal');
-                redirect('perusahaan');
+                $this->session->set_flashdata('status', 'Insert Data Gagal');
+                redirect('admin2/organisasi/perusahaan');
             }
         } else {
             // $this->lowongan_ad();
