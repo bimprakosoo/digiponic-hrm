@@ -30,13 +30,14 @@
                 <div class="row m-2">
                     <div class="col-auto d-none d-sm-block ">
                         <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
+                        <?php echo $this->session->flashdata('status'); ?>
                     </div>
 
                     <div class="col-md-4 ml-auto ">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <select class="form-control text-center" >
+                                    <select class="form-control text-center">
                                         <option value="">-- Filter --</option>
                                         <option value="">-- Filter --</option>
                                         <option value="">-- Filter --</option>
@@ -148,7 +149,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Email</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="email" name="email">
                             </div>
                         </div>
 
@@ -156,7 +157,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Alamat</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="alamat" name="alamat">
                             </div>
                         </div>
 
@@ -164,7 +165,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title">Telp</label>
-                                <input type="text" class="form-control" id="industri" name="industri">
+                                <input type="text" class="form-control" id="telp" name="telp">
                             </div>
                         </div>
 

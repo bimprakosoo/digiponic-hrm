@@ -9,11 +9,11 @@
     <meta name="author" content="AdminKit" />
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
-    <link rel="shortcut icon" href="<?php echo base_url();?>assets/image/Logo.svg" />
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo.svg" />
 
     <title>Dashboard</title>
 
-    <link href="<?php echo base_url();?>assets/admin2/static/css/app.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,8 +21,8 @@
         <!-- SideBar -->
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="<?php echo base_url();?>landingpage">
-                    <span class="align-middle"><img src="<?php echo base_url();?>assets/image/Logo.svg" alt=""></span>
+                <a class="sidebar-brand" href="<?php echo base_url(); ?>landingpage">
+                    <span class="align-middle"><img src="<?php echo base_url(); ?>assets/image/Logo.svg" alt=""></span>
                 </a>
 
                 <ul class="sidebar-nav">
@@ -195,8 +195,8 @@
                     <div class="input-group input-group-navbar">
                         <input type="text" class="form-control" placeholder="Search…" aria-label="Search" />
                         <button class="btn" type="button">
-                <i class="align-middle" data-feather="search"></i>
-              </button>
+                            <i class="align-middle" data-feather="search"></i>
+                        </button>
                     </div>
                 </form>
 
@@ -288,7 +288,7 @@
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker" />
+                                                <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker" />
                                             </div>
                                             <div class="col-10 pl-2">
                                                 <div class="text-dark">Vanessa Tucker</div>
@@ -302,7 +302,7 @@
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris" />
+                                                <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris" />
                                             </div>
                                             <div class="col-10 pl-2">
                                                 <div class="text-dark">William Harris</div>
@@ -316,7 +316,7 @@
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason" />
+                                                <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason" />
                                             </div>
                                             <div class="col-10 pl-2">
                                                 <div class="text-dark">Christina Mason</div>
@@ -330,7 +330,7 @@
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman" />
+                                                <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman" />
                                             </div>
                                             <div class="col-10 pl-2">
                                                 <div class="text-dark">Sharon Lessman</div>
@@ -353,21 +353,19 @@
                             </a>
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                                <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
+                                <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
                                 <span class="text-dark">Charles Hall</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i>
-                    Profile</a>
+                                    Profile</a>
                                 <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="pie-chart"></i>
-                    Analytics</a>
+                                    Analytics</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1" data-feather="settings"></i>
-                    Settings & Privacy</a>
-                                <a class="dropdown-item" href="#"><i
-                      class="align-middle mr-1"
-                      data-feather="help-circle"></i>
-                    Help Center</a>
+                                    Settings & Privacy</a>
+                                <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i>
+                                    Help Center</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Log out</a>
                             </div>
@@ -468,7 +466,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Charles Hall ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Charles Hall ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">30m ago</small>
                                             <strong>Charles Hall</strong> posted something on <strong>Christina Mason</strong>'s timeline<br />
@@ -485,7 +483,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-4.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Christina Mason ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-4.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Christina Mason ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">1h ago</small>
                                             <strong>Christina Mason</strong> posted a new blog<br />
@@ -496,7 +494,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-2.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="William Harris ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-2.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="William Harris ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">3h ago</small>
                                             <strong>William Harris</strong> posted two photos on <strong>Christina Mason</strong>'s timeline<br />
@@ -504,10 +502,10 @@
 
                                             <div class="row g-0 mt-1 ">
                                                 <div class="col-6 col-md-4 col-lg-4 col-xl-3 ">
-                                                    <img src="<?php echo base_url();?>assets/admin2/static/img/photos/unsplash-1.jpg " class="img-fluid pr-2 " alt="Unsplash ">
+                                                    <img src="<?php echo base_url(); ?>assets/admin2/static/img/photos/unsplash-1.jpg " class="img-fluid pr-2 " alt="Unsplash ">
                                                 </div>
                                                 <div class="col-6 col-md-4 col-lg-4 col-xl-3 ">
-                                                    <img src="<?php echo base_url();?>assets/admin2/static/img/photos/unsplash-2.jpg " class="img-fluid pr-2 " alt="Unsplash ">
+                                                    <img src="<?php echo base_url(); ?>assets/admin2/static/img/photos/unsplash-2.jpg " class="img-fluid pr-2 " alt="Unsplash ">
                                                 </div>
                                             </div>
 
@@ -517,7 +515,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-2.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="William Harris ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-2.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="William Harris ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">1d ago</small>
                                             <strong>William Harris</strong> started following <strong>Christina Mason</strong><br />
@@ -538,7 +536,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar-4.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Christina Mason ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar-4.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Christina Mason ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">1d ago</small>
                                             <strong>Christina Mason</strong> posted a new blog<br />
@@ -548,7 +546,7 @@
 
                                     <hr />
                                     <div class="d-flex align-items-start ">
-                                        <img src="<?php echo base_url();?>assets/admin2/static/img/avatars/avatar.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Charles Hall ">
+                                        <img src="<?php echo base_url(); ?>assets/admin2/static/img/avatars/avatar.jpg " width="36 " height="36 " class="rounded-circle mr-2 " alt="Charles Hall ">
                                         <div class="flex-grow-1 ">
                                             <small class="float-right text-navy ">1d ago</small>
                                             <strong>Charles Hall</strong> started following <strong>Christina Mason</strong><br />
@@ -649,16 +647,8 @@
         </div>
     </div>
 
-    <script src="<?php echo base_url();?>assets/admin2/static/js/app.js "></script>
-    <script>
-        document.addEventListener("DOMContentLoaded ", function() {
-            document.getElementById("datetimepicker-dashboard ").flatpickr({
-                inline: true,
-                prevArrow: '<span class="fas fa-chevron-left " title="Previous month "></span>',
-                nextArrow: '<span class="fas fa-chevron-right " title="Next month "></span>',
-            });
-        });
-    </script>
+    <script src="<?php echo base_url(); ?>assets/admin2/static/js/app.js "></script>
+
 </body>
 
 </html>
