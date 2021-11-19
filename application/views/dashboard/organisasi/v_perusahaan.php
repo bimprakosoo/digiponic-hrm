@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <select class="form-control text-center" id="kota" name="kota" required>
+                                    <select class="form-control text-center" >
                                         <option value="">-- Filter --</option>
                                         <option value="">-- Filter --</option>
                                         <option value="">-- Filter --</option>
