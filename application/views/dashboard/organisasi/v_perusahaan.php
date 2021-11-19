@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin2/organisasi/perusahaan/tambah_perusahaan" class="btn btn-primary">Tambah Data</a>
+                    <a href="<?php echo base_url() ?>admin2/organisasi/perusahaan/tambah_perusahaan" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -68,5 +68,122 @@
             </div>
         </div>
     </div>
+    <!-- BEGIN  modal -->
+
+    <div class="modal fade" id="sizedModalLg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data Perusahaan</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/perusahaan/create_perusahaan'); ?>" method="POST" enctype="multipart/form-data">
+
+                        <!-- Perusahaan -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Perusahaan</label>
+                                <input type="text" class="form-control" id="perusahaan" name="perusahaan">
+                            </div>
+                        </div>
+
+                        <!-- Industri -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Industri</label>
+                                <input type="text" class="form-control" id="industri" name="industri">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <!-- provinsi -->
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Provinsi</label>
+                                        <select class="form-control" id="provinsi" name="provinsi" required>
+                                        <option value="">-- Pilih Provinsi --</option>
+                                                        <?php foreach ($provinsi as $prov) : ?>
+                                                            <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                                        <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <!-- Kota -->
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Kota</label>
+                                        <select class="form-control" id="kota" name="kota" required>
+                                            <<option value="">-- Pilih Kota --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- Email -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Email</label>
+                                <input type="text" class="form-control" id="industri" name="industri">
+                            </div>
+                        </div>
+
+                        <!-- Alamat -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Alamat</label>
+                                <input type="text" class="form-control" id="industri" name="industri">
+                            </div>
+                        </div>
+
+                        <!-- Telp -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Telp</label>
+                                <input type="text" class="form-control" id="industri" name="industri">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
 </main>
 <!-- End Content -->
+<script>
+    $(document).ready(function() {
+        $('#provinsi').change(function() {
+            var id = $(this).val();
+            // console.log(id); // cek id
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('pelamar/getKota') ?>",
+                data: {
+                    id: id
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    // console.log(response);
+                    $('#kota').html(response);
+                    // get id kota by provinsi
+                }
+            });
+        });
+    });
+</script>
