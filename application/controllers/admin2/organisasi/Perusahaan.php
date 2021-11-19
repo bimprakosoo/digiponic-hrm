@@ -7,11 +7,14 @@ class Perusahaan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_organisasi');
+        $this->load->model('M_Pelamar');
     }
 
     public function index()
     {
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+
 
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
@@ -51,5 +54,15 @@ class Perusahaan extends CI_Controller
         } else {
             // $this->lowongan_ad();
         }
+    }
+    public function getKota()
+    {
+        $idprov =   $this->input->post('id');
+        $data   =   $this->M_Pelamar->getDataKota($idprov);
+        $output =   '<option value="">-- Pilih Kota --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
 }

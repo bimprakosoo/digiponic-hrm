@@ -8,14 +8,14 @@ class Mutasi extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('M_admin');
+        $this->load->model('M_mutasi');
     }
 
 
     public function index()
     {
-        $data['m_db'] = $this->M_admin->data_karyawan()->result_array();
-        $data['dept'] = $this->M_admin->getDataDepartment()->result_array();
+        $data['m_db'] = $this->M_mutasi->data_karyawan()->result_array();
+        $data['dept'] = $this->M_mutasi->getDataDepartment()->result_array();
 
         // $data['status'] = $this->M_admin->data_departemen()->result_array();
 

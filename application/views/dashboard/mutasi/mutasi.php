@@ -58,7 +58,7 @@
                                          <td><?= $m['nama']; ?></td> <!-- nama karyawan -->
                                          <td>Jabatan</td> <!-- tgl mutasi [menentikan kapan di mutasi ]-->
                                          <td><?= $m['department']; ?></td> <!-- departemen [keuangagn/logistik]-->
-                                         <td>operasional</td> <!-- devisi [operasional/bisnis] -->
+                                         <td><?php echo date('Y-m-d H:i:s'); ?></td> <!-- devisi [operasional/bisnis] -->
                                          <td>staff</td> <!-- jabatan [staf]-->
                                          <td>staff logistik</td> <!-- posisi [staff logistik]-->
                                          <td>cabang malang</td> <!-- penempatan [cabang/gedung]-->
