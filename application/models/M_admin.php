@@ -23,7 +23,7 @@ class M_Admin extends CI_Model
     {
         return $this->db->get('lowongan')->num_rows();
     }
-    
+
     // get data lamaran masuk
     public function lamaran_masuk()
     {
@@ -52,19 +52,16 @@ class M_Admin extends CI_Model
         return $this->db->get();
     }
 
-    // function insert_into()
-    // {
-
-    //     $q = $this->db->get('data_lamaran')->result(); // get first table
-    //     foreach ($q as $r) { // loop over results
-    //         $this->db->update('tbl_karyawan', $r, array('id' => $r->id)); // insert each row to another table
-    //     }
-    // }
-
     public function terima_pelamar($data)
     {
         // pindah data karywaan yang diterima ke tbl_karyawan
         $this->db->insert('tbl_karyawan', $data);
+    }
+
+    public function delete_pelamar($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('lamaran');
     }
 
     public function update_status_pelamar($update_status, $diterima_id)
@@ -94,5 +91,10 @@ class M_Admin extends CI_Model
             $file_image      = $data_upload['file_name'];
         }
         return $file_image;
+    }
+
+    public function getDataDepartment()
+    {
+        return $this->db->get('department');
     }
 }

@@ -36,7 +36,7 @@
   <h2>
     Tentang Kami
   </h2>
-
+  <?= $this->session->flashdata('hasil');     ?>
   <div class="container d-flex justify-content-center">
     <div class="card mb-3 py-5">
       <div class="row g-0">
