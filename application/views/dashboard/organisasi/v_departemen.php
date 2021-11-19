@@ -39,6 +39,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Departemen</th>
+                                    <th>Perusahaan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

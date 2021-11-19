@@ -38,6 +38,12 @@ class M_organisasi extends CI_Model
         return $this->db->get('penempatan');
     }
 
+    // Perusahaan
+    public function getDataPerusahaan()
+    {
+        return $this->db->get('perusahaan');
+    }
+
 
 
     // create data

@@ -69,9 +69,6 @@ class Pelamar extends CI_Controller
                 redirect('pelamar');
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
-
-                var_dump($data);
-                die;
                 redirect('pelamar');
             }
             // redirect('pelamar');

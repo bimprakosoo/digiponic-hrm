@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a href="<?php echo base_url() ?>admin2/organisasi/perusahaan/tambah_perusahaan" class="btn btn-primary">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -47,7 +47,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               
+                                <?php $i = 1;
+                                foreach ($perusahaan as $d) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $d['nama_perusahaan']; ?></td>
+                                        <td><?= $d['industri']; ?></td>
+                                        <td><?= $d['kota']; ?></td>
+                                        <td><?= $d['email']; ?></td>
+                                        <td><?= $d['alamat']; ?></td>
+                                        <td><?= $d['telp']; ?></td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>

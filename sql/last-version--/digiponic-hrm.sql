@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 03:26 AM
+-- Generation Time: Nov 16, 2021 at 02:52 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -67,65 +67,16 @@ INSERT INTO `data_lamaran` (`id`, `nama`, `provinsi`, `kota`, `kecamatan`, `alam
 
 CREATE TABLE `department` (
   `id_departemen` int(11) NOT NULL,
-  `department` varchar(100) NOT NULL,
-  `perusahaan` varchar(100) NOT NULL
+  `department` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`id_departemen`, `department`, `perusahaan`) VALUES
-(1, 'departemen keuangan', ''),
-(2, 'departemen finance', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `devisi`
---
-
-CREATE TABLE `devisi` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `devisi`
---
-
-INSERT INTO `devisi` (`id`, `nama`) VALUES
-(1, 'operasional'),
-(2, 'bisnis');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `golongan`
---
-
-CREATE TABLE `golongan` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jabatan`
---
-
-CREATE TABLE `jabatan` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jabatan`
---
-
-INSERT INTO `jabatan` (`id`, `nama`) VALUES
-(1, 'staf');
+INSERT INTO `department` (`id_departemen`, `department`) VALUES
+(1, 'departemen keuangan'),
+(2, 'departemen finance');
 
 -- --------------------------------------------------------
 
@@ -160,87 +111,7 @@ CREATE TABLE `lowongan` (
 INSERT INTO `lowongan` (`id_lowongan`, `nama_lowongan`, `lokasi`, `perusahaan`, `industri`, `tipe_pekerjaan`, `pengalaman_kerja`, `insentif_lembur`, `level_pekerjaan`, `pendidikan`, `waktu_bekerja`, `gaji`, `post_date`, `ket`, `syarat_pengalaman`, `tunjangan`, `image`) VALUES
 (12, 'Staff Hrd', 'Jombang', 'Maju Jaya', 'ManuFakturing', 'tetap', 2, 'insentif lembur', 'staff', 'S1', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '7000000', '2021-11-05', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Usia maksimal 30 tahun</li>\r\n	<li>Pendidikan minimal Diploma / Sarjana Strata-1 IPK minimal 3.00</li>\r\n	<li>Memiliki pengalaman dalam bidang Staff HRD minimal 2 tahun</li>\r\n	<li>Memahami Undang-Undang Ketenagakerjaan</li>\r\n	<li>Memahami segala bentuk perizinan yang dibutuhkan oleh perusahaan dan pengurusannya</li>\r\n	<li>Menguasai Microsoft Office, minimal Word, Excel (Pivot, Formula), Power Point</li>\r\n	<li>Berintegrasi dalam bekerja (teliti, rajin, tanggung jawab, sigap, cepat belajar/tanggap, disiplin)</li>\r\n	<li>Memiliki wibawa yang bagus dan dapat bekerja sama secara kelompok maupun individual</li>\r\n	<li>Memiliki kemampuan bekerja dibawah tekanan dan dapat memastikan segala kegiatan operasional di HRD/GA dapat berjalan lancar dan tidak ada masalah</li>\r\n	<li>Berpenampilan rapi, jujur, komunikatif, inovatif, interaktif, dan kreatif</li>\r\n	<li>Bersedia ditempatkan di cabang Jakarta dan/atau Surabaya</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Uang Makan,</li>\r\n	<li>Uang Transport,</li>\r\n	<li>Tunjangan Hari Raya (THR),</li>\r\n	<li>Jaminan Kecelakaan Kerja,</li>\r\n	<li>Jaminan Hari Tua,</li>\r\n	<li>Jaminan Pensiun,</li>\r\n	<li>BPJS Kesehatan (Kelas 1)</li>\r\n</ul>\r\n', 'icon-analityc4.svg'),
 (13, 'Staff Hrd', 'Malang', 'Maju Jaya', 'ManuFakturing', 'tetap', 2, 'insentif lembur', 'staff', 'S1', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '7500000', '2021-11-05', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Usia maksimal 30 tahun</li>\r\n	<li>Pendidikan minimal Diploma / Sarjana Strata-1 IPK minimal 3.00</li>\r\n	<li>Memiliki pengalaman dalam bidang Staff HRD minimal 2 tahun</li>\r\n	<li>Memahami Undang-Undang Ketenagakerjaan</li>\r\n	<li>Memahami segala bentuk perizinan yang dibutuhkan oleh perusahaan dan pengurusannya</li>\r\n	<li>Menguasai Microsoft Office, minimal Word, Excel (Pivot, Formula), Power Point</li>\r\n	<li>Berintegrasi dalam bekerja (teliti, rajin, tanggung jawab, sigap, cepat belajar/tanggap, disiplin)</li>\r\n	<li>Memiliki wibawa yang bagus dan dapat bekerja sama secara kelompok maupun individual</li>\r\n	<li>Memiliki kemampuan bekerja dibawah tekanan dan dapat memastikan segala kegiatan operasional di HRD/GA dapat berjalan lancar dan tidak ada masalah</li>\r\n	<li>Berpenampilan rapi, jujur, komunikatif, inovatif, interaktif, dan kreatif</li>\r\n	<li>Bersedia ditempatkan di cabang Jakarta dan/atau Surabaya</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Uang Makan,</li>\r\n	<li>Uang Transport,</li>\r\n	<li>Tunjangan Hari Raya (THR),</li>\r\n	<li>Jaminan Kecelakaan Kerja,</li>\r\n	<li>Jaminan Hari Tua,</li>\r\n	<li>Jaminan Pensiun,</li>\r\n	<li>BPJS Kesehatan (Kelas 1)</li>\r\n</ul>\r\n', 'icon-analityc.svg'),
-(14, 'marketing', 'Malang', 'Maju Jaya', 'Digital', 'kontrak', 1, 'tidak ada', 'staff', 'Pilih Pendidikan', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '', '0000-00-00', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', 'icon-analityc2.svg'),
-(15, 'qw', 'qwq', '', '', 'Pilih Tipe Pekerjaan', 0, '', '', 'Pilih Pendidikan', '', '', '2021-11-19', '', '', '', 'call-of-duty-images-208.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mutasi`
---
-
-CREATE TABLE `mutasi` (
-  `id` int(11) NOT NULL,
-  `tgl_mutasi` date NOT NULL,
-  `jenis_mutasi` varchar(100) NOT NULL,
-  `karyawan_id` int(11) NOT NULL,
-  `departement_id` int(11) NOT NULL,
-  `devisi_id` int(11) NOT NULL,
-  `jabatan_id` int(11) NOT NULL,
-  `gologan_id` int(11) NOT NULL,
-  `posisi_id` int(11) NOT NULL,
-  `cabang_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penempatan`
---
-
-CREATE TABLE `penempatan` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(200) NOT NULL,
-  `lokasi_cabang` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `penempatan`
---
-
-INSERT INTO `penempatan` (`id`, `nama`, `lokasi_cabang`) VALUES
-(1, 'cabang Malang', 'Malang');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `perusahaan`
---
-
-CREATE TABLE `perusahaan` (
-  `id` int(11) NOT NULL,
-  `nama_perusahaan` varchar(200) NOT NULL,
-  `industri` varchar(200) NOT NULL,
-  `kota` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `alamat` text NOT NULL,
-  `telp` varchar(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `perusahaan`
---
-
-INSERT INTO `perusahaan` (`id`, `nama_perusahaan`, `industri`, `kota`, `email`, `alamat`, `telp`) VALUES
-(2, 'maju jaya', 'manufacture', 'malang', 'majujaya@gmail.com', 'jl. perusahaan raya no. 24, bodosari, tanjungtirto, kec. singosari, malang, jawa timur', '083898996210');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `posisi`
---
-
-CREATE TABLE `posisi` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `posisi`
---
-
-INSERT INTO `posisi` (`id`, `nama`) VALUES
-(1, 'staff logistik');
+(14, 'marketing', 'Malang', 'Maju Jaya', 'Digital', 'kontrak', 1, 'tidak ada', 'staff', 'Pilih Pendidikan', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '', '0000-00-00', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', 'icon-analityc2.svg');
 
 -- --------------------------------------------------------
 
@@ -7821,52 +7692,10 @@ ALTER TABLE `department`
   ADD PRIMARY KEY (`id_departemen`);
 
 --
--- Indexes for table `devisi`
---
-ALTER TABLE `devisi`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `golongan`
---
-ALTER TABLE `golongan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `jabatan`
---
-ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `lowongan`
 --
 ALTER TABLE `lowongan`
   ADD PRIMARY KEY (`id_lowongan`);
-
---
--- Indexes for table `mutasi`
---
-ALTER TABLE `mutasi`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `penempatan`
---
-ALTER TABLE `penempatan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `perusahaan`
---
-ALTER TABLE `perusahaan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `posisi`
---
-ALTER TABLE `posisi`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `syarat_pengalaman`
@@ -7922,52 +7751,10 @@ ALTER TABLE `department`
   MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `devisi`
---
-ALTER TABLE `devisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `golongan`
---
-ALTER TABLE `golongan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `jabatan`
---
-ALTER TABLE `jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `lowongan`
 --
 ALTER TABLE `lowongan`
-  MODIFY `id_lowongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `mutasi`
---
-ALTER TABLE `mutasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `penempatan`
---
-ALTER TABLE `penempatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `perusahaan`
---
-ALTER TABLE `perusahaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `posisi`
---
-ALTER TABLE `posisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_lowongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `syarat_pengalaman`

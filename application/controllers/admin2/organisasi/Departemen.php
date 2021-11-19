@@ -6,13 +6,13 @@ class Departemen extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('M_admin');
+        $this->load->model('M_organisasi');
     }
 
     public function index()
     {
 
-        $data['dept'] = $this->M_admin->getDataDepartment()->result_array();
+        $data['dept'] = $this->M_organisasi->getDataDepartment()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');

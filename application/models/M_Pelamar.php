@@ -60,17 +60,17 @@ class M_Pelamar extends CI_Model
         return $file_cv;
     }
 
-    // 
+    // provinsi
     public function getDataprov()
     {
         return $this->db->get('wilayah_provinsi')->result_array();
     }
-    // 
+    // kota
     public function getDataKota($idprov)
     {
         return $this->db->get_where('wilayah_kota', ['provinsi_id' => $idprov])->result();
     }
-    // 
+    // kecamatan
     public function getDataKecamatan($idkota)
     {
         return $this->db->get_where('wilayah_kecamatan', ['kota_id' => $idkota])->result();
