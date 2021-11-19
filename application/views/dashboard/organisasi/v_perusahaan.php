@@ -80,7 +80,7 @@
                     </button>
                 </div>
                 <div class="modal-body m-3">
-                    <form action="<?= base_url('admin2/organisasi/perusahaan/create_perusahaan'); ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url('admin2/organisasi/perusahaan/create_perusahaan'); ?>" method="POST">
 
                         <!-- Perusahaan -->
                         <div class="modal-body">
@@ -105,10 +105,10 @@
                                     <div class="form-group">
                                         <label for="title">Provinsi</label>
                                         <select class="form-control" id="provinsi" name="provinsi" required>
-                                        <option value="">-- Pilih Provinsi --</option>
-                                                        <?php foreach ($provinsi as $prov) : ?>
-                                                            <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                                        <?php endforeach; ?>
+                                            <option value="">-- Pilih Provinsi --</option>
+                                            <?php foreach ($provinsi as $prov) : ?>
+                                                <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -154,11 +154,11 @@
                             </div>
                         </div>
 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
                 </div>
             </div>
         </div>

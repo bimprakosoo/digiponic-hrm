@@ -43,7 +43,7 @@ class M_organisasi extends CI_Model
     {
         return $this->db->get('perusahaan');
     }
-    
+
 
     // create data
 

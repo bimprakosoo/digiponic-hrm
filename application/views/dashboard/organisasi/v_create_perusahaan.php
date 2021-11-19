@@ -40,14 +40,18 @@
                              </div>
                          </div>
 
+                         <!-- lokasi -->
                          <div class="row">
                              <div class="mb-3 col-md-6">
                                  <!-- provinsi -->
                                  <div class="modal-body">
                                      <div class="form-group">
                                          <label for="title">Provinsi</label>
-                                         <select class="form-control" id="kota" name="kota" required>
-                                             <option value="">-- Pilih Kota --</option>
+                                         <select class="form-control" id="provinsi" name="provinsi" required>
+                                             <option value="">-- Pilih Provinsi --</option>
+                                             <?php foreach ($provinsi as $prov) : ?>
+                                                 <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                             <?php endforeach; ?>
                                          </select>
                                      </div>
                                  </div>
@@ -57,23 +61,19 @@
                                  <div class="modal-body">
                                      <div class="form-group">
                                          <label for="title">Kota</label>
-                                         <select class="form-control" id="kecamatan" name="kecamatan" required>
+                                         <select class="form-control" id="kota" name="kota" required>
                                              <option value="">-- Pilih Kecamatan --</option>
                                          </select>
                                      </div>
                                  </div>
-
-
                              </div>
                          </div>
-
-
 
                          <!-- Email -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Email</label>
-                                 <input type="text" class="form-control" id="industri" name="industri">
+                                 <input type="text" class="form-control" id="email" name="email">
                              </div>
                          </div>
 
@@ -81,7 +81,7 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Alamat</label>
-                                 <input type="text" class="form-control" id="industri" name="industri">
+                                 <input type="text" class="form-control" id="alamat" name="alamat">
                              </div>
                          </div>
 
@@ -89,19 +89,13 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Telp</label>
-                                 <input type="text" class="form-control" id="industri" name="industri">
+                                 <input type="text" class="form-control" id="telp" name="telp">
                              </div>
                          </div>
 
-
-                         <th>Kota</th>
-                         <th>Email</th>
-                         <th>Alamat</th>
-                         <th>No Telp</th>
-
                          <div class="row pb-2 m-4">
                              <div class="col-auto ml-auto ">
-                                 <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                 <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan</button>
                              </div>
                          </div>
                  </form>
@@ -111,3 +105,45 @@
 
  </main>
  <!-- End Content -->
+
+ <script>
+     $(document).ready(function() {
+         $('#provinsi').change(function() {
+             var id = $(this).val();
+             // console.log(id); // cek id
+             $.ajax({
+                 type: "POST",
+                 url: "<?= base_url('pelamar/getKota') ?>",
+                 data: {
+                     id: id
+                 },
+                 dataType: "JSON",
+                 success: function(response) {
+                     // console.log(response);
+                     $('#kota').html(response);
+                     // get id kota by provinsi
+                 }
+             });
+         });
+
+         $('#kota').change(function() {
+             var id = $(this).val();
+             // console.log(id); // cek id
+             $.ajax({
+                 type: "POST",
+                 url: "<?= base_url('pelamar/getKecamatan') ?>",
+                 data: {
+                     id: id
+                 },
+                 dataType: "JSON",
+                 success: function(response) {
+                     // console.log(response);
+                     $('#kecamatan').html(response);
+                     // get id kecamtan by kota
+                 }
+             });
+         });
+
+
+     });
+ </script>
