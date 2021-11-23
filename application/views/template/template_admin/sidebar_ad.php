@@ -18,8 +18,15 @@
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/app.css" rel="stylesheet" />
     <link href="<?php echo base_url(); ?>assets/admin2/static/css/custom.css" rel="stylesheet" />
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2a5bcf5393.js" crossorigin="anonymous"></script>
+    
+    <!-- datatable -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <!-- <script>
         $.datepicker.setDefaults({

@@ -31,9 +31,9 @@
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Lowongan</h1>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -57,9 +57,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1; ?>
                                 <?php foreach ($lowongan as $m) : ?>
                                     <tr>
-                                        <th scope="row"><?= ++$start; ?></th>
+                                        <th scope="row"><?= $i; ?></th>
                                         <td><?= $m['nama_lowongan']; ?></td>
                                         <td><?= $m['lokasi']; ?></td>
                                         <td><?= $m['perusahaan']; ?></td>
@@ -149,18 +150,28 @@
                                         </td>
                                         <td><?= $m['image']; ?></td>
                                         <td>
-                                            <a href="" class="btn btn-primary" style="width: 100px;">Edit</a>
-                                            <a href="" class="btn btn-danger" style="width: 100px;">Hapus</a>
+                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>
+                                    <?php $i++; ?>
+
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <?= $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>
 </main>
 <!-- End Content -->
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollX": true
+
+        });
+    });
+</script>
