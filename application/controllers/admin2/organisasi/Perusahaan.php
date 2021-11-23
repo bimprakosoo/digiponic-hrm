@@ -21,44 +21,44 @@ class Perusahaan extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
-    function fetch()
-    {
-        $output = '';
-        $query = '';
-        $this->load->model('M_organisasi');
-        if ($this->input->post('query')) {
-            $query = $this->input->post('query');
-        }
-        $data = $this->M_organisasi->search_perusahaan($query);
-        $output .= '
+//     function fetch()
+//     {
+//         $output = '';
+//         $query = '';
+//         $this->load->model('M_organisasi');
+//         if ($this->input->post('query')) {
+//             $query = $this->input->post('query');
+//         }
+//         $data = $this->M_organisasi->search_perusahaan($query);
+//         $output .= '
   
-      </tr>
-  ';
-        if ($data->num_rows() > 0) {
-            $i = 1;
-            foreach ($data->result() as $row) {
-                $output .= '
-      <tr>
-       <td>' . $i . '</td>
-       <td>' . $row->nama_perusahaan . '</td>
-       <td>' . $row->industri . '</td>
-       <td>' . $row->kota . '</td>
-       <td>' . $row->email . '</td>
-       <td>' . $row->alamat . '</td>
-       <td>' . $row->telp . '</td>
-       <td> <a href="" class="btn btn-primary">Edit</a></td>
-      </tr>
-    ';
-                $i++;
-            }
-        } else {
-            $output .= '<tr>
-       <td colspan="8">No Data Found</td>
-      </tr>';
-        }
-        $output .= '</table>';
-        echo $output;
-    }
+//       </tr>
+//   ';
+//         if ($data->num_rows() > 0) {
+//             $i = 1;
+//             foreach ($data->result() as $row) {
+//                 $output .= '
+//       <tr>
+//        <td>' . $i . '</td>
+//        <td>' . $row->nama_perusahaan . '</td>
+//        <td>' . $row->industri . '</td>
+//        <td>' . $row->kota . '</td>
+//        <td>' . $row->email . '</td>
+//        <td>' . $row->alamat . '</td>
+//        <td>' . $row->telp . '</td>
+//        <td> <a href="" class="btn btn-primary">Edit</a></td>
+//       </tr>
+//     ';
+//                 $i++;
+//             }
+//         } else {
+//             $output .= '<tr>
+//        <td colspan="8">No Data Found</td>
+//       </tr>';
+//         }
+//         $output .= '</table>';
+//         echo $output;
+//     }
 
 
     public function tambah_perusahaan()
