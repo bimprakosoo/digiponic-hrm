@@ -52,6 +52,7 @@ class LandingPage extends CI_Controller
         $this->load->view('template/header');
         $this->load->view('landingpage/lowongan_view', $data);
         $this->load->view('template/footer');
+        // var_dump($data);
     }
     public function lowongan_detail($data_id)
     {

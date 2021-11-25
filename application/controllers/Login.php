@@ -29,7 +29,7 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
         if ($this->form_validation->run() == false) {
-            $this->load->view('template/headerauth');
+            $this->load->view('template/headerAuth');
             $this->load->view('login');
         } else {
             // validasi success
