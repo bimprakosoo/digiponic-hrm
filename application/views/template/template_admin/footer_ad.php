@@ -30,6 +30,10 @@
 
 <script src="<?php echo base_url(); ?>assets/admin2/static/js/app.js "></script>
 <script src="<?php echo base_url(); ?>assets/admin2/static/js/todo.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+
 <!-- <script>
     // Data Picker Initialization
     $('.datepicker').datepicker();

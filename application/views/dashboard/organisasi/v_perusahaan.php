@@ -56,11 +56,10 @@
                         </div>
 
 
-                    </div>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -73,7 +72,27 @@
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                            <tbody id="result">
+                            <tbody>
+
+                                <?php $i = 1; ?>
+                                <?php foreach ($perusahaan as $m) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $m['nama_perusahaan']; ?></td>
+                                        <td><?= $m['industri']; ?></td>
+                                        <td><?= $m['kota']; ?></td>
+                                        <td><?= $m['email']; ?></td>
+                                        <td><?= $m['alamat']; ?></td>
+                                        <td><?= $m['telp']; ?></td>
+                                        <td>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-kota="<?= $m['kota']; ?>" data-email="<?= $m['email']; ?>" data-alamat="<?= $m['alamat']; ?>" data-telp="<?= $m['telp']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
 
                             </tbody>
                         </table>
@@ -190,6 +209,56 @@
         </div>
     </div> -->
     <!-- END  modal -->
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Perusahaan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive ">
+                    <table class="table table-bordered no-margin">
+                        <tbody>
+                            <tr>
+                                <th>Nama Perusahaan</th>
+                                <td><span id="nama_perusahaan"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Industri</th>
+                                <td><span id="dtl_industri"></span></td>
+                            </tr>
+                            <tr>
+                                <th>kota</th>
+                                <td><span id="dtl_kota"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><span id="dtl_email"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td><span id="dtl_alamat"></span></td>
+                            </tr>
+                            <tr>
+                                <th>No Telp</th>
+                                <td><span id="dtl_telp"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
+
 </main>
 <!-- End Content -->
 <script>
@@ -241,5 +310,30 @@
             });
         });
 
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollX": true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var nama_perusahaan = $(this).data('nama_perusahaan');
+            var industri = $(this).data('industri');
+            var kota = $(this).data('kota');
+            var email = $(this).data('email');
+            var alamat = $(this).data('alamat');
+            var telp = $(this).data('telp');
+            $('#nama_perusahaan').text(nama_perusahaan);
+            $('#dtl_industri').text(industri);
+            $('#dtl_kota').text(kota);
+            $('#dtl_email').text(email);
+            $('#dtl_alamat').text(alamat);
+            $('#dtl_telp').text(telp);
+        });
     });
 </script>

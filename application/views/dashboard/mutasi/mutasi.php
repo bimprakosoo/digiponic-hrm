@@ -16,26 +16,15 @@
          <div class="container-fluid p-0">
 
              <div class="card shadow mb-4 ">
-                 <div class="row my-2 my-xl-3 m-2">
-                     <div class="col-auto d-none d-sm-block ">
-                         <h1 class="m-0 font-weight-bold ">Daftar Karyawan</h1>
-                     </div>
 
-                     <div class="col-auto ml-auto ">
-                         <form class="d-none d-sm-inline-block">
-                             <div class="input-group input-group-navbar">
-                                 <input type="text" class="form-control" placeholder="Search…" aria-label="Search" />
-                                 <button class="btn" type="button">
-                                     <i class="align-middle" data-feather="search"></i>
-                                 </button>
-                             </div>
-                         </form>
-                     </div>
+                 <div class="card-header py-3">
+                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
+                     <h1 class="m-0 font-weight-bold ">Daftar Semua Mutasi</h1>
                  </div>
 
-                 <div class="card-body text-center">
+                 <div class="card-body ">
                      <div class="table-responsive">
-                         <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                         <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                              <thead>
                                  <tr>
                                      <th>No</th>
@@ -65,6 +54,7 @@
                                          <td>promosi</td> <!-- jenis mutasi [promosi/demosi]-->
                                          <td>
                                              <a href="<?= base_url('admin2/mutasi/mutasi/update_mutasi/') . $m['id']; ?>"><i class="align-middle mr-2" data-feather="edit"></i></a>
+                                             
 
                                          </td>
 
@@ -75,19 +65,7 @@
                          </table>
                      </div>
                  </div>
-                 <nav aria-label="Page navigation example" class="m-3">
-                     <ul class="pagination justify-content-end">
-                         <li class="page-item disabled">
-                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                         </li>
-                         <li class="page-item"><a class="page-link" href="#">1</a></li>
-                         <li class="page-item"><a class="page-link" href="#">2</a></li>
-                         <li class="page-item"><a class="page-link" href="#">3</a></li>
-                         <li class="page-item">
-                             <a class="page-link" href="#">Next</a>
-                         </li>
-                     </ul>
-                 </nav>
+            
              </div>
          </div>
      </div>
@@ -145,3 +123,10 @@
      </div>
  </main>
  <!-- End Content -->
+ <script>
+     $(document).ready(function() {
+         $('#dataTable').DataTable({
+            "scrollX": true
+         });
+     });
+ </script>

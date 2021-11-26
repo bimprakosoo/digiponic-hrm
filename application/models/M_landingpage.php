@@ -16,7 +16,11 @@ class M_landingpage extends CI_Model
         // $this->db->from('lowongan');
 
         // $this->db->where('role_id', 1);
-        return $this->db->get('lowongan')->result_array();
+        // return $this->db->get('lowongan')->result_array();
+        $this->db->select('*');
+        $this->db->from('lowongan');
+        $sql =  $this->db->get()->result_array();
+        return $sql; 
     }
     public function lowongan_lan( $limit, $start)
     {

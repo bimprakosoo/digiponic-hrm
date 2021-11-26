@@ -10,13 +10,13 @@ class M_Admin extends CI_Model
     }
 
     // get data lowongan
-    public function lowongan_ad($limit, $start)
+    public function lowongan_ad()
     {
         // $this->db->select('*');
         // $this->db->from('lowongan');
 
         // $this->db->where('role_id', 1);
-        return $this->db->get('lowongan', $limit, $start)->result_array();
+        return $this->db->get('lowongan')->result_array();
     }
     // get jumlah data lowongan
     public function countAllLowongan()

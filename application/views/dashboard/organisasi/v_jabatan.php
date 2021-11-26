@@ -31,9 +31,9 @@
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Jabatan</h1>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -49,6 +49,11 @@
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
                                         <td><?= $d['nama_divisi']; ?></td>
+                                        <td>
+                                        <button class="btn btn-secondary" ><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
                                     </tr>
                                 <?php $i++;
                                 endforeach; ?>
@@ -109,3 +114,11 @@
 
 </main>
 <!-- End Content -->
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollX": true
+
+        });
+    });
+</script>
