@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalGolongan">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -33,28 +33,79 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Perusahaan</th>
-                                    <th>Industri</th>
-                                    <th>Kota</th>
-                                    <th>Email</th>
-                                    <th>Alamat</th>
-                                    <th>No Telp</th>
+                                    <th>Nama</th>
+                                    <th>jabatan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
+                                <?php $i = 1;
+                                foreach ($golongan as $d) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $d['nama']; ?></td>
+                                        <td><?= $d['nama_jabatan']; ?></td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalGolongan" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data Golongan</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/golongan/add_gol'); ?>" method="POST">
+
+                        <!-- Golongan -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Golongan</label>
+                                <input type="text" class="form-control" id="golongan" name="golongan">
+                            </div>
+                        </div>
+
+                        <!-- Jabatan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Jabatan</label>
+                                    <select class="form-control" id="jabatan" name="jabatan" required>
+                                        <option value="">-- Pilih Jabatan --</option>
+                                        <?php foreach ($jabatan as $org) : ?>
+                                            <option value="<?= $org['jab_id'] ?>"><?= $org['nama'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </main>
 <!-- End Content -->

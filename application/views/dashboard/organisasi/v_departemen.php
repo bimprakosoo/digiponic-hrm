@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalDepartment">Tambah</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,8 @@
                                 foreach ($dept as $d) : ?>
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
-                                        <td><?= $d['department']; ?></td> <!-- nama departemnt -->
+                                        <td><?= $d['nama']; ?></td> <!-- nama departemnt -->
+                                        <td><?= $d['nama_perusahaan']; ?></td>
                                     </tr>
                                 <?php $i++;
                                 endforeach; ?>
@@ -60,5 +61,52 @@
             </div>
         </div>
     </div>
+
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalDepartment" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data department</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/department/add_Dept'); ?>" method="POST">
+
+                        <!-- Department -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">department</label>
+                                <input type="text" class="form-control" id="department" name="department">
+                            </div>
+                        </div>
+
+                        <!-- Perusahaan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Perusahaan</label>
+                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                        <option value="">-- Pilih Perusahaan --</option>
+                                        <?php foreach ($perusahaan as $p) : ?>
+                                            <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
 <!-- End Content -->

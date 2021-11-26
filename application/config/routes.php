@@ -58,3 +58,5 @@ $route['api/authentication/registration'] = 'api/authentication/registration';
 
 // $route['file-cv'] = "api/pelamar/file_lamaran";
 // $route['file-lamaran'] = "api/pelamar/file_cv";
+
+$route['perusahaan_s'] = 'admin2/organisasi/perusahaan/success';

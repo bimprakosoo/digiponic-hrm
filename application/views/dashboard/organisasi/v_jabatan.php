@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalJabatan">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -37,8 +37,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Jabatan</th>
-                                    <!-- <th>Divisi</th> -->
+                                    <th>Nama</th>
+                                    <th>Divisi</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -48,6 +48,7 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
+                                        <td><?= $d['nama_divisi']; ?></td>
                                     </tr>
                                 <?php $i++;
                                 endforeach; ?>
@@ -59,5 +60,52 @@
             </div>
         </div>
     </div>
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalJabatan" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data department</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/jabatan/add_jab'); ?>" method="POST">
+
+                        <!-- Jabatan -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Jabatan</label>
+                                <input type="text" class="form-control" id="jabatan" name="jabatan">
+                            </div>
+                        </div>
+
+                        <!-- Devisi -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Divisi</label>
+                                    <select class="form-control" id="divisi" name="divisi" required>
+                                        <option value="">-- Pilih Divisi --</option>
+                                        <?php foreach ($divisi as $org) : ?>
+                                            <option value="<?= $org['div_id'] ?>"><?= $org['nama'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </main>
 <!-- End Content -->

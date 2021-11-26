@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalPenempatan">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -37,8 +37,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Penempatan</th>
-                                    <!-- <th>Divisi</th> -->
+
+                                    <th>Nama</th> <!-- nama penempatan e -->
+                                    <th>perusahaan</th> <!-- nama perusahaan e -->
+                                    <th>lokasi</th> <!-- lokasi -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -48,6 +50,9 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
+                                        <td><?= $d['nama_perusahaan']; ?></td>
+                                        <td><?= $d['nama_kota']; ?></td>
+
                                     </tr>
                                 <?php $i++;
                                 endforeach; ?>
@@ -59,5 +64,103 @@
             </div>
         </div>
     </div>
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalPenempatan" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data Penempatan</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <!-- path action -->
+                    <form action="<?= base_url('admin2/organisasi/penempatan/add_pen'); ?>" method="POST">
+
+                        <!-- Penempatan -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">penempatan</label>
+                                <input type="text" class="form-control" id="penempatan" name="penempatan">
+                            </div>
+                        </div>
+
+                        <!-- perusahaan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Perusahaan</label>
+                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                        <option value="">-- Pilih Perusahaan --</option>
+                                        <?php foreach ($perusahaan as $org) : ?>
+                                            <option value="<?= $org['id'] ?>"><?= $org['nama_perusahaan'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <!-- provinsi -->
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Provinsi</label>
+                                        <select class="form-control" id="provinsi" name="provinsi" required>
+                                            <option value="">-- Pilih Provinsi --</option>
+                                            <?php foreach ($provinsi as $prov) : ?>
+                                                <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <!-- Kota -->
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Kota</label>
+                                        <select class="form-control" id="kota" name="kota" required>
+                                            <option value="">-- Pilih Kota --</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
 <!-- End Content -->
+
+<script>
+    $(document).ready(function() {
+        $('#provinsi').change(function() {
+            var id = $(this).val();
+            // console.log(id); // cek id
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('pelamar/getKota') ?>",
+                data: {
+                    id: id
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    // console.log(response);
+                    $('#kota').html(response);
+                    // get id kota by provinsi
+                }
+            });
+        });
+
+    });
+</script>

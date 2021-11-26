@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalPosisi">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -37,8 +37,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Posisi</th>
-                                    <!-- <th>Divisi</th> -->
+                                    <th>Nama</th>
+                                    <th>Golongan</th>
                                     <th scope="col">Action</th>
 
                                 </tr>
@@ -49,6 +49,7 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
+                                        <td><?= $d['nama_golongan']; ?></td>
                                     </tr>
                                 <?php $i++;
                                 endforeach; ?>
@@ -60,5 +61,51 @@
             </div>
         </div>
     </div>
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalPosisi" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data department</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/posisi/add_pos'); ?>" method="POST">
+
+                        <!-- Posisi -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Posisi</label>
+                                <input type="text" class="form-control" id="posisi" name="posisi">
+                            </div>
+                        </div>
+
+                        <!-- Golongan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Golongan</label>
+                                    <select class="form-control" id="golongan" name="golongan" required>
+                                        <option value="">-- Pilih Golongan --</option>
+                                        <?php foreach ($golongan as $org) : ?>
+                                            <option value="<?= $org['gol_id'] ?>"><?= $org['nama'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </main>
 <!-- End Content -->

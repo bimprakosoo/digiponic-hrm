@@ -82,7 +82,7 @@
                                 <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/perusahaan/">Perusahaan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/departemen/">Departemen</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/department/">Departemen</a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/divisi/">Divisi</a>
