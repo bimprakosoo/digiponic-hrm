@@ -20,7 +20,7 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2a5bcf5393.js" crossorigin="anonymous"></script>
-    
+
     <!-- datatable -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -56,14 +56,14 @@
                 <ul class="sidebar-nav">
                     <li class="sidebar-item ">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/dashboard/dashboard/">
-                            <i class="align-middle" data-feather="sliders"></i>
+                            <i class="fas fa-tachometer-alt"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                            <i class="fas fa-briefcase"></i>
                             <span class="align-middle">Pekerjaan</span>
                         </a>
                         <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
@@ -81,7 +81,7 @@
 
                     <li class="sidebar-item">
                         <a data-target="#or" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                            <i class="fas fa-building"></i>
                             <span class="align-middle">Organisasi</span>
                         </a>
                         <ul id="or" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
@@ -111,7 +111,7 @@
 
                     <li class="sidebar-item">
                         <a data-target="#kh" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                            <i class="fas fa-clipboard-list"></i>
                             <span class="align-middle">Kehadiran</span>
                         </a>
                         <ul id="kh" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
@@ -126,7 +126,7 @@
 
                     <li class="sidebar-item">
                         <a data-target="#cuti" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                            <i class="fas fa-id-badge"></i>
                             <span class="align-middle">Cuti</span>
                         </a>
                         <ul id="cuti" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
@@ -144,21 +144,21 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/mutasi/mutasi">
-                            <i class="align-middle" data-feather="credit-card"></i>
+                            <i class="fas fa-exchange-alt"></i>
                             <span class="align-middle">Mutasi</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin/data_karyawan">
-                            <i class="align-middle" data-feather="book"></i>
+                            <i class="fas fa-user-tie"></i>
                             <span class="align-middle">Karyawan</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a data-target="#penilaian" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i>
+                            <i class="fas fa-clipboard-check"></i>
                             <span class="align-middle">Penilaian Kerja</span>
                         </a>
                         <ul id="penilaian" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
@@ -173,28 +173,28 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/top_kerja/top_kerja/">
-                            <i class="align-middle" data-feather="credit-card"></i>
+                            <i class="fas fa-star"></i>
                             <span class="align-middle">Top Kerja</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/acara_rapat/acara_rapat/">
-                            <i class="align-middle" data-feather="credit-card"></i>
+                            <i class="fas fa-handshake"></i>
                             <span class="align-middle">Acara dan Rapat</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/artikel/artikel/">
-                            <i class="align-middle" data-feather="credit-card"></i>
+                            <i class="fas fa-newspaper"></i>
                             <span class="align-middle">Artikel</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/hak_istimewa/hak_istimewa/">
-                            <i class="align-middle" data-feather="credit-card"></i>
+                            <i class="fas fa-users"></i>
                             <span class="align-middle">Hak Istimewa</span>
                         </a>
                     </li>
