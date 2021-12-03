@@ -117,18 +117,6 @@ class Admin extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
-
-    // sidebar karyawan
-    public function data_karyawan()
-    {
-        $data['m_db'] = $this->M_admin->data_karyawan()->result_array();
-
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
-        $this->load->view('karyawan/index', $data);
-        $this->load->view('template/template_admin/footer_ad');
-    }
-
     // delete data kontak
     // function delete($id)
     // {

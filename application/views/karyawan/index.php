@@ -26,33 +26,28 @@
                              <thead>
                                  <tr>
                                      <th>No</th>
-                                     <!-- <th scope="col">Action</th> -->
-                                     <!-- <th>Status</th> -->
-                                     <th>Nama</th>
-                                     <!-- <th>Provinsi</th> -->
-                                     <!-- <th>Kota/Kabupaten</th> -->
-                                     <!-- <th>Kecamatan</th> -->
-                                     <!-- <th>Alamat Lengkap</th> -->
-                                     <th>Jenis Kelamin</th>
-                                     <th>Tanggal Lahir</th>
-                                     <th>No.Telp</th>
-                                     <th>Pendidikan</th>
-                                     <!-- <th>Status Perkawinan</th> -->
-                                     <!-- <th>Status Lamaran</th>
-                                     <th>CV</th> -->
+                                     <th>nama </th>
+                                     <th>perusahaan</th>
+                                     <th>department</th>
+                                     <th>devisi</th>
+                                     <th>jabatan</th>
+                                     <th>posisi</th>
+                                     <th>penempatan</th>
+
                                  </tr>
                              </thead>
                              <tbody>
                                  <?php $i = 1; ?>
-                                 <?php foreach ($m_db as $m) : ?>
+                                 <?php foreach ($datakaryawan as $dk) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-
-                                         <td><?= $m['nama']; ?></td>
-                                         <td><?= $m['jk']; ?></td>
-                                         <td><?= $m['tgl_lahir']; ?></td>
-                                         <td><?= $m['no_telp']; ?></td>
-                                         <td><?= $m['pendidikan_terakhir']; ?></td>
+                                         <td><?= $dk['namaKaryawan']; ?></td>
+                                         <td><?= $dk['namaPerusahaan']; ?></td>
+                                         <td><?= $dk['namaDepartement']; ?></td>
+                                         <td><?= $dk['namaDivisi']; ?></td>
+                                         <td><?= $dk['namaJabatan']; ?></td>
+                                         <td><?= $dk['namaPosisi']; ?></td>
+                                         <td><?= $dk['namaPenempatan']; ?></td>
 
                                      </tr>
                                      <?php $i++; ?>
@@ -79,53 +74,3 @@
      </div>
  </main>
  <!-- End Content -->
-
-
-
- <!-- delete -->
- <?php
-    $i = 1;
-    foreach ($m_db as $m) : ?>
-     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel">status</h5>
-                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">×</span>
-                     </button>
-                 </div>
-                 <div class="modal-body">apakah anda ingin menolak pelamar atas nama : <?= $m['nama']; ?> </div>
-                 <div class="modal-footer">
-                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                     <a class="btn btn-primary" href="<?= base_url('admin/delete/') . $m['id']; ?>">Di Tolak</a>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <?php $i++; ?>
- <?php endforeach; ?>
-
- <!-- diterima -->
- <?php
-    $i = 1;
-    foreach ($m_db as $m) : ?>
-     <div class="modal fade" id="diterima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel">status</h5>
-                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">×</span>
-                     </button>
-                 </div>
-                 <div class="modal-body">apakah anda ingin menerima pelamar atas nama : <?= $m['nama']; ?> </div>
-                 <div class="modal-footer">
-                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                     <a class="btn btn-primary" href="<?= base_url('admin/diterima/') . $m['id']; ?>">Terima Lamaran</a>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <?php $i++; ?>
- <?php endforeach; ?>

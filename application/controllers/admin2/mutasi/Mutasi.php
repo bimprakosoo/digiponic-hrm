@@ -9,54 +9,118 @@ class Mutasi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_mutasi');
+        $this->load->model('M_organisasi');
     }
 
 
     public function index()
     {
-        $data['m_db'] = $this->M_mutasi->data_karyawan()->result_array();
-        $data['dept'] = $this->M_mutasi->getDataDepartment()->result_array();
+        $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
 
-        // $data['status'] = $this->M_admin->data_departemen()->result_array();
+        // // organisasi
+        // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+        $data['department'] = $this->M_mutasi->getAllDepartment()->result_array();
+        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+        $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/mutasi/mutasi', $data);
+        $this->load->view('dashboard/mutasi/v_mutasi', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
-    public function update_mutasi($data_id)
+
+    // public function getDepartment()
+    // {
+    //     $iddept =   $this->input->post('id');
+    //     $data   =   $this->M_mutasi->getDataDepartment($iddept);
+    //     $output =   '<option value="">-- Pilih department --</option>';
+    //     foreach ($data as $row) {
+    //         $output .= ' <option value="' . $row->id . '">' . $row->department_id . ' </option>';
+    //     }
+    //     $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    // }
+
+    public function getDivisi()
     {
+        $iddiv =   $this->input->post('id');
+        $data   =   $this->M_mutasi->getDataDivisi($iddiv);
+        $output =   '<option value="">-- Pilih divisi --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
 
-        $data['m_db'] = $this->db->get_where('tbl_karyawan', ['id' => $data_id])->row_array();
-        $data['dept'] = $this->db->get('department')->result_array();
-        // $data['data'] = $this->Datamaster_model->edits($data_id);
-        // var_dump($data);
-        // die;
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('id_departemen', 'Id_Departemen', 'required');
+    public function getJabatan()
+    {
+        $idjab =   $this->input->post('id');
+        $data   =   $this->M_mutasi->getDataJabatan($idjab);
+        $output =   '<option value="">-- Pilih jabatan --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
 
-        if ($this->form_validation->run() == false) {
-            $this->load->view('template/template_admin/sidebar_ad');
-            $this->load->view('template/template_admin/header_ad');
-            $this->load->view('dashboard/mutasi/update', $data);
-            $this->load->view('template/template_admin/footer_ad');
-        } else {
-            // $submenu_name = $this->input->post('nama');
-            $nama = $this->input->post('nama');
-            $id_departemen = $this->input->post('id_depatemen');
+    public function getGolongan()
+    {
+        $idgol =   $this->input->post('id');
+        $data   =   $this->M_mutasi->getDataGolongan($idgol);
+        $output =   '<option value="">-- Pilih Golongan --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
 
-            $data_sub = [
-                'nama' => $nama,
-                'id_depatemen' => $id_departemen
-            ];
-            // var_dump($data_sub);
+    public function getPosisi()
+    {
+        $idpos =   $this->input->post('id');
+        $data   =   $this->M_mutasi->getDataPosisi($idpos);
+        $output =   '<option value="">-- Pilih posisi --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
+    // next
+
+    // insert data 
+    function create()
+    {
+        if (isset($_POST['submit'])) {
+
+            $data = array(
+
+                'tgl_mutasi'                => $this->post(''),  // date
+                'karyawan_id'               => $this->post('karyawan_id'),
+                'department_id'             => $this->post('department_id'),
+                'divisi_id'                 => $this->post('divisi_id'),
+                'jabatan_id'                => $this->post('jabatan_id'),
+                'posisi_id'                 => $this->post('posisi_id'),
+                'penempatan_id'             => $this->post('penempatan_id'),
+                'jenis_mutasi'              => $this->post('jenis_mutasi'),   // promosi | mutasi | demosi
+                'status'                    => $this->post('status'),  // peding | approve[hrd]
+            );
+
+            // var_dump($data);
             // die;
-            $this->db->set($data_sub);
-            $this->db->where('id', $data_id);
-            $this->db->update('tbl_karyawan');
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Edit Data Success!</div>');
-            redirect('dashboard/mutasi/mutasi');
+            $insert =  $this->curl->simple_post($this->API . '/mutasi/create', $data, array(CURLOPT_BUFFERSIZE => 10));
+
+            if ($insert) {
+                $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
+                redirect('mutasi');
+            } else {
+                $this->session->set_flashdata('hasil', 'Insert Data Gagal');
+                redirect('mutasi');
+            }
+            // redirect('pelamar');
+            // var_dump($insert);
+        } else {
+            $this->load->view('mutasi/mutasi');
         }
     }
 }

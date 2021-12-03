@@ -64,7 +64,7 @@ class M_Pelamar extends CI_Model
     public function getDataprov()
     {
         return $this->db->get('wilayah_provinsi')->result_array();
-    }
+    } 
     // kota
     public function getDataKota($idprov)
     {

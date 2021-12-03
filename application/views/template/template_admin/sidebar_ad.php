@@ -89,7 +89,7 @@
                                 <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/perusahaan/">Perusahaan</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/departemen/">Departemen</a>
+                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/department/">Departemen</a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/divisi/">Divisi</a>
@@ -150,8 +150,8 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin/data_karyawan">
-                            <i class="fas fa-user-tie"></i>
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/karyawan/karyawan/data_karyawan">
+                            <i class="align-middle" data-feather="book"></i>
                             <span class="align-middle">Karyawan</span>
                         </a>
                     </li>

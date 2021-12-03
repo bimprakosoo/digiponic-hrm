@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#modalDivisi">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -39,16 +39,17 @@
                                     <th>No</th>
                                     <th>Nama Divisi</th>
                                     <!-- <th>Kepala Divisi</th> -->
-                                    <!-- <th>Departemen</th> -->
+                                    <th>Departemen</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1;
-                                foreach ($devisi as $d) : ?>
+                                foreach ($divisi as $d) : ?>
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
+                                        <td><?= $d['nama_dept']; ?></td>
                                         <td>
                                             <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                                             <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
@@ -65,6 +66,52 @@
             </div>
         </div>
     </div>
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalDivisi" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data divisi</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/divisi/add_Dev'); ?>" method="POST">
+
+                        <!-- divisi -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Divisi</label>
+                                <input type="text" class="form-control" id="divisi" name="divisi">
+                            </div>
+                        </div>
+
+                        <!-- Department -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Department</label>
+                                    <select class="form-control" id="department" name="department" required>
+                                        <option value="">-- Pilih Department --</option>
+                                        <?php foreach ($department as $org) : ?>
+                                            <option value="<?= $org['dept_id'] ?>"><?= $org['nama'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
 <!-- End Content -->
 <script>
