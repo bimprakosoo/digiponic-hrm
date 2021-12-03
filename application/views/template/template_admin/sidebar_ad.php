@@ -20,7 +20,7 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2a5bcf5393.js" crossorigin="anonymous"></script>
-    
+
     <!-- datatable -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -150,7 +150,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin/data_karyawan">
+                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/karyawan/karyawan/data_karyawan">
                             <i class="align-middle" data-feather="book"></i>
                             <span class="align-middle">Karyawan</span>
                         </a>

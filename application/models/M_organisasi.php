@@ -13,7 +13,7 @@ class M_organisasi extends CI_Model
     public function getDataDepartment()
     {
         // return $this->db->get('department');
-        $this->db->select('department.id AS dept_id, nama, perusahaan.nama_perusahaan');
+        $this->db->select('department.id AS dept_id, department.nama, perusahaan.nama_perusahaan');
         $this->db->from('department');
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
         return $this->db->get();
