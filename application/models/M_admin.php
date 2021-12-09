@@ -54,11 +54,23 @@ class M_Admin extends CI_Model
     // get data lamaran masuk
     public function data_karyawan()
     {
-        $this->db->select('*');
-        $this->db->from('tbl_karyawan');
-        $this->db->join('department', 'tbl_karyawan.id_departemen = department.id_departemen');
+        $this->db->select('tbl_karyawan.nama AS namaKaryawan,
+        perusahaan.nama_perusahaan AS namaPerusahaan,
+        department.nama AS namaDepartement,
+        divisi.nama AS namaDivisi,
+        jabatan.nama AS namaJabatan,
+        posisi.nama AS namaPosisi,
+        penempatan.nama AS namaPenempatan');
+        $this->db->from('data_karyawan');
 
-        // $this->db->where('role_id', 1);
+        $this->db->join('tbl_karyawan', 'tbl_karyawan.id = data_karyawan.karyawan_id');
+        $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id');
+        $this->db->join('department', 'department.id = data_karyawan.department_id');
+        $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id');
+        $this->db->join('jabatan', 'jabatan.id = data_karyawan.jabatan_id');
+        $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id');
+        $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id');
+
         return $this->db->get();
     }
 

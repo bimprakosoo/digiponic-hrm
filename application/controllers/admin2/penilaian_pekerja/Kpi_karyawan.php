@@ -8,7 +8,7 @@ class Kpi_karyawan extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->API = "http://localhost/digiponic-hrm/api";
+        $this->API = site_url() . 'api';
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');

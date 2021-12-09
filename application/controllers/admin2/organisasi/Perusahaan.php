@@ -22,17 +22,6 @@ class Perusahaan extends CI_Controller
     }
 
 
-
-    public function tambah_perusahaan()
-    {
-        $data['provinsi'] = $this->M_Pelamar->getDataprov();
-
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/organisasi/v_create_perusahaan', $data);
-        $this->load->view('template/template_admin/footer_ad');
-    }
-
     // insert data pelamar
     function create_perusahaan()
     {
@@ -52,8 +41,7 @@ class Perusahaan extends CI_Controller
             // var_dump($data);
             // die;
 
-            // $insert = $this->M_organisasi->postDataPerusahaan($data);
-            $insert = $this->db->insert('perusahaan', $data);
+            $insert = $this->M_organisasi->postDataPerusahaan($data);
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Insert Data Berhasil');
