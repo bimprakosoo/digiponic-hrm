@@ -6,7 +6,10 @@ class M_organisasi extends CI_Model
     // Department
     public function getDataDepartment()
     {
-        return $this->db->get('department');
+        $this->db->select('*');
+        $this->db->from('department');
+        $this->db->join('perusahaan', 'perusahaan.id = department.id_departemen');
+        return $this->db->get();
     }
     // Devisi
     public function getDataDevisi()
@@ -41,22 +44,17 @@ class M_organisasi extends CI_Model
     // Perusahaan
     public function getDataPerusahaan()
     {
+
         return $this->db->get('perusahaan');
     }
-
-    // function search_perusahaan($query)
-    // {
-    //     $this->db->select("*");
-    //     $this->db->from("perusahaan");
-    //     if ($query != '') {
-    //         $this->db->like('nama_perusahaan', $query);
-    //         $this->db->or_like('industri', $query);
-    //         $this->db->or_like('kota', $query);
-    //     }
-    //     $this->db->order_by('id', 'ASC');
-    //     return $this->db->get();
-    // }
-
-    // create data
-
+    public function hapusPerusahaan($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('perusahaan');
+    }
+    public function edit($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('perusahaan')->row_array();
+    }
 }

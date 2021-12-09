@@ -89,122 +89,122 @@
                 </div>
 
                 <div class="container overflow-hidden">
-                    <div class="row gy-5">
-                        <div class="col-5">
-                            <div class="p-3 ">
-                                <div class="card" style="width: 100%; ">
-                                    <div class="card-body">
-                                        <h3 class="text-center pt-4 pb-2"> <strong>Staff HRD</strong></h3>
-                                        <p class="text-start">
-                                            <strong>Lokasi</strong> <br> Malang
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Perusahaan</strong> <br> PT MAJU JAYA
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Industri</strong> <br> Manukfaturing
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Tipe Pekerjaan</strong> <br> Kontrak
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Pengalaman Kerja</strong> <br> 2 tahun
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Insentif</strong> <br> Insentif Lembur
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Level Pekerjaan</strong> <br> Staff (non-management & non-supervisor)
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Pendidikan</strong> <br> Diploma / D1/D2/D3, Sarjana / S1
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Waktu bekerja</strong> <br> Senin – Jumat : Jam 08.00 s/d 16.00 <br>
-                                            Sabtu : Jam 08.00 s/d 13.00
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Gaji</strong> <br> IDR 4.500.000 - IDR 5.500.000
-                                        </p>
-                                        <p class="text-start">
-                                            <strong>Posted Date</strong> <br> 11 September 2021
-                                        </p>
+
+                    <div class="row pb-5">
+                        <div class="col-12 col-xl-12">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="card">
+                                        <div class="card-body text-start text-capitalize">
+
+                                            <h3 class="text-center pt-4 pb-2"> <strong>Staff HRD</strong></h3>
+                                            <p class="text-start">
+                                                <strong>Lokasi</strong> <br> Malang
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Perusahaan</strong> <br> PT MAJU JAYA
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Industri</strong> <br> Manukfaturing
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Tipe Pekerjaan</strong> <br> Kontrak
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Pengalaman Kerja</strong> <br> 2 tahun
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Insentif</strong> <br> Insentif Lembur
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Level Pekerjaan</strong> <br> Staff (non-management & non-supervisor)
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Pendidikan</strong> <br> Diploma / D1/D2/D3, Sarjana / S1
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Waktu bekerja</strong> <br> Senin – Jumat : Jam 08.00 s/d 16.00 <br>
+                                                Sabtu : Jam 08.00 s/d 13.00
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Gaji</strong> <br> IDR 4.500.000 - IDR 5.500.000
+                                            </p>
+                                            <p class="text-start">
+                                                <strong>Posted Date</strong> <br> 11 September 2021
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="col-sm-7">
+                                    <div class="card">
+                                        <div class="card-body text-start">
 
-                        <!-- From Lamaran -->
-                        <div class="col-7">
-                            <div class="p-3 ">
-                                <div class="card" style="width: 100%;">
-                                    <div class="card-body">
-                                        <h3 class="text-center pt-4 pb-2"> <strong>Masukan Data Lamaran Anda</strong></h3>
-                                        <form action="<?= base_url('pelamar/create'); ?>" method="POST" enctype="multipart/form-data">
+                                            <h3 class="text-center pt-4 pb-2"> <strong>Masukan Data Lamaran Anda</strong></h3>
+                                            <form action="<?= base_url('pelamar/create'); ?>" method="POST" enctype="multipart/form-data">
 
-                                            <!-- <div class="row mb-3">
+                                                <!-- <div class="row mb-3">
                                             <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama</label>
                                             <div class="col-sm-8">
                                                 <label for="colFormLabel" class="col-sm-12 col-form-label text-start">Aprilda Peter Sandoria Makatita</label>
                                             </div>
                                             </div> -->
 
-                                            <!-- Nama Lengkap -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama Lengkap</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
+                                                <!-- Nama Lengkap -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama Lengkap</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!-- -->
+                                                <!-- -->
 
-                                            <!-- Provinsi -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Provinsi</label>
-                                                <div class="col-sm-8">
-                                                    <select name="provinsi" id="provinsi" class="form-control" aria-label="Default select example">
-                                                        <option value="">-- Pilih Provinsi --</option>
-                                                        <?php foreach ($provinsi as $prov) : ?>
-                                                            <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
+                                                <!-- Provinsi -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Provinsi</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="provinsi" id="provinsi" class="form-control" aria-label="Default select example">
+                                                            <option value="">-- Pilih Provinsi --</option>
+                                                            <?php foreach ($provinsi as $prov) : ?>
+                                                                <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Kabupaten -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kota/Kabupaten</label>
-                                                <div class="col-sm-8">
-                                                    <select class="form-control" id="kota" name="kota" required>
-                                                        <option value="">-- Pilih Kota --</option>
-                                                    </select>
+                                                <!-- Kabupaten -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kota/Kabupaten</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" id="kota" name="kota" required>
+                                                            <option value="">-- Pilih Kota --</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Kecamatan -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kecamatan</label>
-                                                <div class="col-sm-8">
-                                                    <select class="form-control" id="kecamatan" name="kecamatan" required>
-                                                        <option value="">-- Pilih Kecamatan --</option>
-                                                    </select>
+                                                <!-- Kecamatan -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Kecamatan</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" id="kecamatan" name="kecamatan" required>
+                                                            <option value="">-- Pilih Kecamatan --</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Alamat Lengkap -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Alamat Lengkap</label>
-                                                <div class="col-sm-8">
-                                                    <textarea name="alamat_lengkap" id="alamat_lengkap" class="form-control" rows="3"></textarea>
+                                                <!-- Alamat Lengkap -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Alamat Lengkap</label>
+                                                    <div class="col-sm-8">
+                                                        <textarea name="alamat_lengkap" id="alamat_lengkap" class="form-control" rows="3"></textarea>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Jenis Kelamin -->
-                                            <!-- <div class="row mb-3">
+                                                <!-- Jenis Kelamin -->
+                                                <!-- <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
                                                 <div class="col-sm-8 d-flex justify-content-start">
                                                     <div class="form-check form-check-inline">
@@ -217,46 +217,46 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Jenis Kelamin -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
-                                                <div class="col-sm-8">
-                                                    <select name="jk" id="jk" class="form-select" aria-label="Default select example">
-                                                        <option value="">Pilih</option>
-                                                        <option value="laki-laki">Laki-Laki</option>
-                                                        <option value="perempuan">Perempuan</option>
-                                                    </select>
+                                                <!-- Jenis Kelamin -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="jk" id="jk" class="form-select" aria-label="Default select example">
+                                                            <option value="">Pilih</option>
+                                                            <option value="laki-laki">Laki-Laki</option>
+                                                            <option value="perempuan">Perempuan</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Tanggal Lahir -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Tanggal Lahir</label>
-                                                <div class="col-sm-8">
-                                                    <div class="input-group mb-3 date">
-                                                        <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
-                                                        <input type="text" class="form-control" id="txtFromDate" name="tgl_lahir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                <!-- Tanggal Lahir -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Tanggal Lahir</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="input-group mb-3 date">
+                                                            <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                                                            <input type="text" class="form-control" id="txtFromDate" name="tgl_lahir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--  -->
+
+                                                <!-- No.Tlpn -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">No.Tlpn</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No. Tlpn">
 
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- No.Tlpn -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">No.Tlpn</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No. Tlpn">
-
-                                                </div>
-                                            </div>
-                                            <!--  -->
-
-                                            <!-- Status Perkawinan -->
-                                            <!-- <div class="row mb-3">
+                                                <!-- Status Perkawinan -->
+                                                <!-- <div class="row mb-3">
                                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
                                                 <div class="col-sm-8">
                                                     <div class="col-sm-10 d-flex justify-content-start">
@@ -275,70 +275,73 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Pendidikan Terakhir -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
-                                                <div class="col-sm-8">
-                                                    <select name="status_perkawinan" id="status_perkawinan" class="form-select" aria-label="Default select example">
-                                                        <option value="">Pilih</option>
-                                                        <option value="belum kawin">belum kawin</option>
-                                                        <option value="kawin">kawin</option>
-                                                        <!-- <option value="3">Three</option> -->
-                                                    </select>
+                                                <!-- Pendidikan Terakhir -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="status_perkawinan" id="status_perkawinan" class="form-select" aria-label="Default select example">
+                                                            <option value="">Pilih</option>
+                                                            <option value="belum kawin">belum kawin</option>
+                                                            <option value="kawin">kawin</option>
+                                                            <!-- <option value="3">Three</option> -->
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Pendidikan Terakhir -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Pendidikan Terakhir</label>
-                                                <div class="col-sm-8">
-                                                    <select name="pendidikan_terakhir" id="pendidikan_terakhir" class="form-select" aria-label="Default select example">
-                                                        <option value="">Pilih</option>
-                                                        <option value="S1">S1</option>
-                                                        <option value="SMK">SMK</option>
-                                                        <!-- <option value="3">Three</option> -->
-                                                    </select>
+                                                <!-- Pendidikan Terakhir -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Pendidikan Terakhir</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="pendidikan_terakhir" id="pendidikan_terakhir" class="form-select" aria-label="Default select example">
+                                                            <option value="">Pilih</option>
+                                                            <option value="S1">S1</option>
+                                                            <option value="SMK">SMK</option>
+                                                            <!-- <option value="3">Three</option> -->
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Upload Surat Lamaran -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Surat Lamaran</label>
-                                                <div class="col-sm-8">
-                                                    <input class="form-control" type="file" id="up_lamaran" name="up_lamaran">
+                                                <!-- Upload Surat Lamaran -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Surat Lamaran</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" type="file" id="up_lamaran" name="up_lamaran">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <!-- Upload CV -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Uploda CV</label>
-                                                <div class="col-sm-8">
-                                                    <input class="form-control" type="file" id="up_cv" name="up_cv">
+                                                <!-- Upload CV -->
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Uploda CV</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" type="file" id="up_cv" name="up_cv">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--  -->
+                                                <!--  -->
 
-                                            <div class="d-grid gap-2 mx-3 pt-4 pb-4">
-                                                <!-- <a class="btn btn-primary" href="<?php echo base_url(); ?>">Lamaran</a> -->
-                                                <div class="d-grid gap-2">
-                                                    <button type="submit" name="submit" value="submit" class="btn btn-primary">
-                                                        Lamaran
-                                                    </button>
+                                                <div class="d-grid gap-2 mx-3 pt-4 pb-4">
+                                                    <!-- <a class="btn btn-primary" href="<?php echo base_url(); ?>">Lamaran</a> -->
+                                                    <div class="d-grid gap-2">
+                                                        <button type="submit" name="submit" value="submit" class="btn btn-primary">
+                                                            Lamaran
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
+
                 </div>
 
             </section>

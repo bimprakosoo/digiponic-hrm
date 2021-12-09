@@ -15,60 +15,42 @@
                         <div class="col-sm-4">
                             <div class="card" style="height: 220px;">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <h5 class="card-title pt-2">Lowongan</h5>
-                                        </div>
 
-                                        <div class="col-auto ml-auto ">
-                                            <img src="<?php echo base_url(); ?>assets/image/elips.svg">
-                                        </div>
-                                    </div>
+                                    <h5 class="card-title  text-center">Karyawan Training</h5>
+
                                     <hr>
 
-                                    <h1 class="my-5 text-center"><strong>4</strong></h1>
+                                    <h1 class="my-5 text-center" style="font-size: 48px;"><strong>4</strong></h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="card" style="height: 220px;">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <h5 class="card-title pt-2">Lamaran Masuk</h5>
-                                        </div>
 
-                                        <div class="col-auto ml-auto ">
-                                            <img src="<?php echo base_url(); ?>assets/image/elips.svg">
-                                        </div>
-                                    </div>
+                                    <h5 class="card-title text-center">Lamaran Masuk</h5>
+
                                     <hr>
 
-                                    <h1 class="my-5 text-center"><strong>4</strong></h1>
+                                    <h1 class="my-5 text-center" style="font-size: 48px;"><strong>54</strong></h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="card" style="height: 220px;">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <h5 class="card-title pt-2">Karyawan</h5>
-                                        </div>
 
-                                        <div class="col-auto ml-auto ">
-                                            <img src="<?php echo base_url(); ?>assets/image/elips.svg">
-                                        </div>
-                                    </div>
+                                    <h5 class="card-title text-center " >Karyawan</h5>
+
                                     <hr>
 
-                                    <h1 class="mt-5 mb-4 text-center"><strong>4</strong></h1>
+                                    <h1 class="mt-5 mb-2 text-center" style="font-size: 48px;"><strong>114</strong></h1>
                                     <div class="row">
                                         <div class="col-auto">
-                                            <button class="btn btn-primary" style="font-size: 8px;">aktif 100</button>
+                                            <button class="btn btn-primary" style="font-size: 7px;">aktif 100</button>
                                         </div>
                                         <div class="col-auto ml-auto">
-                                            <button class="btn btn-danger" style="font-size: 6px;">Tidak aktif 100</button>
+                                            <button class="btn btn-danger" style="font-size: 7px;">Tidak aktif 100</button>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card flex-fill">
+                <!-- <div class="card flex-fill">
                     <div class="card-header">
 
                         <h5 class="card-title mb-0">Calendar</h5>
@@ -88,13 +70,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-12 col-xl-4">
                 <div class="card flex-fill w-100">
-                    <div class="card-header">
+                    <div class="card-header" style="background: #fff;">
 
-                        <h5 class="card-title mb-0">To do List</h5>
+                        <h5 class="card-title mb-0">Tugas</h5>
                     </div>
                     <div class="card-body">
                         <form action="javascript:void(0);">
@@ -131,7 +113,7 @@
                     </div>
                 </div>
                 <div class="card flex-fill w-100">
-                    <div class="card-header">
+                    <div class="card-header" style="background: #fff;">
 
                         <h5 class="card-title mb-0">Task</h5>
                     </div>

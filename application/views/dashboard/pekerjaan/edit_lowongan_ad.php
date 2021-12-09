@@ -17,38 +17,39 @@
          <div class="container-fluid p-0">
 
              <div class="card shadow m-4 ">
-                 <form action="<?= base_url('admin/create'); ?>" method="POST" enctype="multipart/form-data">
+                 <form action="<?= base_url('admin/update/'); ?>" method="post" enctype="multipart/form-data">
 
                      <div class="card-body ">
                          <div class="modal-body">
-                             <h3 class="m-0 font-weight-bold ">Tambah Data Lowongan</h3>
+                             <h3 class="m-0 font-weight-bold ">Edit Data Lowongan</h3>
                          </div>
+                         <input type="hidden" id="id_lowongan" name="id_lowongan" value="<?= $lowongan['id_lowongan'] ?>">
                          <!-- Nama -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Nama Lowongan</label>
-                                 <input type="text" class="form-control" id="nama_lowongan" name="nama_lowongan">
+                                 <input type="text" class="form-control" id="nama_lowongan" name="nama_lowongan" value="<?= $lowongan['nama_lowongan'] ?>" placeholder="Nama Lowongan" required>
                              </div>
                          </div>
                          <!-- Lokasi -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Lokasi</label>
-                                 <input type="text" class="form-control" id="lokasi" name="lokasi">
+                                 <input type="text" class="form-control" id="lokasi" name="lokasi" value="<?= $lowongan['lokasi'] ?>" placeholder="Lokasi" required>
                              </div>
                          </div>
                          <!-- Perusahaan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Perusahaan</label>
-                                 <input type="text" class="form-control" id="perusahaan" name="perusahaan">
+                                 <input type="text" class="form-control" id="perusahaan" name="perusahaan" value="<?= $lowongan['perusahaan'] ?>" placeholder="Perusahaan" required>
                              </div>
                          </div>
                          <!-- Industri -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Industri</label>
-                                 <input type="text" class="form-control" id="industri" name="industri">
+                                 <input type="text" class="form-control" id="industri" name="industri" value="<?= $lowongan['industri'] ?>" placeholder="industri" required>
                              </div>
                          </div>
                          <!-- Tipe Pekerjaan -->
@@ -56,9 +57,15 @@
                              <div class="form-group">
                                  <label for="title">Tipe Pekerjaan</label>
                                  <select name="tipe_pekerjaan" id="tipe_pekerjaan" class="form-select" aria-label="Default select example">
-                                     <option selected>Pilih Tipe Pekerjaan</option>
-                                     <option value="kontrak">Kontrak</option>
-                                     <option value="tetap">Tetap</option>
+                                     <?php
+                                        if ($lowongan['tipe_pekerjaan'] == "tetap") { ?>
+                                         <option value="tetap" selected> Tetap </option>
+                                         <option value="kontrak"> Kontrak </option>
+                                     <?php } else { ?>
+                                         <option value="tetap"> Tetap </option>
+                                         <option value="kontrak" selected> Kontrak </option>
+                                     <?php }
+                                        ?>
                                  </select>
                                  <!-- <input type="text" class="form-control" id="tipe_pekerjaan" name="tipe_pekerjaan"> -->
                              </div>
@@ -68,10 +75,22 @@
                              <div class="form-group">
                                  <label for="title">Pengalaman Kerja</label>
                                  <select name="pengalaman_kerja" id="pengalaman_kerja" class="form-select" aria-label="Default select example">
-                                     <option selected>Pilih Pengalaman Kerja</option>
-                                     <option value="1/2">1/2 tahun</option>
-                                     <option value="1">1 tahun</option>
-                                     <option value="2">2 tahun</option>
+                                     <?php
+                                        if ($lowongan['pengalaman_kerja'] == "1/2") { ?>
+                                         <option value="1/2" selected>1/2 tahun</option>
+                                         <option value="1">1 tahun</option>
+                                         <option value="2">2 tahun</option>
+                                     <?php } else if ($lowongan['pengalaman_kerja'] == "1") { ?>
+                                         <option value="1/2">1/2 tahun</option>
+                                         <option value="1" selected>1 tahun</option>
+                                         <option value="2">2 tahun</option>
+                                     <?php } else { ?>
+                                         <option value="1/2">1/2 tahun</option>
+                                         <option value="1">1 tahun</option>
+                                         <option value="2" selected>2 tahun</option>
+                                     <?php }
+                                        ?>
+
                                  </select>
                                  <!-- <input type="text" class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"> -->
                              </div>
@@ -80,14 +99,14 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Insentif</label>
-                                 <input type="text" class="form-control" id="insentif_lembur" name="insentif_lembur">
+                                 <input type="text" class="form-control" id="insentif_lembur" name="insentif_lembur" value="<?= $lowongan['insentif_lembur'] ?>" placeholder="insentif_lembur" required>
                              </div>
                          </div>
                          <!-- Level Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Level Pekerjaan</label>
-                                 <input type="text" class="form-control" id="level_pekerjaan" name="level_pekerjaan">
+                                 <input type="text" class="form-control" id="level_pekerjaan" name="level_pekerjaan" value="<?= $lowongan['level_pekerjaan'] ?>" placeholder="level_pekerjaan" required>
                              </div>
                          </div>
                          <!-- Pendidikan -->
@@ -95,11 +114,29 @@
                              <div class="form-group">
                                  <label for="title">Pendidikan</label>
                                  <select name="pendidikan" id="pendidikan" class="form-select" aria-label="Default select example">
-                                     <option selected>Pilih Pendidikan</option>
-                                     <option value="S1">S1</option>
-                                     <option value="D3">D3</option>
-                                     <option value="SMA/SMK">SMA/SMK</option>
-                                     <option value="S1/D3/SMA/SMK">S1/D3/SMA/SMK</option>
+                                     <?php
+                                        if ($lowongan['pendidikan'] == "S1") { ?>
+                                         <option value="S1" selected>S1</option>
+                                         <option value="D3">D3</option>
+                                         <option value="SMA/SMK">SMA/SMK</option>
+                                         <option value="S1/D3/SMA/SMK">S1/D3/SMA/SMK</option>
+                                     <?php } else if ($lowongan['pendidikan'] == "D3") { ?>
+                                         <option value="S1">S1</option>
+                                         <option value="D3" selected>D3</option>
+                                         <option value="SMA/SMK">SMA/SMK</option>
+                                         <option value="S1/D3/SMA/SMK">S1/D3/SMA/SMK</option>
+                                     <?php } else if ($lowongan['pendidikan'] == "SMA/SMK") { ?>
+                                         <option value="S1">S1</option>
+                                         <option value="D3">D3</option>
+                                         <option value="SMA/SMK" selected>SMA/SMK</option>
+                                         <option value="S1/D3/SMA/SMK">S1/D3/SMA/SMK</option>
+                                     <?php } else { ?>
+                                         <option value="S1">S1</option>
+                                         <option value="D3">D3</option>
+                                         <option value="SMA/SMK">SMA/SMK</option>
+                                         <option value="S1/D3/SMA/SMK" selected>S1/D3/SMA/SMK</option>
+                                     <?php }
+                                        ?>
                                  </select>
                                  <!-- <input type="text" class="form-control" id="pendidikan" name="pendidikan"> -->
                              </div>
@@ -108,14 +145,14 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Waktu Bekerja</label>
-                                 <textarea class="ckeditor text-start" id="waktu_bekerja" name="waktu_bekerja"></textarea>
+                                 <textarea class="ckeditor text-start" id="waktu_bekerja" name="waktu_bekerja" required><?= $lowongan['waktu_bekerja'] ?></textarea>
                              </div>
                          </div>
                          <!-- Gaji -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Gaji</label>
-                                 <input type="text" class="form-control" id="gaji" name="gaji">
+                                 <input type="text" class="form-control" id="gaji" name="gaji" value="<?= $lowongan['gaji'] ?>" placeholder="gaji" required>
                              </div>
                          </div>
 
@@ -130,39 +167,41 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Keterangan</label>
-                                 <textarea class="ckeditor" id="ket" name="ket"></textarea>
+                                 <textarea class="ckeditor" id="ket" name="ket" required><?= $lowongan['ket'] ?></textarea>
                              </div>
                          </div>
                          <!-- Syarat PEngalaman -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Syarat Pengalaman</label>
-                                 <textarea class="ckeditor" id="syarat_pengalaman" name="syarat_pengalaman"></textarea>
+                                 <textarea class="ckeditor" id="syarat_pengalaman" name="syarat_pengalaman"><?= $lowongan['syarat_pengalaman'] ?></textarea>
                              </div>
                          </div>
                          <!-- Tunjangan -->
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Tunjangan</label>
-                                 <textarea class="ckeditor" id="tunjangan" name="tunjangan"></textarea>
+                                 <textarea class="ckeditor" id="tunjangan" name="tunjangan"><?= $lowongan['tunjangan'] ?></textarea>
                              </div>
                          </div>
                          <!-- Upload Surat Lamaran -->
                          <div class="modal-body">
                              <div class="form-group">
-                                 <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label><br>
-                                 <input class="pt-1" type="file" id="file_image" name="image">
+                                 <label for="title">Upload Image</label><br>
+                                 <img src="<?= base_url('assets/image/lowongan/') . $lowongan['image']; ?>" alt=""><br>
+                                 <input class="pt-1" type="file" id="file_image" name="image" onchange="VerifyFileNameAndFileSize()" accept=".png,.gif,.jpeg,.tiff,.jpg">
                              </div>
                          </div>
                      </div>
 
                      <!-- Post Date -->
                      <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
-                     <input class="invisible" type="text" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
+                     <input type="hidden" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
 
-                     <div class="row pb-2 m-4">
+                     <div class="row m-4">
                          <div class="col-auto ml-auto ">
-                             <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                             <a href="<?= base_url() ?>admin/lowongan_ad/" class="btn btn-warning">Cancel</a>
+                             <button type="submit" name="submit" value="submit" class="btn btn-primary">Update</button>
                          </div>
                      </div>
                  </form>

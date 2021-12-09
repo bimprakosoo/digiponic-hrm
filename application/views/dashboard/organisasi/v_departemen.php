@@ -39,7 +39,6 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Departemen</th>
-                                    <th>Perusahaan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -48,7 +47,6 @@
                                 foreach ($dept as $d) : ?>
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
-                                        <td><?= $d['department']; ?></td> <!-- nama departemnt -->
                                         <td><?= $d['department']; ?></td> <!-- nama departemnt -->
                                         <td><button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                                             <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
