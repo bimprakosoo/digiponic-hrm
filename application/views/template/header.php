@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css" />
 
+  <!-- Title -->
+  <title>Maju Bersama</title>
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo2.png" />
+
+
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

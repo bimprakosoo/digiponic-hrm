@@ -39,7 +39,6 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Departemen</th>
-                                    <th>Perusahaan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -50,6 +49,7 @@
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td> <!-- nama departemnt -->
                                         <td><?= $d['nama_perusahaan']; ?></td>
+                                        <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
                                         <td><button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                                             <button class="btn btn-primary"><i class="fas fa-edit"></i></button>

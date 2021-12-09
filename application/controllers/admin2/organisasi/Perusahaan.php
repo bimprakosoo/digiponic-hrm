@@ -21,44 +21,6 @@ class Perusahaan extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
-//     function fetch()
-//     {
-//         $output = '';
-//         $query = '';
-//         $this->load->model('M_organisasi');
-//         if ($this->input->post('query')) {
-//             $query = $this->input->post('query');
-//         }
-//         $data = $this->M_organisasi->search_perusahaan($query);
-//         $output .= '
-  
-//       </tr>
-//   ';
-//         if ($data->num_rows() > 0) {
-//             $i = 1;
-//             foreach ($data->result() as $row) {
-//                 $output .= '
-//       <tr>
-//        <td>' . $i . '</td>
-//        <td>' . $row->nama_perusahaan . '</td>
-//        <td>' . $row->industri . '</td>
-//        <td>' . $row->kota . '</td>
-//        <td>' . $row->email . '</td>
-//        <td>' . $row->alamat . '</td>
-//        <td>' . $row->telp . '</td>
-//        <td> <a href="" class="btn btn-primary">Edit</a></td>
-//       </tr>
-//     ';
-//                 $i++;
-//             }
-//         } else {
-//             $output .= '<tr>
-//        <td colspan="8">No Data Found</td>
-//       </tr>';
-//         }
-//         $output .= '</table>';
-//         echo $output;
-//     }
 
     // insert data pelamar
     function create_perusahaan()
@@ -95,11 +57,26 @@ class Perusahaan extends CI_Controller
     public function getKota()
     {
         $idprov =   $this->input->post('id');
-        $data   =   $this->M_Pelamar->getDataKota($idprov);
+        $data ['kota']  =   $this->M_Pelamar->getDataKota($idprov);
         $output =   '<option value="">-- Pilih Kota --</option>';
         foreach ($data as $row) {
             $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
+    public function edit($id)
+    {
+        $data['perusahaan'] = $this->M_organisasi->edit($id);
+        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_perusahaan_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusPerusahaan($id);
+        redirect('admin2/organisasi/perusahaan/');
     }
 }

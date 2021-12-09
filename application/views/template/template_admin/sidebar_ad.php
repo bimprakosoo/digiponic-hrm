@@ -9,7 +9,7 @@
     <meta name="author" content="AdminKit" />
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
 
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo.svg" />
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo2.png" />
 
     <title>Dashboard</title>
 

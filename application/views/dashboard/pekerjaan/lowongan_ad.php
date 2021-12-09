@@ -148,7 +148,7 @@
                                             </div>
                                             <!-- END  modal -->
                                         </td>
-                                        <td><img src="<?= base_url('assets/image/lowongan/').$m['image']; ?>" alt=""></td>
+                                        <td><img src="<?= base_url('assets/image/lowongan/').$m['image']; ?>" style="width: 50px; height: 50px;"></td>
                                         <td>
                                             <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd"
                                             
@@ -169,8 +169,8 @@
                                             data-tunjangan="<?= $m['tunjangan']; ?>"
                                             data-image="<?= base_url('assets/image/lowongan/').$m['image']; ?>"
                                             ><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin/edit/"). $m['id_lowongan'];?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin/hapus/") . $m['id_lowongan']; ?>"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
@@ -272,6 +272,8 @@
         </div>
     </div>
     <!-- END  modal -->
+
+    
 </main>
 <!-- End Content -->
 <script>

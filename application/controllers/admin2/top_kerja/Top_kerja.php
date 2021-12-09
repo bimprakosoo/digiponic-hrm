@@ -22,7 +22,7 @@ class Top_kerja extends CI_Controller
     {
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/top_kerja/top_kerja');
+        $this->load->view('karyawan/penilaian_kerja/v_penilaian_kerja');
         $this->load->view('template/template_admin/footer_ad');
     }
     public function tambah()

@@ -67,7 +67,17 @@ class M_organisasi extends CI_Model
         $this->db->from('penempatan');
         $this->db->join(' perusahaan', 'perusahaan.id = penempatan.perusahaan_id');
         $this->db->join(' wilayah_kota', 'wilayah_kota.id = penempatan.lokasi_cabang');
-
+    }
+   
+    public function hapusPerusahaan($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('perusahaan');
+    }
+    public function edit($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('perusahaan')->row_array();
         return $this->db->get();
     }
 

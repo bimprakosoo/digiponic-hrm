@@ -86,8 +86,8 @@
                                         <td><?= $m['telp']; ?></td>
                                         <td>
                                             <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-kota="<?= $m['kota']; ?>" data-email="<?= $m['email']; ?>" data-alamat="<?= $m['alamat']; ?>" data-telp="<?= $m['telp']; ?>"><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <a class="btn btn-primary"  href="<?php echo base_url("admin2/organisasi/perusahaan/edit/") . $m['id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/perusahaan/hapus/") . $m['id']; ?>"><i class="fas fa-trash-alt"></i></a>
                                         </td>
 
                                     </tr>

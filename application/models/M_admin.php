@@ -18,6 +18,24 @@ class M_Admin extends CI_Model
         // $this->db->where('role_id', 1);
         return $this->db->get('lowongan')->result_array();
     }
+    //edit lowongan
+    public function edit($id)
+    {
+        $this->db->where('id_lowongan', $id);
+        return $this->db->get('lowongan')->row_array();
+    }
+    public function update_low($id_lowongan, $data)
+    {
+        $this->db->where('id_lowongan', $id_lowongan);
+        $this->db->update('lowongan', $data);
+    }
+    // hapus lowongan
+    public function hapus($id)
+    {
+        $this->db->where('id_lowongan', $id);
+        $this->db->delete('lowongan');
+    }
+
     // get jumlah data lowongan
     public function countAllLowongan()
     {

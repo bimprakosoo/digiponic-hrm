@@ -49,7 +49,7 @@
             <p class="card-text text-start">PT. MAJU BERSAMA perusahaan yang telah berdiri sejak tahun dengan berbagai bidang kegiatan.
               Perusahaan kami berdiri dengan motto “memberikan kepuasan kepada relasi”
               sebagai acuan dalam bekerja sehingga kami mendapat kepercayaan penuh dalam mengembangkan bisnis. </p>
-            <a href="<?php echo base_url(); ?>Tentang/Tentang" class="btn btn-primary">Selengkapnya</a>
+            <a href="<?php echo base_url(); ?>LandingPage/tentang" class="btn btn-primary">Selengkapnya</a>
           </div>
         </div>
       </div>
