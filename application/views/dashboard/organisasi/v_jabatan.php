@@ -50,9 +50,9 @@
                                         <td><?= $d['nama']; ?></td>
                                         <td><?= $d['nama_divisi']; ?></td>
                                         <td>
-                                        <button class="btn btn-secondary" ><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/jabatan/edit/") . $d['jab_id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/jabatan/hapus/") . $d['jab_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php $i++;

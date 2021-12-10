@@ -48,9 +48,14 @@
                                          <label for="title">Provinsi</label>
                                          <select class="form-control" id="provinsi" name="provinsi" required>
                                              <option value="">-- Pilih Provinsi --</option>
-                                             <?php foreach ($provinsi as $prov) : ?>
-                                                 <option value="<?= $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                             <?php endforeach; ?>
+                                             <?php foreach ($provinsi as $prov) {
+                                                    if ($prov['id'] == $perusahaan['provinsi']) { ?>
+                                                     <option value="<?=$prov['id'] ?>" selected><?=  $prov['nama'] ?></option>
+                                                 <?php } else { ?>
+                                                     <option value="<?=  $prov['id'] ?>"><?= $prov['nama'] ?></option>
+                                             <?php }
+                                                } ?>
+                                             
                                          </select>
                                      </div>
                                  </div>
@@ -111,3 +116,25 @@
 
  </main>
  <!-- End Content -->
+ <script>
+     $(document).ready(function() {
+         $('#provinsi').change(function() {
+             var id = $(this).val();
+             // console.log(id); // cek id
+             $.ajax({
+                 type: "POST",
+                 url: "<?= base_url('pelamar/getKota') ?>",
+                 data: {
+                     id: id
+                 },
+                 dataType: "JSON",
+                 success: function(response) {
+                     // console.log(response);
+                     $('#kota').html(response);
+                     // get id kota by provinsi
+                 }
+             });
+         });
+
+     });
+ </script>

@@ -46,4 +46,37 @@ class Posisi extends CI_Controller
             redirect('admin2/organisasi/posisi');
         }
     }
+    //edit
+    public function edit($id)
+    {
+
+        $data['posisi'] = $this->M_organisasi->editPos($id);
+        $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
+
+
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_posisi_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_pos = $this->input->post('id');
+        $data = array(
+            // 'id'         =>  $this->input->post('id'),
+            'nama'             =>  $this->input->post('posisi'),
+            'golongan_id'        =>  $this->input->post('golongan')
+        );
+        $this->M_organisasi->update_pos($id_pos, $data);
+        redirect('admin2/organisasi/posisi/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusPosisi($id);
+        redirect('admin2/organisasi/posisi/');
+    }
 }

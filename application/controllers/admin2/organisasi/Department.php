@@ -45,4 +45,36 @@ class Department extends CI_Controller
             redirect('admin2/organisasi/department');
         }
     }
+    //edit
+    public function edit($id)
+    {
+
+        $data['dept'] = $this->M_organisasi->editDept($id);
+        $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_departemen_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_dept = $this->input->post('id');
+        $data = array(
+            // 'id'       =>  $this->input->post('id'),
+            'nama'              =>  $this->input->post('department'),
+            'perusahaan'        =>  $this->input->post('perusahaan'),
+        );
+        $this->M_organisasi->update_dept($id_dept, $data);
+        redirect('admin2/organisasi/department/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusdepartemen($id);
+        redirect('admin2/organisasi/department/');
+    }
 }

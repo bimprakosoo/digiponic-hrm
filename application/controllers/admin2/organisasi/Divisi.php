@@ -46,4 +46,36 @@ class Divisi extends CI_Controller
             redirect('admin2/organisasi/divisi');
         }
     }
+    //edit
+    public function edit($id)
+    {
+
+        $data['divisi'] = $this->M_organisasi->editDiv($id);
+        $data['department'] = $this->M_organisasi->getDataDepartment()->result_array();
+
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_divisi_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_div = $this->input->post('id');
+        $data = array(
+            // 'id'         =>  $this->input->post('id'),
+            'nama'          =>  $this->input->post('divisi'),
+            'department_id' =>  $this->input->post('department'),
+        );
+        $this->M_organisasi->update_div($id_div, $data);
+        redirect('admin2/organisasi/divisi/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusDivisi($id);
+        redirect('admin2/organisasi/divisi/');
+    }
 }

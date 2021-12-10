@@ -39,6 +39,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Departemen</th>
+                                    <th>Nama Perusahaan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -52,8 +53,8 @@
                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
                                         <td><button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/department/edit/") . $d['dept_id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $d['dept_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td> 
                                     </tr>
                                 <?php $i++;

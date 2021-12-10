@@ -66,6 +66,7 @@
                                     <th>Nama Perusahaan</th>
                                     <th>Industri</th>
                                     <th>Kota</th>
+                                    <th>Kota</th>
                                     <th>Email</th>
                                     <th>Alamat</th>
                                     <th>No Telp</th>
@@ -80,6 +81,7 @@
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $m['nama_perusahaan']; ?></td>
                                         <td><?= $m['industri']; ?></td>
+                                        <td><?= $m['provinsi']; ?></td>
                                         <td><?= $m['kota']; ?></td>
                                         <td><?= $m['email']; ?></td>
                                         <td><?= $m['alamat']; ?></td>
