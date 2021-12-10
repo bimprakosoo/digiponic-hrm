@@ -57,7 +57,9 @@ class Admin extends CI_Controller
 
     public function edit($id)
     {
+        
         $data['lowongan'] = $this->M_admin->edit($id);
+
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
         $this->load->view('dashboard/pekerjaan/edit_lowongan_ad', $data);
@@ -65,6 +67,11 @@ class Admin extends CI_Controller
     }
     public function update()
     {
+
+        // $data2  = $this->db->get_where('lowongan', ['id_lowongan' => $data3])->row_array();
+        // $data   = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
+
+
         $id_lowongan = $this->input->post('id_lowongan');
         $data = array(
             // 'id_lowongan' => $this->input->post('id_lowongan'),
@@ -93,7 +100,8 @@ class Admin extends CI_Controller
         $query = $this->M_admin->hapus($id);
         if ($query = true) {
             $this->session->set_flashdata('info', 'Data Berhasil di Hapus');
-            $this->lowongan_ad();
+            redirect('admin/lowongan_ad');
+
         }
     }
 
@@ -121,6 +129,8 @@ class Admin extends CI_Controller
                 'ket' =>  $this->input->post('ket'),
                 'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
                 'tunjangan' =>  $this->input->post('tunjangan'),
+                'image' =>     $this->M_admin->file_image()
+
             );
             // var_dump($data);
             // die;
@@ -131,9 +141,9 @@ class Admin extends CI_Controller
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
             }
-            $this->lowongan_ad();
+            redirect('admin/lowongan_ad');
         } else {
-            $this->lowongan_ad();
+            redirect('admin/lowongan_ad');;
         }
     }
 

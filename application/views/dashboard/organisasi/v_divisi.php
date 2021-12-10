@@ -52,8 +52,8 @@
                                         <td><?= $d['nama_dept']; ?></td>
                                         <td>
                                             <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/divisi/edit/") . $d['div_id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/divisi/hapus/") . $d['div_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php $i++;
@@ -115,9 +115,9 @@
 </main>
 <!-- End Content -->
 <script>
-     $(document).ready(function() {
-         $('#dataTable').DataTable({
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
             "scrollX": true
-         });
-     });
- </script>
+        });
+    });
+</script>

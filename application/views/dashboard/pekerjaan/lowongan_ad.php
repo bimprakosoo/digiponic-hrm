@@ -170,7 +170,7 @@
                                             data-image="<?= base_url('assets/image/lowongan/').$m['image']; ?>"
                                             ><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin/edit/"). $m['id_lowongan'];?>"><i class="fas fa-edit"></i></a>
-                                            <a class="btn btn-danger" href="<?php echo base_url("admin/hapus/") . $m['id_lowongan']; ?>"><i class="fas fa-trash-alt"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
