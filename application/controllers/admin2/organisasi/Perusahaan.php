@@ -79,12 +79,14 @@ class Perusahaan extends CI_Controller
         $idprov =   $this->input->post('id');
         $data['perusahaan'] = $this->M_organisasi->edit($id);
         $data['provinsi'] = $this->M_Pelamar->getDataprov();
-        $data ['kota']  =   $this->M_Pelamar->getDataKota($idprov);
+        $data['kota']  =   $this->M_Pelamar->getDataKotaPerusahaan($data['perusahaan']['provinsi']);
 
         $this->load->view('template/template_admin/sidebar_ad');
         $this->load->view('template/template_admin/header_ad');
         $this->load->view('dashboard/organisasi/v_perusahaan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
+
+        // var_dump($data);
     }
     public function hapus($id)
     {

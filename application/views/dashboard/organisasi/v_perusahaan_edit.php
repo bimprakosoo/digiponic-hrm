@@ -48,14 +48,9 @@
                                          <label for="title">Provinsi</label>
                                          <select class="form-control" id="provinsi" name="provinsi" required>
                                              <option value="">-- Pilih Provinsi --</option>
-                                             <?php foreach ($provinsi as $prov) {
-                                                    if ($prov['id'] == $perusahaan['provinsi']) { ?>
-                                                     <option value="<?=$prov['id'] ?>" selected><?=  $prov['nama'] ?></option>
-                                                 <?php } else { ?>
-                                                     <option value="<?=  $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                             <?php }
-                                                } ?>
-                                             
+                                             <?php foreach ($provinsi as $prov) { ?>
+                                                 <option value="<?= $prov['id'] ?>" <?= $prov['id'] == $perusahaan['provinsi'] ? 'selected' : '' ?>><?= $prov['nama'] ?></option>
+                                             <?php } ?>
                                          </select>
                                      </div>
                                  </div>
@@ -67,14 +62,14 @@
                                          <label for="title">Kota</label>
                                          <select class="form-control" id="kota" name="kota" required>
                                              <option value="">-- Pilih Kota --</option>
+                                             <?php foreach ($kota as $kt) { ?>
+                                                 <option value="<?= $kt['id'] ?>" <?= $kt['id'] == $perusahaan['kota'] ? 'selected' : '' ?>><?= $kt['nama'] ?></option>
+                                             <?php } ?>
                                          </select>
                                      </div>
                                  </div>
-
-
                              </div>
                          </div>
-
 
 
                          <!-- Email -->
