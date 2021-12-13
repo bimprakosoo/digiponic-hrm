@@ -13,17 +13,25 @@ class Admin extends CI_Controller
         $this->load->library('curl');
         $this->load->helper('form');
         $this->load->helper('url');
-        $this->load->model('M_admin');
+       
         $this->load->library('table');
         $this->load->library('form_validation');
+
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
     }
 
     public function index()
     {
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/dashboard_ad/v_dashboard');
-        $this->load->view('template/template_admin/footer_ad');
+        $data['title'] = 'Dashboard';
+        $data['user'] = $this->M_auth->getUserRow();
+        // $data['roleid'] = $this->M_auth->getRoleId();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/home_ad', $data);
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
     // public function lowongan_ad()
     // {
