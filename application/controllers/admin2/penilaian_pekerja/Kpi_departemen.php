@@ -13,17 +13,22 @@ class Kpi_departemen extends CI_Controller
         $this->load->library('curl');
         $this->load->helper('form');
         $this->load->helper('url');
-        $this->load->model('M_admin');
         $this->load->library('table');
         $this->load->library('form_validation');
+
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
     }
 
     public function index()
     {
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/penilaian_kerja/v_kpi_departemen');
-        $this->load->view('template/template_admin/footer_ad');
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/penilaian_kerja/v_kpi_departemen', $data);
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
     public function tambah()
     {
@@ -32,16 +37,7 @@ class Kpi_departemen extends CI_Controller
         $this->load->view('dashboard/penilaian_kerja/v_tambah_departemen');
         $this->load->view('template/template_admin/footer_ad');
     }
-    // public function lowongan_ad()
-    // {
 
-    //     $data['lowongan'] = $this->M_admin->lowongan_ad();
-
-    //     $this->load->view('template/template_admin/sidebar_ad');
-    //     $this->load->view('template/template_admin/header_ad');
-    //     $this->load->view('dashboard/pekerjaan/lowongan_ad', $data);
-    //     $this->load->view('template/template_admin/footer_ad');
-    // }
     public function lowongan_ad()
     {
         //library pagination

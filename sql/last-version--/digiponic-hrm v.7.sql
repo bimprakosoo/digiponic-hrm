@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 05:46 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Waktu pembuatan: 10 Des 2021 pada 09.06
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_karyawan`
+-- Struktur dari tabel `data_karyawan`
 --
 
 CREATE TABLE `data_karyawan` (
@@ -40,7 +40,7 @@ CREATE TABLE `data_karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_karyawan`
+-- Dumping data untuk tabel `data_karyawan`
 --
 
 INSERT INTO `data_karyawan` (`id`, `karyawan_id`, `perusahaan_id`, `department_id`, `divisi_id`, `jabatan_id`, `posisi_id`, `penempatan_id`, `golongan_id`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `data_karyawan` (`id`, `karyawan_id`, `perusahaan_id`, `department_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_lamaran`
+-- Struktur dari tabel `data_lamaran`
 --
 
 CREATE TABLE `data_lamaran` (
@@ -70,7 +70,7 @@ CREATE TABLE `data_lamaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_lamaran`
+-- Dumping data untuk tabel `data_lamaran`
 --
 
 INSERT INTO `data_lamaran` (`id`, `nama`, `provinsi`, `kota`, `kecamatan`, `alamat_lengkap`, `jk`, `tgl_lahir`, `no_telp`, `status_perkawinan`, `pendidikan_terakhir`, `surat_lamaran`, `cv`, `status`) VALUES
@@ -80,13 +80,14 @@ INSERT INTO `data_lamaran` (`id`, `nama`, `provinsi`, `kota`, `kecamatan`, `alam
 (456, 'asdasd', '12', '', '1212240', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran11.pdf', 'cv12.pdf', 0),
 (457, 'asdasd', '31', '', '3101010', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran12.pdf', 'cv13.pdf', 0),
 (458, 'asdasd', '19', '', '1901070', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran13.pdf', 'cv14.pdf', 0),
-(459, 'dasd', '15', '', '1501020', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran14.pdf', 'cv15.pdf', 2),
-(460, 'dasdsadsadsad', '35', '3515', '3515140', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran25.pdf', 'cv26.pdf', 2);
+(459, 'dasd', '15', '', '1501020', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran14.pdf', 'cv15.pdf', 0),
+(460, 'dasdsadsadsad', '35', '3515', '3515140', '', '', '', '', 'Open this select menu', 'Open this select menu', 'Formulir-Surat-Lamaran25.pdf', 'cv26.pdf', 0),
+(462, 'zulfi', '35', '3507', '3507250', 'bunut wetan rt.01 rw.04', 'laki-laki', '11/01/2021', '0838989976219', 'belum kawin', 'S1', 'Formulir-Surat-Lamaran2.pdf', 'cv2.pdf', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Struktur dari tabel `department`
 --
 
 CREATE TABLE `department` (
@@ -96,18 +97,18 @@ CREATE TABLE `department` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `department`
+-- Dumping data untuk tabel `department`
 --
 
 INSERT INTO `department` (`id`, `nama`, `perusahaan`) VALUES
-(3, 'pemasaran', 2),
+(3, 'pemasaran', 3),
 (4, 'gudang', 2),
 (10, 'mesin', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `divisi`
+-- Struktur dari tabel `divisi`
 --
 
 CREATE TABLE `divisi` (
@@ -117,20 +118,20 @@ CREATE TABLE `divisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `divisi`
+-- Dumping data untuk tabel `divisi`
 --
 
 INSERT INTO `divisi` (`id`, `nama`, `department_id`) VALUES
-(1, 'operasional', 3),
+(1, 'operasional', 10),
 (3, 'Marketing', 3),
 (4, 'bisnis', 4),
-(5, 'soal', 4),
+(5, '1', 0),
 (6, 'motor sport', 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `golongan`
+-- Struktur dari tabel `golongan`
 --
 
 CREATE TABLE `golongan` (
@@ -140,19 +141,19 @@ CREATE TABLE `golongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `golongan`
+-- Dumping data untuk tabel `golongan`
 --
 
 INSERT INTO `golongan` (`id`, `nama`, `jabatan_id`) VALUES
-(1, 'top management', 3),
+(1, 'top management', 1),
 (2, 'mid management', 1),
-(4, 'low_profile', 0),
+(4, 'mid_profile', 5),
 (5, 'low_profile', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
+-- Struktur dari tabel `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -162,19 +163,20 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jabatan`
+-- Dumping data untuk tabel `jabatan`
 --
 
 INSERT INTO `jabatan` (`id`, `nama`, `divisi_id`) VALUES
 (1, 'staf', 1),
-(2, 'kepala', 3),
-(5, 'local', 3),
-(6, 'enginier mesin', 6);
+(2, 'coba', 1),
+(5, 'kepala', 1),
+(6, 'enginier mesin', 6),
+(10, 'local', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lowongan`
+-- Struktur dari tabel `lowongan`
 --
 
 CREATE TABLE `lowongan` (
@@ -198,11 +200,11 @@ CREATE TABLE `lowongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `lowongan`
+-- Dumping data untuk tabel `lowongan`
 --
 
 INSERT INTO `lowongan` (`id_lowongan`, `nama_lowongan`, `lokasi`, `perusahaan`, `industri`, `tipe_pekerjaan`, `pengalaman_kerja`, `insentif_lembur`, `level_pekerjaan`, `pendidikan`, `waktu_bekerja`, `gaji`, `post_date`, `ket`, `syarat_pengalaman`, `tunjangan`, `image`) VALUES
-(12, 'Staff Hrd', 'Jombang', 'Maju Jaya', 'ManuFakturing', 'tetap', 2, 'insentif lembur', 'staff', 'S1', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '7000000', '2021-11-05', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Usia maksimal 30 tahun</li>\r\n	<li>Pendidikan minimal Diploma / Sarjana Strata-1 IPK minimal 3.00</li>\r\n	<li>Memiliki pengalaman dalam bidang Staff HRD minimal 2 tahun</li>\r\n	<li>Memahami Undang-Undang Ketenagakerjaan</li>\r\n	<li>Memahami segala bentuk perizinan yang dibutuhkan oleh perusahaan dan pengurusannya</li>\r\n	<li>Menguasai Microsoft Office, minimal Word, Excel (Pivot, Formula), Power Point</li>\r\n	<li>Berintegrasi dalam bekerja (teliti, rajin, tanggung jawab, sigap, cepat belajar/tanggap, disiplin)</li>\r\n	<li>Memiliki wibawa yang bagus dan dapat bekerja sama secara kelompok maupun individual</li>\r\n	<li>Memiliki kemampuan bekerja dibawah tekanan dan dapat memastikan segala kegiatan operasional di HRD/GA dapat berjalan lancar dan tidak ada masalah</li>\r\n	<li>Berpenampilan rapi, jujur, komunikatif, inovatif, interaktif, dan kreatif</li>\r\n	<li>Bersedia ditempatkan di cabang Jakarta dan/atau Surabaya</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Uang Makan,</li>\r\n	<li>Uang Transport,</li>\r\n	<li>Tunjangan Hari Raya (THR),</li>\r\n	<li>Jaminan Kecelakaan Kerja,</li>\r\n	<li>Jaminan Hari Tua,</li>\r\n	<li>Jaminan Pensiun,</li>\r\n	<li>BPJS Kesehatan (Kelas 1)</li>\r\n</ul>\r\n', 'icon-analityc4.svg'),
+(12, 'Staff Hrd', 'Jombang', 'Maju Jaya', 'ManuFakturing', 'tetap', 2, 'insentif lembur', 'staff', 'S1', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '7000000', '2021-12-10', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Usia maksimal 30 tahun</li>\r\n	<li>Pendidikan minimal Diploma / Sarjana Strata-1 IPK minimal 3.00</li>\r\n	<li>Memiliki pengalaman dalam bidang Staff HRD minimal 2 tahun</li>\r\n	<li>Memahami Undang-Undang Ketenagakerjaan</li>\r\n	<li>Memahami segala bentuk perizinan yang dibutuhkan oleh perusahaan dan pengurusannya</li>\r\n	<li>Menguasai Microsoft Office, minimal Word, Excel (Pivot, Formula), Power Point</li>\r\n	<li>Berintegrasi dalam bekerja (teliti, rajin, tanggung jawab, sigap, cepat belajar/tanggap, disiplin)</li>\r\n	<li>Memiliki wibawa yang bagus dan dapat bekerja sama secara kelompok maupun individual</li>\r\n	<li>Memiliki kemampuan bekerja dibawah tekanan dan dapat memastikan segala kegiatan operasional di HRD/GA dapat berjalan lancar dan tidak ada masalah</li>\r\n	<li>Berpenampilan rapi, jujur, komunikatif, inovatif, interaktif, dan kreatif</li>\r\n	<li>Bersedia ditempatkan di cabang Jakarta dan/atau Surabaya</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Uang Makan,</li>\r\n	<li>Uang Transport,</li>\r\n	<li>Tunjangan Hari Raya (THR),</li>\r\n	<li>Jaminan Kecelakaan Kerja,</li>\r\n	<li>Jaminan Hari Tua,</li>\r\n	<li>Jaminan Pensiun,</li>\r\n	<li>BPJS Kesehatan (Kelas 1)</li>\r\n</ul>\r\n', 'undraw_data_input_fxv23.svg'),
 (13, 'Staff Hrd', 'Malang', 'Maju Jaya', 'ManuFakturing', 'tetap', 2, 'insentif lembur', 'staff', 'S1', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '7500000', '2021-11-05', '<ul>\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\n</ul>\n', '<ul>\r\n	<li>Usia maksimal 30 tahun</li>\r\n	<li>Pendidikan minimal Diploma / Sarjana Strata-1 IPK minimal 3.00</li>\r\n	<li>Memiliki pengalaman dalam bidang Staff HRD minimal 2 tahun</li>\r\n	<li>Memahami Undang-Undang Ketenagakerjaan</li>\r\n	<li>Memahami segala bentuk perizinan yang dibutuhkan oleh perusahaan dan pengurusannya</li>\r\n	<li>Menguasai Microsoft Office, minimal Word, Excel (Pivot, Formula), Power Point</li>\r\n	<li>Berintegrasi dalam bekerja (teliti, rajin, tanggung jawab, sigap, cepat belajar/tanggap, disiplin)</li>\r\n	<li>Memiliki wibawa yang bagus dan dapat bekerja sama secara kelompok maupun individual</li>\r\n	<li>Memiliki kemampuan bekerja dibawah tekanan dan dapat memastikan segala kegiatan operasional di HRD/GA dapat berjalan lancar dan tidak ada masalah</li>\r\n	<li>Berpenampilan rapi, jujur, komunikatif, inovatif, interaktif, dan kreatif</li>\r\n	<li>Bersedia ditempatkan di cabang Jakarta dan/atau Surabaya</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Uang Makan,</li>\r\n	<li>Uang Transport,</li>\r\n	<li>Tunjangan Hari Raya (THR),</li>\r\n	<li>Jaminan Kecelakaan Kerja,</li>\r\n	<li>Jaminan Hari Tua,</li>\r\n	<li>Jaminan Pensiun,</li>\r\n	<li>BPJS Kesehatan (Kelas 1)</li>\r\n</ul>\r\n', 'icon-analityc.svg'),
 (14, 'marketing', 'Malang', 'Maju Jaya', 'Digital', 'kontrak', 1, 'tidak ada', 'staff', 'Pilih Pendidikan', '<p>Senin &ndash; Jumat : Jam 08.00 s/d 16.00<br />\r\nSabtu : Jam 08.00 s/d 13.00</p>\r\n', '', '0000-00-00', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Menangani hal yang berkaitan dengan absensi, lembur, cuti karyawan</li>\r\n	<li>Mampu menjalin hubungan baik kepada pihak Internal &amp; eksternal</li>\r\n	<li>Pengurusan dokumen untuk kepentingan Internal Perusahaan</li>\r\n	<li>Mengawasi kinerja dan kedisiplinan karyawan per-periode</li>\r\n	<li>Menjaga, mendata dan merawat seluruh asset perusahaan</li>\r\n	<li>Melakukan proses pengadaan &amp; pendistribusian kebutuhan operasional Perusahaan</li>\r\n</ul>\r\n', 'icon-analityc2.svg'),
 (15, 'qw', 'qwq', '', '', 'Pilih Tipe Pekerjaan', 0, '', '', 'Pilih Pendidikan', '', '', '2021-11-19', '', '', '', 'call-of-duty-images-208.jpg');
@@ -210,7 +212,7 @@ INSERT INTO `lowongan` (`id_lowongan`, `nama_lowongan`, `lokasi`, `perusahaan`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mutasi`
+-- Struktur dari tabel `mutasi`
 --
 
 CREATE TABLE `mutasi` (
@@ -229,35 +231,38 @@ CREATE TABLE `mutasi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penempatan`
+-- Struktur dari tabel `penempatan`
 --
 
 CREATE TABLE `penempatan` (
   `id` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `perusahaan_id` int(11) NOT NULL,
-  `lokasi_cabang` text NOT NULL
+  `lokasi_cabang` text NOT NULL,
+  `provinsi` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `penempatan`
+-- Dumping data untuk tabel `penempatan`
 --
 
-INSERT INTO `penempatan` (`id`, `nama`, `perusahaan_id`, `lokasi_cabang`) VALUES
-(1, 'cabang Malang', 0, 'Malang'),
-(2, 'Cabang A', 2, '1101'),
-(3, 'Cabang B', 3, '8109');
+INSERT INTO `penempatan` (`id`, `nama`, `perusahaan_id`, `lokasi_cabang`, `provinsi`) VALUES
+(1, 'cabang Malang', 0, 'Malang', ''),
+(2, 'Cabang A', 2, '1101', ''),
+(3, 'Cabang B', 3, '8109', ''),
+(4, 'cabang C', 2, '3171', '31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perusahaan`
+-- Struktur dari tabel `perusahaan`
 --
 
 CREATE TABLE `perusahaan` (
   `id` int(11) NOT NULL,
   `nama_perusahaan` varchar(200) NOT NULL,
   `industri` varchar(200) NOT NULL,
+  `provinsi` varchar(200) NOT NULL,
   `kota` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `alamat` text NOT NULL,
@@ -265,18 +270,19 @@ CREATE TABLE `perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `perusahaan`
+-- Dumping data untuk tabel `perusahaan`
 --
 
-INSERT INTO `perusahaan` (`id`, `nama_perusahaan`, `industri`, `kota`, `email`, `alamat`, `telp`) VALUES
-(2, 'maju jaya', 'manufacture', 'malang', 'majujaya@gmail.com', 'jl. perusahaan raya no. 24, bodosari, tanjungtirto, kec. singosari, malang, jawa timur', '083898996210'),
-(3, 'dragonArmy', 'Guild', '1101', 'dragonArmy@cmd.com', 'dragon land', '0001'),
-(10, 'local', 'dasd', '1101', 'local', 'dasd', '123');
+INSERT INTO `perusahaan` (`id`, `nama_perusahaan`, `industri`, `provinsi`, `kota`, `email`, `alamat`, `telp`) VALUES
+(2, 'maju jaya', 'manufacture', '', 'malang', 'majujaya@gmail.com', 'jl. perusahaan raya no. 24, bodosari, tanjungtirto, kec. singosari, malang, jawa timur', '083898996210'),
+(3, 'dragonArmy', 'Guild', '', '1101', 'dragonArmy@cmd.com', 'dragon land', '0001'),
+(10, 'local', 'dasd', '', '1101', 'local', 'dasd', '123'),
+(11, 'Forzz', 'Digital', '36', '3673', 'Frozz@gmail.com', 'Jombang', '0813485748349');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posisi`
+-- Struktur dari tabel `posisi`
 --
 
 CREATE TABLE `posisi` (
@@ -286,7 +292,7 @@ CREATE TABLE `posisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `posisi`
+-- Dumping data untuk tabel `posisi`
 --
 
 INSERT INTO `posisi` (`id`, `nama`, `golongan_id`) VALUES
@@ -296,7 +302,7 @@ INSERT INTO `posisi` (`id`, `nama`, `golongan_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_mutasi`
+-- Struktur dari tabel `role_mutasi`
 --
 
 CREATE TABLE `role_mutasi` (
@@ -305,7 +311,7 @@ CREATE TABLE `role_mutasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `role_mutasi`
+-- Dumping data untuk tabel `role_mutasi`
 --
 
 INSERT INTO `role_mutasi` (`id`, `jenis_mutasi`) VALUES
@@ -316,7 +322,7 @@ INSERT INTO `role_mutasi` (`id`, `jenis_mutasi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `syarat_pengalaman`
+-- Struktur dari tabel `syarat_pengalaman`
 --
 
 CREATE TABLE `syarat_pengalaman` (
@@ -335,7 +341,7 @@ CREATE TABLE `syarat_pengalaman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `syarat_pengalaman`
+-- Dumping data untuk tabel `syarat_pengalaman`
 --
 
 INSERT INTO `syarat_pengalaman` (`id_syarat`, `nama_lowongan`, `syarat-1`, `syarat-2`, `syarat-3`, `syarat-4`, `syarat-5`, `syarat-6`, `syarat-7`, `syarat-8`, `syarat-9`, `syarat-10`) VALUES
@@ -345,7 +351,7 @@ INSERT INTO `syarat_pengalaman` (`id_syarat`, `nama_lowongan`, `syarat-1`, `syar
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_karyawan`
+-- Struktur dari tabel `tbl_karyawan`
 --
 
 CREATE TABLE `tbl_karyawan` (
@@ -368,177 +374,49 @@ CREATE TABLE `tbl_karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_karyawan`
+-- Dumping data untuk tabel `tbl_karyawan`
 --
 
 INSERT INTO `tbl_karyawan` (`id`, `nama`, `provinsi`, `kota`, `kecamatan`, `alamat_lengkap`, `jk`, `tgl_lahir`, `no_telp`, `status_perkawinan`, `pendidikan_terakhir`, `surat_lamaran`, `cv`, `id_departemen`, `id_devisi`, `id_departement`) VALUES
 (1, 'zulfi', '', '', '', '', '', '', '', '', '', '', '', 1, 0, 0),
 (455, 'bahrul', 'sumantra', 'aceh', 'pukau', 'sad', 'laki-laki', '11/04/2021', '12478', 'belum kawin', 'S1', '', '', 0, 0, 0),
-(461, '1234', '33', '3317', '3317100', '', '', '', '', 'Open this select menu', 'Open this select menu', '', '', 0, 0, 0),
-(462, 'zulfi', '35', '3507', '3507250', 'bunut wetan rt.01 rw.04', 'laki-laki', '11/01/2021', '0838989976219', 'belum kawin', 'S1', '', '', 0, 0, 0);
+(461, '1234', '33', '3317', '3317100', '', '', '', '', 'Open this select menu', 'Open this select menu', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nama_lengkap` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `nama` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=Active | 0=Inactive ',
-  `role_id` int(11) NOT NULL,
-  `is_active` int(11) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `nama_lengkap`, `nama`, `image`, `email`, `password`, `created`, `modified`, `status`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'zulfi kurniawan', '', '', 'zulfi@mhs.stiki.ac.id', '0000', '2021-09-24 04:38:20', '2021-09-24 04:38:20', 1, 0, 0, 0),
-(2, 'Moh. Bahrul Ulum', '', '', '181111082@mhs.stiki.ac.id', '0082', '2021-09-24 04:40:58', '2021-09-24 04:40:58', 1, 0, 0, 0),
-(3, 'tes', '', '', 'tes@gmail.com', '0000', '2021-09-27 07:30:45', '2021-09-27 07:30:45', 1, 1, 1, 0),
-(4, 'tes2', '', '', 'tes2@gmail.com', '0000', '2021-09-27 07:35:28', '2021-09-27 07:35:28', 1, 2, 0, 0),
-(5, 'ulum', '', '', 'ulum@gmail.com', '0000', '2021-09-27 08:07:00', '2021-09-27 08:07:00', 1, 1, 0, 0),
-(7, 'wina', '', '', 'wina@gmail.com', '1234', '2021-09-27 11:06:17', '2021-09-27 11:06:17', 1, 3, 0, 0),
-(8, 'ulums', '', '', 'ulums@gmail.com', '1234', '2021-09-28 03:40:09', '2021-09-28 03:40:09', 1, 3, 0, 0),
-(9, 'tes3', '', '', 'tes3@gmail.com', '0000', '2021-10-01 01:45:03', '2021-10-01 01:45:03', 1, 1, 0, 0),
-(10, '', 'bug', 'default.jpg', 'bug@gmail.com', '$2y$10$kDbfQXzaP4i1llwNLY8ic.JlOEgpGXihGRByIUDFS9jEmOWjWKEp.', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 1, 1639054030),
-(11, '', 'bug2', 'default.jpg', 'bug2@gmail.com', '$2y$10$KQBptHAUbq0Kof8.mrME2.hKFVoDMrfONjbxzoaMfe2q2IwwT0LQ.', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2, 1, 1639054924);
+INSERT INTO `users` (`id`, `nama_lengkap`, `email`, `password`, `created`, `modified`, `status`, `role_id`) VALUES
+(1, 'zulfi kurniawan', 'zulfi@mhs.stiki.ac.id', '0000', '2021-09-24 04:38:20', '2021-09-24 04:38:20', 1, 0),
+(2, 'Moh. Bahrul Ulum', '181111082@mhs.stiki.ac.id', '0082', '2021-09-24 04:40:58', '2021-09-24 04:40:58', 1, 0),
+(3, 'tes', 'tes@gmail.com', '0000', '2021-09-27 07:30:45', '2021-09-27 07:30:45', 1, 1),
+(4, 'tes2', 'tes2@gmail.com', '0000', '2021-09-27 07:35:28', '2021-09-27 07:35:28', 1, 2),
+(5, 'ulum', 'ulum@gmail.com', '0000', '2021-09-27 08:07:00', '2021-09-27 08:07:00', 1, 1),
+(7, 'wina', 'wina@gmail.com', '1234', '2021-09-27 11:06:17', '2021-09-27 11:06:17', 1, 3),
+(8, 'ulums', 'ulums@gmail.com', '1234', '2021-09-28 03:40:09', '2021-09-28 03:40:09', 1, 3),
+(9, 'tes3', 'tes3@gmail.com', '0000', '2021-10-01 01:45:03', '2021-10-01 01:45:03', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
---
-
-CREATE TABLE `user_access_menu` (
-  `id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `menu_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_access_menu`
---
-
-INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 2, 2),
-(4, 2, 6);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_menu`
---
-
-CREATE TABLE `user_menu` (
-  `id` int(11) NOT NULL,
-  `menu` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_menu`
---
-
-INSERT INTO `user_menu` (`id`, `menu`) VALUES
-(1, 'Hrd'),
-(2, 'Kehadiran'),
-(3, 'Kepala Cabang'),
-(4, 'Pelamar'),
-(5, 'Admin'),
-(6, 'Dashboard-Karyawan'),
-(7, 'Detail-Karyawan');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_role`
---
-
-CREATE TABLE `user_role` (
-  `id` int(11) NOT NULL,
-  `role` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_role`
---
-
-INSERT INTO `user_role` (`id`, `role`) VALUES
-(1, 'Hrd'),
-(2, 'Karyawan'),
-(3, 'Pelamar'),
-(4, 'Kepala Cabang');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_sub_menu`
---
-
-CREATE TABLE `user_sub_menu` (
-  `id` int(11) NOT NULL,
-  `menu_id` int(11) NOT NULL,
-  `subsub_id` int(11) NOT NULL,
-  `title` varchar(200) NOT NULL,
-  `title_id` varchar(100) NOT NULL,
-  `url` varchar(200) NOT NULL,
-  `icon` varchar(200) NOT NULL,
-  `is_active` int(11) NOT NULL,
-  `sclass` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_sub_menu`
---
-
-INSERT INTO `user_sub_menu` (`id`, `menu_id`, `subsub_id`, `title`, `title_id`, `url`, `icon`, `is_active`, `sclass`) VALUES
-(1, 1, 0, 'Dashboard', 'Dashboard', 'admin2/dashboard', 'fas fa-fw fa-tachometer-alt', 1, 1),
-(2, 1, 0, 'Pekerjaan', 'Pekerjaan', '', 'fas fa-fw fa-briefcase', 1, 2),
-(3, 1, 0, 'Organisasi', 'Organisasi', '', 'fas fa-fw fa-building', 1, 2),
-(4, 2, 0, 'Kehadiran', 'Kehadiran', '', 'fas fa-fw fa-clipboard-list', 1, 2),
-(5, 1, 0, 'Cuti', 'Cuti', '', 'fas fa-fw fa-id-badge', 1, 2),
-(6, 1, 0, 'Mutasi', 'Mutasi', 'admin2/mutasi/mutasi', 'fas fa-fw fa-exchange-alt', 1, 1),
-(7, 1, 0, 'Karyawan', 'Karyawan', 'admin2/karyawan/karyawan', 'fas fa-fw fa-exchange-alt', 1, 1),
-(8, 1, 0, 'Penilaian Kerja', 'Penilaian_Kerja', '', 'fas fa-fw fa-clipboard-check', 1, 2),
-(9, 1, 0, 'Top Kerja', 'Top_Kerja', 'admin2/top_kerja/top_kerja', 'fas fa-fw fa-star', 1, 1),
-(10, 1, 0, 'Acara dan Rapat', 'Acara_dan_Rapat', 'admin2/acara_rapat/acara_rapat', 'fas fa-fw fa-handshake', 1, 1),
-(11, 1, 0, 'Artikel', 'Artikel', 'admin2/artikel/artikel', 'fas fa-fw fa-newspaper', 1, 1),
-(12, 1, 0, 'Hak Istimewa', 'Hak Istimewa', 'admin2/hak_istimewa/hak_istimewa', 'fas fa-fw fa-users', 1, 1),
-(13, 1, 2, 'Lowongan', '', 'admin2/pekerjaan/pekerjaanmaster', '', 1, 0),
-(14, 1, 2, 'Lamaran Masuk', '', 'admin2/pekerjaan/pekerjaanMaster/lamaranMasuk', '', 1, 0),
-(15, 1, 2, 'Hasil Seleksi', '', 'admin/hasil_seleksi', '', 1, 0),
-(16, 1, 3, 'Perusahaan', '', 'admin2/organisasi/perusahaan', '', 1, 0),
-(17, 1, 3, 'Departemen', '', 'admin2/organisasi/department', '', 1, 0),
-(18, 1, 3, 'Divisi', '', 'admin2/organisasi/divisi', '', 1, 0),
-(19, 1, 3, 'Jabatan', '', 'admin2/organisasi/jabatan', '', 1, 0),
-(20, 1, 3, 'Golongan', '', 'admin2/organisasi/golongan', '', 1, 0),
-(21, 1, 3, 'Posisi', '', 'admin2/organisasi/posisi', '', 1, 0),
-(22, 1, 3, 'Penempatan', '', 'admin2/organisasi/penempatan', '', 1, 0),
-(23, 2, 4, 'Absensi', '', 'admin2/kehadiran/absensi', '', 1, 0),
-(24, 2, 4, 'Surat Ijin / Sakit', '', 'admin2/kehadiran/sakit', '', 1, 0),
-(25, 2, 5, 'Permohonan Cuti', '', 'admin2/cuti/permohonan_cuti', '', 1, 0),
-(26, 2, 5, 'Data Cuti Karyawan', '', 'admin2/cuti/data_cuti_karyawan', '', 1, 0),
-(27, 2, 5, 'Pengunduruan Diri', '', 'admin2/cuti/pengunduran_diri', '', 1, 0),
-(28, 1, 8, 'KPI Departemen', '', 'admin2/penilaian_pekerja/kpi_departemen', '', 1, 0),
-(29, 1, 8, 'KPI Karyawan', '', 'admin2/penilaian_pekerja/kpi_karyawan', '', 1, 0),
-(32, 6, 0, 'Dashboard', 'Dashboard-karyawan', 'admin2/dashboard', 'fas fa-fw fa-tachometer-alt', 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `wilayah_kecamatan`
+-- Struktur dari tabel `wilayah_kecamatan`
 --
 
 CREATE TABLE `wilayah_kecamatan` (
@@ -548,7 +426,7 @@ CREATE TABLE `wilayah_kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wilayah_kecamatan`
+-- Dumping data untuk tabel `wilayah_kecamatan`
 --
 
 INSERT INTO `wilayah_kecamatan` (`id`, `kota_id`, `nama`) VALUES
@@ -7438,7 +7316,7 @@ INSERT INTO `wilayah_kecamatan` (`id`, `kota_id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wilayah_kota`
+-- Struktur dari tabel `wilayah_kota`
 --
 
 CREATE TABLE `wilayah_kota` (
@@ -7448,7 +7326,7 @@ CREATE TABLE `wilayah_kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wilayah_kota`
+-- Dumping data untuk tabel `wilayah_kota`
 --
 
 INSERT INTO `wilayah_kota` (`id`, `provinsi_id`, `nama`) VALUES
@@ -7955,7 +7833,7 @@ INSERT INTO `wilayah_kota` (`id`, `provinsi_id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wilayah_provinsi`
+-- Struktur dari tabel `wilayah_provinsi`
 --
 
 CREATE TABLE `wilayah_provinsi` (
@@ -7964,7 +7842,7 @@ CREATE TABLE `wilayah_provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wilayah_provinsi`
+-- Dumping data untuk tabel `wilayah_provinsi`
 --
 
 INSERT INTO `wilayah_provinsi` (`id`, `nama`) VALUES
@@ -8008,255 +7886,207 @@ INSERT INTO `wilayah_provinsi` (`id`, `nama`) VALUES
 --
 
 --
--- Indexes for table `data_karyawan`
+-- Indeks untuk tabel `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_lamaran`
+-- Indeks untuk tabel `data_lamaran`
 --
 ALTER TABLE `data_lamaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `department`
+-- Indeks untuk tabel `department`
 --
 ALTER TABLE `department`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `divisi`
+-- Indeks untuk tabel `divisi`
 --
 ALTER TABLE `divisi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `golongan`
+-- Indeks untuk tabel `golongan`
 --
 ALTER TABLE `golongan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jabatan`
+-- Indeks untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lowongan`
+-- Indeks untuk tabel `lowongan`
 --
 ALTER TABLE `lowongan`
   ADD PRIMARY KEY (`id_lowongan`);
 
 --
--- Indexes for table `mutasi`
+-- Indeks untuk tabel `mutasi`
 --
 ALTER TABLE `mutasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `penempatan`
+-- Indeks untuk tabel `penempatan`
 --
 ALTER TABLE `penempatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `perusahaan`
+-- Indeks untuk tabel `perusahaan`
 --
 ALTER TABLE `perusahaan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posisi`
+-- Indeks untuk tabel `posisi`
 --
 ALTER TABLE `posisi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `role_mutasi`
+-- Indeks untuk tabel `role_mutasi`
 --
 ALTER TABLE `role_mutasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `syarat_pengalaman`
+-- Indeks untuk tabel `syarat_pengalaman`
 --
 ALTER TABLE `syarat_pengalaman`
   ADD PRIMARY KEY (`id_syarat`);
 
 --
--- Indexes for table `tbl_karyawan`
+-- Indeks untuk tabel `tbl_karyawan`
 --
 ALTER TABLE `tbl_karyawan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_departemen` (`id_departemen`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
---
-ALTER TABLE `user_access_menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_menu`
---
-ALTER TABLE `user_menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_role`
---
-ALTER TABLE `user_role`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_sub_menu`
---
-ALTER TABLE `user_sub_menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `wilayah_kecamatan`
+-- Indeks untuk tabel `wilayah_kecamatan`
 --
 ALTER TABLE `wilayah_kecamatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wilayah_kota`
+-- Indeks untuk tabel `wilayah_kota`
 --
 ALTER TABLE `wilayah_kota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wilayah_provinsi`
+-- Indeks untuk tabel `wilayah_provinsi`
 --
 ALTER TABLE `wilayah_provinsi`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_karyawan`
+-- AUTO_INCREMENT untuk tabel `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `data_lamaran`
+-- AUTO_INCREMENT untuk tabel `data_lamaran`
 --
 ALTER TABLE `data_lamaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
 
 --
--- AUTO_INCREMENT for table `department`
+-- AUTO_INCREMENT untuk tabel `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `divisi`
+-- AUTO_INCREMENT untuk tabel `divisi`
 --
 ALTER TABLE `divisi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `golongan`
+--
+ALTER TABLE `golongan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `golongan`
---
-ALTER TABLE `golongan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `jabatan`
+-- AUTO_INCREMENT untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `lowongan`
+-- AUTO_INCREMENT untuk tabel `lowongan`
 --
 ALTER TABLE `lowongan`
   MODIFY `id_lowongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `mutasi`
+-- AUTO_INCREMENT untuk tabel `mutasi`
 --
 ALTER TABLE `mutasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `penempatan`
+-- AUTO_INCREMENT untuk tabel `penempatan`
 --
 ALTER TABLE `penempatan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `perusahaan`
+--
+ALTER TABLE `perusahaan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT untuk tabel `posisi`
+--
+ALTER TABLE `posisi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `perusahaan`
---
-ALTER TABLE `perusahaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `posisi`
---
-ALTER TABLE `posisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `role_mutasi`
+-- AUTO_INCREMENT untuk tabel `role_mutasi`
 --
 ALTER TABLE `role_mutasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `syarat_pengalaman`
+-- AUTO_INCREMENT untuk tabel `syarat_pengalaman`
 --
 ALTER TABLE `syarat_pengalaman`
   MODIFY `id_syarat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_karyawan`
+-- AUTO_INCREMENT untuk tabel `tbl_karyawan`
 --
 ALTER TABLE `tbl_karyawan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=462;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `user_access_menu`
---
-ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `user_menu`
---
-ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `user_role`
---
-ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `user_sub_menu`
---
-ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

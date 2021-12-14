@@ -13,7 +13,7 @@ class Pelamar extends RestController
         parent::__construct();
         $this->load->library('upload');
         // $this->load->database();
-        $this->load->model('M_Pelamar');
+        $this->load->model('M_pelamar');
     }
 
     // menampilkan data pelamaran 

@@ -6,21 +6,26 @@ class Penempatan extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
         $this->load->model('M_organisasi');
-        $this->load->model('M_Pelamar');
+        $this->load->model('M_pelamar');
     }
 
 
     public function index()
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
         $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
-        $data['provinsi']   = $this->M_Pelamar->getDataprov();
+        $data['provinsi']   = $this->M_pelamar->getDataprov();
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_penempatan', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     // insert data 
@@ -53,7 +58,7 @@ class Penempatan extends CI_Controller
     public function getKota()
     {
         $idprov =   $this->input->post('id');
-        $data   =   $this->M_Pelamar->getDataKota($idprov);
+        $data   =   $this->M_pelamar->getDataKota($idprov);
         $output =   '<option value="">-- Pilih Kota --</option>';
         foreach ($data as $row) {
             if ($row->id == $row->idprov) {

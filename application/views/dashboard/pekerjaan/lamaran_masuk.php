@@ -78,7 +78,7 @@
                          </table>
                      </div>
                  </div>
-                
+
              </div>
          </div>
      </div>
@@ -113,7 +113,7 @@
                  <div class="modal-body">apakah anda ingin menolak pelamar atas nama : <?= $m['nama']; ?> </div>
                  <div class="modal-footer">
                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                     <a class="btn btn-primary" href="<?= base_url('admin/ditolak/') . $m['id']; ?>">Di Tolak</a>
+                     <a class="btn btn-primary" href="<?= base_url('admin2/pekerjaan/pekerjaanmaster/ditolak/') . $m['id']; ?>">Di Tolak</a>
                  </div>
              </div>
          </div>
@@ -137,7 +137,7 @@
                  <div class="modal-body">apakah anda ingin menerima pelamar atas nama : <?= $m['nama']; ?> </div>
                  <div class="modal-footer">
                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                     <a class="btn btn-primary" href="<?= base_url('admin/diterima/') . $m['id']; ?>">Terima Lamaran</a>
+                     <a class="btn btn-primary" href="<?= base_url('admin2/pekerjaan/pekerjaanmaster/diterima/') . $m['id']; ?>">Terima Lamaran</a>
                  </div>
              </div>
          </div>

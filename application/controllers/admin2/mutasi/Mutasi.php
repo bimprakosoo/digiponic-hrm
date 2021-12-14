@@ -8,6 +8,10 @@ class Mutasi extends CI_Controller
     function __construct()
     {
         parent::__construct();
+
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
         $this->load->model('M_mutasi');
         $this->load->model('M_organisasi');
     }
@@ -15,6 +19,7 @@ class Mutasi extends CI_Controller
 
     public function index()
     {
+        $data['user'] = $this->M_auth->getUserRow();
         $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
 
         // // organisasi
@@ -25,10 +30,10 @@ class Mutasi extends CI_Controller
         $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
         $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/mutasi/v_mutasi', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     // public function getDepartment()
