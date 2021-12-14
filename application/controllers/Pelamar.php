@@ -15,7 +15,8 @@ class Pelamar extends CI_Controller
         $this->load->helper('url');
         $this->load->library('upload');
         $this->load->library('form_validation');
-        $this->load->model('M_Pelamar');
+        $this->load->model('M_pelamar');
+        $this->load->model('M_auth');
         // if ($this->session->userdata('status') != true) {
         //     redirect(base_url("login"));
         // }
@@ -23,15 +24,20 @@ class Pelamar extends CI_Controller
 
     public function index()
     {
-        $this->load->view('template/header');
-        $this->load->view('landingpage/landingpage_view');
-        $this->load->view('template/footer');
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('landingpage/landingpage_view', $data);
+        $this->load->view('template/footer', $data);
+
+
+        // echo 'selamar data ' . $data['user']['nama'];
     }
 
     public function lamaran()
     {
         // $this->load->view('template/headerauth');
-        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+        $data['provinsi'] = $this->M_pelamar->getDataprov();
         $this->load->view('lowongan/lowongan_lamaran_view', $data);
     }
 
@@ -55,8 +61,8 @@ class Pelamar extends CI_Controller
                 'no_telp'               =>  $this->input->post('no_telp'),
                 'status_perkawinan'     =>  $this->input->post('status_perkawinan'),
                 'pendidikan_terakhir'   =>  $this->input->post('pendidikan_terakhir'),
-                'surat_lamaran'         =>  $this->M_Pelamar->file_lamaran(),
-                'cv'                    =>  $this->M_Pelamar->file_cv()
+                'surat_lamaran'         =>  $this->M_pelamar->file_lamaran(),
+                'cv'                    =>  $this->M_pelamar->file_cv()
             );
 
             // var_dump($data);
@@ -81,7 +87,7 @@ class Pelamar extends CI_Controller
     public function getKota()
     {
         $idprov =   $this->input->post('id');
-        $data   =   $this->M_Pelamar->getDataKota($idprov);
+        $data   =   $this->M_pelamar->getDataKota($idprov);
         $output =   '<option value="">-- Pilih Kota --</option>';
         foreach ($data as $row) {
             $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
@@ -92,7 +98,7 @@ class Pelamar extends CI_Controller
     public function getKecamatan()
     {
         $idkota =   $this->input->post('id');
-        $data   =   $this->M_Pelamar->getDataKecamatan($idkota);
+        $data   =   $this->M_pelamar->getDataKecamatan($idkota);
         $output =   '<option value="">-- Pilih Kecamatan --</option>';
         foreach ($data as $row) {
             $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';

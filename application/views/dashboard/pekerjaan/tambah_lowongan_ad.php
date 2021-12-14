@@ -17,7 +17,7 @@
          <div class="container-fluid p-0">
 
              <div class="card shadow m-4 ">
-                 <form action="<?= base_url('admin/create'); ?>" method="POST" enctype="multipart/form-data">
+                 <form action="<?= base_url('admin2/pekerjaan/pekerjaanmaster/lowongan_post'); ?>" method="POST" enctype="multipart/form-data">
 
                      <div class="card-body ">
                          <div class="modal-body">

@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/image/Logo2.png" />
 
-    <title>Dashboard</title>
+    <title> <?= $title; ?></title>
 
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <!-- <script src="<?php echo base_url(); ?> assets/admin2/ckeditor/ckeditor.js"></script> -->
@@ -53,151 +53,81 @@
                     <span class="align-middle"><img src="<?php echo base_url(); ?>assets/image/Logo.svg" alt=""></span>
                 </a>
 
+                <?php
+                $role_id    = $this->session->userdata('role_id');
+                $queryMenu  = "SELECT `user_menu`.`id`, `menu` 
+                                 FROM `user_menu` JOIN `user_access_menu`
+                                   ON `user_menu`.`id` = `user_access_menu`.`menu_id`
+                                WHERE `user_access_menu`.`role_id` = $role_id
+                                ORDER BY `user_access_menu`.`menu_id` DESC
+                    ";
+                $menu = $this->db->query($queryMenu)->result_array();
+                ?>
+
+
                 <ul class="sidebar-nav">
-                    <li class="sidebar-item ">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/dashboard/dashboard/">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span class="align-middle">Dashboard</span>
-                        </a>
-                    </li>
+                    <!-- loop -->
+                    <?php foreach ($menu as $m) : ?>
+                        <li class="sidebar-item ">
+                            <?= $m['menu']; ?>
+                        </li>
 
-                    <li class="sidebar-item">
-                        <a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="fas fa-briefcase"></i>
-                            <span class="align-middle">Pekerjaan</span>
-                        </a>
-                        <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/lowongan_ad">Lowongan</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/lamaran_masuk">Lamaran Masuk</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin/hasil_seleksi">Hasil Seleksi</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <!-- loop sub-menu by menu -->
+                        <?php
+                        $menuId = $m['id'];
+                        // $querySubMenu = "SELECT *
+                        //                     FROM  `user_sub_menu` JOIN `user_menu`
+                        //                     ON    `user_sub_menu`.`menu_id` = `user_menu`.`id`
+                        //                     WHERE `user_sub_menu`.`menu_id` = $menuId
+                        //                 ";
 
-                    <li class="sidebar-item">
-                        <a data-target="#or" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="fas fa-building"></i>
-                            <span class="align-middle">Organisasi</span>
-                        </a>
-                        <ul id="or" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/perusahaan/">Perusahaan</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/department/">Departemen</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/divisi/">Divisi</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/jabatan/">Jabatan</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/golongan/">Golongan</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/posisi/">Posisi</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/organisasi/penempatan/">Penempatan</a>
-                            </li>
-                        </ul>
-                    </li>
+                        $querySubMenu = "   SELECT *
+                                            FROM `user_sub_menu` 
+                                            WHERE `menu_id` = $menuId
+                                            AND `is_active` = 1
+                                        ";
 
-                    <li class="sidebar-item">
-                        <a data-target="#kh" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="fas fa-clipboard-list"></i>
-                            <span class="align-middle">Kehadiran</span>
-                        </a>
-                        <ul id="kh" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/kehadiran/absensi/">Absensi</a>
+                        $subMenu = $this->db->query($querySubMenu)->result_array();
+                        ?>
+
+                        <?php foreach ($subMenu as $sm) : ?>
+                            <li class="sidebar-item ">
+                                <!-- no-dropdown -->
+                                <?php if ($sm['sclass'] == 1) { ?>
+                                    <a class="sidebar-link" href="<?= base_url($sm['url']); ?>">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span class="align-middle"><?= $sm['title']; ?></span>
+                                    </a>
+                                    <!-- dropdown -->
+                                <?php } else if ($sm['sclass'] == 2) { ?>
+                                    <a data-target="#<?= $sm['title_id'] ?>" data-toggle="collapse" class="sidebar-link collapsed">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span class="align-middle"><?= $sm['title']; ?></span>
+                                    </a>
+                                    <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                        <?php
+                                        $subMenuId = $sm['id'];
+                                        $querySubSubMenu = "SELECT *
+                                                                FROM `user_sub_menu` 
+                                                                WHERE `subsub_id` = $subMenuId
+                                                                AND `is_active` = 1
+                                                            ";
+                                        $subsubMenu = $this->db->query($querySubSubMenu)->result_array();
+
+                                        ?>
+                                        <?php foreach ($subsubMenu as $ssm) : ?>
+                                            <li class="sidebar-item">
+                                                <a class="sidebar-link" href="<?= base_url($ssm['url']); ?>">
+                                                    <span class="align-middle"><?= $ssm['title']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php } ?>
                             </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/kehadiran/sakit/">Surat Ijin / Sakit</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <?php endforeach; ?>
 
-                    <li class="sidebar-item">
-                        <a data-target="#cuti" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="fas fa-id-badge"></i>
-                            <span class="align-middle">Cuti</span>
-                        </a>
-                        <ul id="cuti" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/permohonan_cuti/">Permohonan Cuti</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/data_cuti_karyawan/">Data Cuti Karyawan</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/cuti/pengunduran_diri/">Pengunduruan Diri</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/mutasi/mutasi">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span class="align-middle">Mutasi</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/karyawan/karyawan/data_karyawan">
-                            <i class="align-middle" data-feather="book"></i>
-                            <span class="align-middle">Karyawan</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a data-target="#penilaian" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="fas fa-clipboard-check"></i>
-                            <span class="align-middle">Penilaian Kerja</span>
-                        </a>
-                        <ul id="penilaian" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/penilaian_pekerja/kpi_departemen/">KPI Departemen</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/penilaian_pekerja/kpi_karyawan/">KPI Karyawan</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/top_kerja/top_kerja/">
-                            <i class="fas fa-star"></i>
-                            <span class="align-middle">Top Kerja</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/acara_rapat/acara_rapat/">
-                            <i class="fas fa-handshake"></i>
-                            <span class="align-middle">Acara dan Rapat</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/artikel/artikel/">
-                            <i class="fas fa-newspaper"></i>
-                            <span class="align-middle">Artikel</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="<?php echo base_url(); ?>admin2/hak_istimewa/hak_istimewa/">
-                            <i class="fas fa-users"></i>
-                            <span class="align-middle">Hak Istimewa</span>
-                        </a>
-                    </li>
+                    <?php endforeach; ?>
 
                 </ul>
             </div>

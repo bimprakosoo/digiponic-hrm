@@ -13,17 +13,22 @@ class Data_cuti_karyawan extends CI_Controller
         $this->load->library('curl');
         $this->load->helper('form');
         $this->load->helper('url');
-        $this->load->model('M_admin');
         $this->load->library('table');
         $this->load->library('form_validation');
+
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
     }
 
     public function index()
     {
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
-        $this->load->view('dashboard/cuti/v_data_cuti_karyawan');
-        $this->load->view('template/template_admin/footer_ad');
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/cuti/v_data_cuti_karyawan', $data);
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
     // public function lowongan_ad()
     // {
