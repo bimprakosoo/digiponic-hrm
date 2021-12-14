@@ -35,6 +35,7 @@ class Login extends CI_Controller
             // validasi success
             $this->login_post();
         }
+        
     }
 
     private function login_post()

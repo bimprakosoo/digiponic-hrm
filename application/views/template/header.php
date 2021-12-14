@@ -78,8 +78,8 @@
                   <?php } else { ?>
                     <!-- <a href="login.php">Login</a>
                     <a href="register.php">Register</a> -->
-                    <a class="btn btn-outline-light" href="<?php echo base_url(); ?>login">Login</a>
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>register">Register</a>
+                    <a class="btn btn-outline-light" href="<?php echo base_url(); ?>auth">Login</a>
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>auth/registration">Register</a>
                   <?php } ?>
 
                 </div>
@@ -125,8 +125,8 @@
             <?php } else { ?>
               <!-- <a href="login.php">Login</a>
               <a href="register.php">Register</a> -->
-              <a class="btn btn-outline-light" href="<?php echo base_url(); ?>login">Login</a>
-              <a class="btn btn-success" href="<?php echo base_url(); ?>register">Register</a>
+              <a class="btn btn-outline-light" href="<?php echo base_url(); ?>auth">Login</a>
+              <a class="btn btn-success" href="<?php echo base_url(); ?>auth/registration">Register</a>
             <?php } ?>
 
           </div>

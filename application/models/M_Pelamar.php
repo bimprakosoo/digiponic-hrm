@@ -1,7 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class M_Pelamar extends CI_Model
+class M_pelamar extends CI_Model
 {
 
     function __construct()
@@ -10,13 +10,11 @@ class M_Pelamar extends CI_Model
         $this->load->library('upload');
     }
 
-    public function index()
+    public function getUserRow()
     {
-        // get data
+        return $this->db->get_where('users', ['email' =>
+        $this->session->userdata('email')])->row_array();
     }
-
-
-
     // next
 
     function file_lamaran()
@@ -64,7 +62,7 @@ class M_Pelamar extends CI_Model
     public function getDataprov()
     {
         return $this->db->get('wilayah_provinsi')->result_array();
-    } 
+    }
     // kota
     public function getDataKota($idprov)
     {

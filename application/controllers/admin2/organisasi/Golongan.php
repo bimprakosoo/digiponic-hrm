@@ -6,18 +6,23 @@ class Golongan extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        // model
+        $this->load->model('M_admin');
+        $this->load->model('M_auth');
         $this->load->model('M_organisasi');
     }
 
     public function index()
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
         $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
         $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_golongan', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     // insert data 

@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a href="<?php echo base_url() ?>admin2/pekerjaan/pekerjaanmaster/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-body py-3" >
+                <div class="card-body py-3">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Lowongan</h1>
                 </div>
@@ -75,7 +75,7 @@
                                         <td><?= $m['post_date']; ?></td>
                                         <td>
                                             <!-- BEGIN  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg" >
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">
                                                 Keterangan
                                             </button>
                                             <div class="modal fade" id="sizedModalLg" tabindex="-1" role="dialog" aria-hidden="true">
@@ -148,28 +148,10 @@
                                             </div>
                                             <!-- END  modal -->
                                         </td>
-                                        <td><img src="<?= base_url('assets/image/lowongan/').$m['image']; ?>" style="width: 50px; height: 50px;"></td>
+                                        <td><img src="<?= base_url('assets/image/lowongan/') . $m['image']; ?>" style="width: 50px; height: 50px;"></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd"
-                                            
-                                            data-nama_lowongan="<?= $m['nama_lowongan']; ?>" 
-                                            data-lokasi="<?= $m['lokasi']; ?>" 
-                                            data-perusahaan="<?= $m['perusahaan']; ?>" 
-                                            data-industri="<?= $m['industri']; ?>" 
-                                            data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" 
-                                            data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" 
-                                            data-insentif_lembur="<?= $m['insentif_lembur']; ?>" 
-                                            data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" 
-                                            data-pendidikan="<?= $m['pendidikan']; ?>" 
-                                            data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" 
-                                            data-gaji="<?= $m['gaji']; ?>" 
-                                            data-post_date="<?= $m['post_date']; ?>"
-                                            data-ket="<?= $m['ket']; ?>"
-                                            data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>"
-                                            data-tunjangan="<?= $m['tunjangan']; ?>"
-                                            data-image="<?= base_url('assets/image/lowongan/').$m['image']; ?>"
-                                            ><i class="fas fa-eye"></i></button>
-                                            <a class="btn btn-primary" href="<?php echo base_url("admin/edit/"). $m['id_lowongan'];?>"><i class="fas fa-edit"></i></a>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-insentif_lembur="<?= $m['insentif_lembur']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>" data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" data-image="<?= base_url('assets/image/lowongan/') . $m['image']; ?>"><i class="fas fa-eye"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin/hapus/") . $m['id_lowongan']; ?>"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
@@ -259,7 +241,7 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td ><img src="" alt="" id="dtl_image"></td>
+                                <td><img src="" alt="" id="dtl_image"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,7 +255,7 @@
     </div>
     <!-- END  modal -->
 
-    
+
 </main>
 <!-- End Content -->
 <script>
