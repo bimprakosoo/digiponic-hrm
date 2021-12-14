@@ -38,10 +38,6 @@ class Admin extends CI_Controller
         $this->load->view('template/template_admin/footer_ad', $data);
     }
 
-
-
-
-
     public function hasil_seleksi()
     {
         $this->load->view('template/template_admin/sidebar_ad');

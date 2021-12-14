@@ -123,6 +123,31 @@ class M_Admin extends CI_Model
         return $file_image;
     }
 
+    function file_image_ubah($data3)
+    {
+        // cek jika gambar diubah
+        $upload_img = $_FILES['image']['name'];
+
+        if ($upload_img) {
+            $config['upload_path'] = './assets/image/lowongan/';
+            $config['allowed_types'] = 'jpg|jpeg|png|svg';
+            $config['max_size']     = '2048';
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('image')) {
+                $old_img = $data3['lowongan']['image'];
+                if ($old_img != 'default.jpg') {
+                    unlink(FCPATH . './assets/image/lowongan/' . $old_img);
+                }
+                $new_img = $this->upload->data('file_name');
+                $this->db->set('image', $new_img);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        }
+        return $new_img;
+    }
+
     public function getDataDepartment()
     {
         return $this->db->get('department');

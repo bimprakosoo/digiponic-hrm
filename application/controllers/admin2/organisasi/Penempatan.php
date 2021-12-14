@@ -38,7 +38,8 @@ class Penempatan extends CI_Controller
                 // 'id'         =>  $this->input->post('id'),
                 'nama'             =>  $this->input->post('penempatan'),
                 'perusahaan_id'             =>  $this->input->post('perusahaan'),
-                'lokasi_cabang'        =>  $this->input->post('kota')
+                'lokasi_cabang'        =>  $this->input->post('kota'),
+                'provinsi'        =>  $this->input->post('provinsi')
             );
             $insert = $this->M_organisasi->postDataPenempatan($data);
 
@@ -63,5 +64,37 @@ class Penempatan extends CI_Controller
             $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
+    //edit
+    public function edit($id)
+    {
+
+        $data['penempatan'] = $this->M_organisasi->editPenempatan($id);
+        $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+        $data['provinsi'] = $this->M_Pelamar->getDataprov();
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_penempatan_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_pos = $this->input->post('id');
+        $data = array(
+            // 'id'         =>  $this->input->post('id'),
+            'nama'             =>  $this->input->post('posisi'),
+            'golongan_id'        =>  $this->input->post('golongan')
+        );
+        $this->M_organisasi->update_penempatan($id_pos, $data);
+        redirect('admin2/organisasi/penempatan/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusPenempatan($id);
+        redirect('admin2/organisasi/penempatan/');
     }
 }

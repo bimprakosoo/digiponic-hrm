@@ -49,4 +49,37 @@ class Jabatan extends CI_Controller
             redirect('admin2/organisasi/jabatan');
         }
     }
+    //edit
+    public function edit($id)
+    {
+
+        $data['jabatan'] = $this->M_organisasi->editJab($id);
+        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+
+
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_jabatan_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_jab = $this->input->post('id');
+        $data = array(
+            // 'id'         =>  $this->input->post('id'),
+            'nama'             =>  $this->input->post('jabatan'),
+            'divisi_id'        =>  $this->input->post('divisi'),
+        );
+        $this->M_organisasi->update_jab($id_jab, $data);
+        redirect('admin2/organisasi/jabatan/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusJabatan($id);
+        redirect('admin2/organisasi/jabatan/');
+    }
 }

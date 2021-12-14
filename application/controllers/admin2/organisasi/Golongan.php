@@ -49,4 +49,37 @@ class Golongan extends CI_Controller
             redirect('admin2/organisasi/golongan');
         }
     }
+    //edit
+    public function edit($id)
+    {
+
+        $data['golongan'] = $this->M_organisasi->editGol($id);
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+
+
+
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('dashboard/organisasi/v_golongan_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_gol = $this->input->post('id');
+        $data = array(
+            // 'id'         =>  $this->input->post('id'),
+            'nama'          =>  $this->input->post('golongan'),
+            'jabatan_id'   =>  $this->input->post('jabatan')
+        );
+        $this->M_organisasi->update_gol($id_gol, $data);
+        redirect('admin2/organisasi/golongan/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_organisasi->hapusGolongan($id);
+        redirect('admin2/organisasi/golongan/');
+    }
 }

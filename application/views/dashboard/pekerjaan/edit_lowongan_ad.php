@@ -188,8 +188,8 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Upload Image</label><br>
-                                 <img src="<?= base_url('assets/image/lowongan/') . $lowongan['image']; ?>" alt=""><br>
-                                 <input class="pt-1" type="file" id="file_image" name="image" onchange="VerifyFileNameAndFileSize()" accept=".png,.gif,.jpeg,.tiff,.jpg">
+                                 <img src="<?= base_url('assets/image/lowongan/') . $lowongan['image']; ?>" style="width: 50 px; height: 50px"><br>
+                                 <input class="pt-1" type="file" id="file_image" name="image" >
                              </div>
                          </div>
                      </div>

@@ -41,6 +41,7 @@
                                     <th>Nama</th> <!-- nama penempatan e -->
                                     <th>perusahaan</th> <!-- nama perusahaan e -->
                                     <th>lokasi</th> <!-- lokasi -->
+                                    <th>provinsi</th> <!-- lokasi -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -52,11 +53,12 @@
                                         <td><?= $d['nama']; ?></td>
                                         <td><?= $d['nama_perusahaan']; ?></td>
                                         <td><?= $d['nama_kota']; ?></td>
+                                        <td><?= $d['nama_provinsi']; ?></td>
 
                                         <td>
                                             <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                                            <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/penempatan/edit/") . $d['id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/penempatan/hapus/") . $d['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php $i++;
