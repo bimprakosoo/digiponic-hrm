@@ -23,6 +23,11 @@ class M_organisasi extends CI_Model
         return $this->db->get('perusahaan')->row_array();
         return $this->db->get();
     }
+    public function update_perusahaan($id_perusahaan, $data)
+    {
+        $this->db->where('id', $id_perusahaan);
+        $this->db->update('perusahaan', $data);
+    }
     // Department----------------------------------------------------------------------------------------------------
     public function getDataDepartment()
     {

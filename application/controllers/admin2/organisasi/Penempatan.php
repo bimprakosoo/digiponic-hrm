@@ -56,7 +56,11 @@ class Penempatan extends CI_Controller
         $data   =   $this->M_Pelamar->getDataKota($idprov);
         $output =   '<option value="">-- Pilih Kota --</option>';
         foreach ($data as $row) {
-            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+            if ($row->id == $row->idprov) {
+                $output .= ' <option value="' . $row->id . '" selected>' . $row->nama . ' </option>';
+            } else {
+                $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+            }
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
@@ -80,8 +84,10 @@ class Penempatan extends CI_Controller
         $id_pos = $this->input->post('id');
         $data = array(
             // 'id'         =>  $this->input->post('id'),
-            'nama'             =>  $this->input->post('posisi'),
-            'golongan_id'        =>  $this->input->post('golongan')
+            'nama'             =>  $this->input->post('penempatan'),
+            'perusahaan_id'             =>  $this->input->post('perusahaan'),
+            'lokasi_cabang'        =>  $this->input->post('kota'),
+            'provinsi'        =>  $this->input->post('provinsi')
         );
         $this->M_organisasi->update_penempatan($id_pos, $data);
         redirect('admin2/organisasi/penempatan/');

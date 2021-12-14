@@ -61,13 +61,9 @@
                                          <label for="title">Provinsi</label>
                                          <select class="form-control" id="provinsi" name="provinsi" required>
                                              <option value="">-- Pilih Provinsi --</option>
-                                             <?php foreach ($provinsi as $prov) {
-                                                    if ($prov['id'] == $penempatan['provinsi']) { ?>
-                                                     <option value="<?=$prov['id'] ?>" selected><?=  $prov['nama'] ?></option>
-                                                 <?php } else { ?>
-                                                     <option value="<?=  $prov['id'] ?>"><?= $prov['nama'] ?></option>
-                                             <?php }
-                                                } ?>
+                                             <?php foreach ($provinsi as $prov) { ?>
+                                                 <option value="<?= $prov['id'] ?>" <?= $prov['id'] == $penempatan['provinsi'] ? 'selected' : '' ?>><?= $prov['nama'] ?></option>
+                                             <?php } ?>
                                          </select>
                                      </div>
                                  </div>
@@ -79,6 +75,9 @@
                                          <label for="title">Kota</label>
                                          <select class="form-control" id="kota" name="kota" required>
                                              <option value="">-- Pilih Kota --</option>
+                                             <?php foreach ($kota as $kt) { ?>
+                                                 <option value="<?= $kt['id'] ?>" <?= $kt['id'] == $penempatan['kota'] ? 'selected' : '' ?>><?= $kt['nama'] ?></option>
+                                             <?php } ?>
                                          </select>
                                      </div>
                                  </div>
@@ -99,3 +98,25 @@
 
  </main>
  <!-- End Content -->
+ <script>
+     $(document).ready(function() {
+         $('#provinsi').change(function() {
+             var id = $(this).val();
+             // console.log(id); // cek id
+             $.ajax({
+                 type: "POST",
+                 url: "<?= base_url('pelamar/getKota') ?>",
+                 data: {
+                     id: id
+                 },
+                 dataType: "JSON",
+                 success: function(response) {
+                     // console.log(response);
+                     $('#kota').html(response);
+                     // get id kota by provinsi
+                 }
+             });
+         });
+
+     });
+ </script>
