@@ -65,7 +65,7 @@
                                     <th>No</th>
                                     <th>Nama Perusahaan</th>
                                     <th>Industri</th>
-                                    <th>Kota</th>
+                                    <th>Provinsi</th>
                                     <th>Kota</th>
                                     <th>Email</th>
                                     <th>Alamat</th>

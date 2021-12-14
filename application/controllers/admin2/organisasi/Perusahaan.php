@@ -68,20 +68,19 @@ class Perusahaan extends CI_Controller
         foreach ($data as $row) {
             if ($row->id == $row->idprov) {
                 $output .= ' <option value="' . $row->id . '" selected>' . $row->nama . ' </option>';
-            } else{
+            } else {
                 $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
-
             }
         }
         // foreach ($data as $row) {
         //     $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
         // }
-        
+
         $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
     public function edit($id)
     {
-        $idprov =   $this->input->post('id');
+        // $idprov =   $this->input->post('id');
         $data['perusahaan'] = $this->M_organisasi->edit($id);
         $data['provinsi'] = $this->M_Pelamar->getDataprov();
         $data['kota']  =   $this->M_Pelamar->getDataKotaPerusahaan($data['perusahaan']['provinsi']);
@@ -92,6 +91,24 @@ class Perusahaan extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
 
         // var_dump($data);
+    }
+    //update
+    public function update()
+    {
+
+        $id_perusahaan = $this->input->post('id');
+        $data = array(
+            // 'id'       =>  $this->input->post('id'),
+            'nama_perusahaan'       =>  $this->input->post('perusahaan'),
+            'industri'       =>  $this->input->post('industri'),
+            'provinsi'       =>  $this->input->post('provinsi'),
+            'kota'       =>  $this->input->post('kota'),
+            'email'       =>  $this->input->post('email'),
+            'alamat'       =>  $this->input->post('alamat'),
+            'telp'       =>  $this->input->post('telp'),
+        );
+        $this->M_organisasi->update_perusahaan($id_perusahaan, $data);
+        redirect('admin2/organisasi/perusahaan/');
     }
     public function hapus($id)
     {
