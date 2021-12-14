@@ -9,7 +9,7 @@
     <div class="container-fluid p-0">
 
         <div class="row">
-            <div class="col-12 col-xl-8">
+            <div class="col-12 col-xl-12">
                 <div class="w-100">
                     <div class="row">
                         <div class="col-sm-4">
@@ -40,7 +40,7 @@
                             <div class="card" style="height: 220px;">
                                 <div class="card-body">
 
-                                    <h5 class="card-title text-center " >Karyawan</h5>
+                                    <h5 class="card-title text-center ">Karyawan</h5>
 
                                     <hr>
 
@@ -72,54 +72,48 @@
                     </div>
                 </div> -->
             </div>
-            <div class="col-12 col-xl-4">
-                <div class="card flex-fill w-100">
-                    <div class="card-header" style="background: #fff;">
 
-                        <h5 class="card-title mb-0">Tugas</h5>
-                    </div>
+            <div class="col-12 col-xl-12">
+
+                <div class="card">
                     <div class="card-body">
-                        <form action="javascript:void(0);">
-                            <input type="text" class="form-control add-task" placeholder="New Task...">
-                        </form>
-                        <ul class="nav nav-pills todo-nav">
-                            <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
-                            <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
-                            <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
-                        </ul>
-                        <div class="todo-list">
-                            <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Create theme</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
-                            <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Work on wordpress</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
 
-                            <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Organize office main department</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
-                            <div class="todo-item">
-                                <div class="checker"><span><input type="checkbox"></span></div>
-                                <span>Error solve in HTML template</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                        <h3 class="card-text  "><strong>Todo List</strong></h3>
+
+                        <div class="card-body ">
+                            <div class="table-responsive">
+                                <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>kepala cabang</th>
+                                            <th>nama cabang</th>
+                                            <th>nama perusahaan</th>
+                                            <th>Pengajuan</th>
+                                            
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Peter</td>
+                                            <td>A</td>
+                                            <td>Maju</td>
+                                            <td>mutasi</td>
+                                            <td>
+                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            </td>
+                                            
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card flex-fill w-100">
-                    <div class="card-header" style="background: #fff;">
 
-                        <h5 class="card-title mb-0">Task</h5>
-                    </div>
-                    <div class="card-body py-3">
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -134,3 +128,12 @@
         });
     });
 </script>
+<script>
+     $(document).ready(function() {
+         $('#dataTable').DataTable({
+            "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+         });
+     });
+ </script>
