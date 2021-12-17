@@ -31,7 +31,6 @@ class Absensi extends CI_Controller
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/kehadiran/v_absensi', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
-   
 }

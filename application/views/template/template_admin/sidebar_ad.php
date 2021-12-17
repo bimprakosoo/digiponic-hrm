@@ -71,13 +71,6 @@
 
 
                 <ul class="sidebar-nav">
-                    <!-- loop -->
-
-                    <li class="sidebar-item ">
-
-                    </li>
-
-                    <!-- loop sub-menu by menu -->
                     <?php
                     // $menuId = $m['id'];
                     // $querySubMenu = "SELECT *
@@ -112,14 +105,16 @@
                                 <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                                     <?php
                                     $subMenuId = $sm['id'];
-                                    $querySubSubMenu = "SELECT *
-                                                                FROM `user_sub_menu` 
-                                                                WHERE `subsub_id` = $subMenuId
-                                                                AND `is_active` = 1
-                                                            ";
+                                    // var_dump($subMenuId);
+                                    // die;
+                                    $querySubSubMenu = "SELECT * 
+                                                        FROM user_sub_menu
+                                                        WHERE subsub_id = $subMenuId
+                                                        AND is_active = 1
+                                                        ";
                                     $subsubMenu = $this->db->query($querySubSubMenu)->result_array();
-
                                     ?>
+
                                     <?php foreach ($subsubMenu as $ssm) : ?>
                                         <li class="sidebar-item">
                                             <a class="sidebar-link" href="<?= base_url($ssm['url']); ?>">
@@ -127,6 +122,7 @@
                                             </a>
                                         </li>
                                     <?php endforeach; ?>
+
                                 </ul>
                             <?php } ?>
                         </li>

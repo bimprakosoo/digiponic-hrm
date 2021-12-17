@@ -61,7 +61,7 @@ class Admin extends CI_Controller
         $this->load->view('dashboard/karyawan/v_pelacakan');
         $this->load->view('dashboard/karyawan/v_mutasi');
         $this->load->view('dashboard/karyawan/v_detail_training');
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
 
     // delete data kontak

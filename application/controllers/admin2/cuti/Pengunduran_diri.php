@@ -31,8 +31,6 @@ class Pengunduran_diri extends CI_Controller
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/cuti/v_pengunduran_diri', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
-
-   
 }

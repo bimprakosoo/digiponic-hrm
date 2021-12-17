@@ -19,15 +19,14 @@ class Dashboard extends CI_Controller
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
-
+        
         $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
     }
 
     public function index()
     {
         $data['title'] = 'Dashboard';
-
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/dashboard_ad/v_dashboard', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

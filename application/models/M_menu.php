@@ -19,7 +19,7 @@ class M_menu extends CI_Model
     public function userMenu($role_id)
     {
         $this->db->select('user_sub_menu.id, title, sclass, url, icon, title_id,
-        user_access_menu.id,
+        
         user_access_menu.role_id,
         user_access_menu.menu_id');
         $this->db->from('user_sub_menu');

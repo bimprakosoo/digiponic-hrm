@@ -86,9 +86,6 @@ class Perusahaan extends CI_Controller
     }
     public function edit($id)
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
-        // $idprov =   $this->input->post('id');
         $data['perusahaan'] = $this->M_organisasi->edit($id);
         $data['provinsi'] = $this->M_pelamar->getDataprov();
         $data['kota']  =   $this->M_pelamar->getDataKotaDetail($data['perusahaan']['provinsi']);
