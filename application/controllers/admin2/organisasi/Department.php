@@ -53,13 +53,15 @@ class Department extends CI_Controller
     //edit
     public function edit($id)
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
 
         $data['dept'] = $this->M_organisasi->editDept($id);
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
 
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_departemen_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

@@ -80,13 +80,15 @@ class Perusahaan extends CI_Controller
     }
     public function edit($id)
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
         // $idprov =   $this->input->post('id');
         $data['perusahaan'] = $this->M_organisasi->edit($id);
-        $data['provinsi'] = $this->M_Pelamar->getDataprov();
-        $data['kota']  =   $this->M_Pelamar->getDataKotaPerusahaan($data['perusahaan']['provinsi']);
+        $data['provinsi'] = $this->M_pelamar->getDataprov();
+        $data['kota']  =   $this->M_pelamar->getDataKotaDetail($data['perusahaan']['provinsi']);
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_perusahaan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
 
