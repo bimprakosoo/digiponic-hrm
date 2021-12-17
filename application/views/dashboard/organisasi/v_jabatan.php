@@ -2,8 +2,8 @@
 <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
     <nav aria-label="breadcrumb" class="m-4">
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-            <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-            <li class="breadcrumb-item"><a href="#">Organisasi</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/'); ?>">Dashboards</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/'); ?>">Organisasi</a></li>
             <li class="breadcrumb-item active" aria-current="page">Jabatan</li>
         </ol>
     </nav>
@@ -27,7 +27,7 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-header py-3">
+                <div class="card-body py-3" style="background: #fff;">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Jabatan</h1>
                 </div>
@@ -50,7 +50,7 @@
                                         <td><?= $d['nama']; ?></td>
                                         <td><?= $d['nama_divisi']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_jabatan="<?= $d['nama']; ?>" data-nama_divisi="<?= $d['nama_divisi']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/jabatan/edit/") . $d['jab_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/jabatan/hapus/") . $d['jab_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -87,19 +87,19 @@
                         </div>
 
                         <!-- Devisi -->
-                        <div class="mb-3 col-md-6">
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="title">Divisi</label>
-                                    <select class="form-control" id="divisi" name="divisi" required>
-                                        <option value="">-- Pilih Divisi --</option>
-                                        <?php foreach ($divisi as $org) : ?>
-                                            <option value="<?= $org['div_id'] ?>"><?= $org['nama'] ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
+                        <!-- <div class="mb-3 col-md-6"> -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Divisi</label>
+                                <select class="form-control" id="divisi" name="divisi" required>
+                                    <option value="">-- Pilih Divisi --</option>
+                                    <?php foreach ($divisi as $org) : ?>
+                                        <option value="<?= $org['div_id'] ?>"><?= $org['nama'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
+                        <!-- </div> -->
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -111,6 +111,38 @@
         </div>
     </div>
 
+ <!-- BEGIN  modal -->
+ <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Perusahaan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive ">
+                    <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th>Nama Jabatan</th>
+                                <td><span id="dtl_jabatan"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Divisi</th>
+                                <td><span id="dtl_divisi"></span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
 
 </main>
 <!-- End Content -->
@@ -118,6 +150,17 @@
     $(document).ready(function() {
         $('#dataTable').DataTable({
             "scrollX": true
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var nama_jabatan = $(this).data('nama_jabatan');
+            var nama_divisi = $(this).data('nama_divisi');
+            $('#dtl_jabatan').text(nama_jabatan);
+            $('#dtl_divisi').text(nama_divisi);
 
         });
     });

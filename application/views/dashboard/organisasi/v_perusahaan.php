@@ -2,8 +2,8 @@
 <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
     <nav aria-label="breadcrumb" class="m-4">
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-            <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-            <li class="breadcrumb-item"><a href="#">Organisasi</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/'); ?>">Dashboards</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/'); ?>">Organisasi</a></li>
             <li class="breadcrumb-item active" aria-current="page">Perusahaan</li>
         </ol>
     </nav>
@@ -29,34 +29,16 @@
 
             <div class="card shadow mb-4 ">
                 <div class="row m-2">
-                    <div class="col-auto d-none d-sm-block ">
+                    <!-- <div class="col-auto d-none d-sm-block ">
                         <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
 
+                    </div> -->
+
+                    <div class="card-body py-3">
+                        <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
+                        <h1 class="m-0 font-weight-bold ">Daftar Semua Perusahaan</h1>
                     </div>
 
-                    <div class="col-md-4 ml-auto ">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <select class="form-control text-center">
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <form class="d-none d-sm-inline-block">
-                                    <div class="input-group input-group-navbar">
-                                        <input type="text" class="form-control" placeholder="Search…" aria-label="Search" id="search_text" />
-                                        <button class="btn" type="button">
-                                            <i class="align-middle" data-feather="search"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
                     <div class="card-body ">
                         <div class="table-responsive">
                             <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
@@ -81,8 +63,8 @@
                                             <th scope="row"><?= $i ?></th>
                                             <td><?= $m['nama_perusahaan']; ?></td>
                                             <td><?= $m['industri']; ?></td>
-                                            <td><?= $m['nama_provinsi']; ?></td>
-                                            <td><?= $m['nama_kota']; ?></td>
+                                            <td><?= $m['provinsi']; ?></td>
+                                            <td><?= $m['kota']; ?></td>
                                             <td><?= $m['email']; ?></td>
                                             <td><?= $m['alamat']; ?></td>
                                             <td><?= $m['telp']; ?></td>
@@ -223,7 +205,7 @@
                         </button>
                     </div>
                     <div class="modal-body table-responsive ">
-                        <table class="table table-bordered no-margin">
+                        <table class="table table-bordered "  width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <th>Nama Perusahaan</th>
@@ -254,11 +236,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- END  modal -->
 
 </main>

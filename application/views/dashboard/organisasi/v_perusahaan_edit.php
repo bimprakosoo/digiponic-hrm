@@ -2,10 +2,10 @@
  <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
      <nav aria-label="breadcrumb" class="m-4">
          <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-             <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-             <li class="breadcrumb-item"><a href="#">Pekerjaan</a></li>
-             <li class="breadcrumb-item"><a href="#">Lowongan</a></li>
-             <li class="breadcrumb-item active" aria-current="page">Tambah Lowongan</li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/'); ?>">Dashboards</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/'); ?>">Organisasi</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/'); ?>">Perusahaan</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Edit Perusahaan</li>
          </ol>
      </nav>
  </div>
