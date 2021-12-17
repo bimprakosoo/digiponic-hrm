@@ -51,7 +51,7 @@
                                         <td><?= $d['nama']; ?></td>
                                         <td><?= $d['nama_golongan']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_golongan="<?= $d['nama']; ?>" data-nama_jabatan="<?= $d['nama_jabatan']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_posisi="<?= $d['nama']; ?>" data-nama_golongan="<?= $d['nama_golongan']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/posisi/edit/") . $d['pos_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/posisi/hapus/") . $d['pos_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -127,11 +127,11 @@
                         <tbody>
                             <tr>
                                 <th>Nama Golongan</th>
-                                <td><span id="dtl_golongan"></span></td>
+                                <td><span id="dtl_posisi"></span></td>
                             </tr>
                             <tr>
                                 <th>Jabatan</th>
-                                <td><span id="dtl_jabatan"></span></td>
+                                <td><span id="dtl_golongan"></span></td>
                             </tr>
 
                         </tbody>
@@ -157,10 +157,10 @@
 <script>
     $(document).ready(function() {
         $(document).on('click', '#set_dtl', function() {
+            var nama_posisi = $(this).data('nama_posisi');
             var nama_golongan = $(this).data('nama_golongan');
-            var nama_jabatan = $(this).data('nama_jabatan');
+            $('#dtl_posisi').text(nama_posisi);
             $('#dtl_golongan').text(nama_golongan);
-            $('#dtl_jabatan').text(nama_jabatan);
 
         });
     });
