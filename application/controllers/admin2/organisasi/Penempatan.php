@@ -80,8 +80,7 @@ class Penempatan extends CI_Controller
         $data['provinsi'] = $this->M_pelamar->getDataprov();
         $data['kota']  =   $this->M_pelamar->getDataKotaDetail($data['penempatan']['provinsi']);
 
-        
-// var_dump($data['penempatan']); die;
+        // var_dump($data);
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_penempatan_edit', $data);
