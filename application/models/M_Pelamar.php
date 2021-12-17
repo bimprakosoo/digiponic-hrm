@@ -75,7 +75,7 @@ class M_pelamar extends CI_Model
     }
 
     //get data perusahaan
-    public function getDataKotaPerusahaan($idprov)
+    public function getDataKotaDetail($idprov)
     {
         return $this->db->get_where('wilayah_kota', ['provinsi_id' => $idprov])->result_array();
     }

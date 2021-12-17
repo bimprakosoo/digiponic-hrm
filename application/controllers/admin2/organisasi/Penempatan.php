@@ -72,13 +72,16 @@ class Penempatan extends CI_Controller
     //edit
     public function edit($id)
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
 
         $data['penempatan'] = $this->M_organisasi->editPenempatan($id);
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
-        $data['provinsi'] = $this->M_Pelamar->getDataprov();
-
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $data['provinsi'] = $this->M_pelamar->getDataprov();
+        
+// var_dump($data['penempatan']); die;
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_penempatan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
