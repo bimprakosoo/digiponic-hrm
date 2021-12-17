@@ -24,6 +24,7 @@ class Perusahaan extends CI_Controller
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_perusahaan', $data);
         $this->load->view('template/template_admin/footer_ad', $data);
+        // var_dump($data['perusahaan']);
     }
 
 

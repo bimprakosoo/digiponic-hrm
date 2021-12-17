@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'digiponic-hrm',
+	'hostname' => 'hrm.digiponic.co.id',
+	'username' => 'hms',
+	'password' => '1sampaihms',
+	'database' => 'hms',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -76,7 +76,7 @@
                                          <select class="form-control" id="kota" name="kota" required>
                                              <option value="">-- Pilih Kota --</option>
                                              <?php foreach ($kota as $kt) { ?>
-                                                 <option value="<?= $kt['id'] ?>" <?= $kt['id'] == $penempatan['kota'] ? 'selected' : '' ?>><?= $kt['nama'] ?></option>
+                                                 <option value="<?= $kt['id'] ?>" <?= $kt['id'] == $penempatan['lokasi_cabang'] ? 'selected' : '' ?>><?= $kt['nama'] ?></option>
                                              <?php } ?>
                                          </select>
                                      </div>
