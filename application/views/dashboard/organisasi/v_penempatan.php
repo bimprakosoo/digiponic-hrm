@@ -56,7 +56,7 @@
                                         <td><?= $d['nama_provinsi']; ?></td>
 
                                         <td>
-                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_penempatan="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>" data-nama_kota="<?= $d['nama_kota']; ?>" data-nama_provinsi="<?= $d['nama_provinsi']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/penempatan/edit/") . $d['id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/penempatan/hapus/") . $d['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -146,6 +146,47 @@
         </div>
     </div>
 
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Perusahaan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive ">
+                    <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th>Nama</th>
+                                <td><span id="dtl_penempatan"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Perusahaan</th>
+                                <td><span id="dtl_perusahaan"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Lokasi Cabang</th>
+                                <td><span id="dtl_lokasi"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Provinsi</th>
+                                <td><span id="dtl_provinsi"></span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
+
 </main>
 <!-- End Content -->
 
@@ -175,6 +216,21 @@
     $(document).ready(function() {
         $('#dataTable').DataTable({
             "scrollX": true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var nama_penempatan = $(this).data('nama_penempatan');
+            var nama_perusahaan = $(this).data('nama_perusahaan');
+            var nama_kota = $(this).data('nama_kota');
+            var nama_provinsi = $(this).data('nama_provinsi');
+            $('#dtl_penempatan').text(nama_penempatan);
+            $('#dtl_perusahaan').text(nama_perusahaan);
+            $('#dtl_lokasi').text(nama_kota);
+            $('#dtl_provinsi').text(nama_provinsi);
+
         });
     });
 </script>
