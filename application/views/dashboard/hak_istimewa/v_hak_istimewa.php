@@ -32,7 +32,7 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-hover text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -55,10 +55,10 @@
 </main>
 <!-- End Content -->
 <script>
-     $(document).ready(function() {
-         $('#dataTable').DataTable({
-             "scrollX": true
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollX": true
 
-         });
-     });
- </script>
+        });
+    });
+</script>

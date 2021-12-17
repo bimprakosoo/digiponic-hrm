@@ -43,14 +43,14 @@ class M_auth extends CI_Model
     return $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
   }
 
-  public function queryMenu($role_id)
-  {
-    $this->db->select('user_menu.id, menu');
-    $this->db->from('user_menu');
-    $this->db->join('user_access_menu', 'user_menu.id = user_access_menu.menu_id');
-    $this->db->where('user_access_menu.role_id', $role_id);
-    $this->db->order_by('user_access_menu.menu_id', 'ASC');
+  // public function queryMenu($role_id)
+  // {
+  //   $this->db->select('user_menu.id, menu');
+  //   $this->db->from('user_menu');
+  //   $this->db->join('user_access_menu', 'user_menu.id = user_access_menu.menu_id');
+  //   $this->db->where('user_access_menu.role_id', $role_id);
+  //   $this->db->order_by('user_access_menu.menu_id', 'ASC');
 
-    return $this->db->get()->result_array();
-  }
+  //   return $this->db->get()->result_array();
+  // }
 }

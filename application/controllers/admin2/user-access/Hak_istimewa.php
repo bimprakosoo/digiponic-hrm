@@ -1,11 +1,14 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Karyawan extends CI_Controller
+class Hak_istimewa extends CI_Controller
 {
+    var $API = "";
+
     function __construct()
     {
         parent::__construct();
+        $this->API = site_url() . 'api';
         is_logged_in();
 
         // model
@@ -23,12 +26,9 @@ class Karyawan extends CI_Controller
 
     public function index()
     {
-        $data['user'] = $this->M_auth->getUserRow();
-        $data['datakaryawan'] = $this->M_admin->data_karyawan()->result_array();
+        $data['title'] = 'User Access';
 
-        $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('karyawan/index', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('dashboard/hak_istimewa/v_hak_istimewa', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
 }
