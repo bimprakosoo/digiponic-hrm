@@ -2,9 +2,9 @@
  <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
      <nav aria-label="breadcrumb" class="m-4">
          <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-             <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-             <li class="breadcrumb-item"><a href="#">Organisasi</a></li>
-             <li class="breadcrumb-item"><a href="#">Posisi</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/')?>">Dashboards</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/')?>">Organisasi</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/posisi/')?>">Posisi</a></li>
              <li class="breadcrumb-item active" aria-current="page">Edit Posisi</li>
          </ol>
      </nav>
@@ -34,7 +34,7 @@
                          </div>
 
                          <!-- Golongan -->
-                         <div class="mb-3 col-md-6">
+                         <!-- <div class="mb-3 col-md-6"> -->
                              <div class="modal-body">
                                  <div class="form-group">
                                      <label for="title">Golongan</label>
@@ -50,7 +50,7 @@
                                      </select>
                                  </div>
                              </div>
-                         </div>
+                         <!-- </div> -->
 
                          <div class="row m-4">
                              <div class="col-auto ml-auto ">

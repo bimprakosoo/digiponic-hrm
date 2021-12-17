@@ -12,7 +12,7 @@
     <div class="container-fluid p-0 ">
         <div class="card ">
             <div class="row my-2 my-xl-3 m-2">
-                <div class="col-auto d-none d-sm-block ">
+                <div class="col-auto d-none d-sm-block " >
                     <h3><strong>Tambah Acara dan Rapat </strong></h3>
                 </div>
 
@@ -26,7 +26,7 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-header py-3">
+                <div class="card-body py-3" style="background: #fff;">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Acara dan Rapat</h1>
                 </div>
