@@ -2,8 +2,8 @@
 <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
     <nav aria-label="breadcrumb" class="m-4">
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-            <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-            <li class="breadcrumb-item"><a href="#">Cuti</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/')?>">Dashboards</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/cuti/permohonan_cuti/')?>">Cuti</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data Cuti Karyawan</li>
         </ol>
     </nav>
@@ -17,7 +17,7 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-header py-3">
+                <div class="card-body py-3" style="background: #fff;">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h1 class="m-0 font-weight-bold ">Daftar Semua Data Cuti Karyawan</h1>
                 </div>
