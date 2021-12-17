@@ -52,14 +52,16 @@ class Golongan extends CI_Controller
     //edit
     public function edit($id)
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
 
         $data['golongan'] = $this->M_organisasi->editGol($id);
         $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
 
 
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_golongan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

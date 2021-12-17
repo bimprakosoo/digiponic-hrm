@@ -3,9 +3,9 @@
      <nav aria-label="breadcrumb" class="m-4">
          <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
              <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-             <li class="breadcrumb-item"><a href="#">Pekerjaan</a></li>
-             <li class="breadcrumb-item"><a href="#">Lowongan</a></li>
-             <li class="breadcrumb-item active" aria-current="page">Tambah Lowongan</li>
+             <li class="breadcrumb-item"><a href="#">Organisasi</a></li>
+             <li class="breadcrumb-item"><a href="#">Posisi</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Edit Posisi</li>
          </ol>
      </nav>
  </div>
@@ -21,7 +21,7 @@
 
                      <div class="card-body ">
                          <div class="modal-body">
-                             <h3 class="m-0 font-weight-bold ">Edit Data Perusahaan</h3>
+                             <h3 class="m-0 font-weight-bold ">Edit Data Posisi</h3>
                          </div>
                          <input type="hidden" id="id" name="id" value="<?= $posisi['id'] ?>">
 

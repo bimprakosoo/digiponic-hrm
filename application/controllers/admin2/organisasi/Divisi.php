@@ -55,12 +55,14 @@ class Divisi extends CI_Controller
     public function edit($id)
     {
 
+        $data['user'] = $this->M_auth->getUserRow();
+
         $data['divisi'] = $this->M_organisasi->editDiv($id);
         $data['department'] = $this->M_organisasi->getDataDepartment()->result_array();
 
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_divisi_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

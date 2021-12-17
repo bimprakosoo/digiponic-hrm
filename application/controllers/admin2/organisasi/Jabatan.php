@@ -53,13 +53,15 @@ class Jabatan extends CI_Controller
     public function edit($id)
     {
 
+        $data['user'] = $this->M_auth->getUserRow();
+
         $data['jabatan'] = $this->M_organisasi->editJab($id);
         $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
 
 
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_jabatan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
