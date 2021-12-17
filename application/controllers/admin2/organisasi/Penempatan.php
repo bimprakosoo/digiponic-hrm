@@ -6,26 +6,32 @@ class Penempatan extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
+
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
+        $this->load->model('M_menu');
         $this->load->model('M_organisasi');
         $this->load->model('M_pelamar');
+
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
 
     public function index()
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
         $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
         $data['provinsi']   = $this->M_pelamar->getDataprov();
 
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_penempatan', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
 
     // insert data 
@@ -72,16 +78,11 @@ class Penempatan extends CI_Controller
     //edit
     public function edit($id)
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
-
         $data['penempatan'] = $this->M_organisasi->editPenempatan($id);
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
         $data['provinsi'] = $this->M_pelamar->getDataprov();
         $data['kota']  =   $this->M_pelamar->getDataKotaDetail($data['penempatan']['provinsi']);
 
-        // var_dump($data);
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_penempatan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');

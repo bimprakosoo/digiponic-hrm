@@ -107,4 +107,9 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah logged out!</div>');
         redirect('auth');
     }
+
+    public function blocked()
+    {
+        echo 'access denied';
+    }
 }

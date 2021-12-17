@@ -117,14 +117,36 @@
 
           </ul>
           <div class="gap-3 ms-auto">
-            <?php if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            <?php if (isset($_SESSION['email'])) {
             ?>
-              <!-- <a href="logout.php">Logout</a> -->
-              <a class="btn btn-success" href="<?php echo base_url(); ?>logout">logout</a>
+              <ul class="navbar-nav navbar-align">
+
+
+                <li class="nav-item dropdown">
+                  <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                    <i class="align-middle" data-feather="settings"></i>
+                  </a>
+
+                  <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                    <img src="<?php echo base_url('assets/image/profil/') . $user['image']; ?>" class="avatar img-fluid rounded mr-1" style="width: 40px; height : 40px" />
+                    <strong class="text-dark"><?= $user['nama']; ?></strong>
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i>
+                      Profile</a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <a class="dropdown-item" href="<?= base_url('admin2/dashboard') ?>"><i class="align-middle mr-1" data-feather="help-circle"></i>
+                      Dashboard</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Log out</a>
+                  </div>
+                </li>
+              </ul>
 
             <?php } else { ?>
-              <!-- <a href="login.php">Login</a>
-              <a href="register.php">Register</a> -->
               <a class="btn btn-outline-light" href="<?php echo base_url(); ?>auth">Login</a>
               <a class="btn btn-success" href="<?php echo base_url(); ?>auth/registration">Register</a>
             <?php } ?>
