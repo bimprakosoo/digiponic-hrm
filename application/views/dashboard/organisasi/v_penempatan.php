@@ -2,8 +2,8 @@
 <div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
     <nav aria-label="breadcrumb" class="m-4">
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-            <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-            <li class="breadcrumb-item"><a href="#">Organisasi</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard') ?>">Dashboards</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/') ?>">Organisasi</a></li>
             <li class="breadcrumb-item active" aria-current="page">Penempatan</li>
         </ol>
     </nav>
@@ -172,9 +172,9 @@
     });
 </script>
 <script>
-     $(document).ready(function() {
-         $('#dataTable').DataTable({
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
             "scrollX": true
-         });
-     });
- </script>
+        });
+    });
+</script>

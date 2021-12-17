@@ -54,14 +54,16 @@ class Posisi extends CI_Controller
     //edit
     public function edit($id)
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
 
         $data['posisi'] = $this->M_organisasi->editPos($id);
         $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
 
 
 
-        $this->load->view('template/template_admin/sidebar_ad');
-        $this->load->view('template/template_admin/header_ad');
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_posisi_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
