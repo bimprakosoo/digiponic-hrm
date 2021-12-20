@@ -9,59 +9,56 @@ class PekerjaanMaster extends CI_Controller
     {
         parent::__construct();
         $this->API = $this->API = site_url() . 'api';
-        is_logged_in();
+        $this->load->library('form_validation');
 
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
-        $this->load->model('M_menu');
-        $this->load->model('M_organisasi');
-        $this->load->model('M_pelamar');
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
         $data['title'] = 'Data lowongan';
+        $data['user'] = $this->M_auth->getUserRow();
 
         $data['lowongan'] = $this->M_admin->lowongan_ad();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/lowongan_ad', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     public function lamaranMasuk()
     {
         $data['title'] = 'Lamaran Masuk';
+        $data['user'] = $this->M_auth->getUserRow();
 
         $data['lowongan'] = $this->M_admin->lowongan_ad();
         $data['lamaran_masuk'] = $this->M_admin->lamaran_masuk()->result_array();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/lamaran_masuk', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     public function tambah_lowongan()
     {
         $data['title'] = 'Tambah Data Lowongan';
+        $data['user'] = $this->M_auth->getUserRow();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/tambah_lowongan_ad', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     public function edit($id)
     {
         $data['lowongan'] = $this->M_admin->edit($id);
-
-        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('template/template_admin/sidebar_ad');
+        $this->load->view('template/template_admin/header_ad');
         $this->load->view('dashboard/pekerjaan/edit_lowongan_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
