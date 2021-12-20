@@ -7,12 +7,13 @@ class LandingPage extends CI_Controller
     {
         parent::__construct();
         $this->API = site_url() . 'api';
-        $this->load->library('session');
-        $this->load->library('curl');
-        $this->load->helper('form');
-        $this->load->helper('url');
+        // model
+        $this->load->model('M_auth');
         $this->load->model('M_admin');
         $this->load->model('M_landingpage');
+
+        $data['user'] = $this->M_auth->getUserRow();
+        $this->load->view('template/header', $data);
     }
 
     public function index()
@@ -20,7 +21,7 @@ class LandingPage extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['lowongan'] = $this->M_landingpage->lowongan_lan(3, $data['start']);
 
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/landingpage_view', $data);
         $this->load->view('template/footer');
     }
@@ -28,14 +29,14 @@ class LandingPage extends CI_Controller
     // Page Deksripsi Tentang Perusahaan
     public function Tentang()
     {
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/tentang_view');
         $this->load->view('template/footer');;
     }
 
     public function departemen()
     {
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/departemen_view');
         $this->load->view('template/footer');
     }
@@ -47,7 +48,7 @@ class LandingPage extends CI_Controller
         $data['lowongan'] = $this->M_landingpage->lowongan();
 
 
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/lowongan_view', $data);
         $this->load->view('template/footer');
         // var_dump($data);
@@ -60,7 +61,7 @@ class LandingPage extends CI_Controller
         // var_dump($data);
         // die;
         // $this->load->view('template/headerauth');
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('lowongan/lowongan_detail_view', $data);
         $this->load->view('template/footer');
     }
@@ -68,21 +69,21 @@ class LandingPage extends CI_Controller
 
     public function artikel()
     {
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/artikel_view');
         $this->load->view('template/footer');
     }
 
     public function karyawan()
     {
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/karyawan_view');
         $this->load->view('template/footer');
     }
 
     public function kontak()
     {
-        $this->load->view('template/header');
+        // $this->load->view('template/header');
         $this->load->view('landingpage/kontak_view');
         $this->load->view('template/footer');
     }

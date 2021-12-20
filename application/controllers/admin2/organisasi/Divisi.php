@@ -7,23 +7,29 @@ class Divisi extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
+
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
+        $this->load->model('M_menu');
         $this->load->model('M_organisasi');
+
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
         $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
         $data['department'] = $this->M_organisasi->getDataDepartment()->result_array();
 
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_divisi', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
+        $this->load->view('template/template_admin/footer_ad');
     }
 
     // insert data 
@@ -54,14 +60,9 @@ class Divisi extends CI_Controller
     //edit
     public function edit($id)
     {
-
-        $data['user'] = $this->M_auth->getUserRow();
-
         $data['divisi'] = $this->M_organisasi->editDiv($id);
         $data['department'] = $this->M_organisasi->getDataDepartment()->result_array();
 
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_divisi_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
