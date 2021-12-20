@@ -17,13 +17,6 @@ class Acara_rapat extends CI_Controller
         $this->load->model('M_auth');
         $this->load->library('table');
         $this->load->library('form_validation');
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
     }
 
     public function index()

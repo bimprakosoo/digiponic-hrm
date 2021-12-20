@@ -54,81 +54,80 @@
                 </a>
 
                 <?php
-                // $role_id    = $this->session->userdata('role_id');
-
-                // $querySubMenu = " SELECT    user_sub_menu.id, title, sclass, url, icon, title_id,
-                //                             user_access_menu.id,
-                //                             user_access_menu.role_id,
-                //                             user_access_menu.menu_id
-                //                             FROM user_sub_menu
-                //                             JOIN user_access_menu ON user_sub_menu.id = user_access_menu.menu_id
-                //                             WHERE user_access_menu.role_id = $role_id;
-                // ";
-
-                // $menu = $this->db->query($querySubMenu)->result_array();
-
+                $role_id    = $this->session->userdata('role_id');
+                $queryMenu  = "SELECT `user_menu`.`id`, `menu` 
+                                 FROM `user_menu` JOIN `user_access_menu`
+                                   ON `user_menu`.`id` = `user_access_menu`.`menu_id`
+                                WHERE `user_access_menu`.`role_id` = $role_id
+                                ORDER BY `user_access_menu`.`menu_id` DESC
+                    ";
+                $menu = $this->db->query($queryMenu)->result_array();
                 ?>
 
 
                 <ul class="sidebar-nav">
-                    <?php
-                    // $menuId = $m['id'];
-                    // $querySubMenu = "SELECT *
-                    //                     FROM  `user_sub_menu` JOIN `user_menu`
-                    //                     ON    `user_sub_menu`.`menu_id` = `user_menu`.`id`
-                    //                     WHERE `user_sub_menu`.`menu_id` = $menuId
-                    //                 ";
-
-                    // $querySubMenu = "   SELECT *
-                    //                     FROM `user_sub_menu` 
-                    //                     WHERE `menu_id` = $menuId
-                    //                     AND `is_active` = 1
-                    //                 ";
-
-                    // $subMenu = $this->db->query($querySubMenu)->result_array();
-                    ?>
-
-                    <?php foreach ($roleMenu as $sm) : ?>
+                    <!-- loop -->
+                    <?php foreach ($menu as $m) : ?>
                         <li class="sidebar-item ">
-                            <!-- no-dropdown -->
-                            <?php if ($sm['sclass'] == 1) { ?>
-                                <a class="sidebar-link" href="<?= base_url($sm['url']); ?>">
-                                    <i class="<?= $sm['icon']; ?>"></i>
-                                    <span class="align-middle"><?= $sm['title']; ?></span>
-                                </a>
-                                <!-- dropdown -->
-                            <?php } else if ($sm['sclass'] == 2) { ?>
-                                <a data-target="#<?= $sm['title_id'] ?>" data-toggle="collapse" class="sidebar-link collapsed">
-                                    <i class="<?= $sm['icon']; ?>"></i>
-                                    <span class="align-middle"><?= $sm['title']; ?></span>
-                                </a>
-                                <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                                    <?php
-                                    $subMenuId = $sm['id'];
-                                    // var_dump($subMenuId);
-                                    // die;
-                                    $querySubSubMenu = "SELECT * 
-                                                        FROM user_sub_menu
-                                                        WHERE subsub_id = $subMenuId
-                                                        AND is_active = 1
-                                                        ";
-                                    $subsubMenu = $this->db->query($querySubSubMenu)->result_array();
-                                    ?>
-
-                                    <?php foreach ($subsubMenu as $ssm) : ?>
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link" href="<?= base_url($ssm['url']); ?>">
-                                                <span class="align-middle"><?= $ssm['title']; ?></span>
-                                            </a>
-                                        </li>
-                                    <?php endforeach; ?>
-
-                                </ul>
-                            <?php } ?>
+                            <?= $m['menu']; ?>
                         </li>
+
+                        <!-- loop sub-menu by menu -->
+                        <?php
+                        $menuId = $m['id'];
+                        // $querySubMenu = "SELECT *
+                        //                     FROM  `user_sub_menu` JOIN `user_menu`
+                        //                     ON    `user_sub_menu`.`menu_id` = `user_menu`.`id`
+                        //                     WHERE `user_sub_menu`.`menu_id` = $menuId
+                        //                 ";
+
+                        $querySubMenu = "   SELECT *
+                                            FROM `user_sub_menu` 
+                                            WHERE `menu_id` = $menuId
+                                            AND `is_active` = 1
+                                        ";
+
+                        $subMenu = $this->db->query($querySubMenu)->result_array();
+                        ?>
+
+                        <?php foreach ($subMenu as $sm) : ?>
+                            <li class="sidebar-item ">
+                                <!-- no-dropdown -->
+                                <?php if ($sm['sclass'] == 1) { ?>
+                                    <a class="sidebar-link" href="<?= base_url($sm['url']); ?>">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span class="align-middle"><?= $sm['title']; ?></span>
+                                    </a>
+                                    <!-- dropdown -->
+                                <?php } else if ($sm['sclass'] == 2) { ?>
+                                    <a data-target="#<?= $sm['title_id'] ?>" data-toggle="collapse" class="sidebar-link collapsed">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span class="align-middle"><?= $sm['title']; ?></span>
+                                    </a>
+                                    <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                        <?php
+                                        $subMenuId = $sm['id'];
+                                        $querySubSubMenu = "SELECT *
+                                                                FROM `user_sub_menu` 
+                                                                WHERE `subsub_id` = $subMenuId
+                                                                AND `is_active` = 1
+                                                            ";
+                                        $subsubMenu = $this->db->query($querySubSubMenu)->result_array();
+
+                                        ?>
+                                        <?php foreach ($subsubMenu as $ssm) : ?>
+                                            <li class="sidebar-item">
+                                                <a class="sidebar-link" href="<?= base_url($ssm['url']); ?>">
+                                                    <span class="align-middle"><?= $ssm['title']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php } ?>
+                            </li>
+                        <?php endforeach; ?>
+
                     <?php endforeach; ?>
-
-
 
                 </ul>
             </div>

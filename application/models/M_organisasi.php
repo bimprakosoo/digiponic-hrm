@@ -164,6 +164,7 @@ class M_organisasi extends CI_Model
         $this->db->join(' wilayah_kota', 'wilayah_kota.id = penempatan.lokasi_cabang');
         $this->db->join(' wilayah_provinsi', 'wilayah_provinsi.id = penempatan.provinsi');
         return $this->db->get();
+
     }
     public function editPenempatan($id)
     {
@@ -182,7 +183,7 @@ class M_organisasi extends CI_Model
     }
 
 
-
+   
 
     // function search_perusahaan($query)
     // {
