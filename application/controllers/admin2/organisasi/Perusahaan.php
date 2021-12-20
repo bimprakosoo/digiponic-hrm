@@ -6,25 +6,30 @@ class Perusahaan extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        is_logged_in();
+
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
+        $this->load->model('M_menu');
         $this->load->model('M_organisasi');
         $this->load->model('M_pelamar');
+
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
         $data['provinsi'] = $this->M_pelamar->getDataprov();
 
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_perusahaan', $data);
-        $this->load->view('template/template_admin/footer_ad', $data);
-        // var_dump($data['perusahaan']);
+        $this->load->view('template/template_admin/footer_ad');
     }
 
 
@@ -81,14 +86,10 @@ class Perusahaan extends CI_Controller
     }
     public function edit($id)
     {
-        $data['user'] = $this->M_auth->getUserRow();
-
-        // $idprov =   $this->input->post('id');
         $data['perusahaan'] = $this->M_organisasi->edit($id);
         $data['provinsi'] = $this->M_pelamar->getDataprov();
         $data['kota']  =   $this->M_pelamar->getDataKotaDetail($data['perusahaan']['provinsi']);
 
-        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_perusahaan_edit', $data);
         $this->load->view('template/template_admin/footer_ad');

@@ -9,12 +9,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->API = site_url() . 'api';
-        $this->load->library('session');
-        $this->load->library('curl');
-        $this->load->helper('form');
-        $this->load->helper('url');
-        $this->load->library('upload');
-        $this->load->library('form_validation');
+
         // Load the user model
         $this->load->model('user');
 
