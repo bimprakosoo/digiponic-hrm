@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="col-auto ml-auto ">
-                        <a href="<?php echo base_url() ?>admin2/penilaian_kerja/kpi_departemen/tambah" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo base_url() ?>admin2/penilaian_pekerja/kpi_departemen/tambah" class="btn btn-primary">Tambah Data</a>
                     </div>
                 </div>
             </div>

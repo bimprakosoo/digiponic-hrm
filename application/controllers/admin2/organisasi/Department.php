@@ -6,29 +6,23 @@ class Department extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        is_logged_in();
-
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
-        $this->load->model('M_menu');
         $this->load->model('M_organisasi');
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
+        $data['user'] = $this->M_auth->getUserRow();
+
         $data['dept'] = $this->M_organisasi->getDataDepartment()->result_array();
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_departemen', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     // insert data 
@@ -65,6 +59,8 @@ class Department extends CI_Controller
         $data['dept'] = $this->M_organisasi->editDept($id);
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
 
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/organisasi/v_departemen_edit', $data);
         $this->load->view('template/template_admin/footer_ad');

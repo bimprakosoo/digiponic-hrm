@@ -28,7 +28,7 @@ class Karyawan extends CI_Controller
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/home_ad', $data);
-        $this->load->view('template/template_admin/footer_ad');
+        $this->load->view('template/template_admin/footer_ad', $data);
     }
 
     // public function index()
