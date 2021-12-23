@@ -1,7 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Dashboard3 extends CI_Controller
 {
     var $API = "";
 
@@ -27,7 +27,7 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/dashboard_ad/v_dashboard', $data);
+        $this->load->view('pelamar/v_dashboard', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 

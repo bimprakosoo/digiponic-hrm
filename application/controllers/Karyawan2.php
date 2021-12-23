@@ -3,39 +3,33 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Karyawan extends CI_Controller
 {
+    var $API = "";
 
-
-    public function __construct()
+    function __construct()
     {
         parent::__construct();
-        // liblary
+        $this->API = $this->API = site_url() . 'api';
+        is_logged_in();
 
         // model
         $this->load->model('M_admin');
         $this->load->model('M_auth');
+        $this->load->model('M_menu');
+
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
-        $data['title'] = 'Kehadiran';
-        $data['user'] = $this->M_auth->getUserRow();
-        // $data['roleid'] = $this->M_auth->getRoleId();
-
-        // menu
-        $role_id    = $this->session->userdata('role_id');
-        $data['qmenu'] = $this->M_auth->queryMenu($role_id);
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $data['title'] = 'Dashboard';
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/home_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
-
-    // public function index()
-    // {
-    //     // $this->load->view('template/headerauth');
-    //     $this->load->view('dashboard/admin');
-    // }
 
     public function lowongan_detail()
     {

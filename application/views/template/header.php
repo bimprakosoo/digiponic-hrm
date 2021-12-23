@@ -96,6 +96,8 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url(); ?>LandingPage/tentang">Tentang</a>
             </li>
+
+            <!-- jika user (tidak sama dengan) != 3(pelamar) -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Departemen
@@ -117,8 +119,7 @@
 
           </ul>
           <div class="gap-3 ms-auto">
-            <?php if (isset($_SESSION['email'])) {
-            ?>
+            <?php if (isset($_SESSION['email'])) { ?>
               <ul class="navbar-nav navbar-align">
 
 
@@ -133,13 +134,14 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i>
-                      Profile</a>
+                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i>Profile</a>
 
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item" href="<?= base_url('admin2/dashboard') ?>"><i class="align-middle mr-1" data-feather="help-circle"></i>
-                      Dashboard</a>
+                    <?php foreach ($roleMenu as $sm) : ?>
+                      <a class="dropdown-item" href="<?= base_url($sm['url']); ?>"><i class="align-middle mr-1" data-feather="help-circle"></i><?= $sm['title_id']; ?></a>
+                    <?php endforeach; ?>
+
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Log out</a>
                   </div>

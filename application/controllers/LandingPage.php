@@ -10,8 +10,11 @@ class LandingPage extends CI_Controller
         // model
         $this->load->model('M_auth');
         $this->load->model('M_admin');
+        $this->load->model('M_menu');
         $this->load->model('M_landingpage');
 
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenuPage($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
         $this->load->view('template/header', $data);
     }

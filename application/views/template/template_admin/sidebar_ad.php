@@ -105,8 +105,6 @@
                                 <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                                     <?php
                                     $subMenuId = $sm['id'];
-                                    // var_dump($subMenuId);
-                                    // die;
                                     $querySubSubMenu = "SELECT * 
                                                         FROM user_sub_menu
                                                         WHERE subsub_id = $subMenuId
