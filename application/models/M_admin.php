@@ -123,25 +123,7 @@ class M_Admin extends CI_Model
         return $file_image;
     }
 
-    function file_image1()
-    {
-        // upload file surat lamaran--------------------------------------------------------------------------------------
-        $config['upload_path'] = "./assets/image/artukel/img/";
-        $config['allowed_types'] = "jpg|jpeg|png|svg";
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);
 
-        if (!$this->upload->do_upload('image')) {
-            // salah
-            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
-            $response['hasil'] = false;
-            echo json_encode($response);
-        } else {
-            $data_upload    = $this->upload->data();
-            $file_image      = $data_upload['file_name'];
-        }
-        return $file_image;
-    }
 
     function file_image_ubah($data3)
     {
@@ -184,5 +166,37 @@ class M_Admin extends CI_Model
         $this->db->from('mutasi');
 
         return $this->db->get();
+    }
+
+    // Artikel ---------------------------------------------------------------------------------------------------------------------------------
+    public function postDataArtikel($data)
+    {
+        $this->db->insert('artikel', $data);
+    }
+
+    public function getDataArtikel()
+    {
+        $this->db->select('*');
+        $this->db->from('artikel');
+
+        return $this->db->get();
+    }
+    function file_image1()
+    {
+        $config['upload_path'] = "./assets/image/artikel/img/";
+        $config['allowed_types'] = "jpg|jpeg|png|svg";
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image')) {
+            // salah
+            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+            $response['hasil'] = false;
+            echo json_encode($response);
+        } else {
+            $data_upload    = $this->upload->data();
+            $file_image1      = $data_upload['file_name'];
+        }
+        return $file_image1;
     }
 }

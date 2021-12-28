@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin2/artikel/artikel/tambah" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">Tambah</a>
+                    <a href="<?php echo base_url() ?>admin2/artikel/artikel/tambahArtikel" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">Tambah</a>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                     </button>
                 </div>
                 <div class="modal-body m-3">
-                    <form action="<?= base_url('admin2/organisasi/department/add_Dept'); ?>" method="POST">
+                    <form action="<?= base_url('admin2/artikel/artikel/tambahArtikel'); ?>" method="POST" enctype="multipart/form-data">
 
                         <!-- Judul -->
                         <div class="modal-body">
@@ -104,7 +104,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="colFormLabel" class="col-form-label text-start">Upload Image</label><br>
-                                <input class="pt-1" type="file" id="file_image" name="image">
+                                <input class="pt-1" type="file" id="file_image1" name="image">
                             </div>
                         </div>
 
