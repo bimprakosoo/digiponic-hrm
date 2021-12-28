@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-auto ml-auto ">
-                    <a href="<?php echo base_url() ?>admin/tambah_lowongan" class="btn btn-primary">Tambah Data</a>
+                    <a href="<?php echo base_url() ?>admin2/artikel/artikel/tambah" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">Tambah</a>
                 </div>
             </div>
         </div>
@@ -36,16 +36,31 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Jenis Kegiatan</th>
-                                    <th>Nama Kegiatan</th>
-                                    <th>Tgl Kegiatan</th>
-                                    <th>Waktu Dimulai</th>
-                                    <th>Waktu Berakhir</th>
+                                    <th>Judul Artikel</th>
+                                    <th>Isi Artikel</th>
+                                    <th>Image</th>
+                                    <th>Tanggal Pembuatan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1;
+                                foreach ($artikel as $d) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $d['judul_artikel']; ?></td>
+                                        <td><?= $d['isi_artikel']; ?></td>
+                                        <td><img src="<?= base_url('assets/image/artikel/img/') . $d['image']; ?>" style="width: 50px; height: 50px;"></td>
 
+                                        <td><?= $d['post_date']; ?></td>
+                                        <td>
+                                            <!-- <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_posisi="<?= $d['nama']; ?>" data-nama_golongan="<?= $d['nama_golongan']; ?>"><i class="fas fa-eye"></i></button> -->
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/posisi/edit/")?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/posisi/hapus/")?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -54,6 +69,59 @@
             </div>
         </div>
     </div>
+
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="modalTambah" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="m-0 font-weight-bold ">Tambah Data Artikel</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body m-3">
+                    <form action="<?= base_url('admin2/organisasi/department/add_Dept'); ?>" method="POST">
+
+                        <!-- Judul -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Judul Artikel</label>
+                                <input type="text" class="form-control" id="judul_artikel" name="judul_artikel">
+                            </div>
+                        </div>
+
+                        <!-- Isi -->
+                        <!-- <div class="mb-3 col-md-6"> -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">Isi Artikel</label>
+                                <textarea class="ckeditor text-start" id="isi_artikel" name="isi_artikel"></textarea>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+
+                        <!-- Foto -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="colFormLabel" class="col-form-label text-start">Upload Image</label><br>
+                                <input class="pt-1" type="file" id="file_image" name="image">
+                            </div>
+                        </div>
+
+                        <!-- Tanggal -->
+                        <input type="hidden" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
 <!-- End Content -->
 <script>
