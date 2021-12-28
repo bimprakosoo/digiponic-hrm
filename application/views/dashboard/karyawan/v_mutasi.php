@@ -2,7 +2,7 @@
     <h4 class="mt-3">Informasi Mutasi</h4>
     <div class="card-body ">
         <div class="table-responsive">
-            <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+            <table class="table text-center" id="dataTable1" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
