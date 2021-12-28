@@ -123,6 +123,26 @@ class M_Admin extends CI_Model
         return $file_image;
     }
 
+    function file_image1()
+    {
+        // upload file surat lamaran--------------------------------------------------------------------------------------
+        $config['upload_path'] = "./assets/image/artukel/img/";
+        $config['allowed_types'] = "jpg|jpeg|png|svg";
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image')) {
+            // salah
+            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+            $response['hasil'] = false;
+            echo json_encode($response);
+        } else {
+            $data_upload    = $this->upload->data();
+            $file_image      = $data_upload['file_name'];
+        }
+        return $file_image;
+    }
+
     function file_image_ubah($data3)
     {
         // cek jika gambar diubah

@@ -63,13 +63,13 @@
                                             <th scope="row"><?= $i ?></th>
                                             <td><?= $m['nama_perusahaan']; ?></td>
                                             <td><?= $m['industri']; ?></td>
-                                            <td><?= $m['provinsi']; ?></td>
-                                            <td><?= $m['kota']; ?></td>
+                                            <td><?= $m['nama_kota']; ?></td>
+                                            <td><?= $m['nama_provinsi']; ?></td>
                                             <td><?= $m['email']; ?></td>
                                             <td><?= $m['alamat']; ?></td>
                                             <td><?= $m['telp']; ?></td>
                                             <td>
-                                                <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-kota="<?= $m['kota']; ?>" data-email="<?= $m['email']; ?>" data-alamat="<?= $m['alamat']; ?>" data-telp="<?= $m['telp']; ?>"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-provinsi="<?= $m['nama_provinsi']; ?>" data-kota="<?= $m['nama_kota']; ?>" data-email="<?= $m['email']; ?>" data-alamat="<?= $m['alamat']; ?>" data-telp="<?= $m['telp']; ?>"><i class="fas fa-eye"></i></button>
                                                 <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/perusahaan/edit/") . $m['id']; ?>"><i class="fas fa-edit"></i></a>
                                                 <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/perusahaan/hapus/") . $m['id']; ?>"><i class="fas fa-trash-alt"></i></a>
                                             </td>
@@ -205,7 +205,7 @@
                         </button>
                     </div>
                     <div class="modal-body table-responsive ">
-                        <table class="table table-bordered "  width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <th>Nama Perusahaan</th>
@@ -216,7 +216,11 @@
                                     <td><span id="dtl_industri"></span></td>
                                 </tr>
                                 <tr>
-                                    <th>kota</th>
+                                    <th>Provinsi</th>
+                                    <td><span id="dtl_provinsi"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Kota</th>
                                     <td><span id="dtl_kota"></span></td>
                                 </tr>
                                 <tr>
@@ -307,13 +311,15 @@
         $(document).on('click', '#set_dtl', function() {
             var nama_perusahaan = $(this).data('nama_perusahaan');
             var industri = $(this).data('industri');
+            var provinsi = $(this).data('provinsi');
             var kota = $(this).data('kota');
             var email = $(this).data('email');
             var alamat = $(this).data('alamat');
             var telp = $(this).data('telp');
             $('#nama_perusahaan').text(nama_perusahaan);
             $('#dtl_industri').text(industri);
-            $('#dtl_kota').text(kota);
+            $('#dtl_kota').text(provinsi);
+            $('#dtl_provinsi').text(kota);
             $('#dtl_email').text(email);
             $('#dtl_alamat').text(alamat);
             $('#dtl_telp').text(telp);

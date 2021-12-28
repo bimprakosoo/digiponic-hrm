@@ -6,10 +6,10 @@ class M_organisasi extends CI_Model
     // Perusahaan
     public function getDataPerusahaan()
     {
-        $this->db->select('*');
+        $this->db->select('*, perusahaan.id, wilayah_kota.nama AS nama_kota, wilayah_provinsi.nama AS nama_provinsi');
         $this->db->from('perusahaan');
-        // $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = perusahaan.provinsi');
-        // $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
+        $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = perusahaan.provinsi');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
         return $this->db->get();
     }
     public function hapusPerusahaan($id)
@@ -231,5 +231,17 @@ class M_organisasi extends CI_Model
     public function postDataPenempatan($data)
     {
         $this->db->insert('penempatan', $data);
+    }
+    public function postDataArtikel($data)
+    {
+        $this->db->insert('artikel', $data);
+    }
+
+    public function getDataArtikel()
+    {
+        $this->db->select('*');
+        $this->db->from('artikel');
+
+        return $this->db->get();
     }
 }
