@@ -9,7 +9,7 @@ class Artikel extends CI_Controller
     {
         parent::__construct();
         $this->API = site_url() . 'api';
-        is_logged_in();
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');
@@ -61,5 +61,4 @@ class Artikel extends CI_Controller
             redirect('admin2/artikel/artikel');
         }
     }
-    
 }

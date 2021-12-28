@@ -172,4 +172,17 @@ class M_Admin extends CI_Model
     {
         return $this->db->get('department');
     }
+
+    public function insert_DataMutasi($data)
+    {
+        $this->db->insert('mutasi', $data);
+    }
+
+    public function get_DataMutasi()
+    {
+        $this->db->select('*');
+        $this->db->from('mutasi');
+
+        return $this->db->get();
+    }
 }

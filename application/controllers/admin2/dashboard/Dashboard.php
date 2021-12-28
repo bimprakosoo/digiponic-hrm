@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->API = $this->API = site_url() . 'api';
-        is_logged_in();
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');
@@ -26,6 +26,8 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
+
+        $data['getMutasi'] = $this->M_admin->get_DataMutasi()->result_array();
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/dashboard_ad/v_dashboard', $data);
         $this->load->view('template/template_admin/footer_ad');

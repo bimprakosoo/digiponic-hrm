@@ -86,27 +86,21 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>kepala cabang</th>
+                                            <!-- <th>kepala cabang</th>
                                             <th>nama cabang</th>
                                             <th>nama perusahaan</th>
-                                            <th>Pengajuan</th>
+                                            <th>Pengajuan</th> -->
+
                                             
+                                            <th>jenis mutasi</th>
+                                            <th>jenis mutasi</th>
+
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Peter</td>
-                                            <td>A</td>
-                                            <td>Maju</td>
-                                            <td>mutasi</td>
-                                            <td>
-                                            <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                                            </td>
-                                            
-                                        </tr>
-                                        
+
+                                    </tbody>
                                     </tbody>
                                 </table>
                             </div>
@@ -129,11 +123,11 @@
     });
 </script>
 <script>
-     $(document).ready(function() {
-         $('#dataTable').DataTable({
-            "scrollY":        "200px",
-        "scrollCollapse": true,
-        "paging":         false
-         });
-     });
- </script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollY": "200px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+    });
+</script>

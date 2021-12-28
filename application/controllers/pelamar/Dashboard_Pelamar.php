@@ -1,7 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Dashboard2 extends CI_Controller
+class Dashboard_Pelamar extends CI_Controller
 {
     var $API = "";
 
@@ -9,7 +9,7 @@ class Dashboard2 extends CI_Controller
     {
         parent::__construct();
         $this->API = $this->API = site_url() . 'api';
-        is_logged_in();
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');
@@ -27,7 +27,7 @@ class Dashboard2 extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('karyawan/v_dashboard', $data);
+        $this->load->view('pelamar/v_dashboard', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 
