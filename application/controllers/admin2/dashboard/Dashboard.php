@@ -1,11 +1,14 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Karyawan extends CI_Controller
+class Dashboard extends CI_Controller
 {
+    var $API = "";
+
     function __construct()
     {
         parent::__construct();
+        $this->API = $this->API = site_url() . 'api';
         // is_logged_in();
 
         // model
@@ -18,15 +21,21 @@ class Karyawan extends CI_Controller
         $data['user'] = $this->M_auth->getUserRow();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
     }
 
     public function index()
     {
-        $data['user'] = $this->M_auth->getUserRow();
-        $data['datakaryawan'] = $this->M_admin->data_karyawan()->result_array();
+        $data['title'] = 'Dashboard';
 
-        $this->load->view('karyawan/index', $data);
+        $data['getMutasi'] = $this->M_admin->get_DataMutasi()->result_array();
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/dashboard_ad/v_dashboard', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+
+    public function tambah()
+    {
+        $this->load->view('dashboard/penilaian_kerja/v_tambah_departemen');
         $this->load->view('template/template_admin/footer_ad');
     }
 }

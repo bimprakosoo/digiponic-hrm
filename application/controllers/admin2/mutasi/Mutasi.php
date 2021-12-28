@@ -4,12 +4,13 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class Mutasi extends CI_Controller
 {
     // MUTASI
+    var $API = "";
 
     function __construct()
     {
         parent::__construct();
-
-        is_logged_in();
+        $this->API = site_url() . 'api';
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');
@@ -90,39 +91,34 @@ class Mutasi extends CI_Controller
     // next
 
     // insert data 
-    function create()
+    function tambah_DataMutasi()
     {
         if (isset($_POST['submit'])) {
 
             $data = array(
 
-                'tgl_mutasi'                => $this->input->post(''),  // date
-                'karyawan_id'               => $this->input->post('karyawan_id'),
-                'department_id'             => $this->input->post('department_id'),
-                'divisi_id'                 => $this->input->post('divisi_id'),
-                'jabatan_id'                => $this->input->post('jabatan_id'),
-                'posisi_id'                 => $this->input->post('posisi_id'),
-                'penempatan_id'             => $this->input->post('penempatan_id'),
+                'tgl_pengajuan'             => $this->input->post('post_date'),
+                'karyawan_id'               => $this->input->post('karyawan'),
+                'department_id'             => $this->input->post('department'),
+                'divisi_id'                 => $this->input->post('divisi'),
+                'jabatan_id'                => $this->input->post('jabatan'),
+                'posisi_id'                 => $this->input->post('posisi'),
+                'penempatan_id'             => $this->input->post('penempatan'),
                 'jenis_mutasi'              => $this->input->post('jenis_mutasi'),   // promosi | mutasi | demosi
-                'status'                    => $this->input->post('status'),  // peding | approve[hrd]
+                'status'                    => 0  // peding | approve[hrd]
             );
 
-            // var_dump($data);
-            // die;
-
-            $insert =  $this->curl->simple_post($this->API . '/mutasi/create', $data, array(CURLOPT_BUFFERSIZE => 10));
+            $insert = $this->M_admin->insert_DataMutasi($data);
 
             if ($insert) {
-                $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
-                redirect('mutasi');
+                $this->session->set_flashdata('status', 'Insert Data Berhasil');
+                redirect('admin2/mutasi/mutasi');
             } else {
-                $this->session->set_flashdata('hasil', 'Insert Data Gagal');
-                redirect('mutasi');
+                $this->session->set_flashdata('status', 'Insert Data Gagal');
+                redirect('admin2/mutasi/mutasi');
             }
-            // redirect('pelamar');
-            // var_dump($insert);
         } else {
-            $this->load->view('mutasi/mutasi');
+            redirect('admin2/mutasi/mutasi');
         }
     }
 }

@@ -16,7 +16,7 @@ class Admin extends CI_Controller
 
         $this->load->library('table');
         $this->load->library('form_validation');
-        is_logged_in();
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');

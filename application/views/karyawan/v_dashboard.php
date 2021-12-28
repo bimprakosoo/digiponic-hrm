@@ -86,21 +86,27 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <!-- <th>kepala cabang</th>
+                                            <th>kepala cabang</th>
                                             <th>nama cabang</th>
                                             <th>nama perusahaan</th>
-                                            <th>Pengajuan</th> -->
-
-                                            
-                                            <th>jenis mutasi</th>
-                                            <th>jenis mutasi</th>
+                                            <th>Pengajuan</th>
 
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Peter</td>
+                                            <td>A</td>
+                                            <td>Maju</td>
+                                            <td>mutasi</td>
+                                            <td>
+                                                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                                            </td>
 
-                                    </tbody>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>

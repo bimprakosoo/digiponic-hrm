@@ -16,6 +16,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
+
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Digiponic Login';
             $this->load->view('template/headerAuth', $data);
@@ -42,13 +43,15 @@ class Auth extends CI_Controller
                     ];
 
                     $this->session->set_userdata($data);
-                    // redirect('pelamar');
+
                     if ($user['role_id'] == 1) {
-                        redirect('admin2/dashboard');
+                        redirect('admin2/dashboard/dashboard');
                     } else if ($user['role_id'] == 2) {
-                        redirect('karyawan');
+                        redirect('karyawan/dashboard/dashboard_karyawan');
+                    } else if ($user['role_id'] == 4) {
+                        redirect('karyawan/dashboard/dashboard');
                     } else {
-                        redirect('pelamar');
+                        redirect('pelamar/dashboard/dashboard_pelamar');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
@@ -86,7 +89,7 @@ class Auth extends CI_Controller
                 'email' =>  htmlspecialchars($this->input->post('email', true)),
                 'image' =>  'default.jpg',
                 'password'  =>  password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id'   =>  5, // default pelamar
+                'role_id'   =>  3, // default pelamar
                 'is_active' =>  1, // 1=>aktiv | 0=>nonaktiv
                 'date_created'  =>  time()
             ];

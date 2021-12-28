@@ -9,7 +9,7 @@ class PekerjaanMaster extends CI_Controller
     {
         parent::__construct();
         $this->API = $this->API = site_url() . 'api';
-        is_logged_in();
+        // is_logged_in();
 
         // model
         $this->load->model('M_admin');

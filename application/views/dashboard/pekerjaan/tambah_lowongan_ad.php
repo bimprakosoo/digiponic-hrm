@@ -158,7 +158,7 @@
 
                      <!-- Post Date -->
                      <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
-                     <input class="invisible" type="text" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
+                     <input type="hidden" class="form-control" id="post_date" name="post_date" placeholder="" readonly value="<?php echo date("Y-m-d"); ?>">
 
                      <div class="row pb-2 m-4">
                          <div class="col-auto ml-auto ">
