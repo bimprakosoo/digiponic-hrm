@@ -18,11 +18,9 @@ class M_menu extends CI_Model
 
     public function userMenu($role_id)
     {
-        $this->db->select('user_sub_menu.id, title, sclass, url, icon, title_id,
-        user_access_menu.role_id,
-        user_access_menu.menu_id');
-        $this->db->from('user_sub_menu');
-        $this->db->join('user_access_menu', 'user_sub_menu.id = user_access_menu.menu_id');
+        $this->db->select('user_menu.id, menu, drops, url, icon');
+        $this->db->from('user_menu');
+        $this->db->join('user_access_menu', 'user_menu.id = user_access_menu.menu_id');
         $this->db->where('user_access_menu.role_id',  $role_id);
 
         return $this->db->get();
@@ -32,9 +30,9 @@ class M_menu extends CI_Model
     {
         $queryDash = "      SELECT *
                             FROM user_access_menu
-                            JOIN user_sub_menu ON user_sub_menu.id = user_access_menu.menu_id
-                            WHERE user_access_menu.role_id = '$role_id' 
-                            AND title_id LIKE 'Dashboard%' 
+                            JOIN user_menu ON user_menu.id = user_access_menu.menu_id
+                            WHERE user_access_menu.role_id = '$role_id'
+                            AND menu LIKE 'Dashboard%' 
         ";
         return $this->db->query($queryDash);
     }

@@ -93,9 +93,6 @@
                          <input type="text" class="form-control" id="title" name="title" placeholder="nama Menu">
                      </div>
                      <div class="form-group">
-                         <input type="text" class="form-control" id="title_id" name="title_id" placeholder="nama_id">
-                     </div>
-                     <div class="form-group">
                          <div>
                              <select name="menu_id" id="menu_id" class="form-control">
                                  <?php foreach ($menu as $m) : ?>
@@ -106,11 +103,11 @@
                      </div>
                      <div class="form-group">
                          <div>
-                             <select name="subsub_id" id="subsub_id" class="form-control">
+                             <select name="menu_id" id="menu_id" class="form-control">
                                  <option value="0">pilih-submenu</option>
                                  <?php foreach ($subMenu as $sm) {
-                                        if ($sm['subsub_id'] == 0) { ?>
-                                         <option value="<?= $sm['subsub_id'] ?>"><?= $sm['title'] ?></option>
+                                        if ($sm['menu_id'] == 0) { ?>
+                                         <option value="<?= $sm['menu_id'] ?>"><?= $sm['title'] ?></option>
                                  <?php }
                                     }  ?>
                              </select>

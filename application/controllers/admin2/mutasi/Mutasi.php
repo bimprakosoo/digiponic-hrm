@@ -30,6 +30,8 @@ class Mutasi extends CI_Controller
     public function index()
     {
         $data['title'] = 'Mutasi';
+        $data['user'] = $this->M_auth->getUserRow();
+        $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
         $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
 
         // // organisasi
@@ -94,19 +96,23 @@ class Mutasi extends CI_Controller
     function tambah_DataMutasi()
     {
         if (isset($_POST['submit'])) {
-
+            $user_id = $this->session->userdata('email');
             $data = array(
+
 
                 'tgl_pengajuan'             => $this->input->post('post_date'),
                 'karyawan_id'               => $this->input->post('karyawan'),
                 'department_id'             => $this->input->post('department'),
                 'divisi_id'                 => $this->input->post('divisi'),
                 'jabatan_id'                => $this->input->post('jabatan'),
+                'golongan_id'                => $this->input->post('golongan'),
                 'posisi_id'                 => $this->input->post('posisi'),
                 'penempatan_id'             => $this->input->post('penempatan'),
                 'jenis_mutasi'              => $this->input->post('jenis_mutasi'),   // promosi | mutasi | demosi
-                'status'                    => 0  // peding | approve[hrd]
+                'status'                    => 0,  // peding | approve[hrd]
+                'pengaju'                   => $this->input->post('user_id')
             );
+
 
             $insert = $this->M_admin->insert_DataMutasi($data);
 

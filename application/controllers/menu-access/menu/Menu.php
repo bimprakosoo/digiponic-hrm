@@ -59,13 +59,11 @@ class Menu extends CI_Controller
         } else {
             $data = [
                 'title'         =>   $this->input->post('title'),
-                'title_id'      =>   $this->input->post('title_id'),
                 'menu_id'       =>   $this->input->post('menu_id'),
-                'subsub_id'     =>   $this->input->post('subsub_id'),
                 'url'           =>   $this->input->post('url'),
                 'icon'          =>   $this->input->post('icon'),
                 'is_active'     =>   1,
-                'sclass'        =>   $this->input->post('sclass')
+                'drops'        =>   $this->input->post('drops')
             ];
             $this->M_menu->postSubMenu($data);
 
