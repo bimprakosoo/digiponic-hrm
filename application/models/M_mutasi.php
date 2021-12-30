@@ -41,4 +41,27 @@ class M_mutasi extends CI_Model
     {
         return $this->db->get_where('posisi', ['golongan_id' => $idpos])->result();
     }
+
+    public function get_DataMutasi2()
+    {
+        $this->db->select(' mutasi.id, mutasi.tgl_pengajuan,
+        users.nama AS userID,
+        department.nama AS namaDepartment,
+        divisi.nama AS namaDivisi,
+        jabatan.nama AS namaJabatan,
+        golongan.nama AS namaGolongan,
+        posisi.nama AS namaPosisi,
+        penempatan.nama AS namaPenempatan,
+        mutasi.jenis_mutasi, mutasi.status');
+        $this->db->from('mutasi');
+        $this->db->join('users', 'users.id = mutasi.karyawan_id');
+        $this->db->join('department', 'department.id = mutasi.department_id');
+        $this->db->join('divisi', 'divisi.id = mutasi.divisi_id');
+        $this->db->join('jabatan', 'jabatan.id= mutasi.jabatan_id');
+        $this->db->join('golongan', 'golongan.id = mutasi.gologan_id');
+        $this->db->join('posisi', 'posisi.id = mutasi.posisi_id');
+        $this->db->join('penempatan', 'penempatan.id = mutasi.penempatan_id');
+
+        return $this->db->get();
+    }
 }

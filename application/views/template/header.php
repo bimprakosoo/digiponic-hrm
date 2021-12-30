@@ -139,7 +139,7 @@
                     <div class="dropdown-divider"></div>
 
                     <?php foreach ($roleMenu as $sm) : ?>
-                      <a class="dropdown-item" href="<?= base_url($sm['url']); ?>"><i class="align-middle mr-1" data-feather="help-circle"></i><?= $sm['title_id']; ?></a>
+                      <a class="dropdown-item" href="<?= base_url($sm['url']); ?>"><i class="align-middle mr-1" data-feather="help-circle"></i><?= str_replace('', '_', $sm['menu']); ?></a>
                     <?php endforeach; ?>
 
                     <div class="dropdown-divider"></div>

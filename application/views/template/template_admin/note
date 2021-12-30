@@ -1,0 +1,37 @@
+<?php foreach ($roleMenu as $sm) : ?>
+                        <li class="sidebar-item ">
+                            <!-- no-dropdown -->
+                            <?php if ($sm['sclass'] == 1) { ?>
+                                <a class="sidebar-link" href="<?= base_url($sm['url']); ?>">
+                                    <i class="<?= $sm['icon']; ?>"></i>
+                                    <span class="align-middle"><?= $sm['title']; ?></span>
+                                </a>
+                                <!-- dropdown -->
+                            <?php } else if ($sm['sclass'] == 2) { ?>
+                                <a data-target="#<?= $sm['title_id'] ?>" data-toggle="collapse" class="sidebar-link collapsed">
+                                    <i class="<?= $sm['icon']; ?>"></i>
+                                    <span class="align-middle"><?= $sm['title']; ?></span>
+                                </a>
+                                <ul id="<?= $sm['title_id'] ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                    <?php
+                                    $subMenuId = $sm['id'];
+                                    $querySubSubMenu = "SELECT * 
+                                                        FROM user_sub_menu
+                                                        WHERE subsub_id = $subMenuId
+                                                        AND is_active = 1
+                                                        ";
+                                    $subsubMenu = $this->db->query($querySubSubMenu)->result_array();
+                                    ?>
+
+                                    <?php foreach ($subsubMenu as $ssm) : ?>
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="<?= base_url($ssm['url']); ?>">
+                                                <span class="align-middle"><?= $ssm['title']; ?></span>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            <?php } ?>
+                        </li>
+                    <?php endforeach; ?>

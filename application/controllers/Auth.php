@@ -47,11 +47,11 @@ class Auth extends CI_Controller
                     if ($user['role_id'] == 1) {
                         redirect('admin2/dashboard/dashboard');
                     } else if ($user['role_id'] == 2) {
-                        redirect('karyawan/dashboard/dashboard_karyawan');
+                        redirect('karyawan/dashboard/dashboard');
                     } else if ($user['role_id'] == 4) {
                         redirect('karyawan/dashboard/dashboard');
                     } else {
-                        redirect('pelamar/dashboard/dashboard_pelamar');
+                        redirect('pelamar/dashboard/dashboard');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
