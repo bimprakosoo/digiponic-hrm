@@ -1,8 +1,8 @@
-<div class="tab-pane fade" id="training">
-    <h4 class="mt-3">Informasi Mutasi</h4>
+<div class="tab-pane fade" id="karyawan">
+    <h4 class="mt-3">Data Karyawan</h4>
     <div class="card-body ">
         <div class="table-responsive">
-            <table class="table text-center" id="dataTable2" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+            <table class="table text-center" id="dataTable1" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -40,6 +40,7 @@
     </div>
 
 </div>
+
 </div>
 </div>
 
@@ -62,15 +63,6 @@
 <script>
     $(document).ready(function() {
         $('#dataTable1').DataTable({
-            "scrollX": true,
-            "searching": false
-
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#dataTable2').DataTable({
             "scrollX": true,
             "searching": false
 

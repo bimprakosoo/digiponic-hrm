@@ -38,4 +38,22 @@ class Dashboard extends CI_Controller
         $this->load->view('dashboard/penilaian_kerja/v_tambah_departemen');
         $this->load->view('template/template_admin/footer_ad');
     }
+    public function profile()
+    {
+        $data['title'] = 'Dashboard';
+
+        $data['getMutasi'] = $this->M_admin->get_DataMutasi()->result_array();
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/profil', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    public function profileEdit()
+    {
+        $data['title'] = 'Dashboard';
+
+        $data['getMutasi'] = $this->M_admin->get_DataMutasi()->result_array();
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/profil_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
 }

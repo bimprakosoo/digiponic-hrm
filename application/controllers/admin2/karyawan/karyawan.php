@@ -26,7 +26,9 @@ class Karyawan extends CI_Controller
         $data['user'] = $this->M_auth->getUserRow();
         $data['datakaryawan'] = $this->M_admin->data_karyawan()->result_array();
 
-        $this->load->view('karyawan/index', $data);
+        $this->load->view('dashboard/karyawan/v_detail', $data);
+        $this->load->view('dashboard/karyawan/v_kepalacabang', $data);
+        $this->load->view('dashboard/karyawan/v_karyawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 }

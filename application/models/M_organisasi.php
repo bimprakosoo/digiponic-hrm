@@ -232,16 +232,5 @@ class M_organisasi extends CI_Model
     {
         $this->db->insert('penempatan', $data);
     }
-    public function postDataArtikel($data)
-    {
-        $this->db->insert('artikel', $data);
-    }
-
-    public function getDataArtikel()
-    {
-        $this->db->select('*');
-        $this->db->from('artikel');
-
-        return $this->db->get();
-    }
+   
 }

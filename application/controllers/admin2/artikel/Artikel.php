@@ -15,7 +15,6 @@ class Artikel extends CI_Controller
         $this->load->model('M_admin');
         $this->load->model('M_auth');
         $this->load->model('M_menu');
-        $this->load->model('M_organisasi');
 
 
         $role_id    = $this->session->userdata('role_id');
@@ -28,7 +27,7 @@ class Artikel extends CI_Controller
 
     public function index()
     {
-        $data['artikel'] = $this->M_organisasi->getDataArtikel()->result_array();
+        $data['artikel'] = $this->M_admin->getDataArtikel()->result_array();
 
 
         // $this->load->view('template/template_admin/sidebar_ad', $data);
@@ -36,19 +35,19 @@ class Artikel extends CI_Controller
         $this->load->view('dashboard/artikel/v_artikel', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
-    public function tambah()
+    public function tambahArtikel()
     {
         if (isset($_POST['submit'])) {
 
             $data = array(
                 // 'id'       =>  $this->input->post('id'),
                 'judul_artikel'              =>  $this->input->post('judul_artikel'),
-                'isi_artikel'        =>  $this->input->post('perusahaan'),
-                'image' =>     $this->M_admin->file_image1(),
-                'post_date'        =>  $this->input->post('post_date'),
+                'isi_artikel'        =>  $this->input->post('isi_artikel'),
+                'image'             => $this->M_admin->file_image1(),
+                'post_date'        =>  $this->input->post('post_date')
             );
 
-            $insert = $this->M_organisasi->postDataArtikel($data);
+            $insert = $this->M_admin->postDataArtikel($data);
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Insert Data Berhasil');
