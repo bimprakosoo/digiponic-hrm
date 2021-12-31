@@ -32,8 +32,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>No</th>
                                     <th>Judul Artikel</th>
@@ -54,9 +54,9 @@
 
                                         <td><?= $d['post_date']; ?></td>
                                         <td>
-                                            <!-- <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_posisi="<?= $d['nama']; ?>" data-nama_golongan="<?= $d['nama_golongan']; ?>"><i class="fas fa-eye"></i></button> -->
-                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/posisi/edit/")?>"><i class="fas fa-edit"></i></a>
-                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/posisi/hapus/")?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-judul_artikel="<?= $d['judul_artikel']; ?>" data-isi_artikel="<?= $d['isi_artikel']; ?>" data-post_date="<?= $d['post_date']; ?>" data-image=<?= base_url('assets/image/artikel/img/') . $d['image']; ?>><i class="fas fa-eye"></i></button>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/artikel/artikel/edit/") . $d['id']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/artikel/artikel/hapus/") . $d['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php $i++;
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <!-- BEGIN  modal -->
+    <!-- Tambah  modal -->
     <div class="modal fade" id="modalTambah" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -122,12 +122,68 @@
         </div>
     </div>
 
+    <!-- Detail  modal -->
+    <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Artikel</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive ">
+                    <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th>Judul Artikel</th>
+                                <td><span id="dtl_judul"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Isi Artikel</th>
+                                <td><span id="dtl_isi"></span></td>
+                            </tr>
+                            <tr>
+                            <th>Image</th>
+                                <td><img src="" alt="" id="dtl_image" style="width: 100px; height: 100px;"></td>
+                            </tr>
+                            <tr>
+                                <th>Post Date</th>
+                                <td><span id="dtl_post"></span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
+
 </main>
 <!-- End Content -->
 <script>
     $(document).ready(function() {
         $('#dataTable').DataTable({
             "scrollX": true
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var judul_artikel = $(this).data('judul_artikel');
+            var isi_artikel = $(this).data('isi_artikel');
+            var image = $(this).data('image');
+            var post_date = $(this).data('post_date');            
+            $('#dtl_judul').text(judul_artikel);
+            $('#dtl_isi').text(isi_artikel);
+            $('#dtl_image').attr("src", image);
+            $('#dtl_post').text(post_date);
 
         });
     });

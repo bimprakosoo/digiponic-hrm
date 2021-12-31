@@ -199,4 +199,37 @@ class M_Admin extends CI_Model
         }
         return $file_image1;
     }
+
+    public function editArtikel($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('artikel')->row_array();
+    }
+    public function update_artikel($id_dept, $data)
+    {
+        $this->db->where('id', $id_dept);
+        $this->db->update('artikel', $data);
+    }
+    public function hapusartiklel($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('artikel');
+    }
+
+    // -----------------------------------------------------------------------------------------------------------
+
+
+    // Acara Dan Rapat---------------------------------------------------------------------------------------
+    public function postDataAcaraRapat($data)
+    {
+        $this->db->insert('acara_rapat', $data);
+    }
+    public function getDataAcara()
+    {
+        $this->db->select('*');
+        $this->db->from('acara_rapat');
+
+        return $this->db->get();
+    }
+    
 }

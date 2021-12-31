@@ -41,8 +41,8 @@
 
                     <div class="card-body ">
                         <div class="table-responsive">
-                            <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                <thead>
+                            <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                                <thead class="table-dark">
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Perusahaan</th>
@@ -205,7 +205,7 @@
                         </button>
                     </div>
                     <div class="modal-body table-responsive ">
-                        <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <table class="table table-striped" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <th>Nama Perusahaan</th>
