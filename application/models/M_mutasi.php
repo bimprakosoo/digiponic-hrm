@@ -58,7 +58,7 @@ class M_mutasi extends CI_Model
         $this->db->join('department', 'department.id = mutasi.department_id');
         $this->db->join('divisi', 'divisi.id = mutasi.divisi_id');
         $this->db->join('jabatan', 'jabatan.id= mutasi.jabatan_id');
-        $this->db->join('golongan', 'golongan.id = mutasi.gologan_id');
+        $this->db->join('golongan', 'golongan.id = mutasi.golongan_id');
         $this->db->join('posisi', 'posisi.id = mutasi.posisi_id');
         $this->db->join('penempatan', 'penempatan.id = mutasi.penempatan_id');
 

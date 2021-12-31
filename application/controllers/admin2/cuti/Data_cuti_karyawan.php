@@ -27,10 +27,9 @@ class Data_cuti_karyawan extends CI_Controller
     public function index()
     {
         $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/cuti/v_data_cuti_karyawan', $data);
+        
+        // $this->load->view('dashboard/cuti/v_data_cuti_karyawan', $data);
+        $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 }
