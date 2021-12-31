@@ -33,8 +33,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="example" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
@@ -58,6 +58,13 @@
                                 <?php $i++;
                                 endforeach; ?>
                             </tbody>
+                            <tfoot class="table-dark">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th >Divisi</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -111,8 +118,8 @@
         </div>
     </div>
 
- <!-- BEGIN  modal -->
- <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- BEGIN  modal -->
+    <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -122,7 +129,7 @@
                     </button>
                 </div>
                 <div class="modal-body table-responsive ">
-                    <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                    <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                         <tbody>
                             <tr>
                                 <th>Nama Jabatan</th>
@@ -162,6 +169,32 @@
             $('#dtl_jabatan').text(nama_jabatan);
             $('#dtl_divisi').text(nama_divisi);
 
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            initComplete: function() {
+                this.api().columns().every(function() {
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.footer()).empty())
+                        .on('change', function() {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().sort().each(function(d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
+            }
         });
     });
 </script>

@@ -11,7 +11,7 @@
 <main class="content">
 
     <div class="container-fluid p-0 ">
-        
+
         <!-- Daftar Semua Lowongan -->
         <div class="container-fluid p-0">
 
@@ -22,8 +22,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>Status</th>
                                     <th>Nama</th>
@@ -45,17 +45,17 @@
                         </table>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
 </main>
 <!-- End Content -->
 <script>
-     $(document).ready(function() {
-         $('#dataTable').DataTable({
-             "scrollX": true
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "scrollX": true
 
-         });
-     });
- </script>
+        });
+    });
+</script>

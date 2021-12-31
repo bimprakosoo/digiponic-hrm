@@ -60,4 +60,37 @@ class Artikel extends CI_Controller
             redirect('admin2/artikel/artikel');
         }
     }
+    //edit
+    public function edit($id)
+    {
+        $data['user'] = $this->M_auth->getUserRow();
+
+
+        $data['artikel'] = $this->M_admin->editArtikel($id);
+
+        // $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/artikel/v_artikel_edit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+
+        $id_dept = $this->input->post('id');
+        $data = array(
+            // 'id'       =>  $this->input->post('id'),
+            'judul_artikel'              =>  $this->input->post('judul_artikel'),
+            'isi_artikel'        =>  $this->input->post('isi_artikel'),
+            'image'             => $this->M_admin->file_image1(),
+            'post_date'        =>  $this->input->post('post_date')
+        );
+        $this->M_admin->update_artikel($id_dept, $data);
+        redirect('admin2/artikel/artikel/');
+    }
+    //hapus
+    public function hapus($id)
+    {
+        $this->M_admin->hapusartiklel($id);
+        redirect('admin2/artikel/artikel/');
+    }
 }
