@@ -68,19 +68,19 @@
                                 </a>
                                 <!-- dropdown -->
                             <?php } else if ($m['drops'] == 1) { ?>
-                                <a data-target="#<?= str_replace(' ', '_', $m['menu']) ?>" data-toggle="collapse" class="sidebar-link collapsed">
+                                <a data-target="#<?= str_replace(' ', '_', $m['menu']); ?>" data-toggle="collapse" class="sidebar-link collapsed">
                                     <i class="<?= $m['icon']; ?>"></i>
                                     <span class="align-middle"><?= $m['menu']; ?></span>
                                 </a>
-                                <ul id="<?= str_replace('', '_', $m['menu'])  ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                <ul id="<?= str_replace('', '_', $m['menu']);  ?>" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                                     <?php
                                     $MenuId = $m['id'];
                                     $role_id    = $this->session->userdata('role_id');
                                     $querySubMenu = "SELECT * 
                                                         FROM user_sub_menu
-                                                        JOIN user_access_menu ON user_sub_menu.id = user_access_menu.menu_id
+                                                        JOIN user_access_submenu ON user_sub_menu.id = user_access_submenu.menu_id
                                                         WHERE user_sub_menu.menu_id = $MenuId
-                                                        AND user_access_menu.role_id = $role_id
+                                                        AND user_access_submenu.role_id = $role_id
                                                         ";
 
                                     $subMenu = $this->db->query($querySubMenu)->result_array();
@@ -91,7 +91,7 @@
                                     <?php foreach ($subMenu as $sm) : ?>
                                         <li class="sidebar-item">
                                             <a class="sidebar-link" href="<?= base_url($sm['url']); ?>">
-                                                <span class="align-middle"><?= $sm['title']; ?></span>
+                                                <span class="align-middle"><?= str_replace('', '_', $sm['title']); ?></span>
                                             </a>
                                         </li>
                                     <?php endforeach; ?>
@@ -100,9 +100,6 @@
                             <?php } ?>
                         </li>
                     <?php endforeach; ?>
-
-
-
                 </ul>
             </div>
         </nav>

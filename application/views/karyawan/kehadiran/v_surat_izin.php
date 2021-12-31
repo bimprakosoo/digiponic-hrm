@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="col-auto ml-auto ">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#sizedModalMd">Form Izin Sakit</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#sizedModalMd">Form Izin</button>
                     </div>
                 </div>
             </div>

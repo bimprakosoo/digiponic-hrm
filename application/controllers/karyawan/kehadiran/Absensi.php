@@ -26,7 +26,6 @@ class Absensi extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Absensi';
         $data['user'] = $this->M_auth->getUserRow();
 
         $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);

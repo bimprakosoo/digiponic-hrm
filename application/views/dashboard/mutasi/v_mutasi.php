@@ -203,6 +203,7 @@
              </div>
          </div>
      </div>
+     
      <!-- Detail  modal -->
      <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-hidden="true">
          <div class="modal-dialog modal-lg" role="document">

@@ -1,7 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Absensi extends CI_Controller
+class Cuti extends CI_Controller
 {
     var $API = "";
 
@@ -23,13 +23,12 @@ class Absensi extends CI_Controller
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
     }
-
     public function index()
     {
-        $data['title'] = 'Absensi';
+        $data['title'] = 'Pengajuan Cuti';
         $data['user'] = $this->M_auth->getUserRow();
 
-        $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
+        $this->load->view('karyawan/pengajuan/v_cuti', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 }
