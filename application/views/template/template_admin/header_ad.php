@@ -5,7 +5,7 @@
             <i class="hamburger align-self-center"></i>
         </a>
 
-        <a value="<?= $user['role_id'] ?>"><?= $user['role_id'] ?></a>
+        <a><?= $user['id'] ?></a>
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
@@ -21,7 +21,7 @@
                         <strong class="text-dark"><?= $user['nama']; ?></strong>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="<?php echo base_url('admin2/dashboard/dashboard/profile')?>"><i class="align-middle mr-1" data-feather="user"></i>
+                        <a class="dropdown-item" href="<?php echo base_url('admin2/dashboard/dashboard/profile') ?>"><i class="align-middle mr-1" data-feather="user"></i>
                             Profile</a>
 
                         <div class="dropdown-divider"></div>

@@ -46,6 +46,7 @@
                             <tbody>
                                 <?php $i = 1;
                                 foreach ($dept as $d) : ?>
+
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td> <!-- nama departemnt -->
@@ -115,7 +116,7 @@
         </div>
     </div>
 
-    <!-- BEGIN  modal -->
+    <!-- Detail -->
     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

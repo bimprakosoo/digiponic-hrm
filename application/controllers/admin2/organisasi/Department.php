@@ -75,7 +75,6 @@ class Department extends CI_Controller
 
         $id_dept = $this->input->post('id');
         $data = array(
-            // 'id'       =>  $this->input->post('id'),
             'nama'              =>  $this->input->post('department'),
             'perusahaan'        =>  $this->input->post('perusahaan'),
         );
