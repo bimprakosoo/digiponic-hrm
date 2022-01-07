@@ -32,7 +32,7 @@ class Department extends CI_Controller
     }
 
     // insert data 
-    function add_Dept()
+    function tambahDept()
     {
 
         if (isset($_POST['submit'])) {
@@ -41,8 +41,13 @@ class Department extends CI_Controller
                 // 'id'       =>  $this->input->post('id'),
                 'nama'              =>  $this->input->post('department'),
                 'perusahaan'        =>  $this->input->post('perusahaan'),
+                'deskripsi'         =>  $this->input->post('deskripsi'),
+                'fungsi'            =>  $this->input->post('fungsi'),
+                'peran'             =>  $this->input->post('peran'),
+                'image'             => $this->M_organisasi->file_image()
             );
-
+            // var_dump($data);
+            // die;
             $insert = $this->M_organisasi->postDataDepartment($data);
 
             if ($insert) {
@@ -76,6 +81,10 @@ class Department extends CI_Controller
         $data = array(
             'nama'              =>  $this->input->post('department'),
             'perusahaan'        =>  $this->input->post('perusahaan'),
+            'deskripsi'              =>  $this->input->post('deskripsi'),
+            'fungsi'        =>  $this->input->post('fungsi'),
+            'peran'              =>  $this->input->post('peran'),
+            'image'        =>  $this->M_organisasi->file_image1()
         );
         $this->M_organisasi->update_dept($id_dept, $data);
         redirect('admin2/organisasi/department/');

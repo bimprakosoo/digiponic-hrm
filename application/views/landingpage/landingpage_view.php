@@ -67,7 +67,57 @@
 
   <div class="container-fluid pt-5 px-5 mx-auto">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
+      <?php
+      foreach ($dept as $d) {
+      ?>
+        <div class="col">
+          <div class="card h-100" style="border-radius: 10px;">
+            <img src="<?php echo base_url('assets/image/departemen/foto/'. $d['image']); ?>" class="card-img-top" alt="...">
+            <div class="card-body text-start pt-5">
+              <h5 class="card-title ">Departemen <?= $d['nama'] ?></h5>
+              <p class="card-text"><?= $d['deskripsi'] ?></p>
+            </div>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#departemenModal" class="btn btn-primary">
+              Lihat Selengkapnya
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="departemenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Departemen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <div class="text-center">
+                  <h4>Departemen <?= $d['nama'] ?></h4>
+                </div>
+                <div class="container text-center">
+                  <h5>Fungsi</h5>
+                  <?= $d['fungsi'] ?>
+                </div>
+                <div class="container text-start">
+                  <h5 class="text-center">Peran</h5>
+                  <?= $d['peran'] ?>
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <?php
+      }
+      ?>
+      <!-- <div class="col">
         <div class="card " style="border-radius: 10px;">
           <img src="<?php echo base_url(); ?>assets/image/departemen/departemen-penunjang.svg" class="card-img-top" alt="...">
           <div class="card-body text-start pt-5">
@@ -102,7 +152,7 @@
             Lihat Selengkapnya
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto pb-5">
