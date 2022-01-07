@@ -22,8 +22,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table text-center" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+                            <thead class="table-dark">
                                 <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
                                 <tr>
                                     <th>Status</th>
@@ -60,8 +60,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+                            <thead class="table-dark">
                                 <tr>
                                     <!-- <th>Nama Karyawan</th> -->
                                     <th>No</th>

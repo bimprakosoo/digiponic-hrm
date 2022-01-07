@@ -33,7 +33,7 @@
                          </div>
 
                          <!-- Perusahaan -->
-                         <div class="mb-3 col-md-6">
+                         <!-- <div class="mb-3 col-md-6"> -->
                              <div class="modal-body">
                                  <div class="form-group">
                                      <label for="title">Perusahaan</label>
@@ -48,6 +48,38 @@
                                             } ?>
                                      </select>
                                  </div>
+                             </div>
+                         <!-- </div> -->
+
+                         <!-- deskripsi -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Deskripsi</label>
+                                 <textarea class="ckeditor" id="deskripsi" name="deskripsi"><?= $dept['deskripsi'] ?></textarea>
+                             </div>
+                         </div>
+
+                         <!-- fungsi -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Fungsi</label>
+                                 <textarea class="ckeditor" id="fungsi" name="fungsi"><?= $dept['fungsi'] ?></textarea>
+                             </div>
+                         </div>
+
+                         <!-- Peran -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Peran</label>
+                                 <textarea class="ckeditor" id="peran" name="peran"><?= $dept['peran'] ?></textarea>
+                             </div>
+                         </div>
+
+                         <!-- foto -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Image</label><br>
+                                 <input type="file" id="file_name1" name="image" required>
                              </div>
                          </div>
 

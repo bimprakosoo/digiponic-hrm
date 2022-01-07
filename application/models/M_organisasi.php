@@ -3,6 +3,12 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_organisasi extends CI_Model
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->library('upload');
+    }
+
     // Perusahaan
     public function getDataPerusahaan()
     {
@@ -32,7 +38,7 @@ class M_organisasi extends CI_Model
     public function getDataDepartment()
     {
         // return $this->db->get('department');
-        $this->db->select('department.id AS dept_id, department.nama, perusahaan.nama_perusahaan');
+        $this->db->select('department.id AS dept_id, department.nama, perusahaan.nama_perusahaan, department.fungsi, department.peran, department.deskripsi, department.image');
         $this->db->from('department');
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
         return $this->db->get();
@@ -51,6 +57,26 @@ class M_organisasi extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->delete('department');
+    }
+
+    function file_image()
+    {
+        // upload file surat lamaran--------------------------------------------------------------------------------------
+        $config['upload_path'] = "./assets/image/departemen/foto/";
+        $config['allowed_types'] = "jpg|jpeg|png|svg";
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image')) {
+            // salah
+            $response['pesan'] = 'gambar gagal' . $this->upload->display_errors();
+            $response['hasil'] = false;
+            echo json_encode($response);
+        } else {
+            $data_upload    = $this->upload->data();
+            $file_image      = $data_upload['file_name'];
+        }
+        return $file_image;
     }
 
     // Devisi----------------------------------------------------------------------------------------------------
@@ -232,5 +258,4 @@ class M_organisasi extends CI_Model
     {
         $this->db->insert('penempatan', $data);
     }
-   
 }
