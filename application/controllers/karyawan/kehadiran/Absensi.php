@@ -29,16 +29,17 @@ class Absensi extends CI_Controller
 
     public function index()
     {
-        $userid    = $this->session->userdata('id');
+        $iduser    = $this->session->userdata('id');
         $data['user'] = $this->M_auth->getUserRow();
-        $data['abse'] = $this->M_kehadiran->getAbsensi($userid)->result_array();
+        // $data['idabsen'] = $this->M_kehadiran->getAbsensi();
+        $data['absen'] = $this->M_kehadiran->getAbsensi($iduser)->result_array();
 
 
         $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 
-    // insert data  
+    // insert  
     function Absen_CheckIn()
     {
         $dates = date("Y-m-d");
@@ -47,8 +48,8 @@ class Absensi extends CI_Controller
         if (isset($_POST['submit'])) {
             $data = array(
                 'karyawan_id'   =>  $this->input->post('UserId'),
-                'jam'           =>  $times,
-                'tgl_checkin'   =>  $dates
+                'tanggal'           =>  $dates,
+                'jam_masuk'   =>  $times
             );
 
             $insert = $this->M_kehadiran->postCheckIn($data);
@@ -64,29 +65,23 @@ class Absensi extends CI_Controller
             redirect('karyawan/kehadiran/absensi');
         }
     }
+
+
+    // update 
     function Absen_CheckOut()
     {
-        $dates = date("Y-m-d");
+
+        $iduser   = $this->session->userdata('id');
+
+        $karyawan_id     = $this->M_kehadiran->getDateToday($iduser);
+        $tanggal     = $this->M_kehadiran->getDateToday('tanggal');
+        $jam_masuk     = $this->M_kehadiran->getDateToday('jam_masuk');
         $times = date('H:i:s');
-
-        if (isset($_POST['submit'])) {
-            $data = array(
-                'karyawan_id'   =>  $this->input->post('UserId'),
-                'jam'           =>  $times,
-                'tgl_checkout'  =>  $dates
-            );
-
-            $insert = $this->M_kehadiran->postCheckOut($data);
-
-            if ($insert) {
-                $this->session->set_flashdata('status', 'Check-out berhasil');
-                redirect('karyawan/kehadiran/absensi');
-            } else {
-                $this->session->set_flashdata('status', 'Check-out gagal');
-                redirect('karyawan/kehadiran/absensi');
-            }
-        } else {
-            redirect('karyawan/kehadiran/absensi');
-        }
+        $dates = date("Y-m-d");
+        $data = array(
+            'jam_keluar'    =>  $times
+        );
+        $this->M_kehadiran->updateAbsen($dates, $data, $iduser);
+        redirect('karyawan/kehadiran/absensi');
     }
 }
