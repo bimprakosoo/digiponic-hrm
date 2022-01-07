@@ -77,7 +77,6 @@ class Department extends CI_Controller
     //update
     public function update()
     {
-
         $id_dept = $this->input->post('id');
         $data = array(
             'nama'              =>  $this->input->post('department'),

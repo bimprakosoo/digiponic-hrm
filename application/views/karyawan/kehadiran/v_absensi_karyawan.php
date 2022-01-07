@@ -34,16 +34,20 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>belum absen</td>
-                                    <td><?php echo date('Y-m-d H:i:s'); ?></td>
-
                                     <form action="<?= base_url('karyawan/kehadiran/absensi/Absen_CheckIn'); ?>" method="POST">
-                                        <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
+                                        <div>
+                                            <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
+                                            
+                                        </div>
+
+
+                                        <td>belum absen</td>
+                                        <td><?php echo date('Y-m-d H:i:s'); ?></td>
+
+
                                         <td><button class="btn btn-primary" type="submit" name="submit">Absen Masuk</button></td>
-                                    </form>
-                                    <form action="<?= base_url('karyawan/kehadiran/absensi/Absen_CheckOut'); ?>" method="POST">
-                                        <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
-                                        <td><button class="btn btn-success" type="submit" name="submit">Absen Pulang</button></td>
+                                        <!-- <td><button class="btn btn-success" type="submit" name="submit">Absen Pulang</button></td> -->
+                                        <td><a class="btn btn-success" href="<?php echo base_url('karyawan/kehadiran/absensi/Absen_CheckOut'); ?>">Absen Pulang</a></td>
                                     </form>
                                 </tr>
                             </tbody>
@@ -59,10 +63,12 @@
                     <h3 class="m-0 font-weight-bold">Daftar Data Absensi</h3>
                 </div>
                 <div class="card-body ">
+
                     <div class="table-responsive">
                         <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                             <thead class="table-dark">
                                 <tr>
+
                                     <!-- <th>Nama Karyawan</th> -->
                                     <th>No</th>
                                     <th>Tanggal Absensi</th>
@@ -74,11 +80,11 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1;
-                                foreach ($abse as $a) : ?>
-                                   
+                                foreach ($absen as $a) : ?>
+
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
-                                        <td><?= $a['tgl_checkin']; ?></td>
+                                        <td><?= $a['tanggal']; ?></td>
                                         <td><?= $a['jam_masuk']; ?></td>
                                         <td><?= $a['jam_keluar']; ?></td>
                                     </tr>
