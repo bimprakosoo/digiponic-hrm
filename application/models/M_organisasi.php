@@ -43,6 +43,7 @@ class M_organisasi extends CI_Model
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
         return $this->db->get();
     }
+
     public function editDept($id)
     {
         $this->db->where('id', $id);

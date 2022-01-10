@@ -17,7 +17,7 @@
          <div class="container-fluid p-0">
 
              <div class="card shadow m-4 ">
-                 <form action="<?= base_url('admin/update/'); ?>" method="post" enctype="multipart/form-data">
+                 <form action="<?= base_url('admin2/pekerjaan/pekerjaanmaster/update/'); ?>" method="post" enctype="multipart/form-data">
 
                      <div class="card-body ">
                          <div class="modal-body">
@@ -200,7 +200,7 @@
 
                      <div class="row m-4">
                          <div class="col-auto ml-auto ">
-                             <a href="<?= base_url() ?>admin/lowongan_ad/" class="btn btn-warning">Cancel</a>
+                             <a href="<?= base_url() ?>admin2/pekerjaan/pekerjaanmaster/" class="btn btn-warning">Cancel</a>
                              <button type="submit" name="submit" value="submit" class="btn btn-primary">Update</button>
                          </div>
                      </div>

@@ -57,20 +57,20 @@
                                         <td><?= $d['nama_perusahaan']; ?></td>
                                         <td>
                                             <!-- Fungsi  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deskripsi">
+                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#deskripsi" data-deskripsi="<?= $d['deskripsi']; ?>">
                                                 Deskripsi
                                             </button>
                                             <div class="modal fade" id="deskripsi" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content ">
                                                         <div class="modal-header">
-                                                            <h2 class="modal-title">Deskripsi</h2>
+                                                            <h2 class="modal-title">Deskripsi Singkat</h2>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <?= $d['deskripsi']; ?>
+                                                            <span  id="dtl_deskripsi"></span>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -82,7 +82,7 @@
                                         </td>
                                         <td>
                                             <!-- Fungsi  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fungsi">
+                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#fungsi" data-fungsi="<?= $d['fungsi']; ?>">
                                                 Fungsi
                                             </button>
                                             <div class="modal fade" id="fungsi" tabindex="-1" role="dialog" aria-hidden="true">
@@ -95,7 +95,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <?= $d['fungsi']; ?>
+                                                        <span  id="dtl_fungsi"></span>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -134,7 +134,7 @@
 
                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
-                                        <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_departemen="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>">
+                                        <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_departemen="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>" data-deskripsi="<?= $d['deskripsi']; ?>" data-fungsi="<?= $d['fungsi']; ?>" data-peran="<?= $d['peran']; ?>" data-image="<?= base_url('assets/image/departemen/foto/') .$d['image']; ?>" >
                                                 <i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/department/edit/") . $d['dept_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $d['dept_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
@@ -250,6 +250,22 @@
                                 <th>Nama Perusahaan</th>
                                 <td><span id="nama_perusahaan"></span></td>
                             </tr>
+                            <tr>
+                                <th>Deskripsi Singkat</th>
+                                <td><span id="dtl_deskripsi"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Fungsi</th>
+                                <td><span id="dtl_fungsi"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Peran</th>
+                                <td><span id="dtl_peran"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td><img src="" alt="" id="dtl_image" style="width: 250px; height: 100px;"></td>
+                            </tr>
 
                         </tbody>
                     </table>
@@ -277,9 +293,25 @@
         $(document).on('click', '#set_dtl', function() {
             var nama_departemen = $(this).data('nama_departemen');
             var nama_perusahaan = $(this).data('nama_perusahaan');
+            var deskripsi = $(this).data('deskripsi');
+            var fungsi = $(this).data('fungsi');
+            var peran = $(this).data('peran');
+            var image = $(this).data('image');
             $('#nama_departemen').text(nama_departemen);
             $('#nama_perusahaan').text(nama_perusahaan);
+            $('#dtl_deskripsi').text(deskripsi);
+            $('#dtl_fungsi').text(fungsi);
+            $('#dtl_peran').text(peran);
+            $('#dtl_image').attr("src", image);
 
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl2', function() {
+            var deskripsi = $(this).data('deskripsi');
+            $('#dtl_deskripsi').text(deskripsi);
         });
     });
 </script>
