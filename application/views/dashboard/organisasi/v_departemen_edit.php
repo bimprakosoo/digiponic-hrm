@@ -79,7 +79,7 @@
                          <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Image</label><br>
-                                 <input type="file" id="file_name1" name="image" required>
+                                 <input type="file" id="file_name" name="image" required>
                              </div>
                          </div>
 

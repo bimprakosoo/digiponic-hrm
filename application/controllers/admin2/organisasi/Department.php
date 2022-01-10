@@ -80,11 +80,11 @@ class Department extends CI_Controller
         $id_dept = $this->input->post('id');
         $data = array(
             'nama'              =>  $this->input->post('department'),
-            'perusahaan'        =>  $this->input->post('perusahaan'),
-            'deskripsi'              =>  $this->input->post('deskripsi'),
-            'fungsi'        =>  $this->input->post('fungsi'),
-            'peran'              =>  $this->input->post('peran'),
-            'image'        =>  $this->M_organisasi->file_image1()
+                'perusahaan'        =>  $this->input->post('perusahaan'),
+                'deskripsi'         =>  $this->input->post('deskripsi'),
+                'fungsi'            =>  $this->input->post('fungsi'),
+                'peran'             =>  $this->input->post('peran'),
+                'image'             => $this->M_organisasi->file_image()
         );
         $this->M_organisasi->update_dept($id_dept, $data);
         redirect('admin2/organisasi/department/');

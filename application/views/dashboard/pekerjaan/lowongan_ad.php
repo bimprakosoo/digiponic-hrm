@@ -151,8 +151,8 @@
                                         <td><img src="<?= base_url('assets/image/lowongan/') . $m['image']; ?>" style="width: 50px; height: 50px;"></td>
                                         <td>
                                             <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-insentif_lembur="<?= $m['insentif_lembur']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>" data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" data-image="<?= base_url('assets/image/lowongan/') . $m['image']; ?>"><i class="fas fa-eye"></i></button>
-                                            <a class="btn btn-primary" href="<?php echo base_url("admin/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
-                                            <a class="btn btn-danger" href="<?php echo base_url("admin/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
+                                            <a class="btn btn-primary" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
+                                            <a class="btn btn-danger" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
