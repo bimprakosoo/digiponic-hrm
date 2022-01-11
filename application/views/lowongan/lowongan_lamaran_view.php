@@ -204,22 +204,6 @@
                                                 <!--  -->
 
                                                 <!-- Jenis Kelamin -->
-                                                <!-- <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
-                                                <div class="col-sm-8 d-flex justify-content-start">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                        <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                                <!--  -->
-
-                                                <!-- Jenis Kelamin -->
                                                 <div class="row mb-3">
                                                     <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Jenis Kelamin</label>
                                                     <div class="col-sm-8">
@@ -255,27 +239,7 @@
                                                 </div>
                                                 <!--  -->
 
-                                                <!-- Status Perkawinan -->
-                                                <!-- <div class="row mb-3">
-                                                <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
-                                                <div class="col-sm-8">
-                                                    <div class="col-sm-10 d-flex justify-content-start">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Belum Menikah</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">Cerai</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                                            <label class="form-check-label" for="inlineRadio2">Menikah</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                                <!--  -->
+                                              
 
                                                 <!-- Pendidikan Terakhir -->
                                                 <div class="row mb-3">
