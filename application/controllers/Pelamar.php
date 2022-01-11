@@ -64,10 +64,6 @@ class Pelamar extends CI_Controller
                 'surat_lamaran'         =>  $this->M_pelamar->file_lamaran(),
                 'cv'                    =>  $this->M_pelamar->file_cv()
             );
-
-            // var_dump($data);
-            // die;
-
             $insert =  $this->curl->simple_post($this->API . '/pelamar/create', $data, array(CURLOPT_BUFFERSIZE => 10));
 
             if ($insert) {

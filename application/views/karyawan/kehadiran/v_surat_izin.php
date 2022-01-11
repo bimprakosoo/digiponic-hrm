@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="col-auto ml-auto ">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#sizedModalMd">Form Izin</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#formTambah">Form Izin</button>
                     </div>
                 </div>
             </div>
@@ -37,23 +37,35 @@
                         <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Nama Karyawan</th>
+
                                     <th>Tanggal Buat</th>
-                                    <th>Foto Surat Dokter</th>
                                     <th>Jam </th>
+                                    <th>Foto Surat Dokter</th>
                                     <th>Keterangan</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>belum absen</td>
-                                    <td><?php echo date('Y-m-d H:i:s'); ?></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
+                                <?php $i = 1;
+                                foreach ($izin as $as) : ?>
+
+                                    <tr>
+                                        <td><?= $as['date_created']; ?></td>
+                                        <td><?= $as['time_created']; ?></td>
+                                        <td><?= $as['image']; ?></td>
+                                        <td><?= $as['keterangan']; ?></td>
+                                        <td><?php if ($as['status'] == 0) { ?>
+                                                menunggu persetujuan
+                                            <?php } else if ($as['status'] == 1) { ?>
+                                                diterima
+                                            <?php } else if ($as['status'] == 2) { ?>
+                                                ditolak
+                                            <?php } ?>
+                                        </td>
+
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -64,47 +76,46 @@
     </div>
 
     <!-- BEGIN  modal -->
-    <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="formTambah" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <h4 class="modal-title">Form Izin </h4>
                 </div>
                 <div class="modal-body table-responsive ">
-                    <table class="table  no-margin">
-                        <tbody>
-                            <tr>
-                                <td>Foto </td>
-                                <td>: </td>
+                    <form action="<?= base_url('karyawan/kehadiran/permits/izinform'); ?>" method="POST" enctype="multipart/form-data">
+                        <!-- Department -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title">name</label>
+                                <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
+                            </div>
+                        </div>
 
-                                <td>
-                                    <input type="file" id="izin">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tanggal</td>
-                                <td>:</td>
+                        <!-- Perusahaan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">file upload</label>
+                                    <input type="file" id="izin" name="izin">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Perusahaan -->
+                        <div class="mb-3 col-md-6">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">keterangan</label>
+                                    <textarea id="keterangan" name="keterangan" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
 
-                                <td><?php echo date('Y-m-d'); ?></td>
-                            </tr>
-                            <tr>
-                                <td>Jam Izin</td>
-                                <td>:</td>
-
-                                <td><?php echo date('H:i:s'); ?></td>
-                            </tr>
-                            <tr>
-                                <td>Keterangan</td>
-                                <td>:</td>
-
-                                <td><textarea name="ketIjin" id="ketIzin" cols="30" rows="10"></textarea></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-body d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">Izin Sakit</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
