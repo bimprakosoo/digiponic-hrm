@@ -82,8 +82,8 @@
 
                         <div class="card-body ">
                             <div class="table-responsive">
-                                <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                    <thead>
+                                <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                                    <thead class="table-dark">
                                         <tr>
                                             <th>No</th>
                                             <th>kepala cabang</th>

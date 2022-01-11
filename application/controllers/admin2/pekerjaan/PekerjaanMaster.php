@@ -137,7 +137,7 @@ class PekerjaanMaster extends CI_Controller
             'image' =>     $this->M_admin->file_image()
         );
         $this->M_admin->update_low($id_lowongan, $data);
-        redirect('admin/lowongan_ad');
+        redirect('admin2/pekerjaan/pekerjaanmaster/');
     }
 
     public function diterima($dapat_di)

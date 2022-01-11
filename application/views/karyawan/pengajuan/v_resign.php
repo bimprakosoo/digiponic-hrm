@@ -34,8 +34,8 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>Nama Karyawan</th>
                                     <th>Tanggal Pengajuan</th>
@@ -99,7 +99,7 @@
                     </table>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">Izin Sakit</button>
+                    <button type="button" class="btn btn-primary">Pengundutan Diri</button>
                 </div>
             </div>
         </div>
