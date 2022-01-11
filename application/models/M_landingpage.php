@@ -64,5 +64,27 @@ class M_landingpage extends CI_Model
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
         return $this->db->get();
     }
+    public function artikel( $limit, $start)
+    {
+        // $this->db->select('*');
+        // $this->db->from('lowongan');
+
+        // $query = "SELECT * FROM lowongan ORDER BY id_lowongan ASC";
+        // $this->db->select('*');
+        // $this->db->from('lowongan');
+        // $this->db->limit(3);
+        // $query = $this->db->get();
+        // return $query->result();
+
+        return $this->db->get('artikel', $limit, $start)->result_array();
+    }
+     
+    public function getDataArtikel()
+    {
+        $this->db->select('*');
+        $this->db->from('artikel');
+
+        return $this->db->get();
+    }
     
 }

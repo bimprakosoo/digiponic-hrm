@@ -5616,6 +5616,10 @@ button.close {
     flex: 1 1 auto;
     padding: 1rem;
 }
+/* .modal-body p {
+    word-wrap: break-word;
+} */
+
 
 .modal-footer {
     display: flex;

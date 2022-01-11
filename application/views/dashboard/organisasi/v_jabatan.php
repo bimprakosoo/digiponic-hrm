@@ -36,7 +36,7 @@
                         <table class="table table-striped text-center" id="example" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>No</th>
+                                    <th id="no">No</th>
                                     <th>Nama</th>
                                     <th>Divisi</th>
                                     <th scope="col">Action</th>
@@ -63,6 +63,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th >Divisi</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -178,8 +179,8 @@
             initComplete: function() {
                 this.api().columns().every(function() {
                     var column = this;
-                    var select = $('<select><option value=""></option></select>')
-                        .appendTo($(column.footer()).empty())
+                    var select = $('<select><option value="">No</option></select>')
+                        .appendTo($(column.header('')).empty())
                         .on('change', function() {
                             var val = $.fn.dataTable.util.escapeRegex(
                                 $(this).val()

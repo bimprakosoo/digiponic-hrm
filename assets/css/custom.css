@@ -348,8 +348,10 @@ form input+i {
     font-weight: 400;
     font-size: 18px;
     color: #000;
-    text-align: center;
+    text-align: justify;
+
 }
+
 
 #landLowongan .selengkapnya.d-grid {
     margin-top: 30px;
@@ -364,10 +366,48 @@ form input+i {
     font-size: 18px;
 }
 
-#landArtikel {
+#landArtikel1 {
     background: #f6f8fd;
 }
+#landArtikel1 h2 {
+    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
 
+#landArtikel1 .card-group {
+    width: 100%;
+}
+
+#landArtikel1 .card-group .card {
+    width: 393px;
+    height: 528px;
+}
+
+#landArtikel1 .card-group .card h2 {
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+#landArtikel1 .btn {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#landArtikel1 .d-grid {
+    margin-top: 80px;
+}
+
+#landArtikel1 .d-grid .btn {
+    color: #335c32;
+    background: #fff;
+    border-color: #335c32;
+    font-weight: 500;
+    font-size: 18px;
+}
+/*  */
 #landArtikel h2 {
     padding-top: 30px;
     font-weight: 700;
@@ -410,7 +450,7 @@ form input+i {
     .slider .carousel .carousel-inner {
         height: 190px;
     }
-    #landArtikel .card-text {
+    #landArtikel1 .card-text {
         padding-top: 50px;
     }
 }
@@ -425,7 +465,7 @@ form input+i {
     .slider .carousel .carousel-inner {
         height: 450px;
     }
-    #landArtikel .card-text {
+    #landArtikel1 .card-text {
         padding-top: 20px;
     }
 }
@@ -434,13 +474,13 @@ form input+i {
     .slider .carousel .carousel-inner {
         height: 580px;
     }
-    #landArtikel .card-text {
+    #landArtikel1 .card-text {
         padding-top: 50px;
     }
 }
 
 @media (min-width: 1400px) {
-    #landArtikel .card-text {
+    #landArtikel1 .card-text {
         padding-top: 30px;
     }
 }

@@ -69,7 +69,7 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                        <div class="modal-body m-3" style="text-align: start !important; ">
                                                             <span  id="dtl_deskripsi"></span>
                                                         </div>
                                                         <div class="modal-footer">
@@ -252,7 +252,7 @@
                             </tr>
                             <tr>
                                 <th>Deskripsi Singkat</th>
-                                <td><span id="dtl_deskripsi"></span></td>
+                                <td><span id="dtl_deskripsi2"></span></td>
                             </tr>
                             <tr>
                                 <th>Fungsi</th>
@@ -300,6 +300,7 @@
             $('#nama_departemen').text(nama_departemen);
             $('#nama_perusahaan').text(nama_perusahaan);
             $('#dtl_deskripsi').text(deskripsi);
+            $('#dtl_deskripsi2').text(deskripsi);
             $('#dtl_fungsi').text(fungsi);
             $('#dtl_peran').text(peran);
             $('#dtl_image').attr("src", image);

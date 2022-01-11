@@ -72,8 +72,8 @@
       ?>
         <div class="col">
           <div class="card h-100" style="border-radius: 10px;">
-            <img src="<?php echo base_url('assets/image/departemen/foto/'. $d['image']); ?>" class="card-img-top" alt="...">
-            <div class="card-body text-start pt-5">
+            <img src="<?php echo base_url('assets/image/departemen/foto/' . $d['image']); ?>" class="card-img-top " style="height: 250px;" alt="...">
+            <div class="card-body h-100 pt-5" style="text-align:justify;">
               <h5 class="card-title ">Departemen <?= $d['nama'] ?></h5>
               <p class="card-text"><?= $d['deskripsi'] ?></p>
             </div>
@@ -492,24 +492,26 @@
       foreach ($lowongan as $s) {
       ?>
         <div class="col">
-          <div class="card text-capitalize " style="border-radius: 10px; height:500px;">
-            <div class="d-flex justify-content-center pt-4" style="width: 100%;">
+          <div class="card text-capitalize h-100" style="border-radius: 10px; height:500px;">
+            <div class="d-flex justify-content-center pt-4">
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
             </div>
-            <div class="card-body text-center pt-3 w-100">
+            <div class="card-body h-100 text-center pt-3 w-100">
               <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>
-              <div class="card-text text-truncate">
-                <?php echo $s['ket']; ?>
+              <div class="card-text " style="text-align: justify;">
+                <?php echo $s['deskripsi']; ?>
               </div>
-              <p>Lokasi - <?php echo $s['lokasi']; ?></p>
-              <p>
-                <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>
-              </p>
-              <div class="d-grid gap-2">
-                <a href="<?php echo base_url("landingpage/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
-                  Lihat Selengkapnya
-                </a>
-              </div>
+
+            </div>
+            <p class="text-center">Lokasi - <?php echo $s['lokasi']; ?></p>
+
+            <p class="text-center">
+              <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>
+            </p>
+            <div class="d-grid gap-2 m-2 pb-2">
+              <a href="<?php echo base_url("landingpage/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
+                Lihat Selengkapnya
+              </a>
             </div>
           </div>
         </div>
@@ -572,19 +574,44 @@
 <!-- End Lowongan -->
 
 <!-- Artikel -->
-<section class="landArtikel" id="landArtikel">
+<section id="landArtikel1" >
   <div class="container py-5">
-    <h2>
+    <h2 style="padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;">
       Artikel
-    </h2>
-    <p>
+    </h2> 
+    <p class="text-center">
       Beberapa artikel tentang pentang perusahaan yang bisa anda baca
     </p>
   </div>
 
   <div class="container-fluid pt-5 px-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
+
+      <?php
+      foreach ($artikel as $d) {
+      ?>
+        <div class="col">
+          <div class="card h-100 " style="border-radius: 10px;">
+            <img src="<?php echo base_url('assets/image/artikel/img/' . $d['image']); ?>" class="card-img-top" style="height: 250px;" alt="...">
+            <div class="card-body h-100 " style="text-align: justify;">
+              <h5 class="card-title "><?= $d['judul_artikel'] ?></h5>
+              <p class="card-text pt-2"><?= $d['isi_artikel'] ?></p>
+            </div>
+           
+
+            <h5 class="card-footer" style="background: #fff;"><small><?= $d['post_date'] ?></small></h5>
+
+          </div>
+        </div>
+
+      <?php
+      }
+      ?>
+
+      <!-- <div class="col">
         <div class="card " style="border-radius: 10px;">
           <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
           <div class="card-body text-start pt-5">
@@ -613,11 +640,11 @@
             <h5 class="card-text "><small>Jan 26, 2021</small></h5>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
-  <div class="d-grid gap-2 col-6 mx-auto pb-5">
+  <div class="d-grid gap-2 col-6 mx-auto py-5">
     <a href="<?php echo base_url(); ?>LandingPage/artikel" class="btn btn-primary">Selengkapnya</a>
   </div>
 </section>
