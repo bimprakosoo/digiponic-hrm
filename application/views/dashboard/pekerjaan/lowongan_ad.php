@@ -41,18 +41,6 @@
                                     <th>Lokasi</th>
                                     <th>Perusahaan</th>
                                     <th>Industri</th>
-                                    <th>Tipe Pekerjaan</th>
-                                    <th>Pengalaman Pekerjaan</th>
-                                    <th>Insentif</th>
-                                    <th>Level Pekerjaan</th>
-                                    <th>Pendidikan</th>
-                                    <th>Waktu bekerja</th>
-                                    <th>Gaji</th>
-                                    <th>Post Date</th>
-                                    <th>Keterangan Pekerjaan</th>
-                                    <th>Syarat Pengalaman</th>
-                                    <th>Tunjangan</th>
-                                    <th>Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -65,92 +53,8 @@
                                         <td><?= $m['lokasi']; ?></td>
                                         <td><?= $m['perusahaan']; ?></td>
                                         <td><?= $m['industri']; ?></td>
-                                        <td><?= $m['tipe_pekerjaan']; ?></td>
-                                        <td><?= $m['pengalaman_kerja']; ?> </td>
-                                        <td><?= $m['insentif_lembur']; ?></td>
-                                        <td><?= $m['level_pekerjaan']; ?></td>
-                                        <td><?= $m['pendidikan']; ?></td>
-                                        <td><?= $m['waktu_bekerja']; ?></td>
-                                        <td><?= $m['gaji']; ?></td>
-                                        <td><?= $m['post_date']; ?></td>
                                         <td>
-                                            <!-- BEGIN  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizedModalLg">
-                                                Keterangan
-                                            </button>
-                                            <div class="modal fade" id="sizedModalLg" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Keterangan</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <?= $m['ket']; ?>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td>
-                                            <!-- BEGIN  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#syarat">
-                                                Syarat Pengalaman
-                                            </button>
-                                            <div class="modal fade" id="syarat" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg text-start" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Syarat Pengalaman</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <?= $m['syarat_pengalaman']; ?>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td>
-                                            <!-- BEGIN  modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tunjangan">
-                                                Tunjangan
-                                            </button>
-                                            <div class="modal fade" id="tunjangan" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-md " role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Tunjangan</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <?= $m['tunjangan']; ?>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td><img src="<?= base_url('assets/image/lowongan/') . $m['image']; ?>" style="width: 50px; height: 50px;"></td>
-                                        <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-insentif_lembur="<?= $m['insentif_lembur']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>" data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" data-image="<?= base_url('assets/image/lowongan/') . $m['image']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-deskripsi="<?= $m['deskripsi']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-insentif_lembur="<?= $m['insentif_lembur']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>" data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" data-image="<?= base_url('assets/image/lowongan/') . $m['image']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -228,6 +132,10 @@
                                 <td><span id="dtl_post"></span></td>
                             </tr>
                             <tr>
+                                <th>Deskripsi Singkat</th>
+                                <td><span id="dtl_desk"></span></td>
+                            </tr>
+                            <tr>
                                 <th>Keterangan Kerja</th>
                                 <td><span id="dtl_ket"></span></td>
                             </tr>
@@ -281,6 +189,7 @@
             var waktu_bekerja = $(this).data('waktu_bekerja');
             var gaji = $(this).data('gaji');
             var post_date = $(this).data('post_date');
+            var deskripsi = $(this).data('deskripsi');
             var ket = $(this).data('ket');
             var syarat_pengalaman = $(this).data('syarat_pengalaman');
             var tunjangan = $(this).data('tunjangan');
@@ -297,6 +206,7 @@
             $('#dtl_waktu').text(waktu_bekerja);
             $('#dtl_gaji').text(gaji);
             $('#dtl_post').text(post_date);
+            $('#dtl_desk').text(deskripsi);
             $('#dtl_ket').text(ket);
             $('#dtl_syarat').text(syarat_pengalaman);
             $('#dtl_tunjangan').text(tunjangan);

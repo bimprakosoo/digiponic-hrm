@@ -31,7 +31,7 @@
     
     <div class="row">
       <div class="col-sm-6">
-        <div class="card mb-3">
+        <div class="card mb-3 h-100">
           <div class="card-body">
             <h5 class="card-title pt-lg-5 pb-lg-3">Visi</h5>
             <p class="card-text pt-lg-4 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card mb-3 h-100">
           <div class="card-body pb-2">
             <h5 class="card-title pt-lg-5 pb-lg-3">Misi</h5>
             <p class="card-text pt-lg-4 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,

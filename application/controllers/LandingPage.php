@@ -24,6 +24,7 @@ class LandingPage extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['lowongan'] = $this->M_landingpage->lowongan_lan(3, $data['start']);
         $data['dept'] = $this->M_landingpage->departemen(3, $data['start']);
+        $data['artikel'] = $this->M_landingpage->artikel(3, $data['start']);
 
         // $this->load->view('template/header');
         $this->load->view('landingpage/landingpage_view', $data);

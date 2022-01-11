@@ -49,7 +49,31 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['judul_artikel']; ?></td>
-                                        <td><?= $d['isi_artikel']; ?></td>
+                                         <td>
+                                            <!-- Fungsi  modal -->
+                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#deskripsi" data-isi_artikel="<?= $d['isi_artikel']; ?>">
+                                                Deskripsi
+                                            </button>
+                                            <div class="modal fade" id="deskripsi" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Deskripsi Singkat</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                            <span  id="dtl_isi"></span>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                        </td>
                                         <td><img src="<?= base_url('assets/image/artikel/img/') . $d['image']; ?>" style="width: 50px; height: 50px;"></td>
 
                                         <td><?= $d['post_date']; ?></td>
@@ -141,7 +165,7 @@
                             </tr>
                             <tr>
                                 <th>Isi Artikel</th>
-                                <td><span id="dtl_isi"></span></td>
+                                <td><span id="dtl_isi2"></span></td>
                             </tr>
                             <tr>
                             <th>Image</th>
@@ -182,9 +206,11 @@
             var post_date = $(this).data('post_date');            
             $('#dtl_judul').text(judul_artikel);
             $('#dtl_isi').text(isi_artikel);
+            $('#dtl_isi2').text(isi_artikel);
             $('#dtl_image').attr("src", image);
             $('#dtl_post').text(post_date);
 
         });
     });
 </script>
+
