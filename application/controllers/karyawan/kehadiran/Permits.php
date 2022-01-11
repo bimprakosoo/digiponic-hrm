@@ -1,8 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-date_default_timezone_set('Asia/Jakarta');
-class Absensi extends CI_Controller
+class Permits extends CI_Controller
 {
     var $API = "";
 
@@ -16,6 +15,7 @@ class Absensi extends CI_Controller
         $this->load->model('M_admin');
         $this->load->model('M_auth');
         $this->load->model('M_menu');
+        $this->load->model('M_upload');
         $this->load->model('M_kehadiran');
 
 
@@ -29,55 +29,42 @@ class Absensi extends CI_Controller
 
     public function index()
     {
-        $iduser    = $this->session->userdata('id');
-        $data['user'] = $this->M_auth->getUserRow();
-        // $data['idabsen'] = $this->M_kehadiran->getAbsensi();
-        $data['absen'] = $this->M_kehadiran->getAbsensi($iduser)->result_array();
-
-
-        $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
+        $idUser = $this->session->userdata('id');
+        $data['title'] = 'Izin';
+        $data['izin']  = $this->M_kehadiran->getIzin($idUser)->result_array();
+        $this->load->view('karyawan/kehadiran/v_surat_izin', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 
-    // insert  
-    function Absen_CheckIn()
+    // insert data form izin   
+    function izinForm()
     {
-        $dates = date("Y-m-d");
-        $times = date('H:i:s');
+        $date = date("Y-m-d");
+        $time = date('H:i:s');
 
         if (isset($_POST['submit'])) {
+
             $data = array(
                 'karyawan_id'   =>  $this->input->post('UserId'),
-                'tanggal'           =>  $dates,
-                'jam_masuk'   =>  $times
+                'date_created'  =>  $date,
+                'time_created'  =>  $time,
+                'keterangan'    =>  $this->input->post('keterangan'),
+                'image'         =>  $this->M_upload->izin()
             );
 
-            $insert = $this->M_kehadiran->postCheckIn($data);
+
+
+            $insert = $this->M_kehadiran->postIzin($data);
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Check-in berhasil');
-                redirect('karyawan/kehadiran/absensi');
+                redirect('karyawan/kehadiran/permits');
             } else {
                 $this->session->set_flashdata('status', 'Check-in gagal');
-                redirect('karyawan/kehadiran/absensi');
+                redirect('karyawan/kehadiran/permits');
             }
         } else {
-            redirect('karyawan/kehadiran/absensi');
+            redirect('karyawan/kehadiran/permits');
         }
-    }
-
-
-    // update 
-    function Absen_CheckOut()
-    {
-        $iduser   = $this->session->userdata('id');
-        
-        $times = date('H:i:s');
-        $dates = date("Y-m-d");
-        $data = array(
-            'jam_keluar'    =>  $times
-        );
-        $this->M_kehadiran->updateAbsen($dates, $data, $iduser);
-        redirect('karyawan/kehadiran/absensi');
     }
 }
