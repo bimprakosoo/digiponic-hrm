@@ -75,28 +75,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-form-label col-sm-4 text-sm-left">Kehadiran</label>
                                             <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
+                                                <input type="text" type="disable" value="100%">
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
-                                            <label class="col-form-label col-sm-4 text-sm-left">Penampilan</label>
+                                            <label class="col-form-label col-sm-4 text-sm-left">SP</label>
                                             <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-form-label col-sm-4 text-sm-left">Sikap</label>
-                                            <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
+                                                <span>2</span>
                                             </div>
                                         </div>
 

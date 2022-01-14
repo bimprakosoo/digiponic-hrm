@@ -27,9 +27,7 @@ class Pengunduran_diri extends CI_Controller
     public function index()
     {
         $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
+        
         $this->load->view('dashboard/cuti/v_pengunduran_diri', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

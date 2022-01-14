@@ -17,24 +17,20 @@ class Mutasi extends CI_Controller
         $this->load->model('M_auth');
         $this->load->model('M_menu');
         $this->load->model('M_mutasi');
-        $this->load->model('M_organisasi');
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->model('M_organisasi');  
     }
-
 
     public function index()
     {
-        $data['title'] = 'Mutasi';
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
+        $data['title'] = 'Mutasi';
+
         $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
         $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
 
-        // // organisasi
+        // organisasi
         // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
         $data['department'] = $this->M_mutasi->getAllDepartment()->result_array();
         $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
@@ -42,6 +38,7 @@ class Mutasi extends CI_Controller
         $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
         $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/mutasi/v_mutasi', $data);
         $this->load->view('template/template_admin/footer_ad');
@@ -105,14 +102,13 @@ class Mutasi extends CI_Controller
                 'department_id'             => $this->input->post('department'),
                 'divisi_id'                 => $this->input->post('divisi'),
                 'jabatan_id'                => $this->input->post('jabatan'),
-                'golongan_id'                => $this->input->post('golongan'),
+                'golongan_id'               => $this->input->post('golongan'),
                 'posisi_id'                 => $this->input->post('posisi'),
                 'penempatan_id'             => $this->input->post('penempatan'),
                 'jenis_mutasi'              => $this->input->post('jenis_mutasi'),   // promosi | mutasi | demosi
                 'status'                    => 0,  // peding | approve[hrd]
                 'pengaju'                   => $this->input->post('user_id')
             );
-
 
             $insert = $this->M_admin->insert_DataMutasi($data);
 
