@@ -32,8 +32,9 @@
                 <div class="card-body" style="margin-top: -30px;">
 
                     <div class="row">
-                        <div class="col-12 col-xl-4">
 
+                        <!-- data karyawan -->
+                        <div class="col-12 col-xl-4">
                             <div class="card-body">
                                 <form>
                                     <div class="mb-3">
@@ -50,10 +51,7 @@
                                             <option>...</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3" style="width: 75%;">
-                                        <label class="form-label">Tanggal Buat</label>
-                                        <input type="date" class="form-control" placeholder="Tanggal Buat">
-                                    </div>
+                                    
                                     <div class="mb-3">
                                         <label class="form-label">Keterangan</label>
                                         <textarea class="form-control" placeholder="Textarea" rows="1"></textarea>
@@ -61,6 +59,8 @@
                                 </form>
                             </div>
                         </div>
+
+                        <!-- data KPI -->
                         <div class="col-12 col-xl-8">
                             <div class="card" style="background: #FFFFFF;box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.15);border-radius: 5px;">
                                 <div class="card-body">

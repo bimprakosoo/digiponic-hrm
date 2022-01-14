@@ -63,7 +63,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th >Divisi</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" >Action</th>
                                 </tr>
                             </tfoot> -->
                         </table>

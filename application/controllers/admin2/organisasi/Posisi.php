@@ -25,6 +25,8 @@ class Posisi extends CI_Controller
     public function index()
     {
         $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+
         $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
 
         $this->load->view('template/template_admin/header_ad', $data);
@@ -41,7 +43,7 @@ class Posisi extends CI_Controller
             $data = array(
                 // 'id'         =>  $this->input->post('id'),
                 'nama'             =>  $this->input->post('posisi'),
-                'golongan_id'        =>  $this->input->post('golongan')
+                'jabatan_id'        =>  $this->input->post('jabatan')
             );
 
             $insert = $this->M_organisasi->postDataPosisi($data);
