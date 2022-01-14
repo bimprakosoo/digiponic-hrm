@@ -51,10 +51,10 @@ class M_Admin extends CI_Model
         return $this->db->get();
     }
 
-    // get data lamaran masuk
+    // sementara nama karyawan di ambil dari tbl [users]
     public function data_karyawan()
     {
-        $this->db->select('tbl_karyawan.nama AS namaKaryawan,
+        $this->db->select('users.nama AS karyawan,
         perusahaan.nama_perusahaan AS namaPerusahaan,
         department.nama AS namaDepartement,
         divisi.nama AS namaDivisi,
@@ -63,7 +63,7 @@ class M_Admin extends CI_Model
         penempatan.nama AS namaPenempatan');
         $this->db->from('data_karyawan');
 
-        $this->db->join('tbl_karyawan', 'tbl_karyawan.id = data_karyawan.karyawan_id');
+        $this->db->join('users', 'users.id = data_karyawan.karyawan_id');
         $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id');
         $this->db->join('department', 'department.id = data_karyawan.department_id');
         $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id');

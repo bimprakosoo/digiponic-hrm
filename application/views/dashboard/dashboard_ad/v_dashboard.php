@@ -95,15 +95,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <?php $i = 1;
                                         foreach ($getMutasi as $m) : ?>
                                             <tr>
+
                                                 <td><?= $m['userID']; ?></td>
                                                 <td><?= $m['jenis_mutasi']; ?></td>
                                                 <td><?= $m['tgl_pengajuan']; ?></td>
                                                 <td><?= $m['status']; ?></td>
 
-                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>">
+                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>" data-image="<?= base_url('assets/image/profil/') . $m['image']; ?>">
                                                         <i class="fas fa-eye"></i></button>
                                                 </td>
                                             </tr>
@@ -120,72 +122,7 @@
             </div>
         </div>
 
-        <!-- Detail  modal -->
-        <!-- <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Detail Perusahaan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body table-responsive ">
-                        <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <th>Tgl Pengajuan</th>
-                                    <td><span id="tglpengajuan"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Nama Karyawan</th>
-                                    <td><span id="dtl-karyawan"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>department</th>
-                                    <td><span id="dtl-department"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>divisi</th>
-                                    <td><span id="dtl-divisi"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>jabatan</th>
-                                    <td><span id="dtl-jabatan"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>golongan</th>
-                                    <td><span id="dtl-golongan"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>posisi</th>
-                                    <td><span id="dtl-posisi"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>penempatan</th>
-                                    <td><span id="dtl-penempatan"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>status</th>
-                                    <td><span id="dtl-status"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>jenisMutasi</th>
-                                    <td><span id="dtl-jenismutasi"></span></td>
-                                </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- END  modal -->
-
-      
         <!-- Modal: modalQuickView -->
         <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -198,7 +135,7 @@
                                     <!--Slides-->
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
-                                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).webp" alt="First slide">
+                                            <img class="d-block w-100" src="" alt="" id="dtl_image" alt="Profile">
                                         </div>
                                     </div>
                                     <!--/.Slides-->
@@ -305,7 +242,7 @@
 
                                             <!-- Card header -->
                                             <div class="card-header" id="headingTwo2">
-                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
+                                                <a data-toggle="collapse" href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
                                                     <h5 class="mb-0">
                                                         Keterangan <i class="fas fa-angle-down rotate-icon"></i>
                                                     </h5>
@@ -313,7 +250,7 @@
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapseTwo2"  role="tabpanel" aria-labelledby="headingTwo2" >
+                                            <div id="collapseTwo2" role="tabpanel" aria-labelledby="headingTwo2">
                                                 <div class="card-body">
                                                     pengajuan karyawana ullum utuk di promosikan nai jabatan
                                                 </div>
@@ -322,11 +259,7 @@
                                         </div>
                                         <!-- Accordion card -->
 
-                                        <div class="text-center">
 
-                                            <button type="button" class="btn btn-danger">Ditolak</button>
-                                            <button type="button" class="btn btn-primary">Disetujui</button>
-                                        </div>
 
 
                                     </div>
@@ -359,7 +292,11 @@
 
                                             </div>
                                         </div> -->
+                                        <div class="text-center">
 
+                                            <button type="button" class="btn btn-danger">Ditolak</button>
+                                            <button type="button" class="btn btn-primary">Disetujui</button>
+                                        </div>
                                     </div>
                                     <!-- /.Add to Cart -->
                             </div>
@@ -403,6 +340,7 @@
             var D_penempatan = $(this).data('penempatan');
             var D_status = $(this).data('status');
             var D_jenismutasi = $(this).data('jenismutasi');
+            var image = $(this).data('image');
             $('#tglpengajuan').text(D_tglpengajuan);
             $('#dtl-karyawan').text(D_karyawan);
             $('#dtl-department').text(D_department);
@@ -413,6 +351,7 @@
             $('#dtl-penempatan').text(D_penempatan);
             $('#dtl-status').text(D_status);
             $('#dtl-jenismutasi').text(D_jenismutasi);
+            $('#dtl_image').attr("src", image);
         });
     });
 </script>

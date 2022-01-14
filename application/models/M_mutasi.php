@@ -45,7 +45,7 @@ class M_mutasi extends CI_Model
     public function get_DataMutasi2()
     {
         $this->db->select(' mutasi.id, mutasi.tgl_pengajuan,
-        users.nama AS userID,
+        users.nama AS userID, users.image,
         department.nama AS namaDepartment,
         divisi.nama AS namaDivisi,
         jabatan.nama AS namaJabatan,
