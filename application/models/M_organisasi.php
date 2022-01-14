@@ -159,9 +159,9 @@ class M_organisasi extends CI_Model
     // Posisi----------------------------------------------------------------------------------------------------
     public function getDataPosisi()
     {
-        $this->db->select('posisi.id AS pos_id, posisi.nama, golongan.nama AS nama_golongan');
+        $this->db->select('posisi.id AS pos_id, posisi.nama, jabatan.nama AS nama_jabatan');
         $this->db->from('posisi');
-        $this->db->join('golongan', 'golongan.id = posisi.golongan_id');
+        $this->db->join('jabatan', 'jabatan.id = posisi.jabatan_id');
 
         return $this->db->get();
     }

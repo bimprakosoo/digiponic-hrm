@@ -38,7 +38,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>Golongan</th>
+                                    <th>Jabatan</th>
                                     <th scope="col">Action</th>
 
                                 </tr>
@@ -49,9 +49,9 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
-                                        <td><?= $d['nama_golongan']; ?></td>
+                                        <td><?= $d['nama_jabatan']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_posisi="<?= $d['nama']; ?>" data-nama_golongan="<?= $d['nama_golongan']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_posisi="<?= $d['nama']; ?>" data-nama_jabatan="<?= $d['nama_jabatan']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/posisi/edit/") . $d['pos_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/posisi/hapus/") . $d['pos_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -87,15 +87,15 @@
                             </div>
                         </div>
 
-                        <!-- Golongan -->
+                        <!-- Jabatan -->
                         <!-- <div class="mb-3 col-md-6"> -->
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="title">Golongan</label>
-                                    <select class="form-control" id="golongan" name="golongan" required>
-                                        <option value="">-- Pilih Golongan --</option>
-                                        <?php foreach ($golongan as $org) : ?>
-                                            <option value="<?= $org['gol_id'] ?>"><?= $org['nama'] ?></option>
+                                    <label for="title">Jabatan</label>
+                                    <select class="form-control" id="jabatan" name="jabatan" required>
+                                        <option value="">-- Pilih Jabatan --</option>
+                                        <?php foreach ($jabatan as $org) : ?>
+                                            <option value="<?= $org['jab_id'] ?>"><?= $org['nama'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -126,12 +126,12 @@
                     <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                         <tbody>
                             <tr>
-                                <th>Nama Golongan</th>
+                                <th>Nama jabatan</th>
                                 <td><span id="dtl_posisi"></span></td>
                             </tr>
                             <tr>
                                 <th>Jabatan</th>
-                                <td><span id="dtl_golongan"></span></td>
+                                <td><span id="dtl_jabatan"></span></td>
                             </tr>
 
                         </tbody>
@@ -158,9 +158,9 @@
     $(document).ready(function() {
         $(document).on('click', '#set_dtl', function() {
             var nama_posisi = $(this).data('nama_posisi');
-            var nama_golongan = $(this).data('nama_golongan');
+            var nama_jabatan = $(this).data('nama_jabatan');
             $('#dtl_posisi').text(nama_posisi);
-            $('#dtl_golongan').text(nama_golongan);
+            $('#dtl_jabatan').text(nama_jabatan);
 
         });
     });

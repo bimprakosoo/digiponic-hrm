@@ -43,4 +43,29 @@ class Kpi_karyawan extends CI_Controller
         $this->load->view('dashboard/penilaian_kerja/v_tambah_karyawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
+
+    public function postKPI()
+    {
+        $dates = date("Y-m-d");
+
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'tanggal'           =>  $dates,
+                'karyawan_id'       =>  $this->input->post('UserId'),
+                
+            );
+
+            $insert = $this->M_kehadiran->postCheckIn($data);
+
+        //     if ($insert) {
+        //         $this->session->set_flashdata('status', 'Check-in berhasil');
+        //         redirect('karyawan/kehadiran/absensi');
+        //     } else {
+        //         $this->session->set_flashdata('status', 'Check-in gagal');
+        //         redirect('karyawan/kehadiran/absensi');
+        //     }
+        // } else {
+        //     redirect('karyawan/kehadiran/absensi');
+        }
+    }
 }

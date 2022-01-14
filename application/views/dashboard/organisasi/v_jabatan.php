@@ -63,7 +63,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th >Divisi</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" >Action</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -179,7 +179,7 @@
             initComplete: function() {
                 this.api().columns().every(function() {
                     var column = this;
-                    var select = $('<select><option value="">No</option></select>')
+                    var select = $('<select><option value="">All</option></select>')
                         .appendTo($(column.header('')).empty())
                         .on('change', function() {
                             var val = $.fn.dataTable.util.escapeRegex(

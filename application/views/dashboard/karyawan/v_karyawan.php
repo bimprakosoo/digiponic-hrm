@@ -21,18 +21,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>No</td>
-                        <td>Nama Karyawan</td>
-                        <td>Tgl Mutasi</td>
-                        <td>Target</td>
-                        <td>Departemen</td>
-                        <td>Divisi </td>
-                        <td>Jabatan</td>
-                        <td>Posisi</td>
-                        <td>Penempatan</td>
-                        <td>Jenis Mutasi</td>
-                        <td>Jenis Mutasi</td>
-                        <td scope="col">Action</td>
+                        <?php var_dump($datakaryawan); die; ?>
+                        <?php $i = 1;
+                        foreach ($datakaryawan as $d) : ?>
+                            
+                        <?php $i++;
+                        endforeach; ?>
                     </tr>
                 </tbody>
             </table>
