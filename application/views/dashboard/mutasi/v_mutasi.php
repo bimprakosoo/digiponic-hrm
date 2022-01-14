@@ -47,7 +47,6 @@
                                          <td><?= $md['jenis_mutasi']; ?></td>
                                          <td><?= $md['tgl_pengajuan']; ?></td>
                                          <td><?= $md['status']; ?></td>
-                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
                                          <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $md['tgl_pengajuan']; ?>" data-karyawan="<?= $md['userID']; ?>" data-department="<?= $md['namaDepartment']; ?>" data-divisi="<?= $md['namaDivisi']; ?>" data-jabatan="<?= $md['namaJabatan']; ?>" data-golongan="<?= $md['namaGolongan']; ?>" data-posisi="<?= $md['namaPosisi']; ?>" data-penempatan="<?= $md['namaPenempatan']; ?>" data-status="<?= $md['status']; ?>" data-jenismutasi="<?= $md['jenis_mutasi']; ?>">
                                                  <i class="fas fa-eye"></i></button>

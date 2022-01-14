@@ -5,6 +5,7 @@
         </ol>
     </nav>
 </div>
+
 <main class="content">
     <div class="container-fluid p-0">
 
@@ -85,21 +86,29 @@
                                 <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <!-- <th>kepala cabang</th>
-                                            <th>nama cabang</th>
-                                            <th>nama perusahaan</th>
-                                            <th>Pengajuan</th> -->
-
-                                            
-                                            <th>jenis mutasi</th>
-                                            <th>jenis mutasi</th>
-
+                                            <!-- <th>No</th> -->
+                                            <th>Nama Karyawan</th>
+                                            <th>Jenis Mutasi</th>
+                                            <th>Tgl Pengajuan</th>
+                                            <th>status</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i = 1;
+                                        foreach ($getMutasi as $m) : ?>
+                                            <tr>
+                                                <td><?= $m['userID']; ?></td>
+                                                <td><?= $m['jenis_mutasi']; ?></td>
+                                                <td><?= $m['tgl_pengajuan']; ?></td>
+                                                <td><?= $m['status']; ?></td>
 
+                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>">
+                                                        <i class="fas fa-eye"></i></button>
+                                                </td>
+                                            </tr>
+                                        <?php $i++;
+                                        endforeach; ?>
                                     </tbody>
                                     </tbody>
                                 </table>
@@ -111,6 +120,254 @@
             </div>
         </div>
 
+        <!-- Detail  modal -->
+        <!-- <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Detail Perusahaan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body table-responsive ">
+                        <table class="table table-bordered " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th>Tgl Pengajuan</th>
+                                    <td><span id="tglpengajuan"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Nama Karyawan</th>
+                                    <td><span id="dtl-karyawan"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>department</th>
+                                    <td><span id="dtl-department"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>divisi</th>
+                                    <td><span id="dtl-divisi"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>jabatan</th>
+                                    <td><span id="dtl-jabatan"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>golongan</th>
+                                    <td><span id="dtl-golongan"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>posisi</th>
+                                    <td><span id="dtl-posisi"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>penempatan</th>
+                                    <td><span id="dtl-penempatan"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>status</th>
+                                    <td><span id="dtl-status"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>jenisMutasi</th>
+                                    <td><span id="dtl-jenismutasi"></span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- END  modal -->
+
+      
+        <!-- Modal: modalQuickView -->
+        <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <!--Carousel Wrapper-->
+                                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                                    <!--Slides-->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).webp" alt="First slide">
+                                        </div>
+                                    </div>
+                                    <!--/.Slides-->
+
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                            </div>
+                            <div class="col-lg-7">
+                                <h2 class="h2-responsive product-name">
+                                    <strong id="dtl-karyawan"></strong>
+                                </h2>
+                                <h5 class="h4-responsive">
+                                    Pengajuan
+                                    <span class="green-text">
+                                        <strong id="dtl-jenismutasi"></strong>
+                                    </span>
+
+                                    </h6>
+
+                                    <!--Accordion wrapper-->
+                                    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                                        <!-- Accordion card 1 -->
+                                        <div class="card">
+
+                                            <!-- Card header -->
+                                            <div class="card-header" role="tab" id="headingOne1">
+                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                                    <h5 class="mb-0">
+                                                        Detail Karyawan <i class="fas fa-angle-down rotate-icon"></i>
+                                                    </h5>
+                                                </a>
+                                            </div>
+
+                                            <!-- Card body -->
+                                            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <span>Tanggal Pengajuan</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="tglpengajuan"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Department</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-department"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Devisi</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-divisi"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Jabatan</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-jabatan"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Golongan</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-golongan"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Posisi</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-posisi"></span>
+                                                        </div>
+
+                                                        <!--  -->
+                                                        <div class="col-md-6">
+                                                            <span>Penempatan</span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span id="dtl-penempatan"></span>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- Accordion card -->
+
+                                        <!-- Accordion card 2 -->
+                                        <div class="card">
+
+                                            <!-- Card header -->
+                                            <div class="card-header" id="headingTwo2">
+                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
+                                                    <h5 class="mb-0">
+                                                        Keterangan <i class="fas fa-angle-down rotate-icon"></i>
+                                                    </h5>
+                                                </a>
+                                            </div>
+
+                                            <!-- Card body -->
+                                            <div id="collapseTwo2"  role="tabpanel" aria-labelledby="headingTwo2" >
+                                                <div class="card-body">
+                                                    pengajuan karyawana ullum utuk di promosikan nai jabatan
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- Accordion card -->
+
+                                        <div class="text-center">
+
+                                            <button type="button" class="btn btn-danger">Ditolak</button>
+                                            <button type="button" class="btn btn-primary">Disetujui</button>
+                                        </div>
+
+
+                                    </div>
+                                    <!-- Accordion wrapper -->
+
+
+                                    <!-- Add to Cart -->
+                                    <div class="card-body">
+                                        <!-- <div class="row">
+                                            <div class="col-md-6">
+
+                                                <select class="md-form mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Choose your option</option>
+                                                    <option value="1">White</option>
+                                                    <option value="2">Black</option>
+                                                    <option value="3">Pink</option>
+                                                </select>
+                                                <label>Select color</label>
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <select class="md-form mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Choose your option</option>
+                                                    <option value="1">XS</option>
+                                                    <option value="2">S</option>
+                                                    <option value="3">L</option>
+                                                </select>
+                                                <label>Select size</label>
+
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+                                    <!-- /.Add to Cart -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 <script>
@@ -129,5 +386,39 @@
             "scrollCollapse": true,
             "paging": false
         });
+    });
+</script>
+
+<!-- detail-data -->
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var D_tglpengajuan = $(this).data('tglpengajuan');
+            var D_karyawan = $(this).data('karyawan');
+            var D_department = $(this).data('department');
+            var D_divisi = $(this).data('divisi');
+            var D_jabatan = $(this).data('jabatan');
+            var D_golongan = $(this).data('golongan');
+            var D_posisi = $(this).data('posisi');
+            var D_penempatan = $(this).data('penempatan');
+            var D_status = $(this).data('status');
+            var D_jenismutasi = $(this).data('jenismutasi');
+            $('#tglpengajuan').text(D_tglpengajuan);
+            $('#dtl-karyawan').text(D_karyawan);
+            $('#dtl-department').text(D_department);
+            $('#dtl-divisi').text(D_divisi);
+            $('#dtl-jabatan').text(D_jabatan);
+            $('#dtl-golongan').text(D_golongan);
+            $('#dtl-posisi').text(D_posisi);
+            $('#dtl-penempatan').text(D_penempatan);
+            $('#dtl-status').text(D_status);
+            $('#dtl-jenismutasi').text(D_jenismutasi);
+        });
+    });
+</script>
+<script>
+    // Material Select Initialization
+    $(document).ready(function() {
+        $('.mdb-select').materialSelect();
     });
 </script>
