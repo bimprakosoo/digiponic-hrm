@@ -149,7 +149,7 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td><img src="" alt="" id="dtl_image"></td>
+                                <td><img src="" alt="" id="dtl_image" ></td>
                             </tr>
                         </tbody>
                     </table>

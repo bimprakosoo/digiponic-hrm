@@ -185,7 +185,7 @@
         </div> -->
         <!-- END  modal -->
 
-      
+
         <!-- Modal: modalQuickView -->
         <div class="modal fade" id="detail-data" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -217,16 +217,15 @@
                                     </span>
 
                                     </h6>
-
                                     <!--Accordion wrapper-->
                                     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
-                                        <!-- Accordion card 1 -->
+                                        <!-- Accordion card -->
                                         <div class="card">
 
                                             <!-- Card header -->
                                             <div class="card-header" role="tab" id="headingOne1">
-                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1 collapseOne2">
                                                     <h5 class="mb-0">
                                                         Detail Karyawan <i class="fas fa-angle-down rotate-icon"></i>
                                                     </h5>
@@ -300,12 +299,12 @@
                                         </div>
                                         <!-- Accordion card -->
 
-                                        <!-- Accordion card 2 -->
-                                        <div class="card">
+                                        <!-- Accordion card -->
+                                        <div class="card" >
 
                                             <!-- Card header -->
-                                            <div class="card-header" id="headingTwo2">
-                                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
+                                            <div class="card-header" role="tab" id="headingTwo2">
+                                                <a class="collapsed" data-toggle="collapse"  href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
                                                     <h5 class="mb-0">
                                                         Keterangan <i class="fas fa-angle-down rotate-icon"></i>
                                                     </h5>
@@ -313,7 +312,7 @@
                                             </div>
 
                                             <!-- Card body -->
-                                            <div id="collapseTwo2"  role="tabpanel" aria-labelledby="headingTwo2" >
+                                            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" >
                                                 <div class="card-body">
                                                     pengajuan karyawana ullum utuk di promosikan nai jabatan
                                                 </div>
@@ -322,20 +321,47 @@
                                         </div>
                                         <!-- Accordion card -->
 
-                                        <div class="text-center">
+                                        <!-- Accordion card -->
+                                        <!-- <div class="card"> -->
 
-                                            <button type="button" class="btn btn-danger">Ditolak</button>
-                                            <button type="button" class="btn btn-primary">Disetujui</button>
-                                        </div>
+                                            <!-- Card header -->
+                                            <!-- <div class="card-header" role="tab" id="headingThree3">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                                                    <h5 class="mb-0">
+                                                        Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                                    </h5>
+                                                </a>
+                                            </div> -->
 
+                                            <!-- Card body -->
+                                            <!-- <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                                    squid. 3
+                                                    wolf moon officia aute,
+                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                </div>
+                                            </div> -->
 
+                                        <!-- </div> -->
+                                        <!-- Accordion card -->
+
+                                    <div class="text-center pt-2">
+
+                                        <button type="button" class="btn btn-danger">Ditolak</button>
+                                        <button type="button" class="btn btn-primary">Disetujui</button>
                                     </div>
-                                    <!-- Accordion wrapper -->
 
 
-                                    <!-- Add to Cart -->
-                                    <div class="card-body">
-                                        <!-- <div class="row">
+                            </div>
+                            <!-- Accordion wrapper -->
+
+
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <!-- <div class="row">
                                             <div class="col-md-6">
 
                                                 <select class="md-form mdb-select colorful-select dropdown-primary">
@@ -360,14 +386,14 @@
                                             </div>
                                         </div> -->
 
-                                    </div>
-                                    <!-- /.Add to Cart -->
                             </div>
+                            <!-- /.Add to Cart -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </main>
 <script>

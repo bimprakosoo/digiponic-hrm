@@ -74,7 +74,7 @@
                                             </div>
                                             <!-- END  modal -->
                                         </td>
-                                        <td><img src="<?= base_url('assets/image/artikel/img/') . $d['image']; ?>" style="width: 50px; height: 50px;"></td>
+                                        <td><img class="rounded-circle" src="<?= base_url('assets/image/artikel/img/') . $d['image']; ?>" style="width: 50px; height: 50px;"></td>
 
                                         <td><?= $d['post_date']; ?></td>
                                         <td>

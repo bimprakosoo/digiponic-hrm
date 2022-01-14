@@ -58,14 +58,14 @@
                                 <?php $i++;
                                 endforeach; ?>
                             </tbody>
-                            <tfoot class="table-dark">
+                            <!-- <tfoot class="table-dark">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th >Divisi</th>
                                     <th scope="col">Action</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> -->
                         </table>
                     </div>
                 </div>
@@ -176,26 +176,28 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable({
-            initComplete: function() {
-                this.api().columns().every(function() {
-                    var column = this;
-                    var select = $('<select><option value="">No</option></select>')
-                        .appendTo($(column.header('')).empty())
-                        .on('change', function() {
-                            var val = $.fn.dataTable.util.escapeRegex(
-                                $(this).val()
-                            );
+            "scrollX": true
 
-                            column
-                                .search(val ? '^' + val + '$' : '', true, false)
-                                .draw();
-                        });
+            // initComplete: function() {
+            //     this.api().columns().every(function() {
+            //         var column = this;
+            //         var select = $('<select><option value="">All</option></select>')
+            //             .appendTo($(column.footer('')).empty())
+            //             .on('change', function() {
+            //                 var val = $.fn.dataTable.util.escapeRegex(
+            //                     $(this).val()
+            //                 );
 
-                    column.data().unique().sort().each(function(d, j) {
-                        select.append('<option value="' + d + '">' + d + '</option>')
-                    });
-                });
-            }
+            //                 column
+            //                     .search(val ? '^' + val + '$' : '', true, false)
+            //                     .draw();
+            //             });
+
+            //         column.data().unique().sort().each(function(d, j) {
+            //             select.append('<option value="' + d + '">' + d + '</option>')
+            //         });
+            //     });
+            // }
         });
     });
 </script>
