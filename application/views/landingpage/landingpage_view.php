@@ -566,7 +566,7 @@
       </div> -->
     </div>
   </div>
-  <div class="selengkapnya d-grid gap-2 col-6 mx-auto py-5">
+  <div class="selengkapnya d-grid gap-2 col-6 mx-auto pt-1">
     <a href="<?php echo base_url(); ?>LandingPage/lowongan" class="btn btn-primary">Selengkapnya</a>
   </div>
 
