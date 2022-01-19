@@ -13,7 +13,17 @@
 
         <!-- Daftar Semua Lowongan -->
         <div class="container-fluid p-0">
+            <div class="card ">
+                <div class="row my-2 my-xl-3 m-2">
+                    <div class="col-auto d-none d-sm-block ">
+                        <h3><strong>Management Karyawan Perusahaan</strong></h3>
+                    </div>
 
+                    <div class="col-auto ml-auto ">
+                        <a href="<?= base_url('admin2/organisasi/department/tambahDept'); ?>" class="btn btn-primary" data-toggle="modal" data-target="#modalStrukturKaryawan">Tambah Data</a>
+                    </div>
+                </div>
+            </div>
 
             <div class="card shadow mb-4 ">
                 <!-- <div class="card-body py-3" style="background: #fff;">
@@ -38,4 +48,3 @@
                             <a href="#training" class="nav-link" data-bs-toggle="tab">Detail karyawan training</a>
                         </li> -->
                     </ul>
-                    

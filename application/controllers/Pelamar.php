@@ -9,14 +9,10 @@ class Pelamar extends CI_Controller
     {
         parent::__construct();
         $this->API = site_url() . 'api';
-        $this->load->library('session');
-        $this->load->library('curl');
-        $this->load->helper('form');
-        $this->load->helper('url');
-        $this->load->library('upload');
-        $this->load->library('form_validation');
+
         $this->load->model('M_pelamar');
         $this->load->model('M_auth');
+        $this->load->model('M_landingpage');
         // if ($this->session->userdata('status') != true) {
         //     redirect(base_url("login"));
         // }
@@ -34,10 +30,12 @@ class Pelamar extends CI_Controller
         // echo 'selamar data ' . $data['user']['nama'];
     }
 
-    public function lamaran()
+    public function lamaran($data_id)
     {
         // $this->load->view('template/headerauth');
         $data['provinsi'] = $this->M_pelamar->getDataprov();
+        $data['lowongan'] = $this->M_landingpage->rowLowongan($data_id)->row_array();
+        
         $this->load->view('lowongan/lowongan_lamaran_view', $data);
     }
 
@@ -59,13 +57,15 @@ class Pelamar extends CI_Controller
                 'jk'                    =>  $this->input->post('jk'),
                 'tgl_lahir'             =>  $this->input->post('tgl_lahir'),
                 'no_telp'               =>  $this->input->post('no_telp'),
-                'status_perkawinan'     =>  $this->input->post('status_perkawinan'),
                 'pendidikan_terakhir'   =>  $this->input->post('pendidikan_terakhir'),
                 'surat_lamaran'         =>  $this->M_pelamar->file_lamaran(),
-                'cv'                    =>  $this->M_pelamar->file_cv()
+                'cv'                    =>  $this->M_pelamar->file_cv(),
+                'perusahaan_id'         =>  $this->input->post('IDperusahaan')
             );
-            $insert =  $this->curl->simple_post($this->API . '/pelamar/create', $data, array(CURLOPT_BUFFERSIZE => 10));
 
+
+            // $insert =  $this->curl->simple_post($this->API . '/pelamar/create', $data);
+            $insert = $this->db->insert('data_lamaran', $data);
             if ($insert) {
                 $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
                 redirect('pelamar');

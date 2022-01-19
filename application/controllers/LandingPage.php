@@ -61,9 +61,10 @@ class LandingPage extends CI_Controller
     public function lowongan_detail($data_id)
     {
         // $data['lowongan'] = $this->M_admin->lowongan_ad()->result_array();
-        $data['lowongan'] = $this->db->get_where('lowongan', ['id_lowongan' => $data_id])->row_array();
+        // $data['lowongan'] = $this->db->get_where('lowongan', ['id_lowongan' => $data_id])->row_array();
+        $data['lowongan'] = $this->M_landingpage->rowLowongan($data_id)->row_array();
 
-        // var_dump($data);
+        // var_dump($data); 
         // die;
         // $this->load->view('template/headerauth');
         // $this->load->view('template/header');

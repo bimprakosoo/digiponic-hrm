@@ -37,6 +37,20 @@
                                  <input type="text" class="form-control" id="lokasi" name="lokasi">
                              </div>
                          </div>
+
+                         <!-- Perusahaan -->
+                         <!-- <div class="mb-3 col-md-6"> -->
+                         <!-- <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Perusahaan</label>
+                                 <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                     <option value="">-- Pilih Perusahaan --</option>
+                                   
+                                 </select>
+                             </div> -->
+                             <!-- </div> -->
+                         <!-- </div> -->
+
                          <!-- Perusahaan -->
                          <div class="modal-body">
                              <div class="form-group">

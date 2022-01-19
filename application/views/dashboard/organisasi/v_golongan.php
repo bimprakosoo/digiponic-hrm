@@ -38,7 +38,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>jabatan</th>
+                                    <!-- <th>jabatan</th> -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -48,9 +48,9 @@
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td>
-                                        <td><?= $d['nama_jabatan']; ?></td>
+                                    
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_golongan="<?= $d['nama']; ?>" data-nama_jabatan="<?= $d['nama_jabatan']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_golongan="<?= $d['nama']; ?>" "><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/golongan/edit/") . $d['gol_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/golongan/hapus/") . $d['gol_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -88,17 +88,7 @@
 
                         <!-- Jabatan -->
                         <!-- <div class="mb-3 col-md-6"> -->
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="title">Jabatan</label>
-                                <select class="form-control" id="jabatan" name="jabatan" required>
-                                    <option value="">-- Pilih Jabatan --</option>
-                                    <?php foreach ($jabatan as $org) : ?>
-                                        <option value="<?= $org['jab_id'] ?>"><?= $org['nama'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
+                       
                         <!-- </div> -->
 
                         <div class="modal-footer">

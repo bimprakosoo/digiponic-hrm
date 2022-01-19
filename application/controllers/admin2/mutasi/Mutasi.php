@@ -17,7 +17,7 @@ class Mutasi extends CI_Controller
         $this->load->model('M_auth');
         $this->load->model('M_menu');
         $this->load->model('M_mutasi');
-        $this->load->model('M_organisasi');  
+        $this->load->model('M_organisasi');
     }
 
     public function index()
@@ -29,6 +29,7 @@ class Mutasi extends CI_Controller
 
         $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
         $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
+        $data['data_golongan']  = $this->M_mutasi->getAllGolongan()->result_array();
 
         // organisasi
         // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
@@ -89,7 +90,7 @@ class Mutasi extends CI_Controller
     }
     // next
 
-    // insert data 
+    // menambahkan data mutasi
     function tambah_DataMutasi()
     {
         if (isset($_POST['submit'])) {
@@ -123,4 +124,6 @@ class Mutasi extends CI_Controller
             redirect('admin2/mutasi/mutasi');
         }
     }
+
+    
 }

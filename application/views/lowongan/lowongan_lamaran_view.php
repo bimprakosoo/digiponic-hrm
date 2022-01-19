@@ -78,12 +78,13 @@
         <header>
             <!-- Awal menu -->
             <section class="container-fluid" id="lamaran">
+                <?= form_open('palamar/lamaran' . $lowongan['id_lowongan']); ?>
+
                 <div class="container overflow-hidden pt-3 pb-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Lowongan</a></li>
-                            <li class="breadcrumb-item"><a href="#">Staff HRD</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Lamar Pekerjaan</li>
+                            <li class="breadcrumb-item"><a href="#"><?php echo $lowongan['nama_lowongan']; ?></a></li>
                         </ol>
                     </nav>
                 </div>
@@ -97,44 +98,46 @@
                                     <div class="card">
                                         <div class="card-body text-start text-capitalize">
 
-                                            <h3 class="text-center pt-4 pb-2"> <strong>Staff HRD</strong></h3>
+
+                                            <h3 class="text-center text-capitalize pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
                                             <p class="text-start">
-                                                <strong>Lokasi</strong> <br> Malang
+                                                <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Perusahaan</strong> <br> PT MAJU JAYA
+                                                <strong>Perusahaan</strong> <br> <?php echo $lowongan['nama_perusahaan']; ?>
+
                                             </p>
                                             <p class="text-start">
-                                                <strong>Industri</strong> <br> Manukfaturing
+                                                <strong>Industri</strong> <br> <?php echo $lowongan['industri']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Tipe Pekerjaan</strong> <br> Kontrak
+                                                <strong>Tipe Pekerjaan</strong> <br> <?php echo $lowongan['tipe_pekerjaan']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Pengalaman Kerja</strong> <br> 2 tahun
+                                                <strong>Pengalaman Kerja</strong> <br> <?php echo $lowongan['pengalaman_kerja']; ?> tahun
                                             </p>
                                             <p class="text-start">
-                                                <strong>Insentif</strong> <br> Insentif Lembur
+                                                <strong>Insentif</strong> <br> <?php echo $lowongan['insentif_lembur']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Level Pekerjaan</strong> <br> Staff (non-management & non-supervisor)
+                                                <strong>Level Pekerjaan</strong> <br> <?php echo $lowongan['level_pekerjaan']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Pendidikan</strong> <br> Diploma / D1/D2/D3, Sarjana / S1
+                                                <strong>Pendidikan</strong> <br> <?php echo $lowongan['pendidikan']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Waktu bekerja</strong> <br> Senin – Jumat : Jam 08.00 s/d 16.00 <br>
-                                                Sabtu : Jam 08.00 s/d 13.00
+                                                <strong>Waktu bekerja</strong> <br> <?php echo $lowongan['waktu_bekerja']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Gaji</strong> <br> IDR 4.500.000 - IDR 5.500.000
+                                                <strong>Gaji</strong> <br> IDR <?php echo $lowongan['gaji']; ?>
                                             </p>
                                             <p class="text-start">
-                                                <strong>Posted Date</strong> <br> 11 September 2021
+                                                <strong>Posted Date</strong> <br> <?php echo $lowongan['post_date']; ?>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+                                <?= form_close(); ?>
                                 <div class="col-sm-7">
                                     <div class="card">
                                         <div class="card-body text-start">
@@ -142,13 +145,8 @@
                                             <h3 class="text-center pt-4 pb-2"> <strong>Masukan Data Lamaran Anda</strong></h3>
                                             <form action="<?= base_url('pelamar/create'); ?>" method="POST" enctype="multipart/form-data">
 
-                                                <!-- <div class="row mb-3">
-                                            <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama</label>
-                                            <div class="col-sm-8">
-                                                <label for="colFormLabel" class="col-sm-12 col-form-label text-start">Aprilda Peter Sandoria Makatita</label>
-                                            </div>
-                                            </div> -->
 
+                                                <input type="hidden" id="IDperusahaan" name="IDperusahaan" value="<?= $lowongan['perusahaan']; ?>">
                                                 <!-- Nama Lengkap -->
                                                 <div class="row mb-3">
                                                     <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama Lengkap</label>
@@ -235,22 +233,6 @@
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No. Tlpn">
 
-                                                    </div>
-                                                </div>
-                                                <!--  -->
-
-                                              
-
-                                                <!-- Pendidikan Terakhir -->
-                                                <div class="row mb-3">
-                                                    <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Status Perkawinan</label>
-                                                    <div class="col-sm-8">
-                                                        <select name="status_perkawinan" id="status_perkawinan" class="form-select" aria-label="Default select example">
-                                                            <option value="">Pilih</option>
-                                                            <option value="belum kawin">belum kawin</option>
-                                                            <option value="kawin">kawin</option>
-                                                            <!-- <option value="3">Three</option> -->
-                                                        </select>
                                                     </div>
                                                 </div>
                                                 <!--  -->

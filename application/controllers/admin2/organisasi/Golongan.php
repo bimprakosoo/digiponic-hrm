@@ -39,8 +39,8 @@ class Golongan extends CI_Controller
 
             $data = array(
                 // 'id'         =>  $this->input->post('id'),
-                'nama'          =>  $this->input->post('golongan'),
-                'jabatan_id'   =>  $this->input->post('jabatan')
+                'nama'          =>  $this->input->post('golongan')
+                // 'jabatan_id'   =>  $this->input->post('jabatan')
             );
             $insert = $this->M_organisasi->postDataGolongan($data);
 

@@ -58,7 +58,13 @@
                                  <?php foreach ($lamaran_masuk as $m) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-                                         <td><?= $m['status']; ?></td>
+                                         <td><?php if ($m['status'] == 0) { ?>
+                                                 menunggu
+                                             <?php  } else if ($m['status'] == 1) { ?>
+                                                 diterima
+                                             <?php  } else if ($m['status'] == 2) { ?>
+                                                 ditolak
+                                             <?php } ?></td>
                                          <td><?= $m['nama']; ?></td>
                                          <td><?= $m['jk']; ?></td>
                                          <td><?= $m['tgl_lahir']; ?></td>
