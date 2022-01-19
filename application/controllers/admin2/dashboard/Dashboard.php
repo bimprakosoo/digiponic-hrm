@@ -69,4 +69,26 @@ class Dashboard extends CI_Controller
         $this->load->view('dashboard/profil_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
+
+    // update
+
+    public function terimaMutasi($IDmutasi)
+    {
+        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+        $data = $this->db->get_where('mutasi', ['karyawan_id' => $IDmutasi])->result();
+        foreach ($data as $r) {
+            $update_datakaryawan = [
+                'department_id'     =>  $r->department_id,
+                'divisi_id'         =>  $r->divisi_id,
+                'jabatan_id'        =>  $r->jabatan_id,
+                'posisi_id'         =>  $r->posisi_id,
+                'penempatan_id'     =>  $r->penempatan_id,
+                'golongan_id'       =>  $r->golongan_id
+            ];
+
+            // var_dump($data); die;
+            $this->M_mutasi->update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi);
+        }
+        redirect('admin2/dashboard/dashboard');
+    }
 }

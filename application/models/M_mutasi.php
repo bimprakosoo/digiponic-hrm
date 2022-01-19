@@ -49,7 +49,7 @@ class M_mutasi extends CI_Model
 
     public function get_DataMutasi2()
     {
-        $this->db->select(' mutasi.id,
+        $this->db->select(' mutasi.id, mutasi.karyawan_id,
         mutasi.tgl_pengajuan,
         mutasi.jenis_mutasi,
         mutasi.status,
@@ -71,5 +71,14 @@ class M_mutasi extends CI_Model
         $this->db->join('penempatan', 'penempatan.id = mutasi.penempatan_id');
 
         return $this->db->get();
+    }
+
+    public function update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi)
+    {
+        // update data karyawan dari mutasi
+
+        $this->db->set($update_datakaryawan);
+        $this->db->where('karyawan_id', $IDmutasi);
+        $this->db->update('data_karyawan');
     }
 }
