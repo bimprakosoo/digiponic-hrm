@@ -17,20 +17,18 @@ class PekerjaanMaster extends CI_Controller
         $this->load->model('M_menu');
         $this->load->model('M_organisasi');
         $this->load->model('M_pelamar');
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
     }
 
     public function index()
     {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Data lowongan';
 
         $data['lowongan'] = $this->M_admin->lowongan_ad();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/lowongan_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
@@ -38,11 +36,15 @@ class PekerjaanMaster extends CI_Controller
 
     public function lamaranMasuk()
     {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Lamaran Masuk';
 
         $data['lowongan'] = $this->M_admin->lowongan_ad();
         $data['lamaran_masuk'] = $this->M_admin->lamaran_masuk()->result_array();
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/lamaran_masuk', $data);
         $this->load->view('template/template_admin/footer_ad');
@@ -50,8 +52,14 @@ class PekerjaanMaster extends CI_Controller
 
     public function tambah_lowongan()
     {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Tambah Data Lowongan';
 
+        $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/tambah_lowongan_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
@@ -59,8 +67,13 @@ class PekerjaanMaster extends CI_Controller
 
     public function edit($id)
     {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+        $data['title'] = 'Edit Data Lowongan';
         $data['lowongan'] = $this->M_admin->edit($id);
 
+        $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/pekerjaan/edit_lowongan_ad', $data);
         $this->load->view('template/template_admin/footer_ad');
@@ -142,7 +155,7 @@ class PekerjaanMaster extends CI_Controller
 
     public function diterima($dapat_di)
     {
-        // pindah data karywaan yang diterima ke tbl_karyawan
+        // pindah data karywaan yang diterima ke detail_karyawan
         $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
         foreach ($data as $r) {
             $data = [
@@ -155,12 +168,23 @@ class PekerjaanMaster extends CI_Controller
                 'jk'                    =>  $r->jk,
                 'tgl_lahir'             =>  $r->tgl_lahir,
                 'no_telp'               =>  $r->no_telp,
-                'status_perkawinan'     =>  $r->status_perkawinan,
                 'pendidikan_terakhir'   =>  $r->pendidikan_terakhir,
-
             ];
 
             $this->M_admin->terima_pelamar($data);
+        }
+
+        /*  kirim data id => detail_karyawan to data_karyawan
+            id, perusahaan_id[dari db lowongan]
+        */
+        $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
+        foreach ($data as $r) {
+            $data = [
+                'karyawan_id'           =>  $r->id,
+                'perusahaan_id'         =>  $r->perusahaan_id
+            ];
+
+            $this->M_admin->terima_pelamar2($data);
         }
 
         // update status dari data pelamaran [1 => diterima | 2 => ditolak]
@@ -168,10 +192,11 @@ class PekerjaanMaster extends CI_Controller
         $update_status = [
             'status' => 1
         ];
+
         $this->M_admin->update_status_pelamar($update_status, $dapat_di);
 
         // delete data lamaran yang telah di action
-        $delete =  $this->curl->simple_delete($this->API . '/admin', array('id' => $dapat_di), array(CURLOPT_BUFFERSIZE => 10));
+        // $delete =  $this->curl->simple_delete($this->API . '/admin', array('id' => $dapat_di), array(CURLOPT_BUFFERSIZE => 10));
         // $data = $this->db->get_where('data_lamaran', ['id' => $dapat_di])->result();
         // $this->M_admin->delete_pelamar();
 

@@ -105,7 +105,7 @@
                                                 <td><?= $m['tgl_pengajuan']; ?></td>
                                                 <td><?= $m['status']; ?></td>
 
-                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>" data-image="<?= base_url('assets/image/profil/') . $m['image']; ?>">
+                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>" >
                                                         <i class="fas fa-eye"></i></button>
                                                 </td>
                                             </tr>
@@ -237,7 +237,7 @@
                                         <!-- Accordion card -->
 
                                         <!-- Accordion card -->
-                                        <div class="card" >
+                                        <div class="card">
 
                                             <!-- Card header -->
                                             <div class="card-header" id="headingTwo2">
@@ -258,47 +258,22 @@
                                         </div>
                                         <!-- Accordion card -->
 
-                                        <!-- Accordion card -->
-                                        <!-- <div class="card"> -->
+                                        <!-- <div class="text-center pt-2">
 
-                                            <!-- Card header -->
-                                            <!-- <div class="card-header" role="tab" id="headingThree3">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
-                                                    <h5 class="mb-0">
-                                                        Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div> -->
+                                            <button type="button" class="btn btn-danger">Ditolak</button>
+                                            <button type="button" class="btn btn-primary">Disetujui</button>
+                                        </div> -->
 
-                                            <!-- Card body -->
-                                            <!-- <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                                    squid. 3
-                                                    wolf moon officia aute,
-                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                                                </div>
-                                            </div> -->
 
-                                        <!-- </div> -->
-                                        <!-- Accordion card -->
-
-                                    <div class="text-center pt-2">
-
-                                        <button type="button" class="btn btn-danger">Ditolak</button>
-                                        <button type="button" class="btn btn-primary">Disetujui</button>
                                     </div>
-
-
-                            </div>
-                            <!-- Accordion wrapper -->
+                                    <!-- Accordion wrapper -->
 
 
 
 
-                            <!-- Add to Cart -->
-                            <div class="card-body">
-                                <!-- <div class="row">
+                                    <!-- Add to Cart -->
+                                    <div class="card-body">
+                                        <!-- <div class="row">
                                             <div class="col-md-6">
 
                                                 <select class="md-form mdb-select colorful-select dropdown-primary">
@@ -337,7 +312,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 </main>
 <script>
     document.addEventListener("DOMContentLoaded", function() {

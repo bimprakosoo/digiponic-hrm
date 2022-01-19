@@ -10,7 +10,7 @@
             </ol>
         </nav>
     </div>
- 
+
     <div class="container overflow-hidden">
 
         <div class="row pb-5">
@@ -26,7 +26,7 @@
                                     <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
                                 </p>
                                 <p class="text-start">
-                                    <strong>Perusahaan</strong> <br> <?php echo $lowongan['perusahaan']; ?>
+                                    <strong>Perusahaan</strong> <br> <?php echo $lowongan['nama_perusahaan']; ?>
                                 </p>
                                 <p class="text-start">
                                     <strong>Industri</strong> <br> <?php echo $lowongan['industri']; ?>
@@ -56,7 +56,7 @@
                                     <strong>Posted Date</strong> <br> <?php echo $lowongan['post_date']; ?>
                                 </p>
                                 <div class="d-grid gap-2 mx-3 pb-4">
-                                    <a class="btn btn-primary" href="<?php echo base_url(); ?>pelamar/lamaran">Lamaran</a>
+                                    <a class="btn btn-primary" href="<?php echo base_url('pelamar/lamaran/') . $lowongan['id_lowongan']; ?>">Lamaran</a>
                                 </div>
                             </div>
                         </div>

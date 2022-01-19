@@ -141,13 +141,13 @@
                          <!-- Golongan -->
                          <div class="col-md-6">
                              <div class="modal-body">
-
                                  <label for="title">Golongan</label>
                                  <select class="form-control" id="golongan" name="golongan" required>
-                                     <option value="">-- Pilih golongan --</option>
-
+                                     <option value="">-- Pilih Golongan --</option>
+                                     <?php foreach ($data_golongan as $p) : ?>
+                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                     <?php endforeach; ?>
                                  </select>
-
                              </div>
                          </div>
 
@@ -282,6 +282,7 @@
      });
  </script>
 
+<!-- chain struktur posisi karyawan -->
  <script>
      $(document).ready(function() {
 
@@ -324,26 +325,26 @@
          });
 
          //  golongan
-         $('#jabatan').change(function() {
-             var id = $(this).val();
-             // console.log(id); // cek id
-             $.ajax({
-                 type: "POST",
-                 url: "<?= base_url('admin2/mutasi/mutasi/getGolongan') ?>",
-                 data: {
-                     id: id
-                 },
-                 dataType: "JSON",
-                 success: function(response) {
-                     // console.log(response);
-                     $('#golongan').html(response);
-                     // get id kota by provinsi
-                 }
-             });
-         });
+         //  $('#jabatan').change(function() {
+         //      var id = $(this).val();
+         //      // console.log(id); // cek id
+         //      $.ajax({
+         //          type: "POST",
+         //          url: "<?= base_url('admin2/mutasi/mutasi/getGolongan') ?>",
+         //          data: {
+         //              id: id
+         //          },
+         //          dataType: "JSON",
+         //          success: function(response) {
+         //              // console.log(response);
+         //              $('#golongan').html(response);
+         //              // get id kota by provinsi
+         //          }
+         //      });
+         //  });
 
          //  posisi
-         $('#golongan').change(function() {
+         $('#jabatan').change(function() {
              var id = $(this).val();
              // console.log(id); // cek id
              $.ajax({

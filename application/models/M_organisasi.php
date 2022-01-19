@@ -134,9 +134,9 @@ class M_organisasi extends CI_Model
     // Gologan----------------------------------------------------------------------------------------------------
     public function getDataGolongan()
     {
-        $this->db->select('golongan.id AS gol_id, golongan.nama, jabatan.nama AS nama_jabatan');
+        $this->db->select('golongan.id AS gol_id, golongan.nama');
         $this->db->from('golongan');
-        $this->db->join('jabatan', 'jabatan.id = golongan.jabatan_id');
+        // $this->db->join('jabatan', 'jabatan.id = golongan.jabatan_id');
 
         return $this->db->get();
     }

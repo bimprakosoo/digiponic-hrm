@@ -20,9 +20,9 @@ class M_landingpage extends CI_Model
         $this->db->select('*');
         $this->db->from('lowongan');
         $sql =  $this->db->get()->result_array();
-        return $sql; 
+        return $sql;
     }
-    public function lowongan_lan( $limit, $start)
+    public function lowongan_lan($limit, $start)
     {
         // $this->db->select('*');
         // $this->db->from('lowongan');
@@ -42,7 +42,7 @@ class M_landingpage extends CI_Model
         return $this->db->get('lowongan')->num_rows();
     }
 
-    public function departemen( $limit, $start)
+    public function departemen($limit, $start)
     {
         // $this->db->select('*');
         // $this->db->from('lowongan');
@@ -64,7 +64,7 @@ class M_landingpage extends CI_Model
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
         return $this->db->get();
     }
-    public function artikel( $limit, $start)
+    public function artikel($limit, $start)
     {
         // $this->db->select('*');
         // $this->db->from('lowongan');
@@ -78,7 +78,7 @@ class M_landingpage extends CI_Model
 
         return $this->db->get('artikel', $limit, $start)->result_array();
     }
-     
+
     public function getDataArtikel()
     {
         $this->db->select('*');
@@ -86,5 +86,14 @@ class M_landingpage extends CI_Model
 
         return $this->db->get();
     }
-    
+
+    public function rowLowongan($data_id)
+    {
+        $this->db->select('*');
+        $this->db->from('lowongan');
+        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan');
+        $this->db->where('id_lowongan', $data_id);
+
+        return $this->db->get();
+    }
 }

@@ -27,8 +27,6 @@ class Dashboard extends CI_Controller
 
         $data['getMutasi'] = $this->M_mutasi->get_DataMutasi2()->result_array();
 
-        
-
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/dashboard_ad/v_dashboard', $data);

@@ -73,6 +73,38 @@ class M_Admin extends CI_Model
 
         return $this->db->get();
     }
+    
+    // sementara => ambil dari detail karyawan
+    public function allDataPosisiKaryawan()
+    {
+        $this->db->select('detail_karyawan.nama AS karyawan,
+        perusahaan.nama_perusahaan AS namaPerusahaan,
+        department.nama AS namaDepartement,
+        divisi.nama AS namaDivisi,
+        jabatan.nama AS namaJabatan,
+        posisi.nama AS namaPosisi,
+        penempatan.nama AS namaPenempatan,
+        golongan.nama AS namaGolongan');
+        $this->db->from('data_karyawan');
+        $this->db->join('detail_karyawan', 'detail_karyawan.id = data_karyawan.karyawan_id', 'left');
+        $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id', 'left');
+        $this->db->join('department', 'department.id = data_karyawan.department_id', 'left');
+        $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id', 'left');
+        $this->db->join('jabatan', 'jabatan.id = data_karyawan.jabatan_id', 'left');
+        $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id', 'left');
+        $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id', 'left');
+        $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id', 'left');
+        
+        
+        return $this->db->get();
+    }
+    public function allDataDetailKaryawan()
+    {
+        $this->db->select('*');
+        $this->db->from('detail_karyawan');
+
+        return $this->db->get();
+    }
 
     public function get_data_lamaran()
     {
@@ -85,7 +117,13 @@ class M_Admin extends CI_Model
     public function terima_pelamar($data)
     {
         // pindah data karywaan yang diterima ke tbl_karyawan
-        $this->db->insert('tbl_karyawan', $data);
+        $this->db->insert('detail_karyawan', $data);
+    }
+
+    public function terima_pelamar2($data)
+    {
+        // pindah data karywaan yang diterima ke tbl_karyawan
+        $this->db->insert('data_karyawan', $data);
     }
 
     public function delete_pelamar($id)
@@ -150,14 +188,30 @@ class M_Admin extends CI_Model
         return $new_img;
     }
 
+    public function getDataPerusahaan()
+    {
+        return $this->db->get('perusahaan');
+    }
+
     public function getDataDepartment()
     {
         return $this->db->get('department');
     }
 
+    public function getDataGolongan()
+    {
+        return $this->db->get('golongan');
+    }
+
     public function insert_DataMutasi($data)
     {
         $this->db->insert('mutasi', $data);
+    }
+
+    //sementara
+    public function insert_DataKaryawan($data)
+    {
+        $this->db->insert('data_karyawan', $data);
     }
 
     public function get_DataMutasi()
@@ -231,5 +285,4 @@ class M_Admin extends CI_Model
 
         return $this->db->get();
     }
-    
 }
