@@ -105,7 +105,7 @@
                                                 <td><?= $m['tgl_pengajuan']; ?></td>
                                                 <td><?= $m['status']; ?></td>
 
-                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>" >
+                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>">
                                                         <i class="fas fa-eye"></i></button>
                                                 </td>
                                             </tr>
@@ -300,7 +300,12 @@
                                         <div class="text-center">
 
                                             <button type="button" class="btn btn-danger">Ditolak</button>
-                                            <button type="button" class="btn btn-primary">Disetujui</button>
+                                            <!-- <a href="" type="submit" class="btn btn-primary">Disetujui</a> -->
+                                            <?php $i = 1;
+                                            foreach ($getMutasi as $d) : ?>
+                                                <a class="btn btn-primary" href="<?= base_url('admin2/dashboard/dashboard/terimaMutasi/') . $d['karyawan_id']; ?>">Di Setujui</a>
+                                            <?php $i++;
+                                            endforeach; ?>
                                         </div>
                                     </div>
                                     <!-- /.Add to Cart -->
