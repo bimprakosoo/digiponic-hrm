@@ -52,7 +52,31 @@
                                     <tr>
                                         <td><?= $as['date_created']; ?></td>
                                         <td><?= $as['time_created']; ?></td>
-                                        <td><?= $as['image']; ?></td>
+                                        <td>
+                                            <!-- Fungsi  modal -->
+                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#fungsi" data-image="<?= $as['image']; ?>">
+                                                Foto Surat Dokter
+                                            </button>
+                                            <div class="modal fade" id="fungsi" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Foto Surat Dokter</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
+                                                            <img src=""id="dtl_image" alt="">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                        </td>
                                         <td><?= $as['keterangan']; ?></td>
                                         <td><?php if ($as['status'] == 0) { ?>
                                                 menunggu persetujuan
@@ -129,6 +153,15 @@
         $('#dataTable').DataTable({
             "scrollX": true,
             "searching": false
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var image = $(this).data('image');
+            $('#dtl_image').attr("src", image);
 
         });
     });

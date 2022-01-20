@@ -40,10 +40,19 @@
                          </div>
                          <!-- Perusahaan -->
                          <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Perusahaan</label>
-                                 <input type="text" class="form-control" id="perusahaan" name="perusahaan" value="<?= $lowongan['perusahaan'] ?>" placeholder="Perusahaan" required>
-                             </div>
+
+                             <label for="title">Perusahaan</label>
+                             <select  class="form-select" aria-label="Default select example" id="perusahaan" name="perusahaan" required>
+                                 <option value="">-- Pilih --</option>
+                                 <?php foreach ($perusahaan as  $p) {
+                                        if ( $p['id'] == $lowongan['perusahaan']) { ?>
+                                         <option value="<?=  $p['id'] ?>" selected><?=  $p['nama_perusahaan'] ?></option>
+                                     <?php } else { ?>
+                                         <option value="<?=  $p['id'] ?>"><?=  $p['nama_perusahaan'] ?></option>
+                                 <?php }
+                                    } ?>
+                             </select>
+
                          </div>
                          <!-- Industri -->
                          <div class="modal-body">
@@ -162,6 +171,13 @@
                                  <input type="text" class="form-control" id="post_date" name="post_date">
                              </div>
                          </div> -->
+                         <!-- Deskripsi -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Deskripsi Singkat</label>
+                                 <textarea class="ckeditor" id="ket" name="deskripsi"> <?= $lowongan['deskripsi'] ?></textarea>
+                             </div>
+                         </div>
 
                          <!-- Keterangan -->
                          <div class="modal-body">
@@ -189,7 +205,7 @@
                              <div class="form-group">
                                  <label for="title">Upload Image</label><br>
                                  <img src="<?= base_url('assets/image/lowongan/') . $lowongan['image']; ?>" style="width: 50 px; height: 50px"><br>
-                                 <input class="pt-1" type="file" id="file_image" name="image" >
+                                 <input class="pt-1" type="file" id="file_image" name="image">
                              </div>
                          </div>
                      </div>

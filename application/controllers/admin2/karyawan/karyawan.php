@@ -147,8 +147,25 @@ class Karyawan extends CI_Controller
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/karyawan/v_detail', $data);
+        // $this->load->view('dashboard/karyawan/v_detail', $data);
         $this->load->view('dashboard/karyawan/v_training_karyawan', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    public function edit()
+    {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+        $data['title'] = 'Management Karyawan Training';
+
+        $data['data_training'] = $this->M_training->getDataTraining()->result_array();
+        $data['all_detailkaryawan'] = $this->M_admin->allDataDetailKaryawan()->result_array();
+        $data['perusahaan'] = $this->M_admin->getDataPerusahaan()->result_array();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
+        // $this->load->view('dashboard/karyawan/v_detail', $data);
+        $this->load->view('dashboard/karyawan/v_training_edit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 }
