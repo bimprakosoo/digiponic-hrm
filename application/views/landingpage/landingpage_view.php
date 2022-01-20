@@ -493,9 +493,9 @@
       ?>
         <div class="col">
           <div class="card text-capitalize h-100" style="border-radius: 10px; height:500px;">
-            <div class="d-flex justify-content-center pt-4">
+            <!-- <div class="d-flex justify-content-center pt-4">
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
-            </div>
+            </div> -->
             <div class="card-body h-100 text-center pt-3 w-100">
               <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>
               <div class="card-text " style="text-align: justify;">

@@ -31,12 +31,12 @@
                              </div>
                          </div>
                          <!-- Lokasi -->
-                         <div class="modal-body">
+                         <!-- <div class="modal-body">
                              <div class="form-group">
                                  <label for="title">Lokasi</label>
                                  <input type="text" class="form-control" id="lokasi" name="lokasi">
                              </div>
-                         </div>
+                         </div> -->
 
                          <!-- Perusahaan -->
                          <!-- <div class="mb-3 col-md-6"> -->
@@ -52,12 +52,17 @@
                          <!-- </div> -->
 
                          <!-- Perusahaan -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Perusahaan</label>
-                                 <input type="text" class="form-control" id="perusahaan" name="perusahaan">
-                             </div>
-                         </div>
+                            <div class="modal-body">
+
+                                <label for="title">Perusahaan</label>
+                                <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                    <option value="">-- Pilih --</option>
+                                    <?php foreach ($perusahaan as $p) : ?>
+                                        <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+
+                            </div>
                          <!-- Industri -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -139,6 +144,14 @@
                                  <input type="text" class="form-control" id="post_date" name="post_date">
                              </div>
                          </div> -->
+
+                         <!-- Deskripsi -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Deskripsi Singkat</label>
+                                 <textarea class="ckeditor" id="ket" name="deskripsi"></textarea>
+                             </div>
+                         </div>
 
                          <!-- Keterangan -->
                          <div class="modal-body">

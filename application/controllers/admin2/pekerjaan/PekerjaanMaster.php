@@ -72,6 +72,7 @@ class PekerjaanMaster extends CI_Controller
         $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Edit Data Lowongan';
         $data['lowongan'] = $this->M_admin->edit($id);
+        $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
@@ -109,6 +110,7 @@ class PekerjaanMaster extends CI_Controller
                 'waktu_bekerja' =>  $this->input->post('waktu_bekerja'),
                 'gaji' =>  $this->input->post('gaji'),
                 'post_date' =>  $this->input->post('post_date'),
+                'deskripsi' =>  $this->input->post('deskripsi'),
                 'ket' =>  $this->input->post('ket'),
                 'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
                 'tunjangan' =>  $this->input->post('tunjangan'),
@@ -144,6 +146,7 @@ class PekerjaanMaster extends CI_Controller
             'waktu_bekerja' =>  $this->input->post('waktu_bekerja'),
             'gaji' =>  $this->input->post('gaji'),
             'post_date' =>  $this->input->post('post_date'),
+            'deskripsi' =>  $this->input->post('deskripsi'),
             'ket' =>  $this->input->post('ket'),
             'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
             'tunjangan' =>  $this->input->post('tunjangan'),
