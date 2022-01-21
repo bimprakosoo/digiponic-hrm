@@ -69,57 +69,58 @@
 
     <!-- BEGIN  modal -->
     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <h4 class="modal-title">Form Cuti </h4>
                 </div>
                 <div class="modal-body table-responsive ">
-                    <table class="table  no-margin">
-                        <tbody>
-                            <tr>
-                                <td>Tanggal Pengajuan </td>
-                                <td>: </td>
+                    <form action="<?= base_url('karyawan/pengajuan/cuti/kirim_pengajuan_cuti'); ?>" method="POST">
 
-                                <td>
-                                <?php echo date('Y-m-d '); ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tanggal Cuti</td>
-                                <td>:</td>
+                        <!-- <div class="row"> -->
+                        <input type="hidden" value="<?=$ ?>">
+                        <!-- <div class="row"> -->
+                        <!-- Tanggal Mulai -->
+                        <div class="col-md-12">
+                            <div class="modal-body">
+                                <label for="title">Tanggal Mulai</label>
+                                <div class="input-group mb-3 date">
+                                    <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                                    <input type="date" class="form-control" id="txtFromDate" name="tgl_mulai" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
 
-                                <td><input type="date"></td>
-                            </tr>
-                            <tr>
-                                <td>Sampai Dengan</td>
-                                <td>:</td>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tanggal Berakhir -->
+                        <div class="col-md-12">
+                            <div class="modal-body">
+                                <label for="title">Tanggal Berakhir</label>
+                                <div class="input-group mb-3 date">
+                                    <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                                    <input type="date" class="form-control" id="txtFromDate" name="tgl_berakhir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
 
-                                <td><input type="date"></td>
-                            </tr>
-                            <tr>
-                                <td>Lama</td>
-                                <td>:</td>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div class="col-md-12">
+                            <div class="modal-body">
+                                <label for="title">Keterangan</label>
+                                <textarea name="keterangan" id="keterangan" class="ckeditor"></textarea>
+                            </div>
+                        </div>
 
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>Keterangan</td>
-                                <td>:</td>
 
-                                <td><textarea name="ketIjin" id="ketIzin" cols="30" rows="10"></textarea></td>
-                            </tr>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Kirim</button>
+                        </div>
+                    </form>
 
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-body d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">Izin Sakit</button>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- END  modal -->
+        <!-- END  modal -->
 
 </main>
 <!-- End Content -->
