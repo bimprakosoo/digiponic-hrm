@@ -69,7 +69,7 @@
 
      <!-- Modal Add Mutasi -->
      <div class="modal fade" id="modalAddMutasi" tabindex="-1" role="dialog" aria-hidden="true">
-         <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-dialog modal-xl" role="document">
              <div class="modal-content">
                  <div class="modal-header">
                      <h1 class="m-0 font-weight-bold ">Mutasi</h1>
@@ -91,8 +91,11 @@
                                                  <h5>Karyawan</h5>
 
                                              </div>
+                                             <div class="col-2">
+                                                 <p>:</p>
 
-                                             <div class="col-9">
+                                             </div>
+                                             <div class="col-7">
 
                                                  <select class="form-control" id="karyawan" name="karyawan" required>
                                                      <option value="">-- Pilih karyawan --</option>
@@ -109,24 +112,21 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Departemen</h5>
 
                                              </div>
-                                             <div class="col-4">
-                                                 <p>Departemen Digital</p>
+                                             <div class="col-2">
+                                                 <p>:</p>
 
                                              </div>
-                                             <div class="col-5">
+                                             <div class="col-7">
 
-                                                 <select class="form-control" id="department" name="department" required>
-                                                     <option value="">-- Pilih --</option>
-                                                     <?php foreach ($department as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-                                                 </select>
+                                                 <p>Departemen</p>
                                              </div>
                                          </div>
+
                                      </div>
                                  </div>
 
@@ -134,22 +134,21 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Divisi</h5>
 
                                              </div>
-                                             <div class="col-4">
-                                                 <p>Divisi</p>
+                                             <div class="col-2">
+                                                 <p>:</p>
 
                                              </div>
-                                             <div class="col-5">
+                                             <div class="col-7">
 
-                                                 <select class="form-control" id="divisi" name="divisi" required>
-                                                     <option value="">-- Pilih divisi --</option>
-
-                                                 </select>
+                                                 <p>Divisi</p>
                                              </div>
                                          </div>
+
                                      </div>
                                  </div>
 
@@ -157,20 +156,18 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Jabatan</h5>
 
                                              </div>
-                                             <div class="col-4">
-                                                 <p>Jabatan</p>
+                                             <div class="col-2">
+                                                 <p>:</p>
 
                                              </div>
-                                             <div class="col-5">
+                                             <div class="col-7">
 
-                                                 <select class="form-control" id="jabatan" name="jabatan" required>
-                                                     <option value="">-- Pilih jabatan --</option>
-
-                                                 </select>
+                                                 <p>Jabatan</p>
                                              </div>
                                          </div>
                                      </div>
@@ -180,22 +177,18 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Golongan</h5>
 
                                              </div>
-                                             <div class="col-4">
-                                                 <p>Golongan</p>
+                                             <div class="col-2">
+                                                 <p>:</p>
 
                                              </div>
-                                             <div class="col-5">
+                                             <div class="col-7">
 
-                                                 <select class="form-control" id="golongan" name="golongan" required>
-                                                     <option value="">-- Pilih Golongan --</option>
-                                                     <?php foreach ($data_golongan as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-                                                 </select>
+                                                 <p>Golongan</p>
                                              </div>
                                          </div>
                                      </div>
@@ -205,21 +198,20 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Posisi</h5>
 
                                              </div>
-                                             <div class="col-4">
+                                             <div class="col-2">
+                                                 <p>:</p>
+
+                                             </div>
+                                             <div class="col-7">
+
                                                  <p>Posisi</p>
-
                                              </div>
-                                             <div class="col-5">
 
-                                                 <select class="form-control" id="posisi" name="posisi" required>
-                                                     <option value="">-- Pilih posisi --</option>
-
-                                                 </select>
-                                             </div>
                                          </div>
                                      </div>
                                  </div>
@@ -228,65 +220,139 @@
                                  <div class="col">
                                      <div class="modal-body">
                                          <div class="row gx-5">
+
                                              <div class="col-3">
                                                  <h5>Penempatan</h5>
 
                                              </div>
-                                             <div class="col-4">
+                                             <div class="col-2">
+                                                 <p>:</p>
+
+                                             </div>
+                                             <div class="col-7">
+
                                                  <p>Penempatan</p>
-
-                                             </div>
-                                             <div class="col-5">
-
-                                                 <select class="form-control" id="penempatan" name="penempatan" required>
-                                                     <option value="">-- Pilih --</option>
-                                                     <?php foreach ($penempatan as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-
-                                                 </select>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <!-- Jenis Mutasi -->
-
-                                 <div class="col">
-                                     <div class="modal-body">
-                                         <div class="row gx-5">
-                                             <div class="col-3">
-
-                                             </div>
-                                             <div class="col-4">
-
-                                             </div>
-                                             <div class="col-5">
-
-                                                 <select class="form-control" id="jenis_mutasi" name="jenis_mutasi" required>
-                                                     <option value="promosi">Promosi</option>
-                                                     <option value="mutasi">Mutasi</option>
-                                                     <option value="demosi">Demosi</option>
-                                                 </select>
                                              </div>
                                          </div>
                                      </div>
                                  </div>
                              </div>
 
+                             <div class="col">
+                                 <!-- Karyawan -->
+                                 <div class="col">
+                                     <div class="modal-body">
 
+                                         <select class="form-control" id="karyawan" name="karyawan" hidden>
+                                             <option value="">-- Pilih karyawan --</option>
+                                             <?php foreach ($dkaryawan as $p) : ?>
+                                                 <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                             <?php endforeach; ?>
+                                         </select>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- Department -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="department" name="department" required>
+                                             <option value="">-- Pilih --</option>
+                                             <?php foreach ($department as $p) : ?>
+                                                 <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                             <?php endforeach; ?>
+                                         </select>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- Divisi -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="divisi" name="divisi" required>
+                                             <option value="">-- Pilih divisi --</option>
+
+                                         </select>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- Jabatan -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="jabatan" name="jabatan" required>
+                                             <option value="">-- Pilih jabatan --</option>
+
+                                         </select>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- Golongan -->
+                                 <div class="col">
+                                     <div class="modal-body">
+                                         <select class="form-control" id="golongan" name="golongan" required>
+                                             <option value="">-- Pilih Golongan --</option>
+                                             <?php foreach ($data_golongan as $p) : ?>
+                                                 <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                             <?php endforeach; ?>
+                                         </select>
+                                     </div>
+                                 </div>
+
+                                 <!-- Posisi -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="posisi" name="posisi" required>
+                                             <option value="">-- Pilih posisi --</option>
+
+                                         </select>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- Penempatan -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="penempatan" name="penempatan" required>
+                                             <option value="">-- Pilih --</option>
+                                             <?php foreach ($penempatan as $p) : ?>
+                                                 <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                             <?php endforeach; ?>
+
+                                         </select>
+                                     </div>
+                                 </div>
+
+                                 <!-- Jenis Mutasi -->
+                                 <div class="col">
+                                     <div class="modal-body">
+
+                                         <select class="form-control" id="jenis_mutasi" name="jenis_mutasi" required>
+                                             <option value="promosi">Promosi</option>
+                                             <option value="mutasi">Mutasi</option>
+                                             <option value="demosi">Demosi</option>
+                                         </select>
+                                     </div>
+                                 </div>
+                             </div>
                          </div>
+
+
+
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                             <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
+                         </div>
+                     </form>
                  </div>
-
-
-
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="submit" name="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#coba">Simpan Perubahan</button>
-                 </div>
-                 </form>
              </div>
          </div>
-     </div>
      </div>
 
      <!-- Detail  modal -->

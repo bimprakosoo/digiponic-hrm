@@ -78,7 +78,7 @@
                     <form action="<?= base_url('karyawan/pengajuan/cuti/kirim_pengajuan_cuti'); ?>" method="POST">
 
                         <!-- <div class="row"> -->
-                        <input type="hidden" value="<?=$ ?>">
+                        
                         <!-- <div class="row"> -->
                         <!-- Tanggal Mulai -->
                         <div class="col-md-12">

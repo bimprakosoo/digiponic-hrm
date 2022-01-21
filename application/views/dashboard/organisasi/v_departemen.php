@@ -120,8 +120,8 @@
                                             <!-- END  modal -->
                                         </td>
                                         <td>
-                                           <!-- Fungsi  modal -->
-                                           <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#peran" data-peran="<?= $d['peran']; ?>">
+                                            <!-- Fungsi  modal -->
+                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#peran" data-peran="<?= $d['peran']; ?>">
                                                 Peran
                                             </button>
                                             <div class="modal fade" id="peran" tabindex="-1" role="dialog" aria-hidden="true">
@@ -151,7 +151,39 @@
                                             </div>
                                             <!-- END  modal -->
                                         </td>
-                                        <td><img src="<?= base_url('assets/image/departemen/foto/' . $d['image']); ?>" style="width:100px ; height: 50px;" alt=""></td>
+                                        <td>
+                                            <!-- image  modal -->
+                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#image" data-image="<?= base_url('assets/image/departemen/foto/' . $d['image']); ?>">
+                                                image
+                                            </button>
+                                            <div class="modal fade" id="image" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title">Image</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body table-responsive ">
+                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                    <img src="" id="dtl_image" alt="">
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END  modal -->
+                                            <!-- <img src="<?= base_url('assets/image/departemen/foto/' . $d['image']); ?>" style="width:100px ; height: 50px;" alt=""> -->
+                                        </td>
 
                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
@@ -285,7 +317,7 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td><img src="" alt="" id="dtl_image" class="h-100"></td>
+                                <td><img src="" alt="" id="dtl_image2" class="h-100"></td>
                             </tr>
 
                         </tbody>
@@ -327,6 +359,7 @@
             $('#dtl_peran').text(peran);
             $('#dtl_peran2').text(peran);
             $('#dtl_image').attr("src", image);
+            $('#dtl_image2').attr("src", image);
 
         });
     });
