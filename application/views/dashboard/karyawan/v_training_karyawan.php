@@ -10,7 +10,43 @@
 <main class="content">
 
     <div class="container-fluid p-0 ">
+        <div class="card shadow mb-4 ">
+            <div class="card-body py-3" style="background: #fff;">
+                <h3 class="m-0 font-weight-bold">Karyawan Baru</h3>
+            </div>
+            <div class="card-body ">
+                <div class="table-responsive">
+                    <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Perusahaan</th>
+                                <th>Status</th> <!-- Siap Di Training | Sedang Training -->
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1;
+                            foreach ($karyawan_baru as $kb) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i ?></th>
+                                    <td><?= $kb['nama']; ?></td>
+                                    <td><?= $kb['nama_perusahaan']; ?></td>
+                                    <td><?php if ($kb['status_training'] == 0) { ?>
+                                            Siap Melakukan Training
+                                        <?php } else if ($kb['status_training'] == 1) { ?>
+                                            Sedang Trainnig
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                            <?php $i++;
+                            endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <!-- Daftar Semua Lowongan -->
         <div class="container-fluid p-0">
             <div class="card ">
@@ -35,24 +71,39 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th>No</th>
-                                    <th>Perusahaan</th>
                                     <th>Nama Karyawan</th>
-                                    <th>Trainer</th>
+                                    <th>Keterangan</th>
+                                    <th>Jenis Pelatihan</th>
                                     <th>Tanggal Mulai</th>
                                     <th>Tanggal Berakhir</th>
+                                    <th>Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                    <td>No</td>
-                                    <td>Perusahaan</td>
-                                    <td>Nama Karyawan</td>
-                                    <td>Trainer</td>
-                                    <td>Tanggal Mulai</td>
-                                    <td>Tanggal Berakhir</td>
-                                    <td> <a class="btn btn-primary" href="<?php echo base_url("admin2/karyawan/karyawan/edit/")?>"><i class="fas fa-edit"></i></a></td>
-                                </tr>
+                                <?php $i = 1;
+                                foreach ($karyawan_training as $kb) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $kb['nama']; ?></td>
+                                        <td><?= $kb['deskripsi']; ?></td>
+                                        <td><?= $kb['kategori']; ?></td>
+                                        <td><?= $kb['tgl_mulai']; ?></td>
+                                        <td><?= $kb['tgl_selesai']; ?></td>
+                                        <td><?php if ($kb['status'] == null) { ?>
+                                                -
+                                            <?php } else if ($kb['status'] == 0) { ?>
+                                                gagal
+                                            <?php } else if ($kb['status'] == 1) { ?>
+                                                lolos
+                                            <?php } ?>
+                                        </td>
+                                        <td> <a class="btn btn-primary" href="<?php echo base_url("admin2/karyawan/karyawan/edit/") ?>">lulus</a>
+                                       <a class="btn btn-danger" href="<?php echo base_url("admin2/karyawan/karyawan/edit/") ?>">gagal</a></td>
+
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -76,15 +127,15 @@
                     <form action="<?= base_url('admin2/karyawan/karyawan/Tambah_DataKaryawan_Training'); ?>" method="POST">
 
                         <div class="row">
-                            <!-- karyawan -->
+                            <!-- Perusahaan -->
                             <div class="col-md-6">
                                 <div class="modal-body">
 
                                     <label for="title">Perusahaan</label>
-                                    <select class="form-control" id="karyawan" name="karyawan" required>
+                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
                                         <option value="">-- Pilih --</option>
-                                        <?php foreach ($all_detailkaryawan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                        <?php foreach ($perusahaan as $p) : ?>
+                                            <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -96,10 +147,7 @@
 
                                     <label for="title">karyawan</label>
                                     <select class="form-control" id="karyawan" name="karyawan" required>
-                                        <option value="">-- Pilih --</option>
-                                        <?php foreach ($all_detailkaryawan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                        <?php endforeach; ?>
+                                        <option value=""></option>
                                     </select>
                                 </div>
                             </div>
@@ -109,16 +157,16 @@
                                 <div class="modal-body">
 
                                     <label for="title">Deskripsi</label>
-                                <textarea class="ckeditor" id="deskripsi" name="deskripsi"></textarea>
-                                    
+                                    <textarea class="ckeditor" id="deskripsi" name="deskripsi"></textarea>
+
 
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <!-- karyawan -->
-                            <div class="col-md-6">
+                            <!-- Opsi Pelatihan -->
+                            <!-- <div class="col-md-6">
                                 <div class="modal-body">
 
                                     <label for="title">Opsi Pelatih</label>
@@ -129,17 +177,17 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <!-- Perusahaan -->
+                            <!-- jenis pelatihan -->
                             <div class="col-md-6">
                                 <div class="modal-body">
 
                                     <label for="title">Jenis Pelatihan</label>
-                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                    <select class="form-control" id="type" name="type" required>
                                         <option value="">-- Pilih --</option>
-                                        <?php foreach ($perusahaan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
+                                        <?php foreach ($type as $t) : ?>
+                                            <option value="<?= $t['id'] ?>"><?= $t['kategori'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
 
@@ -149,7 +197,7 @@
 
                         <div class="row">
                             <!-- karyawan -->
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="modal-body">
 
                                     <label for="title">Trainer</label>
@@ -160,51 +208,30 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                            </div>
-
-                            <!-- Perusahaan -->
-                            <div class="col-md-6">
-                                <div class="modal-body">
-
-                                    <label for="title">Biaya Pelatihan</label>
-                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
-                                        <option value="">-- Pilih --</option>
-                                        <?php foreach ($perusahaan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-
-                                </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="row">
-                            <!-- karyawan -->
+                            <!-- Tanggal Mulai -->
                             <div class="col-md-6">
                                 <div class="modal-body">
-
                                     <label for="title">Tanggal Mulai</label>
-                                    <select class="form-control" id="karyawan" name="karyawan" required>
-                                        <option value="">-- Pilih --</option>
-                                        <?php foreach ($all_detailkaryawan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <div class="input-group mb-3 date">
+                                        <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                                        <input type="date" class="form-control" id="txtFromDate" name="tgl_mulai" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- Perusahaan -->
+                            <!-- Tanggal Berakhir -->
                             <div class="col-md-6">
                                 <div class="modal-body">
-
                                     <label for="title">Tanggal Berakhir</label>
-                                    <select class="form-control" id="perusahaan" name="perusahaan" required>
-                                        <option value="">-- Pilih --</option>
-                                        <?php foreach ($perusahaan as $p) : ?>
-                                            <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <div class="input-group mb-3 date">
+                                        <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
+                                        <input type="date" class="form-control" id="txtFromDate" name="tgl_berakhir" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -238,5 +265,30 @@
             "searching": false
 
         });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        // devisi
+        $('#perusahaan').change(function() {
+            var id = $(this).val();
+            // console.log(id); // cek id
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('admin2/karyawan/karyawan/getKaryawanBaru') ?>",
+                data: {
+                    id: id
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    // console.log(response);
+                    $('#karyawan').html(response);
+                    // get id kota by provinsi
+                }
+            });
+        });
+
     });
 </script>

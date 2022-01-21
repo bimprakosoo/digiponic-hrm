@@ -73,7 +73,7 @@ class M_Admin extends CI_Model
 
         return $this->db->get();
     }
-    
+
     // sementara => ambil dari detail karyawan
     public function allDataPosisiKaryawan()
     {
@@ -94,8 +94,8 @@ class M_Admin extends CI_Model
         $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id', 'left');
         $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id', 'left');
         $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id', 'left');
-        
-        
+
+
         return $this->db->get();
     }
     public function allDataDetailKaryawan()
@@ -123,7 +123,7 @@ class M_Admin extends CI_Model
     public function terima_pelamar2($data)
     {
         // pindah data karywaan yang diterima ke tbl_karyawan
-        $this->db->insert('data_karyawan', $data);
+        $this->db->insert('data_karyawan_training', $data);
     }
 
     public function delete_pelamar($id)
