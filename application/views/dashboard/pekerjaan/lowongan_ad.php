@@ -147,10 +147,10 @@
                                 <th>Tunjangan</th>
                                 <td><span id="dtl_tunjangan"></span></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>Image</th>
                                 <td><img src="" alt="" id="dtl_image" ></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -193,7 +193,7 @@
             var ket = $(this).data('ket');
             var syarat_pengalaman = $(this).data('syarat_pengalaman');
             var tunjangan = $(this).data('tunjangan');
-            var image = $(this).data('image');
+            // var image = $(this).data('image');
             $('#dtl_nama').text(nama_lowongan);
             $('#dtl_lokasi').text(lokasi);
             $('#dtl_perusahaan').text(perusahaan);
@@ -210,7 +210,7 @@
             $('#dtl_ket').text(ket);
             $('#dtl_syarat').text(syarat_pengalaman);
             $('#dtl_tunjangan').text(tunjangan);
-            $('#dtl_image').attr("src", image);
+            // $('#dtl_image').attr("src", image);
         });
     });
 </script>

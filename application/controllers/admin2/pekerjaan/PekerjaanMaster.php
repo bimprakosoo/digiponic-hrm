@@ -114,7 +114,7 @@ class PekerjaanMaster extends CI_Controller
                 'ket' =>  $this->input->post('ket'),
                 'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
                 'tunjangan' =>  $this->input->post('tunjangan'),
-                'image' =>     $this->M_admin->file_image()
+                // 'image' =>     $this->M_admin->file_image()
             );
 
             $insert =  $this->db->insert('lowongan', $data);
@@ -150,7 +150,7 @@ class PekerjaanMaster extends CI_Controller
             'ket' =>  $this->input->post('ket'),
             'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
             'tunjangan' =>  $this->input->post('tunjangan'),
-            'image' =>     $this->M_admin->file_image()
+            // 'image' =>     $this->M_admin->file_image()
         );
         $this->M_admin->update_low($id_lowongan, $data);
         redirect('admin2/pekerjaan/pekerjaanmaster/');
