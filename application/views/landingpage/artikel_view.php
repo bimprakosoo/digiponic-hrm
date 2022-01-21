@@ -8,36 +8,26 @@
             <div class="carousel-item active">
                 <div class="container-fluid pt-5 px-5">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col">
-                            <div class="card " style="border-radius: 10px;">
-                                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                                <div class="card-body text-start pt-5">
-                                    <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                                    <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                                    <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
+                        <?php
+                        foreach ($artikel as $d) {
+                        ?>
+                            <div class="col">
+                                <div class="card h-100 " style="border-radius: 10px;">
+                                    <img src="<?php echo base_url('assets/image/artikel/img/' . $d['image']); ?>" class="card-img-top" style="height: 250px;" alt="...">
+                                    <div class="card-body h-100 " style="text-align: justify;">
+                                        <h5 class="card-title "><?= $d['judul_artikel'] ?></h5>
+                                        <p class="card-text pt-2"><?= $d['isi_artikel'] ?></p>
+                                    </div>
+
+
+                                    <h5 class="card-footer" style="background: #fff;"><small><?= $d['post_date'] ?></small></h5>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card " style="border-radius: 10px;">
-                                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                                <div class="card-body text-start pt-5">
-                                    <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                                    <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                                    <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card " style="border-radius: 10px;">
-                                <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
-                                <div class="card-body text-start pt-5">
-                                    <h5 class="card-title ">PT MAJU BERSAMA Menjadi salah satu perusahaan terbaik di provinsi jawa timur</h5>
-                                    <p class="card-text pt-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
-                                    <h5 class="card-text py-5"><small>Jan 26, 2021</small></h5>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

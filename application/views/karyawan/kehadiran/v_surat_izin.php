@@ -55,25 +55,25 @@
                                         <td><?= $as['time_created']; ?></td>
                                         <td>
                                             <!-- Fungsi  modal -->
-                                            <button type="button" class="btn btn-primary" id="set_dtl1" data-toggle="modal" data-target="#surat" data-images="<?= $as['image']; ?>">
-                                                Foto Surat Dokter
+                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#surat" data-surat="<?= $as['image']; ?>">
+                                                Foto Surat Izin
                                             </button>
                                             <div class="modal fade" id="surat" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content ">
                                                         <div class="modal-header">
-                                                            <h2 class="modal-title">Foto Surat Dokter</h2>
+                                                            <h2 class="modal-title">Foto Surat Izin</h2>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body table-responsive ">
-                                                            <table class="table table-striped no-margin">
+                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <th>Image</th>
-                                                                        <td><img src="" alt="" id="dtl_images"></td>
+                                                                        <span id="dtl_surat"> </span>
                                                                     </tr>
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -180,7 +180,7 @@
                             </tr>
                             <tr>
                                 <th>Foto Surat Dokter</th>
-                                <td><img src="" alt="" id="dtl_image" ></td>
+                                <td><img src="" alt="" id="dtl_image2" ></td>
                             </tr>
                             <tr>
                                 <th>Keterangan</th>
@@ -218,12 +218,13 @@
         $(document).on('click', '#set_dtl', function() {
             var date_created = $(this).data('date_created');
             var time_created = $(this).data('time_created');
-            var image = $(this).data('image');
+            var surat = $(this).data('image');
             var keterangan = $(this).data('keterangan');
             var status = $(this).data('status');
             $('#dtl_tgl').text(date_created);
             $('#dtl_jam').text(time_created);
-            $('#dtl_image').attr("src", image);
+            $('#dtl_image').attr("src", surat);
+            $('#dtl_image2').attr("src", surat);
             $('#dtl_ket').text(keterangan);
             $('#dtl_status').text(status);
         });
@@ -233,8 +234,8 @@
     $(document).ready(function() {
         $(document).on('click', '#set_dtl1', function() {
            
-            var images = $(this).data('image');
-            $('#dtl_images').attr("src", images);
+            var surat = $(this).data('image');
+            $('#dtl_images').attr("src", surat);
         });
     });
 </script>

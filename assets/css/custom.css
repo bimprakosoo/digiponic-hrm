@@ -343,6 +343,13 @@ form input+i {
     text-align: center;
 }
 
+#landLowongan h3{
+    padding-top: 30px;
+    font-weight: 700;
+    color: #335c32;
+    text-align: center;
+}
+
 #landLowongan p {
     padding-top: 10px;
     font-weight: 400;

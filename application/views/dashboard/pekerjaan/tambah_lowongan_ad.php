@@ -175,13 +175,13 @@
                              </div>
                          </div>
                          <!-- Upload Surat Lamaran -->
-                         <div class="modal-body">
+                         <!-- <div class="modal-body">
                              <div class="form-group">
                                  <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Upload Image</label><br>
                                  <input class="pt-1" type="file" id="file_image" name="image">
                              </div>
                          </div>
-                     </div>
+                     </div> -->
 
                      <!-- Post Date -->
                      <!-- <button class="btn btn-primary" type="button" id="button-addon1">Date</button> -->
