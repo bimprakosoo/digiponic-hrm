@@ -18,7 +18,6 @@ class Karyawan extends CI_Controller
         $this->load->model('M_mutasi');
         $this->load->model('M_organisasi');
         $this->load->model('M_training');
-        
     }
 
     public function index()
@@ -82,22 +81,24 @@ class Karyawan extends CI_Controller
     {
         if (isset($_POST['submit'])) {
             $data = array(
-                'karyawan_id'               => $this->input->post('karyawan'),
+                'karyawan_id'       => $this->input->post('karyawan'),
+                'deskripsi'         => $this->input->post('deskripsi'),
+                'type'              => $this->input->post('type'),
+                'tgl_mulai'         => $this->input->post('tgl_mulai'),
+                'tgl_selesai'       => $this->input->post('tgl_berakhir')
             );
 
-            var_dump($data);
-            die;
-            $insert = $this->M_admin->insert_DataKaryawan($data);
+            $insert = $this->M_training->insert_DataKaryawanTraining($data);
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Insert Data Berhasil');
-                redirect('admin2/karyawan/karyawan');
+                redirect('admin2/karyawan/karyawan/training');
             } else {
                 $this->session->set_flashdata('status', 'Insert Data Gagal');
-                redirect('admin2/karyawan/karyawan');
+                redirect('admin2/karyawan/karyawan/training');
             }
         } else {
-            redirect('admin2/karyawan/karyawan');
+            redirect('admin2/karyawan/karyawan/training');
         }
     }
 
@@ -141,16 +142,36 @@ class Karyawan extends CI_Controller
         $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Management Karyawan Training';
 
+        // karyawan baru diterima
+        $data['karyawan_baru'] = $this->M_training->getData_KaryawanBaru()->result_array();
+
+        // get data
+        $data['perusahaan']         = $this->M_training->getData_AllPerusahaan()->result_array();
+        $data['type']               = $this->M_training->getData_typePelatihan()->result_array();
+        $data['karyawan_training']  = $this->M_training->getData_KaryawanTraining()->result_array();
+
+
         $data['data_training'] = $this->M_training->getDataTraining()->result_array();
         $data['all_detailkaryawan'] = $this->M_admin->allDataDetailKaryawan()->result_array();
         $data['perusahaan'] = $this->M_admin->getDataPerusahaan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        // $this->load->view('dashboard/karyawan/v_detail', $data);
         $this->load->view('dashboard/karyawan/v_training_karyawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
+
+    public function getKaryawanBaru()
+    {
+        $idperusahaan =   $this->input->post('id');
+        $data   =   $this->M_training->getKaryawanTrain($idperusahaan);
+        $output =   '<option value="">-- Pilih Karyawan --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->karyawan_id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
+    }
+
     public function edit()
     {
         $role_id    = $this->session->userdata('role_id');
