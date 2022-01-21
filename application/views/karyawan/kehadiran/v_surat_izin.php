@@ -54,15 +54,15 @@
                                         <td><?= $as['date_created']; ?></td>
                                         <td><?= $as['time_created']; ?></td>
                                         <td>
-                                            <!-- Fungsi  modal -->
-                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#surat" data-surat="<?= $as['image']; ?>">
-                                                Foto Surat Izin
+                                             <!-- image  modal -->
+                                             <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#image" data-image="<?= base_url('assets/image/izin/' . $as['image']); ?>">
+                                                Foto SUrat Dokter
                                             </button>
-                                            <div class="modal fade" id="surat" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal fade" id="image" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content ">
                                                         <div class="modal-header">
-                                                            <h2 class="modal-title">Foto Surat Izin</h2>
+                                                            <h2 class="modal-title"> Foto SUrat Dokter</h2>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -71,7 +71,7 @@
                                                             <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <span id="dtl_surat"> </span>
+                                                                    <img src="" id="dtl_image" alt="">
                                                                     </tr>
 
                                                                 </tbody>
@@ -95,7 +95,7 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                        <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-date_created="<?= $as['date_created']; ?>" data-time_created="<?= $as['time_created']; ?>" data-keterangan="<?= $as['keterangan']; ?>" data-status="<?= $as['status']; ?>" data-image="<?=$as['image']; ?>"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-date_created="<?= $as['date_created']; ?>" data-time_created="<?= $as['time_created']; ?>" data-keterangan="<?= $as['keterangan']; ?>" data-status="<?= $as['status']; ?>" data-image="<?= base_url('assets/image/izin/' . $as['image']); ?>"><i class="fas fa-eye"></i></button>
                                         </td>
 
                                     </tr>
@@ -179,16 +179,16 @@
                                 <td><span id="dtl_jam"></span></td>
                             </tr>
                             <tr>
-                                <th>Foto Surat Dokter</th>
-                                <td><img src="" alt="" id="dtl_image2" ></td>
-                            </tr>
-                            <tr>
                                 <th>Keterangan</th>
                                 <td><span id="dtl_ket"></span></td>
                             </tr>
                             <tr>
                                 <th>Status</th>
                                 <td><span id="dtl_status"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Foto Surat Dokter</th>
+                                <td><img src="" id="dtl_image2" alt=""></td>
                             </tr>
                         </tbody>
                     </table>
@@ -218,24 +218,15 @@
         $(document).on('click', '#set_dtl', function() {
             var date_created = $(this).data('date_created');
             var time_created = $(this).data('time_created');
-            var surat = $(this).data('image');
+            var image = $(this).data('image');
             var keterangan = $(this).data('keterangan');
             var status = $(this).data('status');
             $('#dtl_tgl').text(date_created);
             $('#dtl_jam').text(time_created);
-            $('#dtl_image').attr("src", surat);
-            $('#dtl_image2').attr("src", surat);
+            $('#dtl_image').attr("src", image);
+            $('#dtl_image2').attr("src", image);
             $('#dtl_ket').text(keterangan);
             $('#dtl_status').text(status);
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $(document).on('click', '#set_dtl1', function() {
-           
-            var surat = $(this).data('image');
-            $('#dtl_images').attr("src", surat);
         });
     });
 </script>
