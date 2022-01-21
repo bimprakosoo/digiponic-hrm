@@ -43,6 +43,7 @@
                                     <th>Foto Surat Dokter</th>
                                     <th>Keterangan</th>
                                     <th>Status</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,10 +55,10 @@
                                         <td><?= $as['time_created']; ?></td>
                                         <td>
                                             <!-- Fungsi  modal -->
-                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#fungsi" data-image="<?= $as['image']; ?>">
+                                            <button type="button" class="btn btn-primary" id="set_dtl1" data-toggle="modal" data-target="#surat" data-images="<?= $as['image']; ?>">
                                                 Foto Surat Dokter
                                             </button>
-                                            <div class="modal fade" id="fungsi" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal fade" id="surat" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content ">
                                                         <div class="modal-header">
@@ -66,8 +67,15 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <img src=""id="dtl_image" alt="">
+                                                        <div class="modal-body table-responsive ">
+                                                            <table class="table table-striped no-margin">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th>Image</th>
+                                                                        <td><img src="" alt="" id="dtl_images"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -85,6 +93,9 @@
                                             <?php } else if ($as['status'] == 2) { ?>
                                                 ditolak
                                             <?php } ?>
+                                        </td>
+                                        <td>
+                                        <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-date_created="<?= $as['date_created']; ?>" data-time_created="<?= $as['time_created']; ?>" data-keterangan="<?= $as['keterangan']; ?>" data-status="<?= $as['status']; ?>" data-image="<?=$as['image']; ?>"><i class="fas fa-eye"></i></button>
                                         </td>
 
                                     </tr>
@@ -146,6 +157,51 @@
     </div>
     <!-- END  modal -->
 
+     <!-- BEGIN  modal -->
+     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Perusahaan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive ">
+                    <table class="table table-striped no-margin">
+                        <tbody>
+                            <tr>
+                                <th>Tanggal Buat</th>
+                                <td><span id="dtl_tgl"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Jam</th>
+                                <td><span id="dtl_jam"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Foto Surat Dokter</th>
+                                <td><img src="" alt="" id="dtl_image" ></td>
+                            </tr>
+                            <tr>
+                                <th>Keterangan</th>
+                                <td><span id="dtl_ket"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td><span id="dtl_status"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END  modal -->
+
 </main>
 <!-- End Content -->
 <script>
@@ -160,9 +216,25 @@
 <script>
     $(document).ready(function() {
         $(document).on('click', '#set_dtl', function() {
+            var date_created = $(this).data('date_created');
+            var time_created = $(this).data('time_created');
             var image = $(this).data('image');
+            var keterangan = $(this).data('keterangan');
+            var status = $(this).data('status');
+            $('#dtl_tgl').text(date_created);
+            $('#dtl_jam').text(time_created);
             $('#dtl_image').attr("src", image);
-
+            $('#dtl_ket').text(keterangan);
+            $('#dtl_status').text(status);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl1', function() {
+           
+            var images = $(this).data('image');
+            $('#dtl_images').attr("src", images);
         });
     });
 </script>
