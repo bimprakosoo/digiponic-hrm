@@ -75,8 +75,10 @@ class LandingPage extends CI_Controller
 
     public function artikel()
     {
+        $data['artikel'] = $this->M_landingpage->getDataArtikel()->result_array();;
+
         // $this->load->view('template/header');
-        $this->load->view('landingpage/artikel_view');
+        $this->load->view('landingpage/artikel_view', $data);
         $this->load->view('template/footer');
     }
 

@@ -497,7 +497,7 @@
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
             </div> -->
             <div class="card-body h-100 text-center pt-3 w-100">
-              <h5 class="card-title"><?php echo $s['nama_lowongan']; ?></h5>
+              <h3 class="card-title pt-3"><strong><?php echo $s['nama_lowongan']; ?></strong></h3>
               <div class="card-text " style="text-align: justify;">
                 <?php echo $s['deskripsi']; ?>
               </div>
