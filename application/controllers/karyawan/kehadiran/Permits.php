@@ -17,21 +17,21 @@ class Permits extends CI_Controller
         $this->load->model('M_menu');
         $this->load->model('M_upload');
         $this->load->model('M_kehadiran');
-
-
-        $role_id    = $this->session->userdata('role_id');
-        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
-
-        $this->load->view('template/template_admin/sidebar_ad', $data);
-        $this->load->view('template/template_admin/header_ad', $data);
     }
 
     public function index()
     {
-        $idUser = $this->session->userdata('id');
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Izin';
+
+        $idUser = $this->session->userdata('id');
+
         $data['izin']  = $this->M_kehadiran->getIzin($idUser)->result_array();
+
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('karyawan/kehadiran/v_surat_izin', $data);
         $this->load->view('template/template_admin/footer_ad');
     }

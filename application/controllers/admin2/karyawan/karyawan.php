@@ -172,6 +172,21 @@ class Karyawan extends CI_Controller
         $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
 
+    public function klulus($IDTraining)
+    {
+        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+        // pindah data karywaan yang diterima ke detail_karyawan
+        $data = $this->db->get_where('data_training', ['karyawan_id' => $IDTraining])->result();
+        foreach ($data as $r) {
+            $data = [
+                'karyawan_id'           =>  $r->karyawan_id
+            ];
+
+            $this->M_training->k($data, $IDTraining);
+        }
+        redirect('admin2/karyawan/karyawan/training');
+    }
+
     public function edit()
     {
         $role_id    = $this->session->userdata('role_id');
