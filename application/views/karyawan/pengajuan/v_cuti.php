@@ -37,27 +37,29 @@
                         <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Nama Karyawan</th>
-                                    <th>Tanggal Pengajuan</th>
+                                    <th>No</th>
                                     <th>Tanggal Cuti</th>
                                     <th>Akhir Cuti </th>
-                                    <th>Lama Cuti</th>
-                                    <th>Sisa Cuti</th>
                                     <th>Keterangan</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>belum absen</td>
-                                    <td><?php echo date('Y-m-d H:i:s'); ?></td>
-                                    <td><?php echo date('Y-m-d H:i:s'); ?></td>
-                                    <td><?php echo date('Y-m-d H:i:s'); ?></td>
-                                    <td>2</td>
-                                    <td>10</td>
-                                    <td>10</td>
-                                    <td>Ditolak</td>
-                                </tr>
+
+                                <?php $i = 1;
+                                
+                                foreach ($cuti as $a) : ?>
+                                    <tr>
+
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $a['tgl_mulai']; ?></td>
+                                        <td><?= $a['tgl_selesai']; ?></td>
+                                        <td><?= $a['keterangan']; ?></td>
+                                        <td><?= $a['status']; ?></td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -78,7 +80,7 @@
                     <form action="<?= base_url('karyawan/pengajuan/cuti/kirim_pengajuan_cuti'); ?>" method="POST">
 
                         <!-- <div class="row"> -->
-                        <input type="hidden" value="<?=$ ?>">
+                        <input type="hidden" id="UserId" name="UserId" value="<?= $user['idusers'] ?>">
                         <!-- <div class="row"> -->
                         <!-- Tanggal Mulai -->
                         <div class="col-md-12">

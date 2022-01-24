@@ -98,8 +98,8 @@
                                                 lolos
                                             <?php } ?>
                                         </td>
-                                        <td> <a class="btn btn-primary" href="<?php echo base_url("admin2/karyawan/karyawan/edit/") ?>">lulus</a>
-                                       <a class="btn btn-danger" href="<?php echo base_url("admin2/karyawan/karyawan/edit/") ?>">gagal</a></td>
+                                        <td> <a class="btn btn-primary" href="<?php echo base_url("admin2/karyawan/karyawan/klulus") ?>">lulus</a>
+                                       <a class="btn btn-danger" href="<?php echo base_url("admin2/karyawan/karyawan/kgagal") ?>">gagal</a></td>
 
                                     </tr>
                                 <?php $i++;

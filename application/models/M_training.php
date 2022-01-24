@@ -58,6 +58,7 @@ class M_training extends CI_Model
         $this->db->from('data_training');
         $this->db->join('detail_karyawan', 'detail_karyawan.id = data_training.karyawan_id', 'left');
         $this->db->join('type_pelatihan', 'type_pelatihan.id = data_training.type', 'left');
+        $this->db->where('detail_karyawan');
 
         return $this->db->get();
     }
@@ -66,5 +67,11 @@ class M_training extends CI_Model
     public function insert_DataKaryawanTraining($data)
     {
         $this->db->insert('data_training', $data);
+    }
+
+    public function lulus($data)
+    {
+        // pindah data karywaan yang diterima ke tbl_karyawan
+        $this->db->insert('data_cuti', $data);
     }
 }
