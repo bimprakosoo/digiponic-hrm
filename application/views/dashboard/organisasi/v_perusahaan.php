@@ -49,9 +49,9 @@
                                         <th>Industri</th>
                                         <th>Provinsi</th>
                                         <th>Kota</th>
-                                        <th>Email</th>
+                                        <!-- <th>Email</th>
                                         <th>Alamat</th>
-                                        <th>No Telp</th>
+                                        <th>No Telp</th> -->
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -63,11 +63,11 @@
                                             <th scope="row"><?= $i ?></th>
                                             <td><?= $m['nama_perusahaan']; ?></td>
                                             <td><?= $m['industri']; ?></td>
-                                            <td><?= $m['nama_kota']; ?></td>
                                             <td><?= $m['nama_provinsi']; ?></td>
-                                            <td><?= $m['email']; ?></td>
+                                            <td><?= $m['nama_kota']; ?></td>
+                                            <!-- <td><?= $m['email']; ?></td>
                                             <td><?= $m['alamat']; ?></td>
-                                            <td><?= $m['telp']; ?></td>
+                                            <td><?= $m['telp']; ?></td> -->
                                             <td>
                                                 <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-provinsi="<?= $m['nama_provinsi']; ?>" data-kota="<?= $m['nama_kota']; ?>" data-email="<?= $m['email']; ?>" data-alamat="<?= $m['alamat']; ?>" data-telp="<?= $m['telp']; ?>"><i class="fas fa-eye"></i></button>
                                                 <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/perusahaan/edit/") . $m['id']; ?>"><i class="fas fa-edit"></i></a>
@@ -198,14 +198,44 @@
         <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Detail Perusahaan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                   
                     <div class="modal-body table-responsive ">
-                        <table class="table table-striped" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                        <h4 class="text-center pt-3" style="color: #335C32;"><Strong>Perusahaan</Strong></h4>
+                        <h5 class="text-center"><span id="nama_perusahaan"></h5>
+                        <div class="container text-center px-4 py-4">
+                            <div class="row gx-5 ">
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>Industri</Strong></p>
+                                    <span id="dtl_industri">
+                                </div>
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>Email</Strong></p>
+                                    <span id="dtl_email"></span>
+                                </div>
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>No Tlpn</Strong></p>
+                                    <span id="dtl_telp"></span>
+                                </div>
+                            </div>
+                            <div class="row gx-5 pt-4">
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>Provinsi</Strong></p>
+                                    <span id="dtl_provinsi"></span>
+                                </div>
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>Kota</Strong></p>
+                                    <span id="dtl_kota"></span>
+                                </div>
+                            </div>
+                            <div class="row gx-5 pt-4">
+                                <div class="col">
+                                    <p style="color: #335C32;"><Strong>Alamat Perusahaan</Strong></p>
+                                    <span id="dtl_alamat">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- <table class="table table-striped" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <th>Nama Perusahaan</th>
@@ -236,7 +266,7 @@
                                     <td><span id="dtl_telp"></span></td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

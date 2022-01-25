@@ -50,7 +50,7 @@
                                         <td><?= $d['nama']; ?></td>
                                     
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_golongan="<?= $d['nama']; ?>" "><i class="fas fa-eye"></i></button>
+                                            <!-- <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_golongan="<?= $d['nama']; ?>" "><i class="fas fa-eye"></i></button> -->
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/golongan/edit/") . $d['gol_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/golongan/hapus/") . $d['gol_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>

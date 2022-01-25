@@ -56,7 +56,7 @@
                                         <td><?= $d['nama_provinsi']; ?></td>
 
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_penempatan="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>" data-nama_kota="<?= $d['nama_kota']; ?>" data-nama_provinsi="<?= $d['nama_provinsi']; ?>"><i class="fas fa-eye"></i></button>
+                                            <!-- <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_penempatan="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>" data-nama_kota="<?= $d['nama_kota']; ?>" data-nama_provinsi="<?= $d['nama_provinsi']; ?>"><i class="fas fa-eye"></i></button> -->
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/penempatan/edit/") . $d['id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/penempatan/hapus/") . $d['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>

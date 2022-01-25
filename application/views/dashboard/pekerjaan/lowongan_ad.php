@@ -37,7 +37,7 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Pekerjaan</th>
+                                    <th>Lowongan</th>
                                     <th>Lokasi</th>
                                     <th>Perusahaan</th>
                                     <th>Industri</th>
@@ -51,10 +51,10 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $m['nama_lowongan']; ?></td>
                                         <td><?= $m['lokasi']; ?></td>
-                                        <td><?= $m['perusahaan']; ?></td>
+                                        <td><?= $m['nama_perusahaan']; ?></td>
                                         <td><?= $m['industri']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-deskripsi="<?= $m['deskripsi']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-insentif_lembur="<?= $m['insentif_lembur']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>" data-waktu_bekerja="<?= $m['waktu_bekerja']; ?>" data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" data-image="<?= base_url('assets/image/lowongan/') . $m['image']; ?>"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-deskripsi="<?= $m['deskripsi']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>"  data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>"  data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" ><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/pekerjaan/pekerjaanmaster/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -74,14 +74,78 @@
     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detail Perusahaan</h5>
+                <!-- <div class="modal-header ">
+                    <h5 class="modal-title ">Detail Perusahaan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
+                </div> -->
                 <div class="modal-body table-responsive ">
-                    <table class="table table-striped no-margin">
+                    <h4 class="text-center pt-3" style="color: #335C32;"><Strong>Lowongan</Strong></h4>
+                    <h5 class="text-center"><span id="dtl_nama"></span> di perusahaan <span id="dtl_perusahaan"></span></h5>
+                    <div class="container text-center px-4 py-4">
+                        <div class="row gx-5 ">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Lokasi</Strong></p>
+                                <span id="dtl_lokasi"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Industri</Strong></p>
+                                <span id="dtl_industri"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Tipe Pekerjaan</Strong></p>
+                                <span id="dtl_tipe"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Pendidikan</Strong></p>
+                                <span id="dtl_pendidikan">
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Pengalaman Kerja</Strong></p>
+                                <span id="dtl_pengalaman"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Level Pekerjaan</Strong></p>
+                                <span id="dtl_level"> </span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Gaji</Strong></p>
+                                <p>Rp &nbsp;<span id="dtl_gaji"></span></p>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Post date</Strong></p>
+                                <span id="dtl_post"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Deskripsi Singkat</Strong></p>
+                                <span id="dtl_desk"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Tugas dan Tanggungjawab</Strong></p>
+                                <span id="dtl_ket"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Persayaratan</Strong></p>
+                                <span id="dtl_syarat"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Tunjangan</Strong></p>
+                                <span id="dtl_tunjangan"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <table class="table table-striped no-margin">
                         <tbody>
                             <tr>
                                 <th>Nama Lowongan</th>
@@ -147,16 +211,15 @@
                                 <th>Tunjangan</th>
                                 <td><span id="dtl_tunjangan"></span></td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <th>Image</th>
                                 <td><img src="" alt="" id="dtl_image" ></td>
-                            </tr> -->
-                        </tbody>
+                            </tr>
+                        </tbody> -->
                     </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -213,4 +276,7 @@
             // $('#dtl_image').attr("src", image);
         });
     });
+</script>
+<script>
+    var x = document.getElementById("dtl_ket").innerHTML;
 </script>

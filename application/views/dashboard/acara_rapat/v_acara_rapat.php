@@ -55,7 +55,7 @@
                                         <td><?= $d['waktu_dimulai']; ?></td>
                                         <td><?= $d['waktu_berakhir']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl"><i class="fas fa-eye"></i></button>
+                                            <!-- <button class="btn btn-secondary" id="set_dtl"><i class="fas fa-eye"></i></button> -->
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/artikel/artikel/edit/") . $d['id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/artikel/artikel/hapus/") . $d['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>

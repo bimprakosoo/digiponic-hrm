@@ -16,48 +16,6 @@
         <div class="container-fluid p-0">
 
             <div class="card shadow mb-4 ">
-                <div class="card-body py-3 " style="background: #fff;">
-                    <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
-                    <h3 class="m-0 font-weight-bold ">Absensi Harian</h3>
-                </div>
-                <div class="card-body ">
-                    <div class="table-responsive">
-                        <table class="table table-striped text-center" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
-                            <thead class="table-dark">
-                                <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
-                                <tr>
-                                    <th>Status</th>
-                                    <th>Tanggal</th>
-                                    <th>Absen Masuk</th>
-                                    <th>Absen Pulang</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <form action="<?= base_url('karyawan/kehadiran/absensi/Absen_CheckIn'); ?>" method="POST">
-                                        <div>
-                                            <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
-                                            
-                                        </div>
-
-
-                                        <td>belum absen</td>
-                                        <td><?php echo date('Y-m-d H:i:s'); ?></td>
-
-
-                                        <td><button class="btn btn-primary" type="submit" name="submit">Absen Masuk</button></td>
-                                        <!-- <td><button class="btn btn-success" type="submit" name="submit">Absen Pulang</button></td> -->
-                                        <td><a class="btn btn-success" href="<?php echo base_url('karyawan/kehadiran/absensi/Absen_CheckOut'); ?>">Absen Pulang</a></td>
-                                    </form>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card shadow mb-4 ">
                 <div class="card-body py-3" style="background: #fff;">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
                     <h3 class="m-0 font-weight-bold">Daftar Data Absensi</h3>
@@ -79,17 +37,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 1;
-                                foreach ($absen as $a) : ?>
-
+                                
                                     <tr>
-                                        <th scope="row"><?= $i ?></th>
-                                        <td><?= $a['tanggal']; ?></td>
-                                        <td><?= $a['jam_masuk']; ?></td>
-                                        <td><?= $a['jam_keluar']; ?></td>
+                                        <th scope="row">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            </div>
+                                        </th>
+                                        <td><?php echo date('Y-m-d'); ?></td>
+                                        <td><?php echo date('Y-m-d'); ?></td>
+                                        <td><?php echo date('Y-m-d'); ?></td>
                                     </tr>
-                                <?php $i++;
-                                endforeach; ?>
+                               
                             </tbody>
                         </table>
                     </div>
