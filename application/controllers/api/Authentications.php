@@ -31,8 +31,9 @@ class Authentications extends RestController
                 // cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
-                        'email'  =>  $user['email'],
-                        'role_id'    =>  $user['role_id']
+                        'id'        => $user['id'],
+                        'email'     =>  $user['email'],
+                        'role_id'   =>  $user['role_id']
                     ];
 
                     // Set the response and exit

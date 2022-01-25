@@ -30,7 +30,7 @@
             <div class="card shadow mb-4 ">
                 <div class="card-body py-3" style="background: #fff;">
                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
-                    <h3 class="m-0 font-weight-bold">Daftar Data Absensi</h3>
+                    <h3 class="m-0 font-weight-bold">Daftar Data izin</h3>
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">

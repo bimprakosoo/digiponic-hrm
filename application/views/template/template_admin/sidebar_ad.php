@@ -43,7 +43,7 @@
         });
     </script> -->
 
-    <script>
+    <!-- <script>
         $.datepicker.setDefaults({
             showOn: "button",
             buttonImage: "<?php echo base_url(); ?>assets/calendar.svg",
@@ -53,7 +53,7 @@
         $(function() {
             $("#txtFromDate").datepicker();
         });
-    </script>
+    </script> -->
 
 </head>
 

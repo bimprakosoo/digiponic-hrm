@@ -26,7 +26,7 @@ class Cuti extends CI_Controller
         $data['title'] = 'Pengajuan Cuti';
 
 
-        // $data['cuti'] = $this->M_pengajuan->pengajuanCuti();
+        $data['cuti'] = $this->M_pengajuan->pengajuanCuti();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
@@ -39,7 +39,7 @@ class Cuti extends CI_Controller
     {
         if (isset($_POST['submit'])) {
             $data = array(
-                
+                'karyawan_id'         => $this->input->post('UserId'),
                 'tgl_mulai'         => $this->input->post('tgl_mulai'),
                 'tgl_selesai'       => $this->input->post('tgl_berakhir'),
                 'keterangan'       => $this->input->post('keterangan')
