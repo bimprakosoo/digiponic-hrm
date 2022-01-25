@@ -63,13 +63,6 @@
                                 </select>
 
                             </div>
-                         <!-- Industri -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Industri</label>
-                                 <input type="text" class="form-control" id="industri" name="industri">
-                             </div>
-                         </div>
                          <!-- Tipe Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -95,13 +88,6 @@
                                  <!-- <input type="text" class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"> -->
                              </div>
                          </div>
-                         <!-- Insentif -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Insentif</label>
-                                 <input type="text" class="form-control" id="insentif_lembur" name="insentif_lembur">
-                             </div>
-                         </div>
                          <!-- Level Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -123,13 +109,7 @@
                                  <!-- <input type="text" class="form-control" id="pendidikan" name="pendidikan"> -->
                              </div>
                          </div>
-                         <!-- Waktu Bekerja -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Waktu Bekerja</label>
-                                 <textarea class="ckeditor text-start" id="waktu_bekerja" name="waktu_bekerja"></textarea>
-                             </div>
-                         </div>
+                         
                          <!-- Gaji -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -153,18 +133,18 @@
                              </div>
                          </div>
 
-                         <!-- Keterangan -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Keterangan</label>
-                                 <textarea class="ckeditor" id="ket" name="ket"></textarea>
-                             </div>
-                         </div>
                          <!-- Syarat PEngalaman -->
                          <div class="modal-body">
                              <div class="form-group">
-                                 <label for="title">Syarat Pengalaman</label>
+                                 <label for="title">Persayaratan </label>
                                  <textarea class="ckeditor" id="syarat_pengalaman" name="syarat_pengalaman"></textarea>
+                             </div>
+                         </div>
+                         <!-- Tugas -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Tugas dan Tanggungjawab</label>
+                                 <textarea class="ckeditor" id="ket" name="ket"></textarea>
                              </div>
                          </div>
                          <!-- Tunjangan -->

@@ -91,8 +91,11 @@
                                                  <h5>Karyawan</h5>
 
                                              </div>
+                                             <div class="col-">
 
-                                             <div class="col-9">
+                                             </div>
+
+                                             <div class="col-7">
 
                                                  <select class="form-control" id="karyawan" name="karyawan" required>
                                                      <option value="">-- Pilih karyawan --</option>

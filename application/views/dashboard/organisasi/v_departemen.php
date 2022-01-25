@@ -40,10 +40,10 @@
                                     <th>No</th>
                                     <th>Nama Departemen</th>
                                     <th>Nama Perusahaan</th>
-                                    <th>Deskripsi</th>
+                                    <!-- <th>Deskripsi</th>
                                     <th>Fungsi</th>
                                     <th>Peran</th>
-                                    <th>Foto</th>
+                                    <th>Foto</th> -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -55,135 +55,6 @@
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['nama']; ?></td> <!-- nama departemnt -->
                                         <td><?= $d['nama_perusahaan']; ?></td>
-                                        <td>
-                                            <!-- Fungsi  modal -->
-                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#deskripsi" data-deskripsi="<?= $d['deskripsi']; ?>">
-                                                Deskripsi
-                                            </button>
-                                            <div class="modal fade" id="deskripsi" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Deskripsi Singkat</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body table-responsive ">
-                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <span id="dtl_deskripsi"> </span>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td>
-                                            <!-- Fungsi  modal -->
-                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#fungsi" data-fungsi="<?= $d['fungsi']; ?>">
-                                                Fungsi
-                                            </button>
-                                            <div class="modal fade" id="fungsi" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Fungsi</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body table-responsive ">
-                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <span id="dtl_fungsi"> </span>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td>
-                                            <!-- Fungsi  modal -->
-                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#peran" data-peran="<?= $d['peran']; ?>">
-                                                Peran
-                                            </button>
-                                            <div class="modal fade" id="peran" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Peran</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body table-responsive ">
-                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <span id="dtl_peran"> </span>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td>
-                                            <!-- image  modal -->
-                                            <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#image" data-image="<?= base_url('assets/image/departemen/foto/' . $d['image']); ?>">
-                                                image
-                                            </button>
-                                            <div class="modal fade" id="image" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Image</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body table-responsive ">
-                                                            <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                                                <tbody>
-                                                                    <tr>
-                                                                    <img src="" id="dtl_image" alt="">
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                            <!-- <img src="<?= base_url('assets/image/departemen/foto/' . $d['image']); ?>" style="width:100px ; height: 50px;" alt=""> -->
-                                        </td>
 
                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
@@ -284,16 +155,48 @@
 
     <!-- Detail -->
     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detail Perusahaan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+
                 <div class="modal-body table-responsive ">
-                    <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                    <h4 class="text-center pt-3" style="color: #335C32;"><Strong>Departemen</Strong></h4>
+                    <h5 class="text-center"><span id="nama_departemen"></span></h5>
+                    <div class="container text-center px-4 py-4">
+                        <div class="row gx-5 ">
+                            <div class="col">
+                                <img src="" alt="" id="dtl_image2" style="height: 500px; width: 500px;">
+                            </div>
+                            <div class="col">
+                                <div class="row gx-5 ">
+                                    <div class="col">
+                                        <p style="color: #335C32;"><Strong> Terletak di Perusahaan</Strong></p>
+                                        <span id="nama_perusahaan"></span>
+                                    </div>
+                                </div>
+                                <div class="row gx-5  pt-4">
+                                    <div class="col">
+                                        <p style="color: #335C32;"><Strong>Deskripsi Singkat</Strong></p>
+                                        <span id="dtl_deskripsi"></span>
+                                    </div>
+                                </div>
+                                <div class="row gx-5 pt-4">
+                                    <div class="col">
+                                        <p style="color: #335C32;"><Strong>Fungsi</Strong></p>
+                                        <span id="dtl_fungsi2"></span>
+                                    </div>
+                                </div>
+                                <div class="row gx-5 pt-4">
+                                    <div class="col">
+                                        <p style="color: #335C32;"><Strong>Peran</Strong></p>
+                                        <span id="dtl_peran2"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                         <tbody>
                             <tr>
                                 <th>Nama Departemen</th>
@@ -321,7 +224,7 @@
                             </tr>
 
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

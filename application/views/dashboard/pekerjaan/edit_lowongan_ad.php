@@ -27,7 +27,7 @@
                          <!-- Nama -->
                          <div class="modal-body">
                              <div class="form-group">
-                                 <label for="title">Nama Lowongan</label>
+                                 <label for="title">Lowongan</label>
                                  <input type="text" class="form-control" id="nama_lowongan" name="nama_lowongan" value="<?= $lowongan['nama_lowongan'] ?>" placeholder="Nama Lowongan" required>
                              </div>
                          </div>
@@ -42,24 +42,17 @@
                          <div class="modal-body">
 
                              <label for="title">Perusahaan</label>
-                             <select  class="form-select" aria-label="Default select example" id="perusahaan" name="perusahaan" required>
+                             <select class="form-select" aria-label="Default select example" id="perusahaan" name="perusahaan" required>
                                  <option value="">-- Pilih --</option>
                                  <?php foreach ($perusahaan as  $p) {
-                                        if ( $p['id'] == $lowongan['perusahaan']) { ?>
-                                         <option value="<?=  $p['id'] ?>" selected><?=  $p['nama_perusahaan'] ?></option>
+                                        if ($p['id'] == $lowongan['perusahaan_id']) { ?>
+                                         <option value="<?= $p['id'] ?>" selected><?= $p['nama_perusahaan'] ?></option>
                                      <?php } else { ?>
-                                         <option value="<?=  $p['id'] ?>"><?=  $p['nama_perusahaan'] ?></option>
+                                         <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
                                  <?php }
                                     } ?>
                              </select>
 
-                         </div>
-                         <!-- Industri -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Industri</label>
-                                 <input type="text" class="form-control" id="industri" name="industri" value="<?= $lowongan['industri'] ?>" placeholder="industri" required>
-                             </div>
                          </div>
                          <!-- Tipe Pekerjaan -->
                          <div class="modal-body">
@@ -104,13 +97,7 @@
                                  <!-- <input type="text" class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"> -->
                              </div>
                          </div>
-                         <!-- Insentif -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Insentif</label>
-                                 <input type="text" class="form-control" id="insentif_lembur" name="insentif_lembur" value="<?= $lowongan['insentif_lembur'] ?>" placeholder="insentif_lembur" required>
-                             </div>
-                         </div>
+                         
                          <!-- Level Pekerjaan -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -150,13 +137,7 @@
                                  <!-- <input type="text" class="form-control" id="pendidikan" name="pendidikan"> -->
                              </div>
                          </div>
-                         <!-- Waktu Bekerja -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Waktu Bekerja</label>
-                                 <textarea class="ckeditor text-start" id="waktu_bekerja" name="waktu_bekerja" required><?= $lowongan['waktu_bekerja'] ?></textarea>
-                             </div>
-                         </div>
+                         
                          <!-- Gaji -->
                          <div class="modal-body">
                              <div class="form-group">
@@ -179,18 +160,18 @@
                              </div>
                          </div>
 
-                         <!-- Keterangan -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Keterangan</label>
-                                 <textarea class="ckeditor" id="ket" name="ket" required><?= $lowongan['ket'] ?></textarea>
-                             </div>
-                         </div>
                          <!-- Syarat PEngalaman -->
                          <div class="modal-body">
                              <div class="form-group">
-                                 <label for="title">Syarat Pengalaman</label>
+                                 <label for="title">Persayaratan</label>
                                  <textarea class="ckeditor" id="syarat_pengalaman" name="syarat_pengalaman"><?= $lowongan['syarat_pengalaman'] ?></textarea>
+                             </div>
+                         </div>
+                         <!-- Keterangan -->
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Tugas dan Tanggungjawab</label>
+                                 <textarea class="ckeditor" id="ket" name="ket" required><?= $lowongan['ket'] ?></textarea>
                              </div>
                          </div>
                          <!-- Tunjangan -->
@@ -200,14 +181,7 @@
                                  <textarea class="ckeditor" id="tunjangan" name="tunjangan"><?= $lowongan['tunjangan'] ?></textarea>
                              </div>
                          </div>
-                         <!-- Upload Surat Lamaran -->
-                         <div class="modal-body">
-                             <div class="form-group">
-                                 <label for="title">Upload Image</label><br>
-                                 <img src="<?= base_url('assets/image/lowongan/') . $lowongan['image']; ?>" style="width: 50 px; height: 50px"><br>
-                                 <input class="pt-1" type="file" id="file_image" name="image">
-                             </div>
-                         </div>
+                         
                      </div>
 
                      <!-- Post Date -->
