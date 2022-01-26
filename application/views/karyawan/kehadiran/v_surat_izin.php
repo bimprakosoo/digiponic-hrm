@@ -56,7 +56,7 @@
                                         <td>
                                              <!-- image  modal -->
                                              <button type="button" class="btn btn-primary" id="set_dtl" data-toggle="modal" data-target="#image" data-image="<?= base_url('assets/image/izin/' . $as['image']); ?>">
-                                                Foto SUrat Dokter
+                                                Foto Surat Dokter
                                             </button>
                                             <div class="modal fade" id="image" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg" role="document">
@@ -120,13 +120,7 @@
                 <div class="modal-body table-responsive ">
                     <form action="<?= base_url('karyawan/kehadiran/permits/izinform'); ?>" method="POST" enctype="multipart/form-data">
                         <!-- Department -->
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="title">name</label>
-                                <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
-                            </div>
-                        </div>
-
+                        <input type="hidden" id="UserId" name="UserId" value="<?= $user['id'] ?>">
                         <!-- Perusahaan -->
                         <div class="mb-3 col-md-6">
                             <div class="modal-body">

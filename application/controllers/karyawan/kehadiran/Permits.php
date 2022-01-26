@@ -17,6 +17,7 @@ class Permits extends CI_Controller
         $this->load->model('M_menu');
         $this->load->model('M_upload');
         $this->load->model('M_kehadiran');
+        $this->load->model('M_notifikasi');
     }
 
     public function index()
@@ -52,13 +53,24 @@ class Permits extends CI_Controller
                 'image'         =>  $this->M_upload->izin()
             );
 
-
+            $notif = array(
+                'role_id' => 1,
+                'jenis_notifikasi' => 'karyawan izin',
+                'created_at' => date('Y-m-d H:i:s'),
+                'status' => 0
+            );
 
             $insert = $this->M_kehadiran->postIzin($data);
 
             if ($insert) {
-                $this->session->set_flashdata('status', 'Check-in berhasil');
-                redirect('karyawan/kehadiran/permits');
+                $insert_notif = $this->M_notifikasi->addNotif($notif);
+                if ($insert_notif) {
+                    $this->session->set_flashdata('status', 'Data Ijin Berhasil Masuk');
+                    redirect('karyawan/kehadiran/permits');
+                } else {
+                    $this->session->set_flashdata('status', 'Data Ijin Gagal Masuk');
+                    redirect('karyawan/kehadiran/permits');
+                }
             } else {
                 $this->session->set_flashdata('status', 'Check-in gagal');
                 redirect('karyawan/kehadiran/permits');
