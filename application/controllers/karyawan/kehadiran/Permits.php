@@ -57,7 +57,8 @@ class Permits extends CI_Controller
                 'role_id' => 1,
                 'jenis_notifikasi' => 'karyawan izin',
                 'created_at' => date('Y-m-d H:i:s'),
-                'status' => 0
+                'read_status' => 0,
+                'status' => 1
             );
 
             $insert = $this->M_kehadiran->postIzin($data);
