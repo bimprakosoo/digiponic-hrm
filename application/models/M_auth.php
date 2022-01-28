@@ -36,7 +36,7 @@ class M_auth extends CI_Model
   public function getUser($email)
   {
     // return $this->db->get_where('users', ['email' => $email])->row_array();
-    $this->db->select('*,
+    $this->db->select('users.*,
     detail_karyawan.id AS idusers');
     $this->db->from('users');
     $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left');
@@ -48,7 +48,7 @@ class M_auth extends CI_Model
   public function getUserRow()
   {
     // return $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-    $this->db->select('*,
+    $this->db->select('users.*,
     detail_karyawan.id AS idusers');
     $this->db->from('users');
     $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left');

@@ -16,6 +16,7 @@ class Dashboard extends CI_Controller
         $this->load->model('M_auth');
         $this->load->model('M_menu');
         $this->load->model('M_mutasi');
+        $this->load->model('M_organisasi');
     }
 
     public function index()
@@ -71,6 +72,17 @@ class Dashboard extends CI_Controller
     }
 
     // update
+    public function profileEditPass()
+    {
+        $iduser   = $this->session->userdata('id');
+        $data = array(
+            'password'  =>  password_hash($this->input->post('pass'), PASSWORD_DEFAULT),
+
+        );
+        // var_dump($data, $iduser); die;
+        $this->M_organisasi->update_profile($iduser, $data);
+        redirect('admin2/dashboard/dashboard/profile');
+    }
 
     public function terimaMutasi($IDmutasi)
     {

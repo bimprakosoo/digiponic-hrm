@@ -91,7 +91,7 @@ class M_landingpage extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('lowongan');
-        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan');
+        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id');
         $this->db->where('id_lowongan', $data_id);
 
         return $this->db->get();

@@ -208,6 +208,12 @@ class M_organisasi extends CI_Model
         $this->db->delete('penempatan');
     }
 
+    // Profile------------------------------------------------------------------------------------------------------
+    public function update_profile($id_user, $data)
+    {
+        $this->db->where('id', $id_user);
+        $this->db->update('users', $data);
+    }
 
 
 

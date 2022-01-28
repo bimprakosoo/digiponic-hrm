@@ -1,138 +1,104 @@
-<div class="container">
-    <div class="row gutters py-5">
-        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+<!-- content -->
+<div class="container-fluid p-0 d-flex align-items-center" style="width: 1184px; height:60px; background: #FCFCFC;">
+    <nav aria-label="breadcrumb" class="m-4">
+        <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
+            <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/'); ?>">Dashboards</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Artikel</li>
+        </ol>
+    </nav>
+</div>
+<main class="content">
+
+    <div class="row">
+        <div class="col-lg-4">
             <div class="card ">
                 <div class="card-body">
-                    <div class="account-settings">
-                        <div class="user-profile">
-                            <div class="user-avatar pb-3">
-                                <img src="<?php echo base_url('assets/image/profil/') . $user['image']; ?>" class="rounded mx-auto d-block" style="width: 180px; height:180px;">
-                            </div>
-                            <h5 class="user-name"><?= $user['nama'] ?></h5>
-                            <h6 class="user-email"><?= $user['email'] ?></h6> <!-- jabatan -->
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                        <div class="mt-3">
+                            <h4>John Doe</h4>
+                            <p class="text-secondary mb-1">Full Stack Developer</p>
+                            <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
+        <div class="col-lg-8">
+            <div class="card">
                 <div class="card-body">
-                    <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="mb-2 text-primary">Data Pribadi</h6>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Nama Lengkap</h6>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="John Doe">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="john@example.com">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Jenis Kelamin</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="(239) 816-9029">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">No. Tlpn</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="(320) 380-4539">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Alamat Lengkap</h6>
+                        </div>
+                        <div class="col-sm-5 text-secondary">
                             <div class="form-group">
-                                <label for="fullName">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                                <select name="kota" id="kota" class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih Kota</option>
+                                    <option value="kontrak">Kontrak</option>
+                                    <option value="tetap">Tetap</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="col-sm-4 text-secondary">
                             <div class="form-group">
-                                <label for="website">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="eMail">Tanggal Lahir</label>
-                                <input type="date" class="form-control" id="tanggal_lahir" placeholder="Tanggal Lahir">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="phone">Jenis Kelamin</label>
-                                <input type="text" class="form-control" id="jk" placeholder="Jenis Kelamin">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Status Perkawinan</label>
-                                <input type="url" class="form-control" id="status_perkawinan" placeholder="Status Perkawinan">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Pendidikan Terakhir</label>
-                                <input type="url" class="form-control" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir">
+                                <select name="provinsi" id="provinsi" class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih Provinsi</option>
+                                    <option value="kontrak">Kontrak</option>
+                                    <option value="tetap">Tetap</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0"></h6>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="Street">Provinsi</label>
-                                <input type="name" class="form-control" id="provinsi" placeholder="Provinsi">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="ciTy">Kota</label>
-                                <input type="name" class="form-control" id="kota" placeholder="Kota">
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="form-group">
-                                <label for="sTate">Alamat Lengkap</label>
-                                <input type="text" class="form-control" id="alamat_lengkap" placeholder="Alamat Lengkap">
-                            </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
                         </div>
                     </div>
-                    <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="mb-2 text-primary">Detail</h6>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="fullName">Penempatan</label>
-                                <input type="text" class="form-control" id="penempatan" placeholder="Penempatan" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Perusahaan</label>
-                                <input type="text" class="form-control" id="perusahaan" placeholder="Perusahaan" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="eMail">Departemen</label>
-                                <input type="text" class="form-control" id="departemen" placeholder="Departemen" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="phone">Divisi</label>
-                                <input type="text" class="form-control" id="divisi" placeholder="Divisi" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Jabatan</label>
-                                <input type="text" class="form-control" id="jabatan" placeholder="Jabatan" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Posisi</label>
-                                <input type="text" class="form-control" id="posisi" placeholder="Posisi" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="text-right">
-                                <a href="<?= base_url('admin2/dashboard/dashboard/profile')?>" class="btn btn-secondary">Cancel</a>
-                                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="button" class="btn btn-primary px-4" value="Update">
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-</div>
+</main>
