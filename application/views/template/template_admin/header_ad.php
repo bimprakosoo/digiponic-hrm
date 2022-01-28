@@ -5,7 +5,7 @@
             <i class="hamburger align-self-center"></i>
         </a>
 
-        <a><?= $user['idusers'] ?></a>
+        <a><?= $user['id'] ?></a>
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">

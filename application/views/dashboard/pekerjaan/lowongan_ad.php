@@ -123,25 +123,25 @@
                         <div class="row gx-5 pt-4">
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Deskripsi Singkat</Strong></p>
-                                <span id="dtl_desk"></span>
+                                <span class="text-justify" id="dtl_desk"></span>
                             </div>
                         </div>
                         <div class="row gx-5 pt-4">
-                            <div class="col">
+                            <div class="col ">
                                 <p style="color: #335C32;"><Strong>Tugas dan Tanggungjawab</Strong></p>
-                                <span id="dtl_ket"></span>
+                                <span class="text-justify" id="dtl_ket"></span>
                             </div>
                         </div>
                         <div class="row gx-5 pt-4">
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Persayaratan</Strong></p>
-                                <span id="dtl_syarat"></span>
+                                <span class="text-justify" id="dtl_syarat"></span>
                             </div>
                         </div>
                         <div class="row gx-5 pt-4">
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Tunjangan</Strong></p>
-                                <span id="dtl_tunjangan"></span>
+                                <span class="text-justify" id="dtl_tunjangan"></span>
                             </div>
                         </div>
                     </div>
@@ -269,10 +269,14 @@
             $('#dtl_waktu').text(waktu_bekerja);
             $('#dtl_gaji').text(gaji);
             $('#dtl_post').text(post_date);
-            $('#dtl_desk').text(deskripsi);
-            $('#dtl_ket').text(ket);
-            $('#dtl_syarat').text(syarat_pengalaman);
-            $('#dtl_tunjangan').text(tunjangan);
+            $('#dtl_desk').text('');
+            $('#dtl_desk').append(deskripsi);
+            $('#dtl_ket').text('');
+            $('#dtl_ket').append(ket);
+            $('#dtl_syarat').text('');
+            $('#dtl_syarat').append(syarat_pengalaman);
+            $('#dtl_tunjangan').text('');
+            $('#dtl_tunjangan').append(tunjangan);
             // $('#dtl_image').attr("src", image);
         });
     });

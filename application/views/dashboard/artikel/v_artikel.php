@@ -37,44 +37,18 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Judul Artikel</th>
-                                    <th>Isi Artikel</th>
-                                    <th>Image</th>
+                                    <!-- <th>Isi Artikel</th>
+                                    <th>Image</th> -->
                                     <th>Tanggal Pembuatan</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="table-sm ">
                                 <?php $i = 1;
                                 foreach ($artikel as $d) : ?>
                                     <tr>
                                         <th scope="row"><?= $i ?></th>
                                         <td><?= $d['judul_artikel']; ?></td>
-                                         <td>
-                                            <!-- Fungsi  modal -->
-                                            <button type="button" id="set_dtl" class="btn btn-primary" data-toggle="modal" data-target="#deskripsi" data-isi_artikel="<?= $d['isi_artikel']; ?>">
-                                                Deskripsi
-                                            </button>
-                                            <div class="modal fade" id="deskripsi" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title">Deskripsi Singkat</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body m-3 text-truncate" style="text-align: start !important;">
-                                                            <span  id="dtl_isi"></span>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END  modal -->
-                                        </td>
-                                        <td><img class="rounded-circle" src="<?= base_url('assets/image/artikel/img/') . $d['image']; ?>" style="width: 50px; height: 50px;"></td>
 
                                         <td><?= $d['post_date']; ?></td>
                                         <td>
@@ -148,16 +122,32 @@
 
     <!-- Detail  modal -->
     <div class="modal fade" id="sizedModalMd" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detail Artikel</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body table-responsive ">
-                    <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                    <h4 class="text-center pt-3" style="color: #335C32;"><Strong><span id="dtl_judul"></span></Strong></h4>
+                    <div class="container text-center px-4 py-4">
+                        <div class="row gx-5 ">
+                            <div class="col">
+                                <img src="" alt="" id="dtl_image" style="height: 500px; width: 500px;">
+                            </div>
+                            <div class="col">
+                                <div class="row gx-5 ">
+                                    <div class="col" >
+                                        <!-- <p style="color: #335C32;"><Strong> Isi Artikel</Strong></p> -->
+                                        <p id="dtl_isi2"></p>
+                                    </div>
+                                </div>
+                                <div class="row gx-5  pt-4">
+                                    <div class="col">
+                                        <p style="color: #335C32;"><Strong>Post Date</Strong></p>
+                                        <span id="dtl_post"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- <table class="table table-striped " width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
                         <tbody>
                             <tr>
                                 <th>Judul Artikel</th>
@@ -177,15 +167,15 @@
                             </tr>
 
                         </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </table> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- END  modal -->
+        <!-- END  modal -->
 
 </main>
 <!-- End Content -->
@@ -203,14 +193,14 @@
             var judul_artikel = $(this).data('judul_artikel');
             var isi_artikel = $(this).data('isi_artikel');
             var image = $(this).data('image');
-            var post_date = $(this).data('post_date');            
+            var post_date = $(this).data('post_date');
             $('#dtl_judul').text(judul_artikel);
-            $('#dtl_isi').text(isi_artikel);
-            $('#dtl_isi2').text(isi_artikel);
+            // $('#dtl_isi').text(isi_artikel);
+            $('#dtl_isi2').text('');
+            $('#dtl_isi2').append(isi_artikel);
             $('#dtl_image').attr("src", image);
             $('#dtl_post').text(post_date);
 
         });
     });
 </script>
-
