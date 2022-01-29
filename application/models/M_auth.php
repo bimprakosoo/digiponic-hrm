@@ -36,8 +36,15 @@ class M_auth extends CI_Model
   public function getUser($email)
   {
     // return $this->db->get_where('users', ['email' => $email])->row_array();
-    $this->db->select('users.*,
-    detail_karyawan.id AS idusers');
+    $this->db->select('users.id,
+    users.image,
+    users.email,
+    users.`password`,
+    users.`status`,
+    users.role_id,
+    users.is_active,
+    detail_karyawan.nama,
+    detail_karyawan.id AS idusers ');
     $this->db->from('users');
     $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left');
     $this->db->where('email',  $email);

@@ -46,4 +46,14 @@ class M_menu extends CI_Model
     {
         $this->db->insert('user_sub_menu', $data);
     }
+
+    public function Role()
+    {
+        return $this->db->get('user_role');
+    }
+
+    public function RoleAccess($role_id)
+    {
+        return $this->db->get_where('user_role', ['id' => $role_id]);
+    }
 }

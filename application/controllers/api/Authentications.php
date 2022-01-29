@@ -31,9 +31,12 @@ class Authentications extends RestController
                 // cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
-                        'id'        => $user['id'],
-                        'email'     =>  $user['email'],
-                        'role_id'   =>  $user['role_id']
+                        'id'  =>  $user['id'],
+                        'email'  =>  $user['email'],
+                        'role_id'    =>  $user['role_id'],
+                        'idusers'    =>  $user['idusers'],
+                        'nama'    =>  $user['nama'],
+                        'image'    =>  $user['image']
                     ];
 
                     // Set the response and exit
@@ -74,13 +77,13 @@ class Authentications extends RestController
     {
         // Get the post data
 
-        $nama_lengkap   = strip_tags($this->post('nama_lengkap'));
+        $nama           = strip_tags($this->post('nama'));
         $email          = strip_tags($this->post('email'));
         $password       = $this->post('password');
         // $role_id        = $this->post('role_id', '1');
 
         // Validate the post data
-        if (!empty($nama_lengkap) && !empty($email) && !empty($password)) {
+        if (!empty($nama) && !empty($email) && !empty($password)) {
 
             // Check if the given email already exists
             $con['returnType'] = 'count';
@@ -96,7 +99,7 @@ class Authentications extends RestController
                 // Insert user data
                 $userData = array(
 
-                    'nama_lengkap'  => $nama_lengkap,
+                    'nama'          => $nama,
                     'email'         => $email,
                     'password'      => ($password),
                     'role_id'       => 1

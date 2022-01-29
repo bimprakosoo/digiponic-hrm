@@ -59,6 +59,27 @@
         $("#myTab li:eq(0) a").tab("show"); // show second tab (0-indexed, like an array)
     });
 </script>
+
+<script>
+    $('.form-check-input').on('click', function() {
+        const menuId = $(this).data('menu');
+        const roleId = $(this).data('role');
+
+        $.ajax({
+            url: "<?= base_url('admin2/user-access/hak_istimewa/changeaccess'); ?>",
+            type: 'post',
+            data: {
+                menuId: menuId,
+                roleId: roleId
+            },
+            success: function() {
+                document.location.href = "<?= base_url('admin2/user-access/hak_istimewa/roleaccess/'); ?>" + roleId
+                
+            }
+        });
+
+    });
+</script>
 </body>
 
 </html>
