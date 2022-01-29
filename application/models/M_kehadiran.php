@@ -3,7 +3,9 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_kehadiran extends CI_Model
 {
-    // admin
+    // ----- Admin -----
+
+    // getData
     public function getAllIzinPengajuan()
     {
         $this->db->select('izin.id, izin.date_created AS tanggal, izin.time_created AS jam, izin.image, keterangan, izin.status as statuss, users.nama');
@@ -34,11 +36,33 @@ class M_kehadiran extends CI_Model
         return $this->db->get()->result_array();
     }
 
+    public function getUserKehadiran()
+    {
+        $this->db->select('detail_karyawan.id, detail_karyawan.nama, kehadiran.`status`');
+        $this->db->from('detail_karyawan');
+        $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
+
+        return $this->db->get();
+    }
+
+    // insertData
+    public function insertUser($data)
+    {
+        // foreach ($data as $d) {
+        //   $array = array('user_id' => $d, 'status' => $d);
+        // }
+        // var_dump($array); die;
+        $this->db->insert('kehadiran', $data);
+    }
+
+    // updateData
     function updateIzin($update_status, $ids)
     {
         $this->db->where('id', $ids);
         $this->db->update('izin', $update_status);
     }
+
+
 
 
 

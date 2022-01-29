@@ -45,13 +45,23 @@ class Auth extends CI_Controller
                     ];
 
                     $this->session->set_userdata($data);
+                    /* ROLE
+                    1 => hrd/admin
+                    2 => karyawan
+                    4 => manager
+                    5 => kepala cabang
 
+                    -no-
+                    10 => pelamar
+                    */
                     if ($user['role_id'] == 1) {
                         redirect('admin2/dashboard/dashboard');
                     } else if ($user['role_id'] == 2) {
                         redirect('karyawan/dashboard/dashboard');
-                    } else if ($user['role_id'] == 4) {
-                        redirect('karyawan/dashboard/dashboard');
+                        // } else if ($user['role_id'] == 3) {
+                        //     redirect('manager/dashboard/dashboard');
+                        // } else if ($user['role_id'] == 4) {
+                        //     redirect('kepala/dashboard/dashboard');
                     } else {
                         redirect('pelamar/dashboard/dashboard');
                     }
@@ -91,7 +101,7 @@ class Auth extends CI_Controller
                 'email' =>  htmlspecialchars($this->input->post('email', true)),
                 'image' =>  'default.jpg',
                 'password'  =>  password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id'   =>  3, // default pelamar
+                'role_id'   =>  2, // default pelamar
                 'is_active' =>  1, // 1=>aktiv | 0=>nonaktiv
                 'date_created'  =>  time()
             ];

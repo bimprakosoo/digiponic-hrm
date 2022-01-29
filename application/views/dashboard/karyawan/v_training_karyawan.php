@@ -3,7 +3,7 @@
     <nav aria-label="breadcrumb" class="m-4">
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
             <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Karyawan</li>
+            <li class="breadcrumb-item active" aria-current="page">Probation</li>
         </ol>
     </nav>
 </div>
@@ -12,7 +12,7 @@
     <div class="container-fluid p-0 ">
         <div class="card shadow mb-4 ">
             <div class="card-body py-3" style="background: #fff;">
-                <h3 class="m-0 font-weight-bold">Karyawan Baru</h3>
+                <h3 class="m-0 font-weight-bold">Probation</h3>
             </div>
             <div class="card-body ">
                 <div class="table-responsive">
@@ -119,7 +119,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="m-0 font-weight-bold ">Managemt Training</h1>
+                    <h1 class="m-0 font-weight-bold ">Managemt Probation</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     </button>
                 </div>

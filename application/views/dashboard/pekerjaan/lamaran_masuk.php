@@ -63,6 +63,8 @@
                                              <?php  } else if ($m['status'] == 1) { ?>
                                                  diterima
                                              <?php  } else if ($m['status'] == 2) { ?>
+                                                 diproses
+                                             <?php  } else if ($m['status'] == 3) { ?>
                                                  ditolak
                                              <?php } ?></td>
                                          <td><?= $m['nama']; ?></td>
@@ -73,9 +75,8 @@
 
                                          <td>
                                              <button class="btn btn-primary" data-toggle="modal" data-target="#diterima-<?= $i; ?>">Di Terima</button>
+                                             <button class="btn btn-danger" data-toggle="modal" data-target="#diproses-<?= $i; ?>">Di Proses</button>
                                              <button class="btn btn-danger" data-toggle="modal" data-target="#ditolak-<?= $i; ?>">Di Tolak</button>
-
-
                                          </td>
                                      </tr>
                                      <?php $i++; ?>
@@ -83,7 +84,7 @@
                              </tbody>
                          </table>
                      </div>
-                 </div>
+                 </div> 
 
              </div>
          </div>
