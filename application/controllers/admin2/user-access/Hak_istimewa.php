@@ -32,17 +32,19 @@ class Hak_istimewa extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
-    public function roleaccess($role_id)
+    public function roleaccess($roleid)
     {
-        $data['title']  = 'User Access';
+        $data['title']  = 'Role Access';
         $role_id        = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
 
-        $data['role'] = $this->M_menu->RoleAccess($role_id)->row_array();
+        // $data['role'] = $this->M_menu->RoleAccess($role_id)->row_array();
+        $data['role'] = $this->db->get_where('user_role', ['id' => $roleid])->row_array();
 
 
-        $this->db->where('id !=', 1);
+
+        // $this->db->where('id !=', 1);
         // $data['menu'] = $this->menu->getUserMenuAll();
         $data['menu'] = $this->db->get('user_menu')->result_array();
 

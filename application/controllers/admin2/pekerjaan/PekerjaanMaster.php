@@ -16,9 +16,9 @@ class PekerjaanMaster extends CI_Controller
         $this->load->model('M_auth');
         $this->load->model('M_menu');
         $this->load->model('M_organisasi');
-        $this->load->model('M_pelamar');
+        $this->load->model('M_pelamar'); 
     }
-
+    // --> pindah ke class lowongan
     public function index()
     {
         $role_id    = $this->session->userdata('role_id');
@@ -50,6 +50,7 @@ class PekerjaanMaster extends CI_Controller
         $this->load->view('template/template_admin/footer_ad');
     }
 
+    // --> pindah ke class lowongan
     public function tambah_lowongan()
     {
         $role_id    = $this->session->userdata('role_id');

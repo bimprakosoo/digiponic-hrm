@@ -33,10 +33,22 @@ class Authentications extends RestController
                     $data = [
                         'id'  =>  $user['id'],
                         'email'  =>  $user['email'],
+                        // 'password'  =>  $user['password'],
                         'role_id'    =>  $user['role_id'],
                         'idusers'    =>  $user['idusers'],
                         'nama'    =>  $user['nama'],
-                        'image'    =>  $user['image']
+                        'image'    =>  $user['image'],
+                        'alamat_lengkap'    =>  $user['alamat_lengkap'],
+                        'jk'    =>  $user['jk'],
+                        'tgl_lahir'    =>  $user['tgl_lahir'],
+                        'no_telp'    =>  $user['no_telp'],
+                        'nama_perusahaan'    =>  $user['nama_perusahaan'],
+                        'nama_departmen'    =>  $user['nama_departmen'],
+                        'nama_divisi'    =>  $user['nama_divisi'],
+                        'nama_jabatan'    =>  $user['nama_jabatan'],
+                        'nama_posisi'    =>  $user['nama_posisi'],
+                        'nama_penempatan'    =>  $user['nama_penempatan'],
+                        'nama_golongan'    =>  $user['nama_golongan']
                     ];
 
                     // Set the response and exit

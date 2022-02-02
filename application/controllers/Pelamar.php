@@ -60,7 +60,7 @@ class Pelamar extends CI_Controller
                 'pendidikan_terakhir'   =>  $this->input->post('pendidikan_terakhir'),
                 'surat_lamaran'         =>  $this->M_pelamar->file_lamaran(),
                 'cv'                    =>  $this->M_pelamar->file_cv(),
-                'perusahaan_id'         =>  $this->input->post('IDperusahaan')
+                'lowongan_id'         =>  $this->input->post('IDlowongan')
             );
 
 
