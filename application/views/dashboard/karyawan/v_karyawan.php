@@ -14,7 +14,7 @@
                         <th>Jabatan</th>
                         <th>Posisi</th>
                         <th>Penempatan</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Action</th> 
                     </tr>
                 </thead>
                 <tbody>

@@ -24,8 +24,10 @@ class Absensi extends CI_Controller
         $data['user']   = $this->M_auth->getUserRow();
         $role_id        = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        
+        $today = date("Y-m-d");
 
-        $data['getuser'] = $this->M_kehadiran->getUserKehadiran()->result_array();
+        $data['getuser'] = $this->M_kehadiran->getUserKehadiran($today)->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
@@ -36,17 +38,15 @@ class Absensi extends CI_Controller
     // Update rating
     public function insertUser()
     {
-        // $dates = date("Y-m-d");
-        // POST values
-        // $dates = date("Y-m-d");
+       
         $sts = $this->input->post('status_id');
         $dt = $this->input->post('dates');
 
         $dt1 = $this->input->post('user_ids');
 
-        // $dt2 = 1;
+        
         foreach ($dt1 as $d) {
-            // $array = array($d);
+           
             $data = array(
                 'user_id'     => $d,
                 'tanggal'     => $dt,
@@ -54,10 +54,7 @@ class Absensi extends CI_Controller
             );
         }
 
-        // foreach ($data as $d) {
-        // 	$array = array('user_id' => $d);
-        // }
-        // insert records
+        
         $insert = $this->M_kehadiran->insertUser($data);
 
         if ($insert) {

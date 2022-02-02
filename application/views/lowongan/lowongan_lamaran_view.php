@@ -116,18 +116,14 @@
                                             <p class="text-start">
                                                 <strong>Pengalaman Kerja</strong> <br> <?php echo $lowongan['pengalaman_kerja']; ?> tahun
                                             </p>
-                                            <p class="text-start">
-                                                <strong>Insentif</strong> <br> <?php echo $lowongan['insentif_lembur']; ?>
-                                            </p>
+                                           
                                             <p class="text-start">
                                                 <strong>Level Pekerjaan</strong> <br> <?php echo $lowongan['level_pekerjaan']; ?>
                                             </p>
                                             <p class="text-start">
                                                 <strong>Pendidikan</strong> <br> <?php echo $lowongan['pendidikan']; ?>
                                             </p>
-                                            <p class="text-start">
-                                                <strong>Waktu bekerja</strong> <br> <?php echo $lowongan['waktu_bekerja']; ?>
-                                            </p>
+                                           
                                             <p class="text-start">
                                                 <strong>Gaji</strong> <br> IDR <?php echo $lowongan['gaji']; ?>
                                             </p>
@@ -146,7 +142,7 @@
                                             <form action="<?= base_url('pelamar/create'); ?>" method="POST" enctype="multipart/form-data">
 
 
-                                                <input type="hidden" id="IDperusahaan" name="IDperusahaan" value="<?= $lowongan['perusahaan']; ?>">
+                                                <input type="hidden" id="IDlowongan" name="IDlowongan" value="<?= $lowongan['id_lowongan']; ?>">
                                                 <!-- Nama Lengkap -->
                                                 <div class="row mb-3">
                                                     <label for="colFormLabel" class="col-sm-4 col-form-label text-start">Nama Lengkap</label>

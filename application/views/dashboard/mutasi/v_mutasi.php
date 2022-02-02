@@ -206,7 +206,7 @@
 
                                  <!-- Posisi -->
                                  <div class="col">
-                                     <div class="modal-body">
+                                     <div class="modal-body">DEPART
                                          <div class="row gx-5">
                                              <div class="col-3">
                                                  <h5>Posisi</h5>
@@ -381,7 +381,7 @@
              // console.log(id); // cek id
              $.ajax({
                  type: "POST",
-                 url: "<?= base_url('admin2/mutasi/mutasi/getDivisi') ?>",
+                 url: "<?= base_url('admin2/mutasi/mutasi/getDivisi') ?>", 
                  data: {
                      id: id
                  },

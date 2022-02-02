@@ -16,7 +16,7 @@ class Karyawan extends RestController
     }
 
 
-    function chekcin_post()
+    function CheckIn_post()
     {
 
         $dates = date("Y-m-d");

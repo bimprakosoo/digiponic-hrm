@@ -45,14 +45,38 @@ class M_Admin extends CI_Model
     }
 
     // get data lamaran masuk
-    public function lamaran_masuk()
-    {
+    // public function lamaran_masuk()
+    // {
+        /* laters
         $this->db->select('*');
         $this->db->from('data_lamaran');
-        // $this->db->where('role_id', 1);
+        */
+
+    //     return $this->db->get();
+    // }
+
+    public function getDataLamaranMasuk()
+    {
+        $this->db->select('data_lamaran.*,
+        perusahaan.nama_perusahaan,
+        department.nama AS nama_department,
+        divisi.nama AS nama_divisi,
+        jabatan.nama AS nama_jabatan,
+        posisi.nama AS nama_posisi,
+        penempatan.nama AS nama_penempatan,
+        golongan.nama AS nama_golongan');
+        $this->db->from('data_lamaran');
+        $this->db->join('lowongan', 'lowongan.id_lowongan = data_lamaran.lowongan_id', 'left');
+        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id', 'left');
+        $this->db->join('department', 'department.id = lowongan.department_id', 'left');
+        $this->db->join('divisi', 'divisi.id = lowongan.divisi_id', 'left');
+        $this->db->join('jabatan', 'jabatan.id = lowongan.divisi_id', 'left');
+        $this->db->join('posisi', 'posisi.id = lowongan.posisi_id', 'left');
+        $this->db->join('penempatan', 'penempatan.id = lowongan.penempatan_id', 'left');
+        $this->db->join('golongan', 'golongan.id = lowongan.golongan_id', 'left');
+
         return $this->db->get();
     }
-
     // sementara nama karyawan di ambil dari tbl [users]
     public function data_karyawan()
     {

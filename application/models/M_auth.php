@@ -44,10 +44,29 @@ class M_auth extends CI_Model
     users.role_id,
     users.is_active,
     detail_karyawan.nama,
-    detail_karyawan.id AS idusers ');
+    detail_karyawan.id AS idusers,
+    detail_karyawan.alamat_lengkap,
+    detail_karyawan.jk,
+    detail_karyawan.no_telp,
+    detail_karyawan.tgl_lahir,
+    perusahaan.nama_perusahaan,
+    department.nama AS nama_departmen,
+    divisi.nama AS nama_divisi,
+    jabatan.nama AS nama_jabatan,
+    posisi.nama AS nama_posisi,
+    penempatan.nama AS nama_penempatan,
+    golongan.nama AS nama_golongan');
     $this->db->from('users');
-    $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left');
-    $this->db->where('email',  $email);
+    $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left'); // detail-karyawan
+    $this->db->join('data_karyawan', 'data_karyawan.karyawan_id = detail_karyawan.id', 'left'); // data-karyawan
+    $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id', 'left'); // perusahaan
+    $this->db->join('department', 'department.id = data_karyawan.department_id', 'left'); // department
+    $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id', 'left'); // divisi
+    $this->db->join('jabatan', 'jabatan.id = data_karyawan.jabatan_id', 'left'); // jabatan
+    $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id', 'left'); // posisi
+    $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id', 'left'); // penemapatan
+    $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id', 'left'); // golongan
+    $this->db->where('users.email',  $email);
 
     return $this->db->get()->row_array();
   }

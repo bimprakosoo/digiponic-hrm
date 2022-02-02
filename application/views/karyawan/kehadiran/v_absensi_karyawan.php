@@ -18,7 +18,7 @@
             <div class="card ">
                 <div class="row my-2 my-xl-3 m-2">
                     <div class="col-auto d-none d-sm-block ">
-                        <h3><strong>Izin Sakit</strong></h3>
+                        <h3><strong></strong></h3>
                     </div>
 
                     <div class="col-auto ml-auto ">
@@ -61,6 +61,7 @@
                                         <td align='center'><input type="checkbox" class='checkbox' name='absen[]' value='<?= $g['id'] ?>'></td>
                                         <td><?= $g['id']; ?></td>
                                         <td><?= $g['nama']; ?></td>
+                                        
                                         <td><?php if ($g['status'] == 1) { ?>
                                                 Hadir
                                             <?php } else if ($g['status'] == 2) { ?>

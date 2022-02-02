@@ -14,7 +14,7 @@
                             <th>devisi</th>
                             <th>jabatan</th>
                             <th>posisi</th>
-                            <th>penempatan</th>
+                            <th>penempatan</th> 
 
                         </tr>
                     </thead>

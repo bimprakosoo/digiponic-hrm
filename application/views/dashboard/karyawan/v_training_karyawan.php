@@ -29,7 +29,7 @@
                         <tbody>
                             <?php $i = 1;
                             foreach ($karyawan_baru as $kb) : ?>
-                                <tr>
+                                <tr> 
                                     <th scope="row"><?= $i ?></th>
                                     <td><?= $kb['nama']; ?></td>
                                     <td><?= $kb['nama_perusahaan']; ?></td>

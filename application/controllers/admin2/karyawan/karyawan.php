@@ -76,6 +76,7 @@ class Karyawan extends CI_Controller
             redirect('admin2/karyawan/karyawan');
         }
     }
+    
     // menambahkan data karyawan training
     function Tambah_DataKaryawan_Training()
     {
@@ -140,7 +141,7 @@ class Karyawan extends CI_Controller
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
-        $data['title'] = 'Probation';
+        $data['title'] = 'Probation'; 
 
         // karyawan baru diterima
         $data['karyawan_baru'] = $this->M_training->getData_KaryawanBaru()->result_array();

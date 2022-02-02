@@ -10,6 +10,11 @@ class M_organisasi extends CI_Model
     }
 
     // Perusahaan
+    function getAllPerusahaan()
+    {
+        return $this->db->get('perusahaan');
+    }
+
     public function getDataPerusahaan()
     {
         $this->db->select('*, perusahaan.id, wilayah_kota.nama AS nama_kota, wilayah_provinsi.nama AS nama_provinsi');
@@ -215,7 +220,30 @@ class M_organisasi extends CI_Model
         $this->db->update('users', $data);
     }
 
+    public function getDataDepartment2($iddep)
+    {
+        return $this->db->get_where('department', ['perusahaan' => $iddep])->result();
+    }
+    
+    public function getDataDivisi2($iddiv)
+    {
+        return $this->db->get_where('divisi', ['department_id' => $iddiv])->result();
+    }
 
+    public function getDataJabatan2($idjab)
+    {
+        return $this->db->get_where('jabatan', ['divisi_id' => $idjab])->result();
+    }
+    
+    public function getDataPosisi2($idpos)
+    {
+        return $this->db->get_where('posisi', ['jabatan_id' => $idpos])->result();
+    }
+    
+    public function getDataGolongan2($idgol)
+    {
+        return $this->db->get_where('golongan', ['jabatan_id' => $idgol])->result();
+    }
 
     // function search_perusahaan($query)
     // {
