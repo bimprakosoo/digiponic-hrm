@@ -112,6 +112,7 @@ class Mutasi extends CI_Controller
             );
 
             $insert = $this->M_admin->insert_DataMutasi($data);
+            // $this->laporan_pdf();
 
             if ($insert) {
                 $this->session->set_flashdata('status', 'Insert Data Berhasil');
@@ -125,5 +126,13 @@ class Mutasi extends CI_Controller
         }
     }
 
+    public function laporan_pdf(){
+        $data['mutasi'] = $this->M_mutasi->get_DataMutasi2()->result_array();
+		$this->load->library('pdf');
+		$this->pdf->setPaper('A4', 'potrait');
+		$this->pdf->filename = "laporan-data-mutasi.pdf";
+		$this->pdf->load_view('dashboard/mutasi/laporan_mutasi', $data);
+        // var_dump($data);
+    }
     
 }
