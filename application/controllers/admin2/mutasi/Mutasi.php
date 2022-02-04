@@ -165,8 +165,8 @@ class Mutasi extends CI_Controller
         redirect('admin2/organisasi/department/');
     }
 
-    public function laporan_pdf(){
-        $data['mutasi'] = $this->M_mutasi->get_DataMutasi2()->result_array();
+    public function laporan_pdf($id){
+        $data['mutasi'] = $this->M_mutasi->get_DataMutasiId($id)->row();
 		$this->load->library('pdf');
 		$this->pdf->setPaper('A4', 'potrait');
 		$this->pdf->filename = "laporan-data-mutasi.pdf";
