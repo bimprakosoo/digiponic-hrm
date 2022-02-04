@@ -50,11 +50,18 @@
                                     <tr>
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $m['nama_lowongan']; ?></td>
-                                        <td><?= $m['lokasi']; ?></td>
+                                        <td><?= $m['kota']; ?></td>
                                         <td><?= $m['nama_perusahaan']; ?></td>
                                         <td><?= $m['industri']; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-deskripsi="<?= $m['deskripsi']; ?>" data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>"  data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>"  data-gaji="<?= $m['gaji']; ?>" data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>" ><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_lowongan="<?= $m['nama_lowongan']; ?>" data-deskripsi="<?= $m['deskripsi']; ?>"
+                                            data-department="<?= $m['nama_dept']; ?>"
+                                            data-divisi="<?= $m['nama_divisi']; ?>"
+                                            data-jabatan="<?= $m['nama_jabatan']; ?>"
+                                            data-posisi="<?= $m['nama_posisi']; ?>"
+                                            data-penempatan="<?= $m['nama_penempatan']; ?>"
+                                            data-golongan="<?= $m['nama_golongan']; ?>"
+                                             data-lokasi="<?= $m['lokasi']; ?>" data-perusahaan="<?= $m['nama_perusahaan']; ?>" data-industri="<?= $m['industri']; ?>" data-tipe_pekerjaan="<?= $m['tipe_pekerjaan']; ?>" data-pengalaman_kerja="<?= $m['pengalaman_kerja']; ?>" data-level_pekerjaan="<?= $m['level_pekerjaan']; ?>" data-pendidikan="<?= $m['pendidikan']; ?>"  data-post_date="<?= $m['post_date']; ?>" data-ket="<?= $m['ket']; ?>" data-syarat_pengalaman="<?= $m['syarat_pengalaman']; ?>" data-tunjangan="<?= $m['tunjangan']; ?>"><i class="fas fa-eye"></i></button>
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/pekerjaan/lowongan/edit/") . $m['id_lowongan']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/pekerjaan/lowongan/hapus/") . $m['id_lowongan']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
@@ -94,6 +101,34 @@
                                 <span id="dtl_industri"></span>
                             </div>
                             <div class="col">
+                                <p style="color: #335C32;"><Strong>Department</Strong></p>
+                                <span id="dtl_department"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Divisi</Strong></p>
+                                <span id="dtl_divisi"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Jabatan</Strong></p>
+                                <span id="dtl_jabatan"></span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Posisi</Strong></p>
+                                <span id="dtl_posisi"> </span>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Penempatan</Strong></p>
+                                <span id="dtl_penempatan"></span></p>
+                            </div>
+                            <div class="col">
+                                <p style="color: #335C32;"><Strong>Golongan</Strong></p>
+                                <span id="dtl_golongan"></span>
+                            </div>
+                        </div>
+                        <div class="row gx-5 pt-4">
+                            <div class="col">
                                 <p style="color: #335C32;"><Strong>Tipe Pekerjaan</Strong></p>
                                 <span id="dtl_tipe"></span>
                             </div>
@@ -101,19 +136,16 @@
                                 <p style="color: #335C32;"><Strong>Pendidikan</Strong></p>
                                 <span id="dtl_pendidikan">
                             </div>
-                        </div>
-                        <div class="row gx-5 pt-4">
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Pengalaman Kerja</Strong></p>
                                 <span id="dtl_pengalaman"></span>
                             </div>
+
+                        </div>
+                        <div class="row gx-5 pt-4">
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Level Pekerjaan</Strong></p>
                                 <span id="dtl_level"> </span>
-                            </div>
-                            <div class="col">
-                                <p style="color: #335C32;"><Strong>Gaji</Strong></p>
-                                <p>Rp &nbsp;<span id="dtl_gaji"></span></p>
                             </div>
                             <div class="col">
                                 <p style="color: #335C32;"><Strong>Post date</Strong></p>
@@ -246,11 +278,14 @@
             var industri = $(this).data('industri');
             var tipe_pekerjaan = $(this).data('tipe_pekerjaan');
             var pengalaman_kerja = $(this).data('pengalaman_kerja');
-            var insentif_lembur = $(this).data('insentif_lembur');
             var level_pekerjaan = $(this).data('level_pekerjaan');
             var pendidikan = $(this).data('pendidikan');
-            var waktu_bekerja = $(this).data('waktu_bekerja');
-            var gaji = $(this).data('gaji');
+            var department = $(this).data('department');
+            var divisi = $(this).data('divisi');
+            var jabatan = $(this).data('jabatan');
+            var posisi = $(this).data('posisi');
+            var penempatan = $(this).data('penempatan');
+            var golongan = $(this).data('golongan');
             var post_date = $(this).data('post_date');
             var deskripsi = $(this).data('deskripsi');
             var ket = $(this).data('ket');
@@ -263,11 +298,15 @@
             $('#dtl_industri').text(industri);
             $('#dtl_tipe').text(tipe_pekerjaan);
             $('#dtl_pengalaman').text(pengalaman_kerja);
-            $('#dtl_insentif').text(insentif_lembur);
+            // $('#dtl_insentif').text(insentif_lembur);
             $('#dtl_level').text(level_pekerjaan);
             $('#dtl_pendidikan').text(pendidikan);
-            $('#dtl_waktu').text(waktu_bekerja);
-            $('#dtl_gaji').text(gaji);
+            $('#dtl_department').text(department);
+            $('#dtl_divisi').text(divisi);
+            $('#dtl_jabatan').text(jabatan);
+            $('#dtl_posisi').text(posisi);
+            $('#dtl_penempatan').text(penempatan);
+            $('#dtl_golongan').text(golongan);
             $('#dtl_post').text(post_date);
             $('#dtl_desk').text('');
             $('#dtl_desk').append(deskripsi);

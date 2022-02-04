@@ -21,7 +21,7 @@
 
                      <div class="card-body ">
                          <div class="modal-body">
-                             <h3 class="m-0 font-weight-bold ">Edit Data Lowongan</h3>
+                             <h3 class="m-0 font-weight-bold ">Edit Data Mutasi</h3>
                          </div>
                          <input type="hidden" class="form-control" id="post_date" name="post_date" readonly value="<?php echo date("Y-m-d"); ?>">
                          <input type="hidden" class="form-control" id="user_id" name="user_id" readonly value="<?= $user['id']; ?>">
