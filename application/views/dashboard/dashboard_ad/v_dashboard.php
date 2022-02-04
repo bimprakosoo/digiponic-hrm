@@ -95,7 +95,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                    <?php if($getmutasi['status']) ?>
                                         <?php $i = 1;
                                         foreach ($getMutasi as $m) : ?>
                                             <tr>

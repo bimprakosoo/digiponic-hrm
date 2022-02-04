@@ -32,25 +32,26 @@
                                  <tr>
                                      <th>No</th>
                                      <th>Nama Karyawan</th>
-                                     <th>Jenis Mutasi</th>
-                                     <th>Tgl Pengajuan</th>
-                                     <th>status</th>
+                                     <th>Department</th>
+                                     <th>Posisi</th>
+                                     <!-- <th>Jenis Mutasi</th> -->
+                                     <!-- <th>Tgl Pengajuan</th> -->
+                                     <!-- <th>status</th> -->
                                      <th scope="col">Action</th>
                                  </tr>
                              </thead>
                              <tbody>
                                  <?php $i = 1;
-                                    foreach ($mutasiData as $md) : ?>
+                                    foreach ($dkaryawan as $md) : ?>
                                      <tr>
                                          <th scope="row"><?= $i ?></th>
-                                         <td><?= $md['userID']; ?></td>
-                                         <td><?= $md['jenis_mutasi']; ?></td>
-                                         <td><?= $md['tgl_pengajuan']; ?></td>
-                                         <td><?= $md['status']; ?></td>
+                                         <td><?= $md['nama']; ?></td>
+                                         <td><?= $md['department_id']; ?></td>
+                                         <td><?= $md['posisi_id']; ?></td>
 
-                                         <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $md['tgl_pengajuan']; ?>" data-karyawan="<?= $md['userID']; ?>" data-department="<?= $md['namaDepartment']; ?>" data-divisi="<?= $md['namaDivisi']; ?>" data-jabatan="<?= $md['namaJabatan']; ?>" data-golongan="<?= $md['namaGolongan']; ?>" data-posisi="<?= $md['namaPosisi']; ?>" data-penempatan="<?= $md['namaPenempatan']; ?>" data-status="<?= $md['status']; ?>" data-jenismutasi="<?= $md['jenis_mutasi']; ?>">
-                                                 <i class="fas fa-eye"></i></button>
-                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/edit/")?>"><i class="fas fa-edit"></i></a>
+                                         <td>
+
+                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/edit/") . $md['id'];?>"><i class="fas fa-edit"></i></a>
                                              <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $md['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                          </td>
                                      </tr>
@@ -149,7 +150,9 @@
 
                                                  <select class="form-control" id="divisi" name="divisi" required>
                                                      <option value="">-- Pilih divisi --</option>
-
+                                                     <?php foreach ($department as $p) : ?>
+                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php endforeach; ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -381,7 +384,7 @@
              // console.log(id); // cek id
              $.ajax({
                  type: "POST",
-                 url: "<?= base_url('admin2/mutasi/mutasi/getDivisi') ?>", 
+                 url: "<?= base_url('admin2/mutasi/mutasi/getDepartment') ?>",
                  data: {
                      id: id
                  },

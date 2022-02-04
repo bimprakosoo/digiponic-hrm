@@ -86,7 +86,7 @@ class Dashboard extends CI_Controller
 
     public function terimaMutasi($IDmutasi)
     {
-        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+
         $data = $this->db->get_where('mutasi', ['karyawan_id' => $IDmutasi])->result();
         foreach ($data as $r) {
             $update_datakaryawan = [
@@ -100,6 +100,9 @@ class Dashboard extends CI_Controller
 
             // var_dump($data); die;
             $this->M_mutasi->update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi);
+
+            // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+
         }
         redirect('admin2/dashboard/dashboard');
     }

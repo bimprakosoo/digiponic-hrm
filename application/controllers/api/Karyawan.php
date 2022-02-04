@@ -23,15 +23,19 @@ class Karyawan extends RestController
         $times = date('H:i:s');
         // $response = array();
         $data = array(
-            'karyawan_id'   =>  $this->input->post('UserId'),
-            'tanggal'       =>  $dates,
-            'jam_masuk'     =>  $times
+            'user_id'   =>  $this->input->post('UserId'),
+            'tanggal'   =>  $dates,
+            'jam'       =>  $times,
+            'lokasi'    =>  $this->input->post('lokasi'),
+            'foto'      =>  $this->input->post('foto'),
+            'status'    =>  1
+            
         );
 
         // var_dump($data);
         // die;
 
-        $insert = $this->db->insert('absensi', $data);
+        $insert = $this->db->insert('kehadiran', $data);
         if ($insert) {
             $this->response($data, 200);
         } else {

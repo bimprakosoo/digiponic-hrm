@@ -27,7 +27,7 @@ class Absensi extends CI_Controller
         
         $today = date("Y-m-d");
 
-        $data['getuser'] = $this->M_kehadiran->getUserKehadiran($today)->result_array();
+        $data['getuser'] = $this->M_kehadiran->getUserKehadiran()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);

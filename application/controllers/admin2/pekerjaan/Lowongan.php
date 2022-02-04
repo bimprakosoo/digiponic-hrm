@@ -84,22 +84,15 @@ class Lowongan extends CI_Controller
 
             $data = array(
                 'nama_lowongan'      => $this->input->post('nama_lowongan'),
-                // 'lokasi'             =>  $this->input->post('lokasi'),
-                // 'perusahaan'         =>  $this->input->post('perusahaan'),
-                // 'industri'           =>  $this->input->post('industri'),
                 'tipe_pekerjaan'     =>  $this->input->post('tipe_pekerjaan'),
                 'pengalaman_kerja'   =>  $this->input->post('pengalaman_kerja'),
-                // 'insentif_lembur'    =>  $this->input->post('insentif_lembur'),
                 'level_pekerjaan'    =>  $this->input->post('level_pekerjaan'),
                 'pendidikan'         =>  $this->input->post('pendidikan'),
-                // 'waktu_bekerja'      =>  $this->input->post('waktu_bekerja'),
-                'gaji'               =>  $this->input->post('gaji'),
                 'post_date'          =>  $this->input->post('post_date'),
                 'deskripsi'          =>  $this->input->post('deskripsi'),
                 'ket'                =>  $this->input->post('ket'),
                 'syarat_pengalaman'  =>  $this->input->post('syarat_pengalaman'),
                 'tunjangan'          =>  $this->input->post('tunjangan'),
-                // 'image'              =>     $this->M_admin->file_image()
                 
                 'perusahaan_id'     =>  $this->input->post('perusahaan'),
                 'department_id'     =>  $this->input->post('department'),
@@ -138,7 +131,7 @@ class Lowongan extends CI_Controller
             'level_pekerjaan' =>  $this->input->post('level_pekerjaan'),
             'pendidikan' =>  $this->input->post('pendidikan'),
             // 'waktu_bekerja' =>  $this->input->post('waktu_bekerja'),
-            'gaji' =>  $this->input->post('gaji'),
+            // 'gaji' =>  $this->input->post('gaji'),
             'post_date' =>  $this->input->post('post_date'),
             'deskripsi' =>  $this->input->post('deskripsi'),
             'ket' =>  $this->input->post('ket'),
