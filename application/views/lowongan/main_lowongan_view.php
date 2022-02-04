@@ -42,7 +42,7 @@
                     Melakukan pencatatan, penginputan, pengarsipan dokumen, dan
                     penyusunan laporan keuangan dan perpajakan.
                   </p>
-                  <p>Lokasi - Malang</p>
+                  <p>Lokasi - <?php echo $lowongan['kota']; ?>, <?php echo $lowongan['provinsi']; ?></p>
                   <p>
                     <strong>Posted Date</strong> <br /> 11 September 2021
                   </p>

@@ -503,7 +503,7 @@
               </div>
 
             </div>
-            <p class="text-center">Lokasi - <?php echo $s['lokasi']; ?></p>
+            <p class="text-center">Lokasi - <?php echo $s['kota']; ?>, <?php echo $s['provinsi']; ?></p>
 
             <p class="text-center">
               <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>

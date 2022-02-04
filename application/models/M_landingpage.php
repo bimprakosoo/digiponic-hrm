@@ -17,8 +17,12 @@ class M_landingpage extends CI_Model
 
         // $this->db->where('role_id', 1);
         // return $this->db->get('lowongan')->result_array();
-        $this->db->select('*');
+        $this->db->select('*,  wilayah_kota.nama AS kota, wilayah_provinsi.nama AS provinsi');
+
         $this->db->from('lowongan');
+        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
+        $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = perusahaan.provinsi');
         $sql =  $this->db->get()->result_array();
         return $sql;
     }
@@ -33,8 +37,13 @@ class M_landingpage extends CI_Model
         // $this->db->limit(3);
         // $query = $this->db->get();
         // return $query->result();
+        $this->db->select('*,  wilayah_kota.nama AS kota, wilayah_provinsi.nama AS provinsi');
 
-        return $this->db->get('lowongan', $limit, $start)->result_array();
+        $this->db->from('lowongan');
+        $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
+        $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = perusahaan.provinsi');
+        return $this->db->get('', $limit, $start)->result_array();
     }
     // get jumlah data lowongan
     public function countAllLowongan()
@@ -89,9 +98,13 @@ class M_landingpage extends CI_Model
 
     public function rowLowongan($data_id)
     {
-        $this->db->select('*');
+        $this->db->select('*, wilayah_kota.nama AS kota, wilayah_provinsi.nama AS provinsi');
         $this->db->from('lowongan');
         $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
+        $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = perusahaan.provinsi');
+
+
         $this->db->where('id_lowongan', $data_id);
 
         return $this->db->get();

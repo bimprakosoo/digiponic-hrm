@@ -17,18 +17,17 @@
 
              <div class="card shadow mb-4 ">
 
-                 <div class="card-body py-3" style="background: #fff;">
-                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
+                 <div class="card-body " style="background: #fff;">
                      <h1 class="m-0 font-weight-bold ">Daftar Semua Mutasi</h1>
                  </div>
-                 <div class="col-auto ml-auto ">
+                 <!-- <div class="col-auto ml-auto ">
                      <a class="btn btn-primary" data-toggle="modal" data-target="#modalAddMutasi">Tambah</a>
-                 </div>
+                 </div> -->
 
                  <div class="card-body ">
                      <div class="table-responsive">
-                         <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                             <thead>
+                         <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                             <thead class="table-dark">
                                  <tr>
                                      <th>No</th>
                                      <th>Nama Karyawan</th>
@@ -38,7 +37,7 @@
                                      <th scope="col">Action</th>
                                  </tr>
                              </thead>
-                             <tbody>
+                             <tbody class="table-sm ">
                                  <?php $i = 1;
                                     foreach ($mutasiData as $md) : ?>
                                      <tr>
@@ -50,7 +49,7 @@
 
                                          <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $md['tgl_pengajuan']; ?>" data-karyawan="<?= $md['userID']; ?>" data-department="<?= $md['namaDepartment']; ?>" data-divisi="<?= $md['namaDivisi']; ?>" data-jabatan="<?= $md['namaJabatan']; ?>" data-golongan="<?= $md['namaGolongan']; ?>" data-posisi="<?= $md['namaPosisi']; ?>" data-penempatan="<?= $md['namaPenempatan']; ?>" data-status="<?= $md['status']; ?>" data-jenismutasi="<?= $md['jenis_mutasi']; ?>">
                                                  <i class="fas fa-eye"></i></button>
-                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/edit/")?>"><i class="fas fa-edit"></i></a>
+                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/edit/") ?>"><i class="fas fa-edit"></i></a>
                                              <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $md['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                          </td>
                                      </tr>
@@ -381,7 +380,7 @@
              // console.log(id); // cek id
              $.ajax({
                  type: "POST",
-                 url: "<?= base_url('admin2/mutasi/mutasi/getDivisi') ?>", 
+                 url: "<?= base_url('admin2/mutasi/mutasi/getDivisi') ?>",
                  data: {
                      id: id
                  },
