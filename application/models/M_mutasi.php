@@ -81,4 +81,9 @@ class M_mutasi extends CI_Model
         $this->db->where('karyawan_id', $IDmutasi);
         $this->db->update('data_karyawan');
     }
+    public function editmutasi($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('tbl_karyawan')->row_array();
+    }
 }
