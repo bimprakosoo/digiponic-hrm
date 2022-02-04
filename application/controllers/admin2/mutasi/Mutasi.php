@@ -124,6 +124,43 @@ class Mutasi extends CI_Controller
             redirect('admin2/mutasi/mutasi');
         }
     }
+    public function edit()
+    {
+        $role_id    = $this->session->userdata('role_id');
+        $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+        $data['user'] = $this->M_auth->getUserRow();
+        $data['title'] = 'Edit Mutasi';
 
-    
+        $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
+        $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
+        $data['data_golongan']  = $this->M_mutasi->getAllGolongan()->result_array();
+
+        // organisasi
+        // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+        $data['department'] = $this->M_mutasi->getAllDepartment()->result_array();
+        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+        $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
+        
+        $this->load->view('template/template_admin/sidebar_ad', $data);
+        $this->load->view('template/template_admin/header_ad', $data);
+        $this->load->view('dashboard/mutasi/v_mutasiedit', $data);
+        $this->load->view('template/template_admin/footer_ad');
+    }
+    //update
+    public function update()
+    {
+        $id_dept = $this->input->post('id');
+        $data = array(
+            'nama'              =>  $this->input->post('department'),
+            'perusahaan'        =>  $this->input->post('perusahaan'),
+            'deskripsi'         =>  $this->input->post('deskripsi'),
+            'fungsi'            =>  $this->input->post('fungsi'),
+            'peran'             =>  $this->input->post('peran'),
+            'image'             => $this->M_organisasi->file_image()
+        );
+        $this->M_organisasi->update_dept($id_dept, $data);
+        redirect('admin2/organisasi/department/');
+    }
 }
