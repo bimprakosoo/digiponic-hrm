@@ -13,9 +13,16 @@ class M_Admin extends CI_Model
     public function lowongan_ad()
     {
         $this->db->select('lowongan.*,
-        perusahaan.industri, perusahaan.nama_perusahaan');
+        perusahaan.industri, perusahaan.nama_perusahaan, wilayah_kota.nama AS kota, department.nama AS nama_dept, divisi.nama AS nama_divisi, jabatan.nama AS nama_jabatan, posisi.nama AS nama_posisi, penempatan.nama AS nama_penempatan, golongan.nama AS nama_golongan');
         $this->db->from('lowongan');
         $this->db->join('perusahaan', 'perusahaan.id = lowongan.perusahaan_id', 'left');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = perusahaan.kota');
+        $this->db->join('department', 'department.id = lowongan.department_id', 'left');
+        $this->db->join('divisi', 'divisi.id = lowongan.divisi_id', 'left');
+        $this->db->join('jabatan', 'jabatan.id = lowongan.jabatan_id', 'left');
+        $this->db->join('posisi', 'posisi.id = lowongan.posisi_id', 'left');
+        $this->db->join('penempatan', 'penempatan.id = lowongan.penempatan_id', 'left');
+        $this->db->join('golongan', 'golongan.id = lowongan.golongan_id', 'left');
 
         // $this->db->where('role_id', 1);
         return $this->db->get()->result_array();
@@ -47,7 +54,7 @@ class M_Admin extends CI_Model
     // get data lamaran masuk
     // public function lamaran_masuk()
     // {
-        /* laters
+    /* laters
         $this->db->select('*');
         $this->db->from('data_lamaran');
         */

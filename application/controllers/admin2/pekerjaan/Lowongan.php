@@ -27,6 +27,12 @@ class Lowongan extends CI_Controller
         $data['title'] = 'Data lowongan';
 
         $data['lowongan'] = $this->M_admin->lowongan_ad();
+        $data['dept'] = $this->M_organisasi->getDataDepartment()->result_array();
+        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+        $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
+        $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
@@ -58,7 +64,14 @@ class Lowongan extends CI_Controller
         $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Edit Data Lowongan';
         $data['lowongan'] = $this->M_admin->edit($id);
+        // -------
         $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
+        $data['dept'] = $this->M_organisasi->getDataDepartment()->result_array();
+        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+        $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
+        $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
@@ -93,7 +106,8 @@ class Lowongan extends CI_Controller
                 'ket'                =>  $this->input->post('ket'),
                 'syarat_pengalaman'  =>  $this->input->post('syarat_pengalaman'),
                 'tunjangan'          =>  $this->input->post('tunjangan'),
-                
+                // 'image'              =>     $this->M_admin->file_image()
+
                 'perusahaan_id'     =>  $this->input->post('perusahaan'),
                 'department_id'     =>  $this->input->post('department'),
                 'divisi_id'         =>  $this->input->post('department'),
@@ -138,6 +152,14 @@ class Lowongan extends CI_Controller
             'syarat_pengalaman' =>  $this->input->post('syarat_pengalaman'),
             'tunjangan' =>  $this->input->post('tunjangan'),
             // 'image' =>     $this->M_admin->file_image()
+            
+            'perusahaan_id'     =>  $this->input->post('perusahaan'),
+            'department_id'     =>  $this->input->post('department'),
+            'divisi_id'         =>  $this->input->post('department'),
+            'jabatan_id'        =>  $this->input->post('jabatan'),
+            'posisi_id'         =>  $this->input->post('posisi'),
+            'penempatan_id'     =>  $this->input->post('penempatan'),
+            'golongan_id'       =>  $this->input->post('golongan'),
         );
         $this->M_admin->update_low($id_lowongan, $data);
         redirect('admin2/pekerjaan/lowongan/');

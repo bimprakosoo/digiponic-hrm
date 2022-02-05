@@ -110,4 +110,7 @@ div.uploader {
 }
 
 /* Profil dashboard */
-
+.m{
+    color: rgb(211, 12, 12);
+    font-weight: bold;
+}

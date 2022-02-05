@@ -23,7 +23,7 @@
 
                                 <h3 class="text-center text-capitalize pt-4 pb-2"> <strong><?php echo $lowongan['nama_lowongan']; ?></strong></h3>
                                 <p class="text-start">
-                                    <strong>Lokasi</strong> <br> <?php echo $lowongan['lokasi']; ?>
+                                    <strong>Lokasi</strong> <br> <?php echo $lowongan['kota']; ?>, <?php echo $lowongan['provinsi']; ?>
                                 </p>
                                 <p class="text-start">
                                     <strong>Perusahaan</strong> <br> <?php echo $lowongan['nama_perusahaan']; ?>

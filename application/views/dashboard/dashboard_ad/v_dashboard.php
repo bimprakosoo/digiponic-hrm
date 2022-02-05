@@ -48,10 +48,10 @@
                                     <h1 class="mt-5 mb-2 text-center" style="font-size: 48px;"><strong>114</strong></h1>
                                     <div class="row">
                                         <div class="col-auto">
-                                            <button class="btn btn-primary" style="font-size: 7px;">aktif 100</button>
+                                            <button class="btn btn-primary" style="font-size: 12px;">aktif 100</button>
                                         </div>
                                         <div class="col-auto ml-auto">
-                                            <button class="btn btn-danger" style="font-size: 7px;">Tidak aktif 100</button>
+                                            <button class="btn btn-danger" style="font-size: 12px;">Tidak aktif 100</button>
                                         </div>
                                     </div>
                                 </div>
@@ -83,8 +83,8 @@
 
                         <div class="card-body ">
                             <div class="table-responsive">
-                                <table class="table text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                                    <thead>
+                                <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                                    <thead class="table-dark">
                                         <tr>
                                             <!-- <th>No</th> -->
                                             <th>Nama Karyawan</th>

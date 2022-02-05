@@ -17,18 +17,17 @@
 
              <div class="card shadow mb-4 ">
 
-                 <div class="card-body py-3" style="background: #fff;">
-                     <!-- <h6 class="m-0 font-weight-bold text-primary">Management User</h6> -->
+                 <div class="card-body " style="background: #fff;">
                      <h1 class="m-0 font-weight-bold ">Daftar Semua Mutasi</h1>
                  </div>
-                 <div class="col-auto ml-auto ">
+                 <!-- <div class="col-auto ml-auto ">
                      <a class="btn btn-primary" data-toggle="modal" data-target="#modalAddMutasi">Tambah</a>
-                 </div>
+                 </div> -->
 
                  <div class="card-body ">
                      <div class="table-responsive">
-                         <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                             <thead>
+                         <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                             <thead class="table-dark">
                                  <tr>
                                      <th>No</th>
                                      <th>Nama Karyawan</th>
@@ -40,7 +39,7 @@
                                      <th scope="col">Action</th>
                                  </tr>
                              </thead>
-                             <tbody>
+                             <tbody class="table-sm ">
                                  <?php $i = 1;
                                     foreach ($dkaryawan as $md) : ?>
                                      <tr>
