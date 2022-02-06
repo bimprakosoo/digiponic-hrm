@@ -29,7 +29,7 @@ class Mutasi extends CI_Controller
 
         $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
         $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
-        $data['data_golongan']  = $this->M_mutasi->getAllGolongan()->result_array();
+        // $data['data_golongan']  = $this->M_mutasi->getAllGolongan()->result_array();
 
         // organisasi
         // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
@@ -41,8 +41,21 @@ class Mutasi extends CI_Controller
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/mutasi/v_mutasi', $data);
+        $this->load->view('dashboard/mutasi/v-detail', $data);
+        $this->load->view('dashboard/mutasi/v-tablistkaryawan', $data);
+        $this->load->view('dashboard/mutasi/v-tabpengajuanmutasi', $data);
         $this->load->view('template/template_admin/footer_ad');
+    }
+
+    public function getkaryawan()
+    {
+        $idkarayawan =   $this->input->post('id');
+        $data   =   $this->M_mutasi->getDataKaryawan($idkarayawan);
+        $output =   '<option value="">-- Pilih D --</option>';
+        foreach ($data as $row) {
+            $output .= ' <option value="' . $row->id . '">' . $row->nama . ' </option>';
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode($output));
     }
 
     public function getDivisi()
@@ -91,15 +104,17 @@ class Mutasi extends CI_Controller
     // next
 
     // menambahkan data mutasi
-    function tambah_DataMutasi()
+    // function tambah_DataMutasi()
+    function prosesMutasi()
     {
         if (isset($_POST['submit'])) {
-            $user_id = $this->session->userdata('email');
+            // $user_id = $this->session->userdata('email');
+            $dates = date("Y-m-d");
             $data = array(
 
 
-                'tgl_pengajuan'             => $this->input->post('post_date'),
-                'karyawan_id'               => $this->input->post('karyawan'),
+                'tgl_pengajuan'             => $dates,
+                'karyawan_id'               => $this->input->post('IDkaryawan'),
                 'department_id'             => $this->input->post('department'),
                 'divisi_id'                 => $this->input->post('divisi'),
                 'jabatan_id'                => $this->input->post('jabatan'),
@@ -125,30 +140,34 @@ class Mutasi extends CI_Controller
             redirect('admin2/mutasi/mutasi');
         }
     }
-    public function edit()
+    public function edit($id)
     {
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
         $data['title'] = 'Edit Mutasi';
 
-        $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
-        $data['dkaryawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
+        // $data['mutasiData'] = $this->M_mutasi->get_DataMutasi2()->result_array();
+        $data['detail_karyawan']  = $this->M_mutasi->getAllKaraywan()->result_array();
         $data['data_golongan']  = $this->M_mutasi->getAllGolongan()->result_array();
 
         // organisasi
+
+        $data['karyawan'] = $this->M_mutasi->editmutasi($id);
         // $data['perusahaan'] = $this->M_organisasi->getDataPerusahaan()->result_array();
-        $data['department'] = $this->M_mutasi->getAllDepartment()->result_array();
+        $data['department'] = $this->M_organisasi->getDataDepartment()->result_array();
         $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
         $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
         $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+        $data['golongan'] = $this->M_organisasi->getDataGolongan()->result_array();
         $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
-        
+
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
         $this->load->view('dashboard/mutasi/v_mutasiedit', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
+
     //update
     public function update()
     {
