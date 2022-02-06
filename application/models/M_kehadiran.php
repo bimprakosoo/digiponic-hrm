@@ -36,14 +36,15 @@ class M_kehadiran extends CI_Model
         return $this->db->get()->result_array();
     }
 
-    public function getUserKehadiran($today)
+    public function getUserKehadiran()
     {
         $this->db->select('detail_karyawan.id, 
         detail_karyawan.nama,
-         kehadiran.`status`');
+         kehadiran.`status`,
+         kehadiran.tanggal');
         $this->db->from('detail_karyawan');
         $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
-        $this->db->where('kehadiran.tanggal', $today);
+        // $this->db->where('kehadiran.tanggal', $today);
 
         // $query = $this->db->query('SELECT
         // detail_karyawan.id,

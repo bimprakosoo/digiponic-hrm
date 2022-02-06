@@ -98,12 +98,14 @@ class Dashboard extends CI_Controller
                 'golongan_id'       =>  $r->golongan_id
             ];
 
-            // var_dump($data); die;
             $this->M_mutasi->update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi);
-
-            // update status dari data pelamaran [1 => diterima | 2 => ditolak]
-
         }
+        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+        $updateStatus = array(
+            'status' => 1
+        );
+        $this->M_mutasi->update_statusMutasi($updateStatus, $IDmutasi);
+
         redirect('admin2/dashboard/dashboard');
     }
 }

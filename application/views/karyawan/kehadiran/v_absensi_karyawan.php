@@ -61,14 +61,18 @@
                                         <td align='center'><input type="checkbox" class='checkbox' name='absen[]' value='<?= $g['id'] ?>'></td>
                                         <td><?= $g['id']; ?></td>
                                         <td><?= $g['nama']; ?></td>
-                                        
-                                        <td><?php if ($g['status'] == 1) { ?>
-                                                Hadir
-                                            <?php } else if ($g['status'] == 2) { ?>
-                                                Absen
-                                            <?php } else if ($g['status'] == null) { ?>
+
+                                        <td> <?php if ($g['tanggal'] == '2022-02-05') { ?>
+                                                <?php if ($g['status'] == 1) { ?>
+                                                    Hadir
+                                                <?php } else if ($g['status'] == 2) { ?>
+                                                    Absen
+                                                <?php } else if ($g['status'] == null) { ?>
+                                                    Belum Abseni
+                                                <?php } ?>
+                                            <?php } else { ?>
                                                 Belum Abseni
-                                            <?php } ?>
+                                            <?php }  ?>
                                         </td>
                                     </tr>
                                 <?php $i++;
@@ -201,8 +205,7 @@
                             dates: date
                         },
                         success: function() {
-
-
+                            location.reload(true);
                         }
                     });
                 }
