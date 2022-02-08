@@ -35,10 +35,7 @@
                             <a href="#list" class="nav-link" data-bs-toggle="tab">List karyawan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#hadir" class="nav-link" data-bs-toggle="tab">hadir</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#tidak-hadir" class="nav-link" data-bs-toggle="tab">tidak hadir</a>
+                            <a href="#hadir" class="nav-link" data-bs-toggle="tab">Kehadiran</a>
                         </li>
                         <li class="nav-item">
                             <a href="#izin" class="nav-link" data-bs-toggle="tab">izin</a>

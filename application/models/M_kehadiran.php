@@ -71,8 +71,10 @@ class M_kehadiran extends CI_Model
         $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
         // $this->db->where('kehadiran.tanggal', $today);
         // $this->db->group_by('nama');
-        // $this->db->where('status', 1);
-        
+        // $array = array('status' => 1, 'status' => 2);
+
+        // $this->db->where($array);
+
         $this->db->order_by('tanggal', 'DESC');
 
         return $this->db->get();
