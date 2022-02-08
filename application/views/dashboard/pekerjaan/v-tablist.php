@@ -10,7 +10,7 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Lowongan</th>
-                            <th>status</th>
+                            <th>status</th> 
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

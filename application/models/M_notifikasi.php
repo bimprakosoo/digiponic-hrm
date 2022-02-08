@@ -19,7 +19,7 @@ class M_notifikasi extends CI_Model
 
   public function getUnreadNumber($role){
     $this->db->select('COUNT(id) as jumlah');
-    $this->db->where('role_id',$role);
+    $this->db->where('role_id',$role); 
     $this->db->where('read_status',0);
     $this->db->where('status',1);
     $sql = $this->db->get('notifikasi');

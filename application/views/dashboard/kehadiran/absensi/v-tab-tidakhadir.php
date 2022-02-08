@@ -6,9 +6,13 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>Lowongan</th>
                         <th>Status</th>
+                        <th>Nama</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Lahir</th>
+                        <th>No.Telp</th>
+                        <th>Pendidikan</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +32,10 @@
                                     <?php  } else if ($m['status'] == 3) { ?>
                                         ditolak
                                     <?php } ?></td>
+                                <td>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#diterima-<?= $i; ?>">Di Terima</button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#ditolak-<?= $i; ?>">Di Tolak</button>
+                                </td>
                             </tr>
                         <?php } ?>
                         <?php $i++; ?>

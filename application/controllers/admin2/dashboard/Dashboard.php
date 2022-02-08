@@ -100,10 +100,12 @@ class Dashboard extends CI_Controller
 
             $this->M_mutasi->update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi);
         }
-        // update status dari data pelamaran [1 => diterima | 2 => ditolak]
+        // update status dari tbl mutasi [1 => diterima | 2 => ditolak] 
         $updateStatus = array(
-            'status' => 1
+            'status' => 1,
+            'hari_efektif' => $this->input->post('hari_efektif')
         );
+
         $this->M_mutasi->update_statusMutasi($updateStatus, $IDmutasi);
 
         redirect('admin2/dashboard/dashboard');

@@ -28,11 +28,18 @@ class Absensi extends CI_Controller
         $today = date("Y-m-d");
 
         // $data['getuser'] = $this->M_kehadiran->getUserKehadiran($today)->result_array();
-        $data['getuser'] = $this->M_kehadiran->getUserKehadiran()->result_array();
+        $data['getuser'] = $this->M_kehadiran->getUserKehadiran2()->result_array();
+        $data['gethadir'] = $this->M_kehadiran->getKehadiran()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
+        // $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
+        $this->load->view('dashboard/kehadiran/absensi/v-detail', $data);
+        $this->load->view('dashboard/kehadiran/absensi/v-tablist', $data);
+        $this->load->view('dashboard/kehadiran/absensi/v-tab-hadir', $data);
+        $this->load->view('dashboard/kehadiran/absensi/v-tab-tidakhadir', $data);
+        $this->load->view('dashboard/kehadiran/absensi/v-tab-izin', $data);
+
         $this->load->view('template/template_admin/footer_ad');
     }
 
@@ -41,7 +48,7 @@ class Absensi extends CI_Controller
     {
         $tanggal = date("Y-m-d");
         // $jam = time("H:i:s");
-         $jam = date('H:i:s');
+        $jam = date('H:i:s');
         $sts = $this->input->post('status_id');
         $dt = $this->input->post('dates');
 
@@ -56,8 +63,8 @@ class Absensi extends CI_Controller
                 'jam_masuk'   => $jam,
                 'status'      => $sts
             );
+            $insert = $this->M_kehadiran->insertUser($data);
         }
-        $insert = $this->M_kehadiran->insertUser($data);
 
 
 
