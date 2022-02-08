@@ -15,22 +15,27 @@
                 <tbody>
                     <?php $i = 1;
                     foreach ($gethadir as $g) : ?>
-                        <tr>
-                            <td><?= $g['id']; ?></td>
-                            <td><?= $g['nama']; ?></td>
-                            <td><?= $g['tanggal']; ?></td>
 
-                            <td>
-                                <?php if ($g['status'] == 1) { ?>
-                                    Hadir
-                                <?php } else if ($g['status'] == 2) { ?>
-                                    Absen
-                                <?php } else if ($g['status'] == null) { ?>
-                                    Belum Abseni
-                                <?php } ?>
+                        <?php if ($g['status'] != 3) { ?>
+                            <tr>
+                                <td><?= $g['id']; ?></td>
+                                <td><?= $g['nama']; ?></td>
+                                <td><?= $g['tanggal']; ?></td>
 
-                            </td>
-                        </tr>
+                                <td>
+                                    <?php if ($g['status'] == 1) { ?>
+                                        Hadir
+                                    <?php } else if ($g['status'] == 2) { ?>
+                                        Absen
+                                    <?php } else if ($g['status'] == 3) { ?>
+                                        izin
+                                    <?php } else if ($g['status'] == null) { ?>
+                                        Belum Abseni
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
                     <?php $i++;
                     endforeach; ?>
                 </tbody>

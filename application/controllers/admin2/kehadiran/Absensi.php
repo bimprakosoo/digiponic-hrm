@@ -33,14 +33,15 @@ class Absensi extends CI_Controller
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        // $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
         $this->load->view('dashboard/kehadiran/absensi/v-detail', $data);
         $this->load->view('dashboard/kehadiran/absensi/v-tablist', $data);
         $this->load->view('dashboard/kehadiran/absensi/v-tab-hadir', $data);
-        $this->load->view('dashboard/kehadiran/absensi/v-tab-tidakhadir', $data);
         $this->load->view('dashboard/kehadiran/absensi/v-tab-izin', $data);
-
         $this->load->view('template/template_admin/footer_ad');
+        
+        // dibuang ---------------------------------------------------------------
+        // $this->load->view('dashboard/kehadiran/absensi/v-tab-tidakhadir', $data);
+        // $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
     }
 
     // Update rating
@@ -54,9 +55,7 @@ class Absensi extends CI_Controller
 
         $dt1 = $this->input->post('user_ids');
 
-
         foreach ($dt1 as $d) {
-
             $data = array(
                 'user_id'     => $d,
                 'tanggal'     => $dt,
@@ -65,8 +64,6 @@ class Absensi extends CI_Controller
             );
             $insert = $this->M_kehadiran->insertUser($data);
         }
-
-
 
         if ($insert) {
             $this->session->set_flashdata('status', 'Insert Data Berhasil');
