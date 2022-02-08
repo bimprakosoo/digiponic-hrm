@@ -37,21 +37,37 @@
                         <div class="col-12 col-xl-4">
                             <div class="card-body">
                                 <form>
+                                    <!-- department -->
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputState">Departemen</label>
-                                        <select id="inputState" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
+                                        <label class="form-label" for="inputState">Department</label>
+                                        <select class="form-control" id="department" name="department" required>
+                                            <option value="">-- Pilih Department --</option>
+                                            <?php foreach ($department as $org) : ?>
+                                                <option value="<?= $org['dept_id'] ?>"><?= $org['nama'] ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
+
                                     <div class="mb-3">
+                                        <label class="form-label" for="inputState">Divisi</label>
+                                        <select class="form-control" id="divisi" name="divisi" required>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputState">Karyawan</label>
+                                        <select class="form-control" id="karyawan1" name="karyawan1" required>
+                                        </select>
+                                    </div>
+
+                                    <!-- <div class="mb-3">
                                         <label class="form-label" for="inputState">Karyawan</label>
                                         <select id="inputState" class="form-control">
                                             <option selected>Choose...</option>
                                             <option>...</option>
                                         </select>
-                                    </div>
-                                    
+                                    </div> -->
+
                                     <div class="mb-3">
                                         <label class="form-label">Keterangan</label>
                                         <textarea class="form-control" placeholder="Textarea" rows="1"></textarea>
@@ -156,3 +172,48 @@
         </div>
 </main>
 <!-- End Content -->
+
+<!-- chain struktur posisi karyawan -->
+<script>
+    $(document).ready(function() {
+
+        // devisi
+        $('#department').change(function() {
+            var id = $(this).val();
+            // console.log(id); // cek id
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('admin2/penilaian_kerja/kpi_karyawan/getDivisi') ?>",
+                data: {
+                    id: id
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    // console.log(response);
+                    $('#divisi').html(response);
+                    // get id kota by provinsi
+                }
+            });
+        });
+
+        //  karyawan
+        $('#divisi').change(function() {
+            var id = $(this).val();
+            // console.log(id); // cek id
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('admin2/penilaian_kerja/kpi_karyawan/getkaryawanByDivisi') ?>",
+                data: {
+                    id: id
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    // console.log(response);
+                    $('#karyawan1').html(response);
+                    // get id kota by provinsi
+                }
+            });
+        });
+
+    });
+</script>
