@@ -15,6 +15,17 @@ class Karyawan extends RestController
         $this->load->model('M_kehadiran');
     }
 
+    function AmbilDataAbsensi_get()
+    {
+        $id = $this->get('user_id');
+        if ($id == '') {
+            $absensi = $this->db->get('kehadiran')->result();
+        } else {
+            $this->db->where('user_id', $id);
+            $absensi = $this->db->get('kehadiran')->result();
+        }
+        $this->response($absensi, 200);
+    }
 
     function CheckIn_post()
     {
@@ -25,19 +36,26 @@ class Karyawan extends RestController
         $data = array(
             'user_id'   =>  $this->input->post('UserId'),
             'tanggal'   =>  $dates,
-            'jam'       =>  $times,
+            'jam_masuk'       =>  $times,
             'lokasi'    =>  $this->input->post('lokasi'),
             'foto'      =>  $this->input->post('foto'),
             'status'    =>  1
-            
+
         );
 
         // var_dump($data);
         // die;
 
         $insert = $this->db->insert('kehadiran', $data);
+
+        
         if ($insert) {
-            $this->response($data, 200);
+            // $this->response($data, 200);
+            $this->response([
+                'message'   => 'data kehadiran berhasil dikirim .',
+                'data'      => $data,
+                'status'    => $insert
+            ], RestController::HTTP_OK);
         } else {
             $this->response(array('hasil' => 'fail', 502));
         }

@@ -43,6 +43,7 @@
                                         <!-- <th>No</th> -->
                                     <th>ID Karyawan</th>
                                     <th>Nama</th>
+                                    <th>tanggal</th>
                                     <th>Status Kehadiran</th>
                                     <!-- <th>Lokasi</th> -->
                                 </tr>
@@ -61,8 +62,9 @@
                                         <td align='center'><input type="checkbox" class='checkbox' name='absen[]' value='<?= $g['id'] ?>'></td>
                                         <td><?= $g['id']; ?></td>
                                         <td><?= $g['nama']; ?></td>
+                                        <td><?= $g['tanggal']; ?></td> 
 
-                                        <td> <?php if ($g['tanggal'] == '2022-02-05') { ?>
+                                        <td> <?php if ($g['tanggal'] == date("Y-m-d") ) { ?>
                                                 <?php if ($g['status'] == 1) { ?>
                                                     Hadir
                                                 <?php } else if ($g['status'] == 2) { ?>
@@ -89,6 +91,7 @@
             </div>
         </div>
     </div>
+    
     <!-- BEGIN  modal -->
     <div class="modal fade" id="formTambah" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">

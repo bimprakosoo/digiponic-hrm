@@ -41,9 +41,10 @@ class Mutasi extends CI_Controller
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/mutasi/v-detail', $data);
+        $this->load->view('dashboard/mutasi/v-detail', $data); 
         $this->load->view('dashboard/mutasi/v-tablistkaryawan', $data);
         $this->load->view('dashboard/mutasi/v-tabpengajuanmutasi', $data);
+        $this->load->view('dashboard/mutasi/v-tabhistory', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 

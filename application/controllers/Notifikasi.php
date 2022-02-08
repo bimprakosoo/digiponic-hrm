@@ -9,8 +9,8 @@ class Notifikasi extends CI_Controller {
   }
 
   public function get_notifikasi_hrd(){
-    $notifikasi_list = $this->M_notifikasi->getAll('1')->result_array();
-    $notifikasi_unread = $this->M_notifikasi->getUnreadNumber('1')->row_array();
+    $notifikasi_list = $this->M_notifikasi->getAll('3')->result_array();
+    $notifikasi_unread = $this->M_notifikasi->getUnreadNumber('3')->row_array();
     $data = ['data' => $notifikasi_list,
              'unread' => $notifikasi_unread['jumlah']];
     echo json_encode($data);
