@@ -52,6 +52,7 @@
 
                                              <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/edit/") . $md['id'];?>"><i class="fas fa-edit"></i></a>
                                              <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $md['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
+                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/mutasi/mutasi/laporan_pdf/" . $md['id'])?>"><i class="fas fa-download"></i></a>
                                          </td>
                                      </tr>
                                  <?php $i++;
