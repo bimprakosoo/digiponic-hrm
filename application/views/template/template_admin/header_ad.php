@@ -19,7 +19,7 @@
 							<span class="indicator" id='unread_count'></span>
 						</div>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown" data-bs-popper="none" id='notification_list'>>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown" data-bs-popper="none" id='notification_list'>
 						<div class="list-group">
 							<div class="list-group-item">
 								<div class="row g-0 align-items-center">

@@ -17,14 +17,14 @@
          <div class="container-fluid p-0">
 
              <div class="card shadow m-4 ">
-                 <form action="<?= base_url('admin2/pekerjaan/pekerjaanmaster/update/'); ?>" method="post" enctype="multipart/form-data">
+                 <form action="<?= base_url('admin2/mutasi/mutasi/prosesMutasi'); ?>" method="post" enctype="multipart/form-data">
 
                      <div class="card-body ">
                          <div class="modal-body">
-                             <h3 class="m-0 font-weight-bold ">Edit Data Mutasi</h3>
+                             <h3 class="m-0 font-weight-bold ">Pengajuan Mutasi Karyawan</h3>
                          </div>
-                         <input type="hidden" class="form-control" id="post_date" name="post_date" readonly value="<?php echo date("Y-m-d"); ?>">
-                         <input type="hidden" class="form-control" id="user_id" name="user_id" readonly value="<?= $user['id']; ?>">
+                         <!-- <input type="hidden" class="form-control" id="post_date" name="post_date" readonly value="<?php echo date("Y-m-d"); ?>"> -->
+                         <input type="hidden" class="form-control" id="user_id" name="user_id" readonly value="<?= $user['idusers']; ?>">
                          <div class="row gx-5">
                              <div class="col">
                                  <!-- Karyawan -->
@@ -41,13 +41,33 @@
 
                                              <div class="col-7">
 
-                                                 <select class="form-control" id="karyawan" name="karyawan" required>
-                                                     <option value="">-- Pilih karyawan --</option>
-                                                     <?php foreach ($dkaryawan as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-                                                 </select>
+                                                 <input type="hidden" class="form-control" id="IDkaryawan" name="IDkaryawan" value="<?= $karyawan['karyawan_id']; ?>" readonly>
+                                                 <input type="text" class="form-control" value="<?= $karyawan['nama']; ?>" readonly>
+
                                              </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+                                 <div class="col">
+                                     <div class="modal-body">
+                                         <div class="row gx-5">
+                                             <div class="col-3">
+                                                 <h5>Organisasi</h5>
+
+                                             </div>
+
+                                             <div class="col-4">
+                                                 <h5>Asal</h5>
+
+                                             </div>
+
+                                             <div class="col-4">
+                                                 <h5>Mutasi</h5>
+
+                                             </div>
+
                                          </div>
                                      </div>
                                  </div>
@@ -61,16 +81,20 @@
 
                                              </div>
                                              <div class="col-4">
-                                                 <p>Departemen Digital</p>
+                                                 <p><?= $karyawan['nama_department']; ?></p>
 
                                              </div>
                                              <div class="col-5">
 
                                                  <select class="form-control" id="department" name="department" required>
                                                      <option value="">-- Pilih --</option>
-                                                     <?php foreach ($department as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
+                                                     <?php foreach ($department as $p) {
+                                                            if ($p['dept_id'] == $karyawan['department_id']) { ?>
+                                                             <option value="<?= $p['dept_id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['dept_id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -86,14 +110,21 @@
 
                                              </div>
                                              <div class="col-4">
-                                                 <p>Divisi</p>
+                                                 <p><?= $karyawan['nama_divisi']; ?></p>
+
 
                                              </div>
                                              <div class="col-5">
 
                                                  <select class="form-control" id="divisi" name="divisi" required>
                                                      <option value="">-- Pilih divisi --</option>
-
+                                                     <?php foreach ($divisi as $p) {
+                                                            if ($p['div_id'] == $karyawan['divisi_id']) { ?>
+                                                             <option value="<?= $p['div_id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['div_id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -109,14 +140,51 @@
 
                                              </div>
                                              <div class="col-4">
-                                                 <p>Jabatan</p>
+                                                 <p><?= $karyawan['nama_jabatan']; ?></p>
+
 
                                              </div>
                                              <div class="col-5">
 
                                                  <select class="form-control" id="jabatan" name="jabatan" required>
                                                      <option value="">-- Pilih jabatan --</option>
+                                                     <?php foreach ($jabatan as $p) {
+                                                            if ($p['jab_id'] == $karyawan['jabatan_id']) { ?>
+                                                             <option value="<?= $p['jab_id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['jab_id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
+                                                 </select>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
 
+                                 <!-- Posisi -->
+                                 <div class="col">
+                                     <div class="modal-body">
+                                         <div class="row gx-5">
+                                             <div class="col-3">
+                                                 <h5>Posisi</h5>
+
+                                             </div>
+                                             <div class="col-4">
+                                                 <p><?= $karyawan['nama_posisi']; ?></p>
+
+
+                                             </div>
+                                             <div class="col-5">
+
+                                                 <select class="form-control" id="posisi" name="posisi" required>
+                                                     <option value="">-- Pilih posisi --</option>
+                                                     <?php foreach ($posisi as $p) {
+                                                            if ($p['pos_id'] == $karyawan['posisi_id']) { ?>
+                                                             <option value="<?= $p['pos_id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['pos_id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -132,39 +200,21 @@
 
                                              </div>
                                              <div class="col-4">
-                                                 <p>Golongan</p>
+                                                 <p><?= $karyawan['nama_golongan']; ?></p>
+
 
                                              </div>
                                              <div class="col-5">
 
-                                                 <select class="form-control" id="golongan" name="golongan" required>
+                                                 <select class="form-control" id="golongan" name="golongan">
                                                      <option value="">-- Pilih Golongan --</option>
-                                                     <?php foreach ($data_golongan as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-                                                 </select>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-
-                                 <!-- Posisi -->
-                                 <div class="col">
-                                     <div class="modal-body">DEPART
-                                         <div class="row gx-5">
-                                             <div class="col-3">
-                                                 <h5>Posisi</h5>
-
-                                             </div>
-                                             <div class="col-4">
-                                                 <p>Posisi</p>
-
-                                             </div>
-                                             <div class="col-5">
-
-                                                 <select class="form-control" id="posisi" name="posisi" required>
-                                                     <option value="">-- Pilih posisi --</option>
-
+                                                     <?php foreach ($golongan as $p) {
+                                                            if ($p['gol_id'] == $karyawan['golongan_id']) { ?>
+                                                             <option value="<?= $p['gol_id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['gol_id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -180,17 +230,21 @@
 
                                              </div>
                                              <div class="col-4">
-                                                 <p>Penempatan</p>
+                                                 <p><?= $karyawan['nama_penempatan']; ?></p>
+
 
                                              </div>
                                              <div class="col-5">
 
-                                                 <select class="form-control" id="penempatan" name="penempatan" required>
+                                                 <select class="form-control" id="penempatan" name="penempatan">
                                                      <option value="">-- Pilih --</option>
-                                                     <?php foreach ($penempatan as $p) : ?>
-                                                         <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
-                                                     <?php endforeach; ?>
-
+                                                     <?php foreach ($penempatan as $p) {
+                                                            if ($p['id'] == $karyawan['penempatan_id']) { ?>
+                                                             <option value="<?= $p['id'] ?>" selected><?= $p['nama'] ?></option>
+                                                         <?php } else { ?>
+                                                             <option value="<?= $p['id'] ?>"><?= $p['nama'] ?></option>
+                                                     <?php }
+                                                        } ?>
                                                  </select>
                                              </div>
                                          </div>
@@ -210,6 +264,7 @@
                                              <div class="col-5">
 
                                                  <select class="form-control" id="jenis_mutasi" name="jenis_mutasi" required>
+                                                     <option>pilih</option>
                                                      <option value="promosi">Promosi</option>
                                                      <option value="mutasi">Mutasi</option>
                                                      <option value="demosi">Demosi</option>
@@ -224,8 +279,8 @@
                          </div>
                          <div class="row m-4">
                              <div class="col-auto ml-auto ">
-                                 <a href="<?= base_url() ?>admin2/pekerjaan/pekerjaanmaster/" class="btn btn-warning">Cancel</a>
-                                 <button type="submit" name="submit" value="submit" class="btn btn-primary">Update</button>
+                                 <a href="<?= base_url() ?>admin2/mutasi/mutasi/" class="btn btn-warning">Cancel</a>
+                                 <button type="submit" name="submit" value="submit" class="btn btn-primary">Proses</button>
                              </div>
                          </div>
                  </form>

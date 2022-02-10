@@ -79,7 +79,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h3 class="card-text  "><strong>Todo List</strong></h3>
+                        <h3 class="card-text"><strong>Todo List</strong></h3>
 
                         <div class="card-body ">
                             <div class="table-responsive">
@@ -95,20 +95,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <?php $i = 1;
                                         foreach ($getMutasi as $m) : ?>
-                                            <tr>
+                                            <?php if ($m['status'] == 0) { ?>
+                                                <tr>
+                                                    <td><?= $m['userID']; ?></td>
+                                                    <td><?= $m['jenis_mutasi']; ?></td>
+                                                    <td><?= $m['tgl_pengajuan']; ?></td>
+                                                    <td><?php if ($m['status'] == 0) { ?>
+                                                            menunggu persetujuan
+                                                    <td><?php } else if ($m['status'] == 1) { ?>
+                                                        pengajuan diterima
+                                                    <?php } ?></td>
 
-                                                <td><?= $m['userID']; ?></td>
-                                                <td><?= $m['jenis_mutasi']; ?></td>
-                                                <td><?= $m['tgl_pengajuan']; ?></td>
-                                                <td><?= $m['status']; ?></td>
-
-                                                <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>">
-                                                        <i class="fas fa-eye"></i></button>
-                                                </td>
-                                            </tr>
+                                                    <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>"><i class="fas fa-eye"></i></button>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         <?php $i++;
                                         endforeach; ?>
                                     </tbody>
@@ -129,6 +132,8 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="row">
+
+
                             <div class="col-lg-5">
                                 <!--Carousel Wrapper-->
                                 <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
@@ -256,6 +261,8 @@
                                             </div>
 
                                         </div>
+
+
                                         <!-- Accordion card -->
 
                                         <!-- <div class="text-center pt-2">
@@ -269,54 +276,35 @@
                                     <!-- Accordion wrapper -->
 
 
+                                    <?php foreach ($getMutasi as $d) : ?>
+                                        <form action="<?= base_url('admin2/dashboard/dashboard/terimaMutasi/') . $d['karyawan_id']; ?>" method="POST">
+                                        <?php endforeach; ?>
 
-
-                                    <!-- Add to Cart -->
-                                    <div class="card-body">
-                                        <!-- <div class="row">
-                                            <div class="col-md-6">
-
-                                                <select class="md-form mdb-select colorful-select dropdown-primary">
-                                                    <option value="" disabled selected>Choose your option</option>
-                                                    <option value="1">White</option>
-                                                    <option value="2">Black</option>
-                                                    <option value="3">Pink</option>
-                                                </select>
-                                                <label>Select color</label>
-
+                                        <div class="row-md-6">
+                                            <div class="modal-body">
+                                                <label for="title">Hari Efektif </label>
+                                                <input type="date" class="form-control" id="txtFromDate" name="hari_efektif" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                                             </div>
-                                            <div class="col-md-6">
-
-                                                <select class="md-form mdb-select colorful-select dropdown-primary">
-                                                    <option value="" disabled selected>Choose your option</option>
-                                                    <option value="1">XS</option>
-                                                    <option value="2">S</option>
-                                                    <option value="3">L</option>
-                                                </select>
-                                                <label>Select size</label>
-
-                                            </div>
-                                        </div> -->
-                                        <div class="text-center">
-
-                                            <button type="button" class="btn btn-danger">Ditolak</button>
-                                            <!-- <a href="" type="submit" class="btn btn-primary">Disetujui</a> -->
-                                            <?php $i = 1;
-                                            foreach ($getMutasi as $d) : ?>
-                                                <a class="btn btn-primary" href="<?= base_url('admin2/dashboard/dashboard/terimaMutasi/') . $d['karyawan_id']; ?>">Di Setujui</a>
-                                            <?php $i++;
-                                            endforeach; ?>
                                         </div>
-                                    </div>
-                                    <!-- /.Add to Cart -->
+
+                                        <div class="card-body">
+                                            <div class="text-center">
+
+                                                <button type="button" class="btn btn-danger">Ditolak</button>
+                                                <button type="submit" name="submit" value="submit" class="btn btn-primary">Di Setujui</button>
+                                                <!-- <button type="submit" name="submit" value="submit" class="btn btn-primary">Di Tolak</button> -->
+                                            </div>
+                                        </div>
+                                        <!-- /.Add to Cart -->
+                                        <!-- </div> -->
+                                        <!-- /.Add to Cart -->
+                                        </form>
                             </div>
-                            <!-- /.Add to Cart -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 </main>
 <script>

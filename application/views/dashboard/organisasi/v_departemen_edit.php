@@ -34,21 +34,21 @@
 
                          <!-- Perusahaan -->
                          <!-- <div class="mb-3 col-md-6"> -->
-                             <div class="modal-body">
-                                 <div class="form-group">
-                                     <label for="title">Perusahaan</label>
-                                     <select class="form-control" id="perusahaan" name="perusahaan" required>
-                                         <option value="">-- Pilih Perusahaan --</option>
-                                         <?php foreach ($perusahaan as $p) {
-                                                if ($p['id'] == $dept['perusahaan']) { ?>
-                                                 <option value="<?= $p['id'] ?>" selected><?= $p['nama_perusahaan'] ?></option>
-                                             <?php } else { ?>
-                                                 <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
-                                         <?php }
-                                            } ?>
-                                     </select>
-                                 </div>
+                         <div class="modal-body">
+                             <div class="form-group">
+                                 <label for="title">Perusahaan</label>
+                                 <select class="form-control" id="perusahaan" name="perusahaan" required>
+                                     <option value="">-- Pilih Perusahaan --</option>
+                                     <?php foreach ($perusahaan as $p) {
+                                            if ($p['id'] == $dept['perusahaan']) { ?>
+                                             <option value="<?= $p['id'] ?>" selected><?= $p['nama_perusahaan'] ?></option>
+                                         <?php } else { ?>
+                                             <option value="<?= $p['id'] ?>"><?= $p['nama_perusahaan'] ?></option>
+                                     <?php }
+                                        } ?>
+                                 </select>
                              </div>
+                         </div>
                          <!-- </div> -->
 
                          <!-- deskripsi -->

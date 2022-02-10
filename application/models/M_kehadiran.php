@@ -36,22 +36,46 @@ class M_kehadiran extends CI_Model
         return $this->db->get()->result_array();
     }
 
-    public function getUserKehadiran($today)
+    public function getUserKehadiran()
     {
-        $this->db->select('detail_karyawan.id, detail_karyawan.nama, kehadiran.`status`');
+        $this->db->select('detail_karyawan.id, 
+        detail_karyawan.nama,
+         kehadiran.`status`,
+         kehadiran.tanggal');
         $this->db->from('detail_karyawan');
         $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
-        $this->db->where('kehadiran.tanggal', $today);
+        $this->db->group_by('detail_karyawan.id');
+
+        // $this->db->where('kehadiran.tanggal', $today);
+        return $this->db->get();
+    }
+
+    public function getUserKehadiran2()
+    {
+        $this->db->select('detail_karyawan.id, detail_karyawan.nama, kehadiran.`status`, kehadiran.tanggal');
+        $this->db->from('detail_karyawan');
+        $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
+        // $this->db->where('kehadiran.tanggal', $today);
+        $this->db->group_by('nama');
 
         return $this->db->get();
     }
 
-    public function getUserKehadiran2($today)
+    public function getKehadiran()
     {
-        $this->db->select('detail_karyawan.id, detail_karyawan.nama, kehadiran.`status`');
+        $this->db->select('detail_karyawan.id,
+        detail_karyawan.nama,
+        kehadiran.tanggal, 
+        kehadiran.`status`');
         $this->db->from('detail_karyawan');
         $this->db->join('kehadiran', 'kehadiran.user_id = detail_karyawan.id', 'left');
-        $this->db->where('kehadiran.tanggal', $today);
+        // $this->db->where('kehadiran.tanggal', $today);
+        // $this->db->group_by('nama');
+        // $array = array('status' => 1, 'status' => 2);
+
+        // $this->db->where($array);
+
+        $this->db->order_by('tanggal', 'DESC');
 
         return $this->db->get();
     }
