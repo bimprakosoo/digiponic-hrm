@@ -4,7 +4,7 @@
         <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
             <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
             <li class="breadcrumb-item"><a href="#">Kehadiran</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Hak Istimewa</li>
+            <li class="breadcrumb-item active" aria-current="page">Izin</li>
         </ol>
     </nav>
 </div>

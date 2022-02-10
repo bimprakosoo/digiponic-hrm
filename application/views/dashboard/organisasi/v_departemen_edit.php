@@ -4,7 +4,7 @@
          <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
              <li class="breadcrumb-item"><a href="<?= base_url('admin2/dashboard/'); ?>">Dashboards</a></li>
              <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/perusahaan/'); ?>">Organisasi</a></li>
-             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/department/'); ?>">Lowongan</a></li>
+             <li class="breadcrumb-item"><a href="<?= base_url('admin2/organisasi/department/'); ?>">Department</a></li>
              <li class="breadcrumb-item active" aria-current="page">Edit Department</li>
          </ol>
      </nav>

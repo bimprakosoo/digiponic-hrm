@@ -109,4 +109,12 @@ class M_landingpage extends CI_Model
 
         return $this->db->get();
     }
+    public function get_slider()
+    {
+        $this->db->select('*');
+
+        $this->db->from('banner');
+
+        return $this->db->get();
+    }
 }

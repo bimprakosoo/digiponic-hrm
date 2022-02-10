@@ -24,7 +24,7 @@
                 <div class="card-body ">
                     <div class="table-responsive">
                         <table class="table table-bordered text-center" id="dataTable" width="100%"  style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                            <thead class="table-dark">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Karyawan</th>

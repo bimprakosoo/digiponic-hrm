@@ -40,7 +40,7 @@
                             <h6 class="mb-0">Nama Lengkap</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            Kenneth Valdez
+                            <?= $user['nama']?>
                         </div>
                     </div>
                     <hr>
@@ -49,7 +49,7 @@
                             <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            fip@jukmuh.al
+                            <?= $user['email']?>
                         </div>
                     </div>
                     <hr>

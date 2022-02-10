@@ -5,7 +5,7 @@
              <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
              <li class="breadcrumb-item"><a href="#">Pekerjaan</a></li>
              <li class="breadcrumb-item"><a href="#">Lowongan</a></li>
-             <li class="breadcrumb-item active" aria-current="page">Tambah Lowongan</li>
+             <li class="breadcrumb-item active" aria-current="page">Edit Lowongan</li>
          </ol>
      </nav>
  </div>

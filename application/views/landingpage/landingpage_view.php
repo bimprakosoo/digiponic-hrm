@@ -3,20 +3,35 @@
   <div class="slider w-100">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <?php
+        foreach ($slider as $key => $value) {
+          if ($key == 0) { ?>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $key; ?>" class="active" aria-current="true"></button>
+          <?php } else { ?>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $key; ?>" aria-current="true"></button>
+
+        <?php   }
+        }
+        ?>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<?php echo base_url(); ?>/assets/image/slide/slide-1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<?php echo base_url(); ?>/assets/image/slide/slide-2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<?php echo base_url(); ?>/assets/image/slide/slide-3.jpg" class="d-block w-100" alt="...">
-        </div>
+        <?php
+        // var_dump($slider); die;
+        ?>
+        <?php
+        foreach ($slider as $key => $value) {
+          if ($key == 0) { ?>
+            <div class="carousel-item active">
+              <img src="<?php echo base_url('assets/image/slide/') . $value['image']; ?>" class="d-block w-100" alt="...">
+            </div>
+          <?php } else { ?>
+            <div class="carousel-item ">
+              <img src="<?php echo base_url('assets/image/slide/') . $value['image']; ?>" class="d-block w-100" alt="...">
+            </div>
+        <?php }
+        }
+        ?>
+
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -574,14 +589,14 @@
 <!-- End Lowongan -->
 
 <!-- Artikel -->
-<section id="landArtikel1" >
+<section id="landArtikel1">
   <div class="container py-5">
     <h2 style="padding-top: 30px;
     font-weight: 700;
     color: #000;
     text-align: center;">
       Artikel
-    </h2> 
+    </h2>
     <p class="text-center">
       Beberapa artikel tentang pentang perusahaan yang bisa anda baca
     </p>
@@ -600,7 +615,7 @@
               <h5 class="card-title "><?= $d['judul_artikel'] ?></h5>
               <p class="card-text pt-2"><?= $d['isi_artikel'] ?></p>
             </div>
-           
+
 
             <h5 class="card-footer" style="background: #fff;"><small><?= $d['post_date'] ?></small></h5>
 

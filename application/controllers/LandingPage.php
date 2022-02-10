@@ -21,6 +21,7 @@ class LandingPage extends CI_Controller
 
     public function index()
     {
+        $data['slider'] = $this->M_landingpage->get_slider(array('is_active' => 1))->result_array();
         $data['start'] = $this->uri->segment(3);
         $data['lowongan'] = $this->M_landingpage->lowongan_lan(3, $data['start']);
         $data['dept'] = $this->M_landingpage->departemen(3, $data['start']);
