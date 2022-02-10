@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller
     {
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
+        $data['user'] = $this->M_auth->getUser_row();
         $data['title'] = 'Dashboard';
 
         $data['getMutasi'] = $this->M_mutasi->get_DataMutasi2()->result_array();
