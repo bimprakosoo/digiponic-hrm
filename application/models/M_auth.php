@@ -83,6 +83,9 @@ class M_auth extends CI_Model
     users.is_active,
     detail_karyawan.nama,
     detail_karyawan.id AS idusers,
+    detail_karyawan.kecamatan,
+    detail_karyawan.kota,
+    detail_karyawan.provinsi,
     detail_karyawan.alamat_lengkap,
     detail_karyawan.jk,
     detail_karyawan.no_telp,
@@ -93,7 +96,7 @@ class M_auth extends CI_Model
     jabatan.nama AS nama_jabatan,
     posisi.nama AS nama_posisi,
     penempatan.nama AS nama_penempatan,
-    golongan.nama AS nama_golongan');
+    golongan.nama AS nama_golongan, wilayah_kota.nama AS wkota, wilayah_provinsi.nama AS wprovinsi, wilayah_kecamatan.nama AS wkecamatan');
     $this->db->from('users');
     $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left'); // detail-karyawan
     $this->db->join('data_karyawan', 'data_karyawan.karyawan_id = detail_karyawan.id', 'left'); // data-karyawan
@@ -104,6 +107,9 @@ class M_auth extends CI_Model
     $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id', 'left'); // posisi
     $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id', 'left'); // penemapatan
     $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id', 'left'); // golongan
+    $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = detail_karyawan.provinsi');
+    $this->db->join('wilayah_kota', 'wilayah_kota.id = detail_karyawan.kota');
+    $this->db->join('wilayah_kecamatan', 'wilayah_kecamatan.id = detail_karyawan.kecamatan');
     $this->db->where('users.email', $this->session->userdata('email'));
 
     return $this->db->get()->row_array();
@@ -119,5 +125,11 @@ class M_auth extends CI_Model
     $this->db->where('email', $this->session->userdata('email'));
 
     return $this->db->get()->row_array();
+  }
+
+  public function update_profil($id, $data)
+  {
+    $this->db->where('id', $id);
+    $this->db->update('detail_karyawan', $data);
   }
 }

@@ -22,7 +22,7 @@
                 <div class="card-body ">
                     <div class="table-responsive">
                         <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                            <thead class="table-dark">
                                 <tr>
                                     <th>Nama Karyawan</th>
                                     <th>Tgl</th>
@@ -71,7 +71,7 @@
             <div class="card-body ">
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" id="dataTerima" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th>Nama Karyawan</th>
                                 <th>Tgl</th>
@@ -118,7 +118,7 @@
             <div class="card-body ">
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" id="dataTolak" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th>Nama Karyawan</th>
                                 <th>Tgl</th>

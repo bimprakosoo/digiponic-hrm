@@ -43,7 +43,7 @@
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
-                            <tbody class="table-sm ">
+                            <tbody >
                                 <?php $i = 1;
                                 foreach ($artikel as $d) : ?>
                                     <tr>
