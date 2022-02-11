@@ -255,6 +255,29 @@ class M_Admin extends CI_Model
         return $this->db->get();
     }
 
+    public function get_DataKarayawan($id_users)
+    {
+        $this->db->select('*,
+        perusahaan.nama_perusahaan AS namaPerusahaan,
+        department.nama AS namaDepartment,
+        divisi.nama AS namaDivisi,
+        jabatan.nama AS namaJabatan,
+        golongan.nama AS namaGolongan,
+        posisi.nama AS namaPosisi,
+        penempatan.nama AS namaPenempatan');
+        $this->db->from('data_karyawan');
+        $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id', 'left');
+        $this->db->join('department', 'department.id = data_karyawan.department_id', 'left');
+        $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id', 'left');
+        $this->db->join('jabatan', 'jabatan.id = data_karyawan.jabatan_id', 'left');
+        $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id', 'left');
+        $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id', 'left');
+        $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id', 'left');
+        $this->db->where('karyawan_id', $id_users);
+
+        return $this->db->get();
+    }
+
     // Artikel ---------------------------------------------------------------------------------------------------------------------------------
     public function postDataArtikel($data)
     {
