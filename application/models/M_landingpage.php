@@ -68,10 +68,10 @@ class M_landingpage extends CI_Model
     public function getDataDepartment()
     {
         // return $this->db->get('department');
-        $this->db->select('department.id AS dept_id, department.nama, perusahaan.nama_perusahaan, department.fungsi, department.peran');
+        $this->db->select('*, department.id AS dept_id, department.nama, perusahaan.nama_perusahaan, department.fungsi, department.peran');
         $this->db->from('department');
         $this->db->join('perusahaan', 'perusahaan.id = department.perusahaan');
-        return $this->db->get();
+        return $this->db->get()->result_array();
     }
     public function artikel($limit, $start)
     {
