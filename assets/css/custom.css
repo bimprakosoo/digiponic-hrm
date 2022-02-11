@@ -213,7 +213,31 @@ form input+i {
     border-radius: 10px;
 }
 
+@media (min-width: 320px) {
+    #mybutton{
+        position: relative; z-index: 1;left: 43%;top: -30px;cursor: pointer;
+    }
+}
 
+@media (min-width: 576px) {
+    #mybutton{
+        position: relative; z-index: 1;left: 47%;top: -30px;cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    #mybutton{
+        position: relative; z-index: 1;left: 45%;top: -30px;cursor: pointer;
+    }
+}
+
+@media (min-width: 1200px) {
+   
+}
+
+@media (min-width: 1400px) {
+    
+}
 /*--------------------------------------------------------------
 # Home
 --------------------------------------------------------------*/
@@ -493,22 +517,16 @@ form input+i {
 }
 
 
+
 /*--------------------------------------------------------------
 # Departemen
 --------------------------------------------------------------*/
-
-#strukturDept {
-    padding-top: 140px;
-}
 
 #daftarDept {
     padding-top: 40px;
 }
 
-#departemen .card {
-    width: 393px;
-    height: 528px;
-}
+
 
 #departemen .card-img-top {
     width: 100%;
@@ -516,38 +534,23 @@ form input+i {
 }
 
 @media (min-width: 320px) {
-    #departemen .card {
-        width: 255px;
-        height: 528px;
-    }
+    
 }
 
 @media (min-width: 400px) {
-    #departemen .card {
-        width: 320px;
-        height: 528px;
-    }
+    
 }
 
 @media (min-width: 768px) {
-    #departemen .card {
-        width: 230px;
-        height: 528px;
-    }
+    
 }
 
 @media (min-width: 1200px) {
-    #departemen .card {
-        width: 373px;
-        height: 528px;
-    }
+    
 }
 
 @media (min-width: 1400px) {
-    #departemen .card {
-        width: 423px;
-        height: 528px;
-    }
+    
 }
 
 

@@ -94,7 +94,7 @@
                     <div class="row pb-5">
                         <div class="col-12 col-xl-12">
                             <div class="row">
-                                <div class="col-sm-5">
+                                <div class="col-xl-4 col-md-5 mb-4">
                                     <div class="card">
                                         <div class="card-body text-start text-capitalize">
 
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <?= form_close(); ?>
-                                <div class="col-sm-7">
+                                <div class="col-xl-8 col-md-7 mb-4">
                                     <div class="card">
                                         <div class="card-body text-start">
 

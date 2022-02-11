@@ -8,7 +8,7 @@
 
   <div class="tentang">
     <h2 class="pt">PT. MAJU BERSAMA</h2>
-    <p class="text-break-1">
+    <p class="text-break-1 ">
       PT. MAJU BERSAMA perusahaan yang telah berdiri sejak tahun
       dengan berbagai bidang kegiatan. Perusahaan kami berdiri dengan
       motto “memberikan kepuasan kepada relasi” sebagai acuan dalam
@@ -29,22 +29,22 @@
   </div>
   <div class="visiMisi pb-5">
     
-    <div class="row">
-      <div class="col-sm-6">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-5 col-md-6 mb-4">
         <div class="card mb-3 h-100">
           <div class="card-body">
-            <h5 class="card-title pt-lg-5 pb-lg-3">Visi</h5>
-            <p class="card-text pt-lg-4 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            <h5 class="card-title pt-3 ">Visi</h5>
+            <p class="card-text pt-3 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-xl-5 col-md-6 mb-4">
         <div class="card mb-3 h-100">
           <div class="card-body pb-2">
-            <h5 class="card-title pt-lg-5 pb-lg-3">Misi</h5>
-            <p class="card-text pt-lg-4 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            <h5 class="card-title pt-3 ">Misi</h5>
+            <p class="card-text pt-3 pb-lg-4 m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
