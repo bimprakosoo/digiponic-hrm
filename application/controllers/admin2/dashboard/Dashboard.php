@@ -49,6 +49,9 @@ class Dashboard extends CI_Controller
         $data['user'] = $this->M_auth->getUser_row();
         $data['title'] = 'Profile';
 
+        $id_users    = $this->session->userdata('idusers');
+
+        $data['getKaryawanP'] = $this->M_admin->get_DataKarayawan($id_users)->result_array();
         $data['getMutasi'] = $this->M_admin->get_DataMutasi()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
