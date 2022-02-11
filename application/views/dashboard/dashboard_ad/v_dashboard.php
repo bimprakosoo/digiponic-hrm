@@ -104,9 +104,9 @@
                                                     <td><?= $m['tgl_pengajuan']; ?></td>
                                                     <td><?php if ($m['status'] == 0) { ?>
                                                             menunggu persetujuan
-                                                    <td><?php } else if ($m['status'] == 1) { ?>
-                                                        pengajuan diterima
-                                                    <?php } ?></td>
+                                                        <?php } else if ($m['status'] == 1) { ?>
+                                                            pengajuan diterima
+                                                        <?php } ?></td>
 
                                                     <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#detail-data" data-tglpengajuan="<?= $m['tgl_pengajuan']; ?>" data-karyawan="<?= $m['userID']; ?>" data-department="<?= $m['namaDepartment']; ?>" data-divisi="<?= $m['namaDivisi']; ?>" data-jabatan="<?= $m['namaJabatan']; ?>" data-golongan="<?= $m['namaGolongan']; ?>" data-posisi="<?= $m['namaPosisi']; ?>" data-penempatan="<?= $m['namaPenempatan']; ?>" data-status="<?= $m['status']; ?>" data-jenismutasi="<?= $m['jenis_mutasi']; ?>"><i class="fas fa-eye"></i></button>
                                                     </td>

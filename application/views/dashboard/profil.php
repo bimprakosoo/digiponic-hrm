@@ -21,7 +21,7 @@
 
                         </div>
                         <div class="mt-3">
-                            <a href="<?= base_url('admin2/dashboard/dashboard/profileEdit') ?>" class="btn btn-info" style="width: 100px;"> Edit </a>
+                            <a href="<?= base_url('admin2/dashboard/dashboard/profileEdit/').$user['idusers'] ?>" class="btn btn-info" style="width: 100px;"> Edit </a>
                         </div>
                         <div class="mt-3">
                             <a href="<?= base_url('admin2/dashboard/dashboard/profileEdit') ?>" class="btn btn-info" style="width: 150px;" data-toggle="modal" data-target="#modalTambah"> Ubah Sandi </a>
@@ -58,7 +58,7 @@
                             <h6 class="mb-0">Jenis Kelamin</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            Laki-Laki
+                        <?= $user['jk']?>
                         </div>
                     </div>
                     <hr>
@@ -67,7 +67,7 @@
                             <h6 class="mb-0">No. Tlpn</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            (239) 816-9029
+                            <?=$user['no_telp'] ?>
                         </div>
                     </div>
                     <hr>
@@ -76,7 +76,7 @@
                             <h6 class="mb-0">Alamat Lengkap</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            Bay Area, San Francisco, CA
+                            <?= $user['alamat_lengkap']?>,  <?= $user['wkecamatan']?>,  <?= $user['wkota']?>,  <?= $user['wprovinsi']?> 
                         </div>
                     </div>
                     <hr>

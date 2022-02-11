@@ -80,4 +80,9 @@ class M_pelamar extends CI_Model
         return $this->db->get_where('wilayah_kota', ['provinsi_id' => $idprov])->result_array();
     }
 
+     //get data perusahaan
+     public function getDataKecamatanDetail($idkota)
+     {
+         return $this->db->get_where('wilayah_kecamatan', ['kota_id' => $idkota])->result_array();
+     }
 }
