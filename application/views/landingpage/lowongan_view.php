@@ -1,4 +1,4 @@
-<section class="landLowongan pb-5" id="landLowongan">
+<section class="lowongan pb-5" id="lowongan">
 
   <img src="<?php echo base_url(); ?>assets/image/slide/slide.svg" class="d-block w-100" />
 
@@ -8,15 +8,15 @@
     </center>
 
   </div>
-  <div class="container-fluid ">
-    <div class="row d-flex justify-content-center">
+  <div class="container-fluid px-5">
+    <div class="row">
 
       <!-- Earnings (Monthly) Card Example -->
       
       <?php
       foreach ($lowongan as $s) {
       ?>
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
           <div class="card text-capitalize h-100" style="border-radius: 10px; height:500px;">
             <!-- <div class="d-flex justify-content-center pt-4">
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />

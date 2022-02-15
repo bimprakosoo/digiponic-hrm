@@ -9,10 +9,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/custom.css" />
-
-   <!-- Font Awesome -->
-   <script src="https://kit.fontawesome.com/2a5bcf5393.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>

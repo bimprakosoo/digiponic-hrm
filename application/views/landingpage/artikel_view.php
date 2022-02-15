@@ -6,12 +6,12 @@
     <div id="carouselExampleControls" class="carousel slide pt-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="container-fluid pt-5 ">
-                    <div class="row d-flex justify-content-center">
+                <div class="container-fluid pt-5 px-5">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <?php
                         foreach ($artikel as $d) {
                         ?>
-                            <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="col">
                                 <div class="card h-100 " style="border-radius: 10px;">
                                     <img src="<?php echo base_url('assets/image/artikel/img/' . $d['image']); ?>" class="card-img-top" style="height: 250px;" alt="...">
                                     <div class="card-body h-100 " style="text-align: justify;">
@@ -32,9 +32,9 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="container-fluid pt-5 ">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-4 col-md-6 mb-4">
+                <div class="container-fluid pt-5 px-5">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
                             <div class="card " style="border-radius: 10px;">
                                 <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
                                 <div class="card-body text-start pt-5">
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="col">
                             <div class="card " style="border-radius: 10px;">
                                 <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
                                 <div class="card-body text-start pt-5">
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="col">
                             <div class="card " style="border-radius: 10px;">
                                 <img src="<?php echo base_url(); ?>assets/image/artikel/artikel.svg" class="card-img-top" alt="...">
                                 <div class="card-body text-start pt-5">

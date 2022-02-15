@@ -80,12 +80,12 @@
     Departemen
   </h2>
 
-  <div class="container-fluid pt-5 ">
-    <div class="row d-flex justify-content-center">
+  <div class="container-fluid pt-5 px-5 mx-auto">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <?php
       foreach ($dept as $d) {
       ?>
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div class="col">
           <div class="card h-100" style="border-radius: 10px;">
             <img src="<?php echo base_url('assets/image/departemen/foto/' . $d['image']); ?>" class="card-img-top " style="height: 250px;" alt="...">
             <div class="card-body h-100 pt-5" style="text-align:justify;">
@@ -102,16 +102,20 @@
         <div class="modal fade" id="departemenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Departemen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
-              <div class="modal-body ">
-                <div class="text-center pt-3">
+              <div class="modal-body">
+                <div class="text-center">
                   <h4>Departemen <?= $d['nama'] ?></h4>
                 </div>
-                <div style="text-align:justify;">
-                  <h5 class="text-center pt-2">Fungsi</h5>
+                <div class="container text-center">
+                  <h5>Fungsi</h5>
                   <?= $d['fungsi'] ?>
                 </div>
-                <div style="text-align:justify;">
+                <div class="container text-start">
                   <h5 class="text-center">Peran</h5>
                   <?= $d['peran'] ?>
                 </div>
@@ -166,10 +170,51 @@
       </div> -->
     </div>
   </div>
-  <div class="d-grid gap-2 col-6 mx-auto pb-5" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-6 mx-auto pb-5">
     <a href="<?php echo base_url(); ?>LandingPage/departemen" class="btn btn-primary">Selengkapnya</a>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="departemenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail Karyawan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="text-center">
+            <h4>Departemen Akutansi dan Keuangan</h4>
+          </div>
+          <div class="container text-center">
+            <h5>Fungsi</h5>
+            <p>Keuangan mengatur dana perusahaan agar secara efektif digunakan untuk memaksimalkan keuntungan usaha sekaligus menjaga
+              penggunaan dana tersebut secara efisien dan akuntansi bertugas mengumpulkan bukti-bukti segala jenis
+              transaksi yang telah terjadi atau akan terjadi (berdasarkan metode akrual), mencatat dan mengelompokkannya,
+              mudian membuat laporan keuangan perusahaan sesuai dengan prinsip-prinsip Akuntansi yang berlaku umum atau
+              Standar Akuntansi Keuangan yang berlaku.</p>
+          </div>
+          <div class="container text-start">
+            <h5 class="text-center">Peran</h5>
+            <p>
+              1. Akuntansi keuangan, berkaitan dengan mencatat semua transaksi, menggunakan sistem pembukuan entri ganda dan menyiapkan laporan keuangan. <br>
+              2. Sistem keuangan, menganalisis kebutuhan informasi keuangan organisasi dan meninjau sistem yang ada dan bertanggung jawab atas desain dan pemeliharaan sistem keuangan.<br>
+              3. Penganggaran, berkaitan dengan analisis dan kontrol informasi keuangan untuk membantu operasi sehari-hari perusahaan. <br>
+              4. Penggajian <br>
+              5. Treasuri dan perencanaan keuangan <br>
+              6. Perpajakan, menangani semua urusan perpajakan. <br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- End Departemen -->
 
@@ -456,17 +501,17 @@
     </p>
   </div>
 
-  <div class="container ">
-    <div class="row d-flex justify-content-center ">
+  <div class="container px-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <?php
       foreach ($lowongan as $s) {
       ?>
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div class="col">
           <div class="card text-capitalize h-100" style="border-radius: 10px; height:500px;">
             <!-- <div class="d-flex justify-content-center pt-4">
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
             </div> -->
-            <div class="card-body h-100 text-center pt-3 ">
+            <div class="card-body h-100 text-center pt-3 w-100">
               <h3 class="card-title pt-3"><strong><?php echo $s['nama_lowongan']; ?></strong></h3>
               <div class="card-text " style="text-align: justify;">
                 <?php echo $s['deskripsi']; ?>
@@ -545,7 +590,7 @@
 
 <!-- Artikel -->
 <section id="landArtikel1">
-  <div class="container py-3">
+  <div class="container py-5">
     <h2 style="padding-top: 30px;
     font-weight: 700;
     color: #000;
@@ -557,13 +602,13 @@
     </p>
   </div>
 
-  <div class="container-fluid pt-3">
-    <div class="row  d-flex justify-content-center">
+  <div class="container-fluid pt-5 px-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
 
       <?php
       foreach ($artikel as $d) {
       ?>
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div class="col">
           <div class="card h-100 " style="border-radius: 10px;">
             <img src="<?php echo base_url('assets/image/artikel/img/' . $d['image']); ?>" class="card-img-top" style="height: 250px;" alt="...">
             <div class="card-body h-100 " style="text-align: justify;">
@@ -614,7 +659,7 @@
     </div>
   </div>
 
-  <div class="d-grid gap-2 col-6 mx-auto pb-5" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-6 mx-auto py-5">
     <a href="<?php echo base_url(); ?>LandingPage/artikel" class="btn btn-primary">Selengkapnya</a>
   </div>
 </section>

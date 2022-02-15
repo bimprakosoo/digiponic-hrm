@@ -42,10 +42,8 @@ class LandingPage extends CI_Controller
 
     public function departemen()
     {
-        $data['dept'] = $this->M_landingpage->getDataDepartment();
-
         // $this->load->view('template/header');
-        $this->load->view('landingpage/departemen_view',$data);
+        $this->load->view('landingpage/departemen_view');
         $this->load->view('template/footer');
     }
 
