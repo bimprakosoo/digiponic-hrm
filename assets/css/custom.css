@@ -241,9 +241,28 @@ form input+i {
 /*--------------------------------------------------------------
 # Home
 --------------------------------------------------------------*/
-
+#tentang .blur {
+    position: relative;
+    display: inline-block; /* make the div not 100% */
+  }
+  /* the 'blur' effect */
+  #tentang .blur:before {
+    content: '';
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #tentang .blur img {
+    display: block; /* remove bottom space */
+  }
 .slider .carousel .carousel-inner {
-    height: 600px;
+    height: auto;
+    
 }
 
 #landTentang {
@@ -478,7 +497,7 @@ form input+i {
 }
 
 @media (min-width: 320px) {
-    .slider .carousel .carousel-inner {
+    .slider .carousel .carousel-inner .carousel-item img {
         height: 190px;
     }
     #landArtikel1 .card-text {
@@ -487,24 +506,24 @@ form input+i {
 }
 
 @media (min-width: 576px) {
-    .slider .carousel .carousel-inner {
+    /* .slider .carousel .carousel-inner {
         height: 205px;
-    }
+    } */
 }
 
 @media (min-width: 768px) {
-    .slider .carousel .carousel-inner {
+    /* .slider .carousel .carousel-inner {
         height: 450px;
-    }
+    } */
     #landArtikel1 .card-text {
         padding-top: 20px;
     }
 }
 
 @media (min-width: 1200px) {
-    .slider .carousel .carousel-inner {
+    /* .slider .carousel .carousel-inner {
         height: 580px;
-    }
+    } */
     #landArtikel1 .card-text {
         padding-top: 50px;
     }

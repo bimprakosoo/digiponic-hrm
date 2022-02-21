@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css" />
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" />
 
   <!-- Title -->
   <title>Maju Bersama</title>

@@ -16,7 +16,7 @@
       <?php
       foreach ($lowongan as $s) {
       ?>
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
           <div class="card text-capitalize h-100" style="border-radius: 10px; height:500px;">
             <!-- <div class="d-flex justify-content-center pt-4">
               <img style=" width: 48px; heigth: 50px;" src="<?php echo base_url('assets/image/lowongan/') . $s['image']; ?>" class="card-img-top" />
