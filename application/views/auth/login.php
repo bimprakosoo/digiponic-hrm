@@ -27,7 +27,7 @@
 
                             <div class="form-group pt-3">
                                 <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                                <span style="" id="mybutton" onclick="change()"><i class="far fa-eye"></i></span>
+                                <span  id="mybutton" onclick="change()"><i class="far fa-eye"></i></span>
 
                                 <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
