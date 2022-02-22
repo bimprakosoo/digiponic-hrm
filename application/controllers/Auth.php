@@ -58,10 +58,10 @@ class Auth extends CI_Controller
                         redirect('admin2/dashboard/dashboard');
                     } else if ($user['role_id'] == 2) {
                         redirect('karyawan/dashboard/dashboard');
-                        } else if ($user['role_id'] == 3) {
-                            redirect('admin2/dashboard/dashboard');
-                        } else if ($user['role_id'] == 4) {
-                            redirect('admin2/dashboard/dashboard');
+                    } else if ($user['role_id'] == 3) {
+                        redirect('admin2/dashboard/dashboard');
+                    } else if ($user['role_id'] == 4) {
+                        redirect('admin2/dashboard/dashboard');
                     } else {
                         redirect('pelamar/dashboard/dashboard');
                     }

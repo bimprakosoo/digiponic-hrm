@@ -13,8 +13,63 @@ class M_kpi extends CI_Model
         return $this->db->get()->result();
     }
 
+    // public function getKpiIndikator($idkaryawan)
+    // {
+    //     $this->db->select('kpi_indikator.*');
+    //     $this->db->from('kpi_indikator');
+    //     $this->db->join('data_karyawan', 'kpi_indikator.jabatan_id = data_karyawan.jabatan_id');
+    //     $this->db->where('karyawan_id', $idkaryawan);
+
+    //     return $this->db->get();
+    // }
+
+    public function get_KpiIndikator()
+    {
+        $this->db->select('kpi_indikator.*, divisi.nama AS nama_divisi');
+        $this->db->from('kpi_indikator');
+        $this->db->join('divisi', 'divisi.id = kpi_indikator.divisi_id', 'left');
+
+        return $this->db->get();
+    }
+
+    public function get_prosentase($id)
+    {
+        $this->db->select('user_id,
+        COUNT( user_id ) AS absensi,
+        ROUND( ( COUNT( user_id ) / 20 ) * 100, 0 ) AS prosentase ');
+        $this->db->from('kehadiran');
+        $this->db->where('user_id', $id);
+
+        $this->db->group_by('user_id');
+
+        return $this->db->get();
+    }
+
+    public function insert_DataKpi($data)
+    {
+        $this->db->insert('kpi_karyawan', $data);
+    }
+
     public function getDataDivisi($iddiv)
     {
         return $this->db->get_where('divisi', ['department_id' => $iddiv])->result();
+    }
+
+    // KPI => presentase kehadiran
+    public function PersentaseKehadiran()
+    {
+        $this->db->select('id,
+        user_id,
+        YEAR ( tanggal ),
+        MONTH ( tanggal ),
+        COUNT( user_id )');
+        $this->db->from('kehadiran ');
+        $array = array('status' => 1, 'status' => 2);
+        $this->db->where($array);
+        $this->db->group_by('user_id,
+        MONTH ( tanggal )');
+        $this->db->order_by('MONTH ( tanggal )', 'desc');
+
+        return $this->db->get();
     }
 }

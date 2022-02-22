@@ -37,8 +37,9 @@
 						<i class="align-middle" data-feather="settings"></i>
 					</a>
 
+					
 					<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-						<img src="<?php echo base_url('assets/image/profil/') . $user['image']; ?>" class="avatar img-fluid rounded mr-1" />
+						<img src="<?= base_url('assets/image/profil/') . $user['image']; ?>" class="avatar img-fluid rounded mr-1" />
 						<strong class="text-dark"><?= $user['nama']; ?></strong>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
