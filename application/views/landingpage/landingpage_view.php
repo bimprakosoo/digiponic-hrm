@@ -1,4 +1,3 @@
-
 <!-- Carusoel -->
 <section class="slider">
   <div class="slider w-100">
@@ -15,26 +14,26 @@
         }
         ?>
       </div>
-      <div class="carousel-inner" style="height:auto; ">
+      <div class="carousel-inner">
         <?php
         // var_dump($slider); die;
         ?>
         <?php
         foreach ($slider as $key => $value) {
           if ($key == 0) { ?>
-            <div class="carousel-item active" >
-              <img  src="<?php echo base_url('assets/image/slide/') . $value['image']; ?>" class="d-block w-100" alt="...">
+            <div class="carousel-item active">
+              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt="...">
               <div class="carousel-caption d-none d-md-block">
-              <h5 style="color:#fff; background:rgba(0,0,0,0.6); " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
+                <h5 style="color:#fff; " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
 
                 <button class="btn btn-primary">Selengkapnyaya</button>
               </div>
             </div>
           <?php } else { ?>
-            <div class="carousel-item " >
-              <img   src="<?php echo base_url('assets/image/slide/') . $value['image']; ?>" class="d-block w-100" alt="...">
+            <div class="carousel-item ">
+              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt="...">
               <div class="carousel-caption d-none d-md-block">
-              <h5 style="color:#fff; background:rgba(0,0,0,0.6); " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
+                <h5 style="color:#fff; " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
 
                 <button class="btn btn-primary">Selengkapnyaya</button>
 
