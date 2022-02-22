@@ -57,4 +57,42 @@ class Pengajuan extends RestController
         }
         $this->response($cuti, 200);
     }
+
+
+    // API Resing --------------------------------------------------------------------------------
+
+    function ListPengajuanResing_get()
+    {
+        $id = $this->get('karyawan_id');
+        if ($id == '') {
+            $resign = $this->db->get('data_resign')->result();
+        } else {
+            $this->db->where('karyawan_id', $id);
+            $resign = $this->db->get('data_resign')->result();
+        }
+        $this->response($resign, 200);
+    }
+
+    function PengajuanResign_post()
+    {
+        $dates = date("Y-m-d");
+        $data = array(
+            'karyawan_id'       => $this->input->post('karyawan_id'),
+            'tgl_resign'        => $this->input->post('tgl_resign'),
+            'keterangan'        => $this->input->post('keterangan'),
+            'tanggal_pengajuan'      => $dates
+        );
+
+        $insert = $this->db->insert('data_resign', $data);
+
+        if ($insert) {
+            $this->response([
+                'message'   => 'Data Pengajuan Resign telah Terkirim.',
+                'data'      => $data,
+                'status'    => $insert
+            ], RestController::HTTP_OK);
+        } else {
+            $this->response(array('hasil' => 'fail', 502));
+        }
+    }
 }

@@ -33,7 +33,7 @@
 
                     <div class="row">
 
-                        <!-- data karyawan -->
+                        <!-- data karyawan ----------------------------------->
                         <div class="col-12 col-xl-4">
                             <div class="card-body">
                                 <form>
@@ -48,26 +48,21 @@
                                         </select>
                                     </div>
 
+                                    <!-- Divisi -->
                                     <div class="mb-3">
                                         <label class="form-label" for="inputState">Divisi</label>
                                         <select class="form-control" id="divisi" name="divisi" required>
                                         </select>
                                     </div>
 
+                                    <!-- karyawan -->
                                     <div class="mb-3">
                                         <label class="form-label" for="inputState">Karyawan</label>
                                         <select class="form-control" id="karyawan1" name="karyawan1" required>
                                         </select>
                                     </div>
 
-                                    <!-- <div class="mb-3">
-                                        <label class="form-label" for="inputState">Karyawan</label>
-                                        <select id="inputState" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div> -->
-
+                                    <!-- keterangan -->
                                     <div class="mb-3">
                                         <label class="form-label">Keterangan</label>
                                         <textarea class="form-control" placeholder="Textarea" rows="1"></textarea>
@@ -75,8 +70,9 @@
                                 </form>
                             </div>
                         </div>
+                        <!-- ----------------------------------------------- -->
 
-                        <!-- data KPI -->
+                        <!-- Proses KPI ----------------------------->
                         <div class="col-12 col-xl-8">
                             <div class="card" style="background: #FFFFFF;box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.15);border-radius: 5px;">
                                 <div class="card-body">
@@ -92,46 +88,44 @@
                                             <label class="col-form-label col-sm-4 text-sm-left">Kehadiran</label>
                                             <div class="col-sm-6 ml-auto">
                                                 <input type="text" type="disable" value="100%">
+
                                             </div>
                                         </div>
-
+                                        <!-- 
                                         <div class="mb-3 row">
                                             <label class="col-form-label col-sm-4 text-sm-left">SP</label>
                                             <div class="col-sm-6 ml-auto">
                                                 <span>2</span>
                                             </div>
-                                        </div>
+                                        </div> -->
 
-                                        <h5 class="col-sm-4 text-sm-left"><strong>2. Kompetensi</strong></h5>
+                                        <!-- KPI ----------------------------------------------------------->
+                                        <h5 class="col-sm-4 text-sm-left"><strong>2. KPI</strong></h5>
+                                        <!-- jabatan = user-> jabatan -->
+
+
                                         <div class="mb-3 row">
                                             <label class="col-form-label col-sm-4 text-sm-left">Efisiensi Kerja</label>
                                             <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-form-label col-sm-4 text-sm-left">Ketepatan Waktu</label>
-                                            <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-form-label col-sm-6 text-sm-left">Kemampuan Mencapai Target</label>
-                                            <div class="col-sm-6 ml-auto">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
+                                                <input type="text">
                                             </div>
                                         </div>
 
-                                        <h5 class="col-sm-5 text-sm-left"><strong>3. Kompetensi Umum</strong></h5>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-sm-4 text-sm-left">Ketepatan Waktu</label>
+                                            <div class="col-sm-6 ml-auto">
+                                                <input type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-sm-6 text-sm-left">Kemampuan Mencapai Target</label>
+                                            <div class="col-sm-6 ml-auto">
+                                                <input type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- <h5 class="col-sm-5 text-sm-left"><strong>3. Budaya</strong></h5>
                                         <div class="mb-3 row">
                                             <label class="col-form-label col-sm-4 text-sm-left">Kerjasama</label>
                                             <div class="col-sm-6 ml-auto">
@@ -158,7 +152,7 @@
                                                     <option>...</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                     </form>
                                 </div>
@@ -210,7 +204,8 @@
                 success: function(response) {
                     // console.log(response);
                     $('#karyawan1').html(response);
-                    // get id kota by provinsi
+                    $('#karyawan2').html(response);
+                    
                 }
             });
         });
