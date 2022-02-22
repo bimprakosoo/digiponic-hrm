@@ -141,6 +141,7 @@ class Mutasi extends CI_Controller
             redirect('admin2/mutasi/mutasi');
         }
     }
+    
     public function edit($id)
     {
         $role_id    = $this->session->userdata('role_id');

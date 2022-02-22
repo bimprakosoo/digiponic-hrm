@@ -96,7 +96,8 @@ class M_auth extends CI_Model
     jabatan.nama AS nama_jabatan,
     posisi.nama AS nama_posisi,
     penempatan.nama AS nama_penempatan,
-    golongan.nama AS nama_golongan, wilayah_kota.nama AS wkota, wilayah_provinsi.nama AS wprovinsi, wilayah_kecamatan.nama AS wkecamatan');
+    golongan.nama AS nama_golongan, 
+    wilayah_kota.nama AS wkota, wilayah_provinsi.nama AS wprovinsi, wilayah_kecamatan.nama AS wkecamatan');
     $this->db->from('users');
     $this->db->join('detail_karyawan', 'detail_karyawan.id = users.detail_karyawan_id', 'left'); // detail-karyawan
     $this->db->join('data_karyawan', 'data_karyawan.karyawan_id = detail_karyawan.id', 'left'); // data-karyawan

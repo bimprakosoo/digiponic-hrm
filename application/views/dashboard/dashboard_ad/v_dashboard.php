@@ -14,44 +14,44 @@
                 <div class="w-100">
                     <div class="row">
                         <div class="col-sm-4">
-                            <div class="card" style="height: 200px;">
+                            <div class="card" style="height: 220px;">
                                 <div class="card-body">
 
-                                    <h5 class="text-center m" style="color: #335c32;">Karyawan Training</h5>
+                                    <h5 class="card-title  text-center">Karyawan Training</h5>
 
                                     <hr>
 
-                                    <h1 class="my-4 text-center" style="font-size: 48px;">4</h1>
+                                    <h1 class="my-5 text-center" style="font-size: 48px;"><strong>4</strong></h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="card" style="height: 200px;">
+                            <div class="card" style="height: 220px;">
                                 <div class="card-body">
 
-                                    <h5 class="text-center m" style="color: #335c32;">Lamaran Masuk</h5>
+                                    <h5 class="card-title text-center">Lamaran Masuk</h5>
 
                                     <hr>
 
-                                    <h1 class="my-4 text-center" style="font-size: 48px;">54</h1>
+                                    <h1 class="my-5 text-center" style="font-size: 48px;"><strong>54</strong></h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="card" style="height: 200px;">
+                            <div class="card" style="height: 220px;">
                                 <div class="card-body">
 
-                                    <h5 class="text-center m" style="color: #335c32;">Karyawan</h5>
+                                    <h5 class="card-title text-center ">Karyawan</h5>
 
                                     <hr>
 
-                                    <h1 class="mt-4 mb-2 text-center" style="font-size: 48px;">114</h1>
+                                    <h1 class="mt-5 mb-2 text-center" style="font-size: 48px;"><strong>114</strong></h1>
                                     <div class="row">
-                                        <div class="col-6 d-flex justify-content-center">
-                                            <button class="btn btn-primary" style="width: 110px; font-size: 12px;">aktif 100</button>
+                                        <div class="col-auto">
+                                            <button class="btn btn-primary" style="font-size: 12px;">aktif 100</button>
                                         </div>
-                                        <div class="col-6 d-flex justify-content-center">
-                                            <button class="btn btn-danger" style="width: 110px; font-size: 12px;">Tidak aktif 100</button>
+                                        <div class="col-auto ml-auto">
+                                            <button class="btn btn-danger" style="font-size: 12px;">Tidak aktif 100</button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,9 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-header card-text" style="background:#fff; color: #335c32; "><strong>Todo List</strong></h3>
+
+                        <h3 class="card-text"><strong>Todo List</strong></h3>
+
                         <div class="card-body ">
                             <div class="table-responsive">
                                 <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
@@ -112,6 +114,7 @@
                                             <?php } ?>
                                         <?php $i++;
                                         endforeach; ?>
+                                    </tbody>
                                     </tbody>
                                 </table>
                             </div>
