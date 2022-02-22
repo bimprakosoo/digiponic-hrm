@@ -79,7 +79,7 @@
                         </div>
                         <div class="col-xl-7 col-md-6 mb-4">
                             <div class="progress mb-3">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">5</div>
                             </div>
                         </div>
                     </div>
