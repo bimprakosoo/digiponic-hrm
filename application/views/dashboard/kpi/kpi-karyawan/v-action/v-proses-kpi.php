@@ -113,21 +113,21 @@
                                             if ($k['divisi_id'] == $karyawan['divisi_id']) { ?>
                                                 <!-- indikator 1 -->
                                                 <div class="mb-3 row">
-                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator_1'] ?></label>
+                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator1'] ?></label>
                                                     <div class="col-sm-6 ml-auto">
                                                         <input type="text" class="form-control" id="indikator1" name="indikator1">
                                                     </div>
                                                 </div>
                                                 <!-- indikator 2 -->
                                                 <div class="mb-3 row">
-                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator_2'] ?></label>
+                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator2'] ?></label>
                                                     <div class="col-sm-6 ml-auto">
                                                         <input type="text" class="form-control" id="indikator2" name="indikator2">
                                                     </div>
                                                 </div>
                                                 <!-- indikator 3 -->
                                                 <div class="mb-3 row">
-                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator_3'] ?></label>
+                                                    <label class="col-form-label col-sm-4 text-sm-left"><?= $k['indikator3'] ?></label>
                                                     <div class="col-sm-6 ml-auto">
                                                         <input type="text" class="form-control" id="indikator3" name="indikator3">
                                                     </div>

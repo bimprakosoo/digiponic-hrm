@@ -17,12 +17,13 @@ class Pengajuan extends RestController
 
     function PengajuanCuti_post()
     {
-        // $response = array();
+        $dates = date("Y-m-d");
         $data = array(
-            'karyawan_id'         => $this->input->post('karyawan_id'),
-            'tgl_mulai'         => $this->input->post('tgl_mulai'),
-            'tgl_selesai'       => $this->input->post('tgl_selesai'),
-            'keterangan'       => $this->input->post('keterangan')
+            'karyawan_id'           => $this->input->post('karyawan_id'),
+            'tgl_mulai'             => $this->input->post('tgl_mulai'),
+            'tgl_selesai'           => $this->input->post('tgl_selesai'),
+            'keterangan'            => $this->input->post('keterangan'),
+            'tanggal_create'        => $dates
         );
 
         // $insert = $this->db->insert('data_lamaran', $data);
@@ -30,7 +31,11 @@ class Pengajuan extends RestController
         $insert = $this->db->insert('data_cuti', $data);
 
         if ($insert) {
-            $this->response($data, 200);
+            $this->response([
+                'message'   => 'Data Pengajuan Cuti telah Terkirim.',
+                'data'      => $data,
+                'status'    => $insert
+            ], RestController::HTTP_OK);
         } else {
             $this->response(array('hasil' => 'fail', 502));
         }

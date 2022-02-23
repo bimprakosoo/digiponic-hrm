@@ -38,7 +38,7 @@ class Absensi extends CI_Controller
         $this->load->view('dashboard/kehadiran/absensi/v-tab-hadir', $data);
         $this->load->view('dashboard/kehadiran/absensi/v-tab-izin', $data);
         $this->load->view('template/template_admin/footer_ad');
-        
+
         // dibuang ---------------------------------------------------------------
         // $this->load->view('dashboard/kehadiran/absensi/v-tab-tidakhadir', $data);
         // $this->load->view('karyawan/kehadiran/v_absensi_karyawan', $data);
@@ -57,10 +57,11 @@ class Absensi extends CI_Controller
 
         foreach ($dt1 as $d) {
             $data = array(
-                'user_id'     => $d,
-                'tanggal'     => $dt,
-                'jam_masuk'   => $jam,
-                'status'      => $sts
+                'user_id'       => $d,
+                'tanggal'       => $dt,
+                'jam_masuk'     => $jam,
+                'status'        => $sts,
+                'id_devices'    => 'Web'
             );
             $insert = $this->M_kehadiran->insertUser($data);
         }
