@@ -54,7 +54,7 @@ class Permits extends CI_Controller
             );
 
             $notif = array(
-                'role_id' => 1,
+                'role_id' => 3,
                 'jenis_notifikasi' => 'karyawan izin',
                 'created_at' => date('Y-m-d H:i:s'),
                 'read_status' => 0,
