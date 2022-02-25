@@ -27,13 +27,13 @@
                                     <td><?php if ($kb['status'] == 1) { ?>
                                             sedang berjalan
                                         <?php } else if ($kb['status'] == 2) { ?>
-                                            menuggu evaluasi
+                                            Proses evaluasi
                                         <?php } ?>
                                     </td>
                                     <td>
-                                        <!-- <button name="submit" class="btn btn-success" data-toggle="modal" data-target="# -<?= $i; ?>">evaluasi</button> -->
+
                                         <?php if ($kb['status'] == 2) { ?>
-                                            <button name="submit" class="btn btn-success" data-toggle="modal" data-target="# -<?= $i; ?>">evaluasi</button>
+                                            <button name="submit" class="btn btn-success" data-toggle="modal" data-target="#ProbationLulus-<?= $kb['probation_id']; ?>">evaluasi</button>
                                         <?php } ?>
                                     </td>
                                 </tr>

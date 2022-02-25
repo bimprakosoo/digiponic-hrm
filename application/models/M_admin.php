@@ -87,22 +87,24 @@ class M_Admin extends CI_Model
     // sementara nama karyawan di ambil dari tbl [users]
     public function data_karyawan()
     {
-        $this->db->select('users.nama AS karyawan,
+        $this->db->select('detail_karyawan.nama AS karyawan,
         perusahaan.nama_perusahaan AS namaPerusahaan,
         department.nama AS namaDepartement,
         divisi.nama AS namaDivisi,
         jabatan.nama AS namaJabatan,
         posisi.nama AS namaPosisi,
-        penempatan.nama AS namaPenempatan');
+        penempatan.nama AS namaPenempatan,
+        golongan.nama AS namaGolongan');
         $this->db->from('data_karyawan');
 
-        $this->db->join('users', 'users.id = data_karyawan.karyawan_id');
+        $this->db->join('detail_karyawan', 'detail_karyawan.id = data_karyawan.karyawan_id');
         $this->db->join('perusahaan', 'perusahaan.id = data_karyawan.perusahaan_id');
         $this->db->join('department', 'department.id = data_karyawan.department_id');
         $this->db->join('divisi', 'divisi.id = data_karyawan.divisi_id');
         $this->db->join('jabatan', 'jabatan.id = data_karyawan.jabatan_id');
         $this->db->join('posisi', 'posisi.id = data_karyawan.posisi_id');
         $this->db->join('penempatan', 'penempatan.id = data_karyawan.penempatan_id');
+        $this->db->join('golongan', 'golongan.id = data_karyawan.golongan_id');
 
         return $this->db->get();
     }
@@ -117,6 +119,7 @@ class M_Admin extends CI_Model
         jabatan.nama AS namaJabatan,
         posisi.nama AS namaPosisi,
         penempatan.nama AS namaPenempatan,
+        golongan.id as gol_id,
         golongan.nama AS namaGolongan');
         $this->db->from('data_karyawan');
         $this->db->join('detail_karyawan', 'detail_karyawan.id = data_karyawan.karyawan_id', 'left');
@@ -341,6 +344,4 @@ class M_Admin extends CI_Model
 
         return $this->db->get();
     }
-
-    
 }
