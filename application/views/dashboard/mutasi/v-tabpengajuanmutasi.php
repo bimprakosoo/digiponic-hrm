@@ -2,7 +2,7 @@
         <h4 class="mt-3">List Mutasi</h4>
         <div class="card-body ">
             <div class="table-responsive">
-                <table class="table table-striped text-center" id="example" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
+                <table class="table table-striped text-center" id="example1" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
