@@ -12,7 +12,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php $i = 1;
+                    foreach ($dkaryawan as $md) : ?>
+                        <tr>
+                            <th scope="row"><?= $i ?></th>
+                            <td><?= $md['nama']; ?></td>
+                            <td><?= $md['department_id']; ?></td>
+                            <td><?= $md['posisi_id']; ?></td>
+
+                            <td>
+                                <a class="btn btn-primary" href="<?php echo base_url("admin2/penilaian_kerja/kpi_karyawan/proses_kpi/") . $md['id']; ?>"><i class="fas fa-user-edit"></i></a>
+                                <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $md['id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    <?php $i++;
+                    endforeach; ?>
                 </tbody>
             </table>
         </div>

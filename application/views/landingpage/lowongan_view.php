@@ -34,7 +34,7 @@
               <strong>Posted Date</strong> <br /> <?php echo $s['post_date']; ?>
             </p>
             <div class="d-grid gap-2 m-2 pb-2">
-              <a href="<?php echo base_url("landingpage/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
+              <a href="<?php echo base_url("LandingPage/lowongan_detail/") . $s['id_lowongan']; ?>" class="btn btn-primary">
                 Lihat Selengkapnya
               </a>
             </div>

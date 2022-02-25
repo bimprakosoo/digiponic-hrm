@@ -68,10 +68,10 @@ class Pelamar extends CI_Controller
             $insert = $this->db->insert('data_lamaran', $data);
             if ($insert) {
                 $this->session->set_flashdata('hasil', 'Insert Data Berhasil');
-                redirect('pelamar');
+                redirect('LandingPage');
             } else {
                 $this->session->set_flashdata('hasil', 'Insert Data Gagal');
-                redirect('pelamar');
+                redirect('LandingPage');
             }
             // redirect('pelamar');
             // var_dump($insert);

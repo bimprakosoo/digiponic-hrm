@@ -40,69 +40,66 @@
                                 <div class="card-body">
 
                                     <h5 class="m text-center " style="color: #335c32;">Absensi</h5>
-                                    
-                                    <!-- <i class="fa-solid fa-user-check"></i> -->
-                                    <!-- <i class="fa-solid fa-user-clock"></i> -->
+
                                     <hr>
-                                    <h1 class="mt-4 text-center" style="color: orange;"><i class="fas fa-fw fa-solid fa-user-clock"></i></h1>
-                                    <h5 class="mb-5 text-center" style="color: orange;">Belum Absensi</h5>
+                                    <?php if ($statusAbsen['tanggal'] == date("Y-m-d")) { ?>
+                                        <h1 class="mt-4 text-center" style="color: green;">
+                                            <i class="fas fa-fw fa-solid fa-user-check"></i>
+                                        </h1>
+                                        <h5 class="mb-5 text-center" style="color: green;">Sudah Absensi</h5>
+                                    <?php } else { ?>
+                                        <h1 class="mt-4 text-center" style="color: orange;">
+                                            <i class="fas fa-fw fa-solid fa-user-clock"></i>
+                                        </h1>
+                                        <h5 class="mb-5 text-center" style="color: orange;">Belum Absensi</h5>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="card flex-fill">
-                    <div class="card-header">
-
-                        <h5 class="card-title mb-0">Calendar</h5>
-                    </div>
-                    <div class="card-body d-flex">
-                        <div class="align-self-center w-100">
-                            <div class="chart">
-                                <div id="datetimepicker-dashboard"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
-
         <div class="card">
             <div class="card-body">
 
                 <h3 class="card-header card-text" style="background: #FFF; color:#335c32;"><strong>KPI Karyawan Bulan Lalu</strong></h3>
 
                 <div class="card-body ">
+                    <!-- 1 -->
                     <div class="row">
                         <div class="col-xl-5 col-md-6 mb-4">
-                            <h5>Efesiensi Kerja</h5>
+                            <h5><?= $KPI['indikator1'] ?></h5>
                         </div>
                         <div class="col-xl-7 col-md-6 mb-4">
                             <div class="progress mb-3">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">5</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?= $KPI['indikator_1']; ?>0%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="10"><?= $KPI['indikator_1']; ?></div>
                             </div>
                         </div>
                     </div>
+                    <!-- 2 -->
                     <div class="row">
                         <div class="col-xl-5 col-md-6 mb-4">
-                            <h5>Kemampuan Mencapai Target</h5>
+                            <h5><?= $KPI['indikator2'] ?></h5>
                         </div>
                         <div class="col-xl-7 col-md-6 mb-4">
                             <div class="progress mb-3">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?= $KPI['indikator_2']; ?>0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><?= $KPI['indikator_2']; ?></div>
                             </div>
                         </div>
                     </div>
+                    <!-- 3 -->
                     <div class="row">
                         <div class="col-xl-5 col-md-6 mb-4">
-                            <h5>Ketepatan Waktu</h5>
+                            <h5><?= $KPI['indikator3'] ?></h5>
                         </div>
                         <div class="col-xl-7 col-md-6 mb-4">
                             <div class="progress mb-3">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?= $KPI['indikator_2']; ?>0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?= $KPI['indikator_2']; ?></div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

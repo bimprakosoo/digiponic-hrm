@@ -72,4 +72,27 @@ class M_kpi extends CI_Model
 
         return $this->db->get();
     }
+
+
+    // Dashboard karyawan---------------------------------------------------------
+
+    public function KPIDashboard($id)
+    {
+        $this->db->select('	detail_karyawan.nama,
+        kpi_indikator.indikator1,
+        kpi_indikator.indikator2,
+        kpi_indikator.indikator3,
+        indikator_1,
+        indikator_2,
+        indikator_3,
+        b_kerja_tim,
+        b_inisiatif');
+        $this->db->from('kpi_indikator');
+        $this->db->join('data_karyawan', 'data_karyawan.divisi_id = kpi_indikator.divisi_id', 'left');
+        $this->db->join('kpi_karyawan', 'kpi_karyawan.karyawan_id = data_karyawan.karyawan_id', 'left');
+        $this->db->join('detail_karyawan', 'detail_karyawan.id = data_karyawan.karyawan_id', 'left');
+        $this->db->where('detail_karyawan.id', $id);
+
+        return $this->db->get();
+    }
 }
