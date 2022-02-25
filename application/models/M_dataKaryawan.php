@@ -45,7 +45,10 @@ class M_dataKaryawan extends CI_Model
         jabatan.nama AS nama_jabatan,
         posisi.nama AS nama_posisi,
         penempatan.nama AS nama_penempatan,
-        golongan.nama AS nama_golongan ');
+        golongan.nama AS nama_golongan,
+        wilayah_provinsi.nama AS nama_provinsi,
+	    wilayah_kota.nama AS nama_kota,
+	    wilayah_kecamatan.nama AS nama_kecamatan');
         $this->db->from('probation');
         $this->db->join('perusahaan', 'perusahaan.id = probation.perusahaan_id', 'left');
         $this->db->join('department', 'department.id = probation.department_id', 'left');
@@ -54,6 +57,10 @@ class M_dataKaryawan extends CI_Model
         $this->db->join('posisi', 'posisi.id = probation.posisi_id', 'left');
         $this->db->join('penempatan', 'penempatan.id = probation.penempatan_id', 'left');
         $this->db->join('golongan', 'golongan.id = probation.golongan_id', 'left');
+
+        $this->db->join('wilayah_provinsi', 'wilayah_provinsi.id = probation.provinsi', 'left');
+        $this->db->join('wilayah_kota', 'wilayah_kota.id = probation.kota', 'left');
+        $this->db->join('wilayah_kecamatan', 'wilayah_kecamatan.id = probation.kecamatan', 'left');
 
         return $this->db->get();
     }
@@ -64,7 +71,7 @@ class M_dataKaryawan extends CI_Model
         $this->db->from('data_probation');
         $this->db->join('probation', 'probation.id = data_probation.probation_id', 'left');
         $this->db->join('posisi', 'posisi.id = probation.posisi_id', 'left');
-        
+
         return $this->db->get();
     }
 

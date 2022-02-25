@@ -20,63 +20,79 @@ class Karyawan extends CI_Controller
         $this->load->model('M_training');
     }
 
+    // public function index()
+    // {
+    //     $role_id    = $this->session->userdata('role_id');
+    //     $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
+    //     $data['user'] = $this->M_auth->getUserRow();
+    //     $data['title'] = 'Management Karyawan';
+
+    //     $data['all_posisikaryawan'] = $this->M_admin->allDataPosisiKaryawan()->result_array();
+    //     $data['all_detailkaryawan'] = $this->M_admin->allDataDetailKaryawan()->result_array();
+    //     $data['datakaryawan'] = $this->M_admin->data_karyawan()->result_array();
+    //     $data['data_golongan']  = $this->M_admin->getDataGolongan()->result_array();
+    //     $data['department'] = $this->M_admin->getDataDepartment()->result_array();
+    //     $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
+    //     $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
+    //     $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
+    //     $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
+
+
+    //     $this->load->view('template/template_admin/sidebar_ad', $data);
+    //     $this->load->view('template/template_admin/header_ad', $data);
+    //     $this->load->view('dashboard/karyawan/v_detail', $data);
+    //     $this->load->view('dashboard/karyawan/v_kepalacabang', $data);
+    //     $this->load->view('dashboard/karyawan/v_karyawan', $data);
+    //     $this->load->view('template/template_admin/footer_ad');
+    // }
+
     public function index()
     {
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
-        $data['user'] = $this->M_auth->getUserRow();
+        $data['user'] = $this->M_auth->getUser_row();
         $data['title'] = 'Management Karyawan';
 
-        $data['all_posisikaryawan'] = $this->M_admin->allDataPosisiKaryawan()->result_array();
-        $data['all_detailkaryawan'] = $this->M_admin->allDataDetailKaryawan()->result_array();
-        $data['datakaryawan'] = $this->M_admin->data_karyawan()->result_array();
-        $data['data_golongan']  = $this->M_admin->getDataGolongan()->result_array();
-        $data['department'] = $this->M_admin->getDataDepartment()->result_array();
-        $data['divisi'] = $this->M_organisasi->getDataDivisi()->result_array();
-        $data['jabatan'] = $this->M_organisasi->getDataJabatan()->result_array();
-        $data['posisi'] = $this->M_organisasi->getDataPosisi()->result_array();
-        $data['penempatan'] = $this->M_organisasi->getDataPenempatan()->result_array();
-
+        $data['Allkaryawan'] = $this->M_admin->allDataPosisiKaryawan()->result_array();
 
         $this->load->view('template/template_admin/sidebar_ad', $data);
         $this->load->view('template/template_admin/header_ad', $data);
-        $this->load->view('dashboard/karyawan/v_detail', $data);
-        $this->load->view('dashboard/karyawan/v_kepalacabang', $data);
-        $this->load->view('dashboard/karyawan/v_karyawan', $data);
+        $this->load->view('dashboard/karyawan/karyawan/v-detail', $data);
+        $this->load->view('dashboard/karyawan/karyawan/v-tabkepala', $data);
+        $this->load->view('dashboard/karyawan/karyawan/v-tabmanager', $data);
+        $this->load->view('dashboard/karyawan/karyawan/v-tabkaryawan', $data);
         $this->load->view('template/template_admin/footer_ad');
     }
 
-    // menambahkan data karyawan
-    function tambah_DataKaryawan()
-    {
-        if (isset($_POST['submit'])) {
-            $data = array(
-                'karyawan_id'               => $this->input->post('karyawan'),
-                'perusahaan_id'             => 11,
-                'department_id'             => $this->input->post('department'),
-                'divisi_id'                 => $this->input->post('divisi'),
-                'jabatan_id'                => $this->input->post('jabatan'),
-                'golongan_id'               => $this->input->post('golongan'),
-                'posisi_id'                 => $this->input->post('posisi'),
-                'penempatan_id'             => $this->input->post('penempatan')
-            );
+    // menambahkan data karyawan [Abort]
+    // function tambah_DataKaryawan()
+    // {
+    //     if (isset($_POST['submit'])) {
+    //         $data = array(
+    //             'karyawan_id'               => $this->input->post('karyawan'),
+    //             'perusahaan_id'             => 11,
+    //             'department_id'             => $this->input->post('department'),
+    //             'divisi_id'                 => $this->input->post('divisi'),
+    //             'jabatan_id'                => $this->input->post('jabatan'),
+    //             'golongan_id'               => $this->input->post('golongan'),
+    //             'posisi_id'                 => $this->input->post('posisi'),
+    //             'penempatan_id'             => $this->input->post('penempatan')
+    //         );
 
-            var_dump($data);
-            die;
-            $insert = $this->M_admin->insert_DataKaryawan($data);
+    //         $insert = $this->M_admin->insert_DataKaryawan($data);
 
-            if ($insert) {
-                $this->session->set_flashdata('status', 'Insert Data Berhasil');
-                redirect('admin2/karyawan/karyawan');
-            } else {
-                $this->session->set_flashdata('status', 'Insert Data Gagal');
-                redirect('admin2/karyawan/karyawan');
-            }
-        } else {
-            redirect('admin2/karyawan/karyawan');
-        }
-    }
-    
+    //         if ($insert) {
+    //             $this->session->set_flashdata('status', 'Insert Data Berhasil');
+    //             redirect('admin2/karyawan/karyawan');
+    //         } else {
+    //             $this->session->set_flashdata('status', 'Insert Data Gagal');
+    //             redirect('admin2/karyawan/karyawan');
+    //         }
+    //     } else {
+    //         redirect('admin2/karyawan/karyawan');
+    //     }
+    // }
+
     // menambahkan data karyawan training
     function Tambah_DataKaryawan_Training()
     {
@@ -141,7 +157,7 @@ class Karyawan extends CI_Controller
         $role_id    = $this->session->userdata('role_id');
         $data['roleMenu'] = $this->M_menu->userMenu($role_id)->result_array();
         $data['user'] = $this->M_auth->getUserRow();
-        $data['title'] = 'Probation'; 
+        $data['title'] = 'Probation';
 
         // karyawan baru diterima
         $data['karyawan_baru'] = $this->M_training->getData_KaryawanBaru()->result_array();

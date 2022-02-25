@@ -16,6 +16,7 @@ class Probation extends CI_Controller
         $this->load->model('M_auth');
         $this->load->model('M_menu');
         $this->load->model('M_training');
+        $this->load->model('M_organisasi');
         $this->load->model('M_dataKaryawan');
     }
 
@@ -38,6 +39,8 @@ class Probation extends CI_Controller
         $data['data_training'] = $this->M_training->getDataTraining()->result_array();
         $data['all_detailkaryawan'] = $this->M_admin->allDataDetailKaryawan()->result_array();
         $data['perusahaan'] = $this->M_admin->getDataPerusahaan()->result_array();
+        $data['roles'] = $this->M_organisasi->getRoles()->result_array();
+
 
         $data['karyawan_probation'] = $this->M_dataKaryawan->getDataProbation()->result_array();
         $data['dataprobation'] = $this->M_dataKaryawan->get_DataProbation()->result_array();
@@ -72,7 +75,7 @@ class Probation extends CI_Controller
             // $getdata = $this->db->get_where('probation', ['id' => $idProbation])->result();
             // $getdata = $this->M_dataKaryawan->DataProbationByID($idProbation)->result();
             $update_status = [
-                'status_training' => 1
+                'status' => 1
             ];
 
             $this->M_dataKaryawan->update_StatusProbation($update_status, $idProbation);

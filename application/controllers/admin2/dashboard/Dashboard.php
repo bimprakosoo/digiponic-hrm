@@ -123,7 +123,6 @@ class Dashboard extends CI_Controller
             'password'  =>  password_hash($this->input->post('pass'), PASSWORD_DEFAULT),
 
         );
-        // var_dump($data, $iduser); die;
         $this->M_organisasi->update_profile($iduser, $data);
         redirect('admin2/dashboard/dashboard/profile');
     }
@@ -144,6 +143,7 @@ class Dashboard extends CI_Controller
 
             $this->M_mutasi->update_dataMutasiKaryawan($update_datakaryawan, $IDmutasi);
         }
+        
         // update status dari tbl mutasi [1 => diterima | 2 => ditolak] 
         $updateStatus = array(
             'status' => 1,

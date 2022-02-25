@@ -59,7 +59,7 @@
                                         <!-- wingi tak hapus siji, dadi mek nomor karo nama departemen tok -->
 
                                         <td><button class="btn btn-secondary" id="set_dtl" data-toggle="modal" data-target="#sizedModalMd" data-nama_departemen="<?= $d['nama']; ?>" data-nama_perusahaan="<?= $d['nama_perusahaan']; ?>" data-deskripsi="<?= $d['deskripsi']; ?>" data-fungsi="<?= $d['fungsi']; ?>" data-peran="<?= $d['peran']; ?>" data-image="<?= base_url('assets/image/departemen/foto/') . $d['image']; ?>">
-                                                <i class="fas fa-eye"></i></button>
+                                                <i class="fas fa-eye"></i></button> 
                                             <a class="btn btn-primary" href="<?php echo base_url("admin2/organisasi/department/edit/") . $d['dept_id']; ?>"><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger" href="<?php echo base_url("admin2/organisasi/department/hapus/") . $d['dept_id']; ?>" onclick="return confirm('Yakin mau hapus?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>

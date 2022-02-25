@@ -39,6 +39,7 @@ class Karyawan extends RestController
             'jam_masuk'       =>  $times,
             'lokasi'    =>  $this->input->post('lokasi'),
             'foto'      =>  $this->input->post('foto'),
+            'devices'   => $this->input->post('devices'),
             'status'    =>  1
 
         );
@@ -48,7 +49,7 @@ class Karyawan extends RestController
 
         $insert = $this->db->insert('kehadiran', $data);
 
-        
+
         if ($insert) {
             // $this->response($data, 200);
             $this->response([

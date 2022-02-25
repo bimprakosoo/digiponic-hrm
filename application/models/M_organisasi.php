@@ -293,4 +293,13 @@ class M_organisasi extends CI_Model
     {
         $this->db->insert('penempatan', $data);
     }
+    
+    public function getRoles()
+    {
+        $this->db->select('*');
+        $this->db->from('user_role');
+        
+        return $this->db->get();
+        
+    }
 }

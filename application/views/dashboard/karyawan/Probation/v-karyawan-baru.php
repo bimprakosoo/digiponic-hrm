@@ -17,20 +17,24 @@
                     <tbody>
                         <?php $i = 1;
                         foreach ($karyawan_probation as $kb) : ?>
-                            <tr>
-                                <th scope="row"><?= $i ?></th>
-                                <td><?= $kb['nama']; ?></td>
-                                <td><?= $kb['nama_posisi']; ?></td>
-                                <td><?php if ($kb['status_training'] == 0) { ?>
-                                        Ready
-                                    <?php } else if ($kb['status_training'] == 1) { ?>
-                                        Proses Probation
-                                    <?php } ?>
-                                </td>
-                                <td>
-                                    <button name="submit" class="btn btn-success" data-toggle="modal" data-target="#ModalReadyProbation-<?= $i; ?>">Probation</button>
-                                </td>
-                            </tr>
+                            <?php if ($kb['status'] != 3) { ?>
+                                <tr>
+                                    <th scope="row"><?= $i ?></th>
+                                    <td><?= $kb['nama']; ?></td>
+                                    <td><?= $kb['nama_posisi']; ?></td>
+                                    <td><?php if ($kb['status'] == 0) { ?>
+                                            Ready
+                                        <?php } else if ($kb['status'] == 1) { ?>
+                                            Proses Probation
+                                        <?php } else if ($kb['status'] == 2) { ?>
+                                            proses Evaluasi
+                                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        <button name="submit" class="btn btn-success" data-toggle="modal" data-target="#ModalReadyProbation-<?= $i; ?>">Probation</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         <?php $i++;
                         endforeach; ?>
                     </tbody>
