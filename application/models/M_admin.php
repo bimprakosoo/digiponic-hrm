@@ -119,7 +119,7 @@ class M_Admin extends CI_Model
         jabatan.nama AS namaJabatan,
         posisi.nama AS namaPosisi,
         penempatan.nama AS namaPenempatan,
-        golongan.id as gol_id,
+        data_karyawan.golongan_id as gol_id,
         golongan.nama AS namaGolongan');
         $this->db->from('data_karyawan');
         $this->db->join('detail_karyawan', 'detail_karyawan.id = data_karyawan.karyawan_id', 'left');
