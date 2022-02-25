@@ -22,20 +22,20 @@
         foreach ($slider as $key => $value) {
           if ($key == 0) { ?>
             <div class="carousel-item active">
-              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5 style="color:#fff; " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
+              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt=".">
+              <div class="carousel-caption ">
+                <h5 style="color:#fff; " class="slide_h pt-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
 
-                <button class="btn btn-primary">Selengkapnyaya</button>
+                <button class="slide_h btn btn-primary ">Selengkapnyaya</button>
               </div>
             </div>
           <?php } else { ?>
             <div class="carousel-item ">
-              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5 style="color:#fff; " class="py-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
+              <img style=" background:rgba(0,0,0,0.6) url(<?php echo base_url('assets/image/slide/') . $value['image']; ?>);  " src="" class="hero d-block  " alt=".">
+              <div class="carousel-caption ">
+                <h5 style="color:#fff; " class="slide_h pt-3">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
 
-                <button class="btn btn-primary">Selengkapnyaya</button>
+                <button class="slide_h btn btn-primary ">Selengkapnyaya</button>
 
               </div>
             </div>
