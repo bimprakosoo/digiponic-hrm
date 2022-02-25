@@ -100,6 +100,7 @@ class M_mutasi extends CI_Model
         $this->db->where('karyawan_id', $IDmutasi);
         $this->db->update('mutasi');
     }
+    
     public function editmutasi($id)
     {
         $this->db->select('data_karyawan.*,

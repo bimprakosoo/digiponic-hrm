@@ -44,7 +44,7 @@ class Department extends CI_Controller
                 'deskripsi'         =>  $this->input->post('deskripsi'),
                 'fungsi'            =>  $this->input->post('fungsi'),
                 'peran'             =>  $this->input->post('peran'),
-                'image'             => $this->M_organisasi->file_image()
+                'image'             => $this->M_organisasi->file_image() 
             );
             // var_dump($data);
             // die;

@@ -61,7 +61,7 @@ class Absensi extends CI_Controller
                 'tanggal'       => $dt,
                 'jam_masuk'     => $jam,
                 'status'        => $sts,
-                'id_devices'    => 'Web'
+                'devices'    => 'Web'
             );
             $insert = $this->M_kehadiran->insertUser($data);
         }
