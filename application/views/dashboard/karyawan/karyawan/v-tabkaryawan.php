@@ -3,8 +3,8 @@
     <div class="card-body ">
         <div class="table-responsive">
             <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap; border: none !important;" cellspacing="0">
-            <thead class="table-dark">
-                        <tr>
+                <thead class="table-dark">
+                    <tr>
                         <th>No</th>
                         <th>Nama Karyawan</th>
                         <th>Perusahaan</th>
@@ -14,11 +14,12 @@
                         <th>Posisi</th>
                         <th>Penempatan</th>
                         <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 1;
-                        foreach ($Allkaryawan as $m) : ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1;
+                    foreach ($Allkaryawan as $m) : ?>
+                        <?php if ($m['gol_id'] == 2) { ?>
                             <tr>
                                 <th scope="row"><?= $i ?></th>
                                 <td><?= $m['karyawan']; ?></td>
@@ -30,9 +31,10 @@
                                 <td><?= $m['namaPenempatan']; ?></td>
                                 <td><?= $m['namaGolongan']; ?></td>
                             </tr>
-                        <?php $i++;
-                        endforeach; ?>
-                    </tbody>
+                        <?php } ?>
+                    <?php $i++;
+                    endforeach; ?>
+                </tbody>
             </table>
         </div>
     </div>
@@ -57,4 +59,3 @@
         });
     });
 </script>
-

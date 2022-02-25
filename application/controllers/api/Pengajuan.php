@@ -13,6 +13,7 @@ class Pengajuan extends RestController
         parent::__construct();
         // model
         $this->load->model('M_pengajuan');
+        $this->load->model('M_notifikasi');
     }
 
     function PengajuanCuti_post()
@@ -26,11 +27,19 @@ class Pengajuan extends RestController
             'tanggal_create'        => $dates
         );
 
+        $notif = array(
+            'role_id' => 1,
+            'jenis_notifikasi' => 'Pengajuan Cuti',
+            'created_at' => date('Y-m-d H:i:s'),
+            'read_status' => 0,
+            'status' => 1
+        );
         // $insert = $this->db->insert('data_lamaran', $data);
         // $insert = $this->M_pengajuan->insert_pengajuanCuti($data);
         $insert = $this->db->insert('data_cuti', $data);
 
         if ($insert) {
+            $insert_notif = $this->M_notifikasi->addNotif($notif);
             $this->response([
                 'message'   => 'Data Pengajuan Cuti telah Terkirim.',
                 'data'      => $data,
@@ -82,9 +91,9 @@ class Pengajuan extends RestController
     {
         $dates = date("Y-m-d");
         $data = array(
-            'karyawan_id'       => $this->input->post('karyawan_id'),
-            'tgl_resign'        => $this->input->post('tgl_resign'),
-            'keterangan'        => $this->input->post('keterangan'),
+            'karyawan_id'           => $this->input->post('karyawan_id'),
+            'tgl_resign'            => $this->input->post('tgl_resign'),
+            'keterangan'            => $this->input->post('keterangan'),
             'tanggal_pengajuan'      => $dates
         );
 

@@ -23,21 +23,44 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
-                            <thead>
+                        <table class="table table-striped text-center" id="dataTable" width="100%" style="max-width:100%; white-space:nowrap;" cellspacing="0">
+                            <thead class="table-success">
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Karyawan</th>
-                                    <th>Tgl Pengajuan</th>
-                                    <th>Tgl Masuk Kerja</th>
-                                    <th>Tgl Keluar Kerja</th>
+                                    <th>Nama</th>
+                                    <th>Tgl Pengajuan Resign</th>
                                     <th>Keterangan</th>
                                     <th>Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1;
+                                foreach ($resign as $as) : ?>
 
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?= $as['nama']; ?></td>
+                                        <td><?= $as['tgl_resign']; ?></td>
+                                        <td><?= $as['keterangan']; ?></td>
+                                        <td><?php if ($as['status'] < 2) { ?>
+                                                menunggu persetujuan
+                                            <?php } else if ($as['status'] == 2) { ?>
+                                                diterima
+                                            <?php } else if ($as['status'] == 3) { ?>
+                                                ditolak
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($as['status'] < 2) { ?>
+                                                <a class="btn btn-success" href="<?php echo base_url("admin2/cuti/pengunduran_diri/approveRequest/") . $as['id']; ?>"><i class="far fa-check-circle"></i></i></a>
+                                                <a class="btn btn-danger" href="<?php echo base_url("admin2/cuti/pengunduran_diri/tolakRequest/") . $as['id']; ?>"><i class="far fa-times-circle"></i></i></a>
+                                            <?php } ?>
+
+                                        </td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach; ?>
                             </tbody>
                         </table>
                     </div>

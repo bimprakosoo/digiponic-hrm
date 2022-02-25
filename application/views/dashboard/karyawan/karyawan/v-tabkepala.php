@@ -21,6 +21,7 @@
                     <tbody>
                         <?php $i = 1;
                         foreach ($Allkaryawan as $m) : ?>
+                         <?php if ($m['gol_id'] == 4) { ?>
                             <tr>
                                 <th scope="row"><?= $i ?></th>
                                 <td><?= $m['karyawan']; ?></td>
@@ -32,6 +33,7 @@
                                 <td><?= $m['namaPenempatan']; ?></td>
                                 <td><?= $m['namaGolongan']; ?></td>
                             </tr>
+                            <?php } ?>
                         <?php $i++;
                         endforeach; ?>
                     </tbody>

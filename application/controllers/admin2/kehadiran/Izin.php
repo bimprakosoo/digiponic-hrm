@@ -42,8 +42,7 @@ class Izin extends CI_Controller
             'izin.status' => 1
         ];
         $data = $this->M_kehadiran->updateIzin($update_status, $ids);
-        var_dump($data);
-        die;
+
 
         redirect('admin2/kehadiran/izin');
     }
@@ -55,8 +54,7 @@ class Izin extends CI_Controller
             'izin.status' => 2
         ];
         $data = $this->M_kehadiran->updateIzin($update_status, $ids);
-        var_dump($data);
-        die;
+
 
         redirect('admin2/kehadiran/izin');
     }
